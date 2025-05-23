@@ -69,8 +69,8 @@ export interface TranslationContent {
   contactEmail: string;
   contactPhone: string;
   contactLinkedIn: string;
-  sendMessage: string; // Will be "Verstuur Email" / "Send Email"
-  openWhatsApp: string; // New key
+  sendMessage: string; 
+  openWhatsApp: string; 
   viewProfile: string;
   
   // Generic
@@ -78,6 +78,10 @@ export interface TranslationContent {
   error: string;
   by: string;
   optionalLabel: string;
+
+  // Legal
+  legalPrivacy: string;
+  legalDisclaimer: string;
 }
 
 
@@ -92,7 +96,7 @@ export const translations: Translations = {
     navCustomers: 'Klanten',
     navServices: 'Diensten',
     navPublications: 'Publicaties',
-    navProjectInquiry: 'Contactformulier', // Changed from Projectaanvraag
+    navProjectInquiry: 'Contactformulier', 
     navContact: 'Contact',
     languageToggle: 'Switch to English',
     themeToggleLight: 'Schakel naar lichte modus',
@@ -127,7 +131,7 @@ export const translations: Translations = {
     publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)',
     viewPublication: 'Bekijk Publicatie',
     
-    projectInquiryTitle: 'Contactformulier', // Changed
+    projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -147,14 +151,17 @@ export const translations: Translations = {
     contactEmail: 'E-mail',
     contactPhone: 'Telefoon (WhatsApp)',
     contactLinkedIn: 'LinkedIn Profiel',
-    sendMessage: 'Verstuur Email', // Changed from Verstuur Bericht
+    sendMessage: 'Verstuur Email',
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'Bekijk Profiel',
 
     loading: 'Laden...',
     error: 'Fout',
     by: 'door',
-    optionalLabel: 'optioneel'
+    optionalLabel: 'optioneel',
+
+    legalPrivacy: 'Privacybeleid',
+    legalDisclaimer: 'Disclaimer',
   },
   en: {
     navHome: 'Home',
@@ -162,7 +169,7 @@ export const translations: Translations = {
     navCustomers: 'Customers',
     navServices: 'Services',
     navPublications: 'Publications',
-    navProjectInquiry: 'Contact Form', // Changed from Project Inquiry
+    navProjectInquiry: 'Contact Form', 
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
     themeToggleLight: 'Switch to light mode',
@@ -197,7 +204,7 @@ export const translations: Translations = {
     publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)',
     viewPublication: 'View Publication',
 
-    projectInquiryTitle: 'Contact Form', // Changed
+    projectInquiryTitle: 'Contact Form', 
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -217,13 +224,18 @@ export const translations: Translations = {
     contactEmail: 'Email',
     contactPhone: 'Phone (WhatsApp)',
     contactLinkedIn: 'LinkedIn Profile',
-    sendMessage: 'Send Email', // Changed from Send Message (for email card)
+    sendMessage: 'Send Email', 
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'View Profile',
     
     loading: 'Loading...',
     error: 'Error',
     by: 'by',
-    optionalLabel: 'optional'
+    optionalLabel: 'optional',
+
+    legalPrivacy: 'Privacy Policy',
+    legalDisclaimer: 'Disclaimer',
   },
 };
+
+    
