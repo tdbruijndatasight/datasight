@@ -1,3 +1,4 @@
+
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 export interface NavItem {
@@ -11,7 +12,7 @@ export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navCustomers', href: '#customers', id: 'customers' },
   { labelKey: 'navServices', href: '#services', id: 'services' },
   { labelKey: 'navPublications', href: '#publications', id: 'publications' },
-  { labelKey: 'navAIProposals', href: '#ai-proposals', id: 'ai-proposals' },
+  { labelKey: 'navProjectInquiry', href: '#inquiry', id: 'inquiry' },
   { labelKey: 'navContact', href: '#contact', id: 'contact' },
 ];
 

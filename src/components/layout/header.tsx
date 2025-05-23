@@ -1,11 +1,13 @@
+
 "use client";
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Brain, BarChartBig, Database, Settings, BookOpen, Users, Mail, Phone, Linkedin as LinkedinIconLucide, Languages } from 'lucide-react';
+import { Menu, X, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger, SheetClose } from '@/components/ui/sheet';
 import LanguageToggle from './language-toggle';
+import { ThemeToggle } from './theme-toggle';
 import { useLanguage } from '@/hooks/use-language';
 import { NAV_ITEMS } from '@/constants/site';
 import { cn } from '@/lib/utils';
@@ -52,8 +54,10 @@ const Header: React.FC = () => {
         <nav className="hidden md:flex items-center space-x-2">
           <NavLinks />
           <LanguageToggle />
+          <ThemeToggle />
         </nav>
-        <div className="md:hidden">
+        <div className="md:hidden flex items-center gap-2">
+          <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
               <Button variant="ghost" size="icon">
@@ -61,7 +65,7 @@ const Header: React.FC = () => {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-[280px] bg-background p-6">
-              <div className="flex flex-col space-y-6">
+              <div className="flex flex-col space-y-6 h-full">
                 <div className="flex justify-between items-center mb-6">
                    <Logo />
                    <SheetClose asChild>

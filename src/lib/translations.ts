@@ -1,3 +1,4 @@
+
 export type Locale = 'nl' | 'en';
 
 export interface TranslationContent {
@@ -7,9 +8,11 @@ export interface TranslationContent {
   navCustomers: string;
   navServices: string;
   navPublications: string;
-  navAIProposals: string;
+  navProjectInquiry: string; // Changed from navAIProposals
   navContact: string;
   languageToggle: string;
+  themeToggleLight: string;
+  themeToggleDark: string;
 
   // Home Section
   homeTitle: string;
@@ -42,15 +45,21 @@ export interface TranslationContent {
   publication1Description: string;
   viewPublication: string;
 
-  // AI Proposal Section
-  aiProposalsTitle: string;
-  aiProposalsSubtitle: string;
-  aiProposalsFormLabel: string;
-  aiProposalsFormPlaceholder: string;
-  aiProposalsFormButton: string;
-  aiProposalsFormLoading: string;
-  aiProposalsResultsTitle: string;
-  aiProposalsError: string;
+  // Project Inquiry Section (formerly AI Proposal Section)
+  projectInquiryTitle: string;
+  projectInquirySubtitle: string;
+  emailLabel: string;
+  emailPlaceholder: string;
+  phoneLabel: string;
+  phonePlaceholder: string;
+  questionLabel: string;
+  questionPlaceholder: string;
+  submitInquiryButton: string;
+  submitInquiryLoading: string;
+  contactFormResponseTime: string;
+  contactFormSuccessTitle: string;
+  contactFormSuccessMessage: string;
+  contactFormError: string; // Generic error for form submission
 
   // Contact Section
   contactTitle: string;
@@ -63,6 +72,7 @@ export interface TranslationContent {
   loading: string;
   error: string;
   by: string;
+  optionalLabel: string;
 }
 
 
@@ -77,9 +87,11 @@ export const translations: Translations = {
     navCustomers: 'Klanten',
     navServices: 'Diensten',
     navPublications: 'Publicaties',
-    navAIProposals: 'AI Voorstellen',
+    navProjectInquiry: 'Projectaanvraag',
     navContact: 'Contact',
     languageToggle: 'Switch to English',
+    themeToggleLight: 'Schakel naar lichte modus',
+    themeToggleDark: 'Schakel naar donkere modus',
 
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
@@ -108,15 +120,21 @@ export const translations: Translations = {
     publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)',
     viewPublication: 'Bekijk Publicatie',
     
-    aiProposalsTitle: 'AI-Gegenereerde Projectvoorstellen',
-    aiProposalsSubtitle: 'Beschrijf uw data-uitdaging en ontvang direct drie initiële projectvoorstellen.',
-    aiProposalsFormLabel: 'Beschrijf uw data-gerelateerde pijnpunten:',
-    aiProposalsFormPlaceholder: 'Bijvoorbeeld: "We hebben moeite om inzichten te krijgen uit onze logdata en onze huidige systemen zijn te traag."',
-    aiProposalsFormButton: 'Genereer Voorstellen',
-    aiProposalsFormLoading: 'Voorstellen genereren...',
-    aiProposalsResultsTitle: 'Uw Projectvoorstellen:',
-    aiProposalsError: 'Er is een fout opgetreden bij het genereren van voorstellen. Probeer het later opnieuw.',
-    
+    projectInquiryTitle: 'Projectaanvraag Indienen',
+    projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
+    emailLabel: 'E-mailadres',
+    emailPlaceholder: 'uw.email@voorbeeld.nl',
+    phoneLabel: 'Telefoonnummer',
+    phonePlaceholder: 'Bijv. +31 6 12345678',
+    questionLabel: 'Uw vraag of projectbeschrijving',
+    questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...',
+    submitInquiryButton: 'Verstuur Aanvraag',
+    submitInquiryLoading: 'Bezig met versturen...',
+    contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
+    contactFormSuccessTitle: 'Aanvraag Ontvangen!',
+    contactFormSuccessMessage: 'Bedankt voor uw bericht. Ik neem zo spoedig mogelijk contact met u op.',
+    contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw.',
+        
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
@@ -126,6 +144,7 @@ export const translations: Translations = {
     loading: 'Laden...',
     error: 'Fout',
     by: 'door',
+    optionalLabel: 'optioneel'
   },
   en: {
     navHome: 'Home',
@@ -133,9 +152,11 @@ export const translations: Translations = {
     navCustomers: 'Customers',
     navServices: 'Services',
     navPublications: 'Publications',
-    navAIProposals: 'AI Proposals',
+    navProjectInquiry: 'Project Inquiry',
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
+    themeToggleLight: 'Switch to light mode',
+    themeToggleDark: 'Switch to dark mode',
 
     homeTitle: 'Transforming Data Insights into Business Value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
@@ -164,14 +185,20 @@ export const translations: Translations = {
     publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)',
     viewPublication: 'View Publication',
 
-    aiProposalsTitle: 'AI-Powered Project Proposals',
-    aiProposalsSubtitle: 'Describe your data challenge and instantly receive three initial project proposals.',
-    aiProposalsFormLabel: 'Describe your data-related pain points:',
-    aiProposalsFormPlaceholder: 'E.g., "We are struggling to get insights from our log data and our current systems are too slow."',
-    aiProposalsFormButton: 'Generate Proposals',
-    aiProposalsFormLoading: 'Generating proposals...',
-    aiProposalsResultsTitle: 'Your Project Proposals:',
-    aiProposalsError: 'An error occurred while generating proposals. Please try again later.',
+    projectInquiryTitle: 'Submit Project Inquiry',
+    projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
+    emailLabel: 'Email Address',
+    emailPlaceholder: 'your.email@example.com',
+    phoneLabel: 'Phone Number',
+    phonePlaceholder: 'E.g., +44 7123 456789',
+    questionLabel: 'Your Question or Project Description',
+    questionPlaceholder: 'Describe your data challenge, project idea, or question here...',
+    submitInquiryButton: 'Send Inquiry',
+    submitInquiryLoading: 'Sending...',
+    contactFormResponseTime: 'You can expect a response within 5 business days.',
+    contactFormSuccessTitle: 'Inquiry Received!',
+    contactFormSuccessMessage: 'Thank you for your message. I will get back to you as soon as possible.',
+    contactFormError: 'An error occurred while sending your inquiry. Please try again later.',
 
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
@@ -182,5 +209,6 @@ export const translations: Translations = {
     loading: 'Loading...',
     error: 'Error',
     by: 'by',
+    optionalLabel: 'optional'
   },
 };

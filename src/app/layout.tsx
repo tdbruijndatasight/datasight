@@ -1,8 +1,11 @@
+
 import type { Metadata, Viewport } from 'next';
 import { Geist, Geist_Mono } from 'next/font/google';
 import './globals.css';
 import { LanguageProvider } from '@/contexts/language-context';
+import { ThemeProvider } from '@/contexts/theme-provider';
 import { Toaster } from "@/components/ui/toaster";
+import StickyContactButtons from '@/components/layout/sticky-contact-buttons';
 
 const geistSans = Geist({
   variable: '--font-geist-sans',
@@ -17,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: 'DataSight Portfolio - Tom de Bruijn | Splunk & Cribl Consultant',
   description: 'Expert freelance (ZZP) Splunk and Cribl consultancy services. AI-powered data solutions and project proposals. Tom de Bruijn, Data Consultant.',
-  keywords: ['Splunk', 'Cribl', 'Consultant', 'zzp', 'freelance', 'data consultant', 'data solutions', 'Tom de Bruijn', 'DataSight', 'project proposals', 'IT consultant'],
+  keywords: ['Splunk', 'Cribl', 'Consultant', 'zzp', 'freelance', 'data consultant', 'data solutions', 'Tom de Bruijn', 'DataSight', 'project proposals', 'IT consultant', 'project inquiry'],
   authors: [{ name: 'Tom de Bruijn' }],
   creator: 'Tom de Bruijn',
   publisher: 'Tom de Bruijn',
@@ -52,8 +55,8 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#F0F8FF' },
-    { media: '(prefers-color-scheme: dark)', color: '#1A2A3A' }, // Example dark theme color
+    { media: '(prefers-color-scheme: light)', color: 'hsl(var(--background))' },
+    { media: '(prefers-color-scheme: dark)', color: 'hsl(var(--background))' },
   ],
 }
 
@@ -64,13 +67,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <LanguageProvider>
-      <html lang="nl"> {/* Default language set here */}
-        <body className={`${geistSans.variable} ${geistMono.variable} antialiased`}>
-          {children}
-          <Toaster />
-        </body>
-      </html>
-    </LanguageProvider>
+    <ThemeProvider defaultTheme="system" storageKey="datasight-theme">
+      <LanguageProvider>
+        <html lang="nl" suppressHydrationWarning> {/* Default language set here, suppressHydrationWarning for next-themes */}
+          <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
+            {children}
+            <StickyContactButtons />
+            <Toaster />
+          </body>
+        </html>
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

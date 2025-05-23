@@ -1,3 +1,4 @@
+
 "use client";
 
 import React, { useState } from 'react';
@@ -38,22 +39,31 @@ const AiProposalSection: React.FC = () => {
     setIsLoading(true);
     setProposals([]);
     try {
-      const result = await generateProjectProposals(data as GenerateProjectProposalsInput);
-      if (result && result.projectProposals) {
-        setProposals(result.projectProposals);
-      } else {
-        toast({
-          variant: "destructive",
-          title: t('error'),
-          description: t('aiProposalsError'),
-        });
-      }
+      // This section is being replaced. The generateProjectProposals flow might be used differently or removed later.
+      // For now, this direct client-side call is effectively obsolete with the new form.
+      // const result = await generateProjectProposals(data as GenerateProjectProposalsInput);
+      // if (result && result.projectProposals) {
+      //   setProposals(result.projectProposals);
+      // } else {
+      //   toast({
+      //     variant: "destructive",
+      //     title: t('error'),
+      //     description: t('aiProposalsError'), // This key will be replaced by contactFormError
+      //   });
+      // }
+      console.warn("AiProposalSection onSubmit is called, but this section is being replaced by ProjectInquirySection. This logic should not run.");
+      toast({
+        variant: "destructive",
+        title: "Old Form Active",
+        description: "This AI Proposal form is being replaced. Please use the new Inquiry form.",
+      });
+
     } catch (error) {
-      console.error("Error generating proposals:", error);
+      console.error("Error in (old) AiProposalSection:", error);
       toast({
         variant: "destructive",
         title: t('error'),
-        description: t('aiProposalsError'),
+        description: t('contactFormError'), // Using new key for consistency
       });
     }
     setIsLoading(false);
@@ -65,17 +75,21 @@ const AiProposalSection: React.FC = () => {
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
             <Sparkles className="h-8 w-8 text-accent" />
-            {t('aiProposalsTitle')}
+            {/* This title will be replaced by projectInquiryTitle */}
+            {t('projectInquiryTitle')} 
             <Sparkles className="h-8 w-8 text-accent" />
           </h2>
           <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            {t('aiProposalsSubtitle')}
+            {/* This subtitle will be replaced by projectInquirySubtitle */}
+            {t('projectInquirySubtitle')}
           </p>
         </AnimatedSection>
 
         <AnimatedSection delay="delay-200">
           <Card className="max-w-2xl mx-auto shadow-xl bg-card border-primary/20">
             <CardContent className="p-6 md:p-8">
+              <p className="text-center text-destructive">This section is being updated. Please refer to the new "Project Inquiry" form.</p>
+              {/* The form below is part of the old AiProposalSection and will be removed/replaced by ProjectInquirySection's form.
               <Form {...form}>
                 <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                   <FormField
@@ -108,10 +122,12 @@ const AiProposalSection: React.FC = () => {
                   </Button>
                 </form>
               </Form>
+              */}
             </CardContent>
           </Card>
         </AnimatedSection>
 
+        {/* This result display is also part of the old section
         {proposals.length > 0 && (
           <AnimatedSection delay="delay-400" className="mt-12">
             <Card className="max-w-2xl mx-auto shadow-xl bg-card border-primary/20">
@@ -130,9 +146,13 @@ const AiProposalSection: React.FC = () => {
             </Card>
           </AnimatedSection>
         )}
+        */}
       </div>
     </section>
   );
 };
 
 export default AiProposalSection;
+// This file will be replaced by src/components/sections/project-inquiry-section.tsx
+// The content above is a placeholder to ensure no build errors during transition.
+// The actual new content for the inquiry form is in project-inquiry-section.tsx.

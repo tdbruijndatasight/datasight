@@ -1,9 +1,10 @@
+
 import Header from '@/components/layout/header';
 import HomeSection from '@/components/sections/home-section';
 import CustomersSection from '@/components/sections/customers-section';
 import ServicesSection from '@/components/sections/services-section';
 import PublicationsSection from '@/components/sections/publications-section';
-import AiProposalSection from '@/components/sections/ai-proposal-section';
+import ProjectInquirySection from '@/components/sections/project-inquiry-section';
 import ContactSection from '@/components/sections/contact-section';
 
 export default function HomePage() {
@@ -15,7 +16,7 @@ export default function HomePage() {
         <CustomersSection />
         <ServicesSection />
         <PublicationsSection />
-        <AiProposalSection />
+        <ProjectInquirySection />
         <ContactSection />
       </main>
     </>
