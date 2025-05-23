@@ -9,7 +9,7 @@ export interface TranslationContent {
   navServices: string;
   navPublications: string;
   navProjectInquiry: string;
-  navSplHelper: string; // New
+  // navSplHelper: string; // Removed
   navContact: string;
   languageToggle: string;
   themeToggleLight: string;
@@ -64,21 +64,21 @@ export interface TranslationContent {
   contactFormSuccessMessage: string;
   contactFormError: string;
 
-  // SPL Query Helper Section - New
-  splHelperTitle: string;
-  splHelperSubtitle: string;
-  splHelperFormLabel: string;
-  splHelperFormPlaceholder: string;
-  splHelperFormButton: string;
-  splHelperFormLoading: string;
-  splHelperResultTitle: string;
-  splHelperSplQueryLabel: string;
-  splHelperExplanationLabel: string;
-  splHelperQueryLimitReachedTitle: string;
-  splHelperQueryLimitReachedMessage: string;
-  splHelperError: string;
-  splHelperCopyToClipboard: string;
-  splHelperCopied: string;
+  // SPL Query Helper Section - Removed
+  // splHelperTitle: string;
+  // splHelperSubtitle: string;
+  // splHelperFormLabel: string;
+  // splHelperFormPlaceholder: string;
+  // splHelperFormButton: string;
+  // splHelperFormLoading: string;
+  // splHelperResultTitle: string;
+  // splHelperSplQueryLabel: string;
+  // splHelperExplanationLabel: string;
+  // splHelperQueryLimitReachedTitle: string;
+  // splHelperQueryLimitReachedMessage: string;
+  // splHelperError: string;
+  // splHelperCopyToClipboard: string;
+  // splHelperCopied: string;
 
 
   // Contact Section
@@ -161,7 +161,7 @@ export const translations: Translations = {
     navServices: 'Diensten',
     navPublications: 'Publicaties',
     navProjectInquiry: 'Contactformulier',
-    navSplHelper: 'SPL Assistent', // New
+    // navSplHelper: 'SPL Assistent', // Removed
     navContact: 'Contact',
     languageToggle: 'Switch to English',
     themeToggleLight: 'Schakel naar lichte modus',
@@ -211,21 +211,21 @@ export const translations: Translations = {
     contactFormSuccessMessage: 'Bedankt voor uw bericht. Ik neem zo spoedig mogelijk contact met u op.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw.',
 
-    // SPL Query Helper Section - New NL
-    splHelperTitle: 'SPL Query Assistent',
-    splHelperSubtitle: 'Beschrijf uw Splunk-zoekbehoefte of stel een vraag, en ontvang een AI-gegenereerde SPL-query en uitleg. U kunt dit 2 keer gratis proberen.',
-    splHelperFormLabel: 'Uw Splunk-vraag of zoekbeschrijving',
-    splHelperFormPlaceholder: 'Bijv. \'Toon alle errors van de laatste 24 uur voor host ABC\' of \'Hoe tel ik unieke gebruikers per sourcetype?\'',
-    splHelperFormButton: 'Genereer SPL',
-    splHelperFormLoading: 'Genereren...',
-    splHelperResultTitle: 'Gegenereerde SPL Query & Uitleg',
-    splHelperSplQueryLabel: 'SPL Query:',
-    splHelperExplanationLabel: 'Uitleg:',
-    splHelperQueryLimitReachedTitle: 'Querylimiet Bereikt',
-    splHelperQueryLimitReachedMessage: 'U heeft uw twee gratis queries gebruikt. Neem alstublieft contact met mij op voor verdere hulp!',
-    splHelperError: 'Kon geen SPL-query genereren. Probeer het opnieuw of herformuleer uw vraag.',
-    splHelperCopyToClipboard: "Kopieer naar klembord",
-    splHelperCopied: "Gekopieerd!",
+    // SPL Query Helper Section - Removed NL
+    // splHelperTitle: 'SPL Query Assistent',
+    // splHelperSubtitle: 'Beschrijf uw Splunk-zoekbehoefte of stel een vraag, en ontvang een AI-gegenereerde SPL-query en uitleg. U kunt dit 2 keer gratis proberen.',
+    // splHelperFormLabel: 'Uw Splunk-vraag of zoekbeschrijving',
+    // splHelperFormPlaceholder: 'Bijv. \'Toon alle errors van de laatste 24 uur voor host ABC\' of \'Hoe tel ik unieke gebruikers per sourcetype?\'',
+    // splHelperFormButton: 'Genereer SPL',
+    // splHelperFormLoading: 'Genereren...',
+    // splHelperResultTitle: 'Gegenereerde SPL Query & Uitleg',
+    // splHelperSplQueryLabel: 'SPL Query:',
+    // splHelperExplanationLabel: 'Uitleg:',
+    // splHelperQueryLimitReachedTitle: 'Querylimiet Bereikt',
+    // splHelperQueryLimitReachedMessage: 'U heeft uw twee gratis queries gebruikt. Neem alstublieft contact met mij op voor verdere hulp!',
+    // splHelperError: 'Kon geen SPL-query genereren. Probeer het opnieuw of herformuleer uw vraag.',
+    // splHelperCopyToClipboard: "Kopieer naar klembord",
+    // splHelperCopied: "Gekopieerd!",
 
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
@@ -241,7 +241,7 @@ export const translations: Translations = {
     by: 'door',
     optionalLabel: 'optioneel',
 
-    legalPrivacy: 'Privacy',
+    legalPrivacy: 'Privacy', // Updated from 'Privacybeleid'
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - NL
@@ -297,7 +297,7 @@ export const translations: Translations = {
     navServices: 'Services',
     navPublications: 'Publications',
     navProjectInquiry: 'Contact Form',
-    navSplHelper: 'SPL Helper', // New
+    // navSplHelper: 'SPL Helper', // Removed
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
     themeToggleLight: 'Switch to light mode',
@@ -347,21 +347,21 @@ export const translations: Translations = {
     contactFormSuccessMessage: 'Thank you for your message. I will get back to you as soon as possible.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later.',
 
-    // SPL Query Helper Section - New EN
-    splHelperTitle: 'SPL Query Assistant',
-    splHelperSubtitle: 'Describe your Splunk search need or ask a question, and get an AI-generated SPL query and explanation. You can try this 2 times for free.',
-    splHelperFormLabel: 'Your Splunk question or search description',
-    splHelperFormPlaceholder: 'e.g., \'Show me all errors from the last 24 hours for host ABC\' or \'How do I count unique users by sourcetype?\'',
-    splHelperFormButton: 'Generate SPL',
-    splHelperFormLoading: 'Generating...',
-    splHelperResultTitle: 'Generated SPL Query & Explanation',
-    splHelperSplQueryLabel: 'SPL Query:',
-    splHelperExplanationLabel: 'Explanation:',
-    splHelperQueryLimitReachedTitle: 'Query Limit Reached',
-    splHelperQueryLimitReachedMessage: 'You\'ve used your two free queries. For further assistance, please get in touch with me!',
-    splHelperError: 'Could not generate SPL query. Please try again or rephrase your question.',
-    splHelperCopyToClipboard: "Copy to clipboard",
-    splHelperCopied: "Copied!",
+    // SPL Query Helper Section - Removed EN
+    // splHelperTitle: 'SPL Query Assistant',
+    // splHelperSubtitle: 'Describe your Splunk search need or ask a question, and get an AI-generated SPL query and explanation. You can try this 2 times for free.',
+    // splHelperFormLabel: 'Your Splunk question or search description',
+    // splHelperFormPlaceholder: 'e.g., \'Show me all errors from the last 24 hours for host ABC\' or \'How do I count unique users by sourcetype?\'',
+    // splHelperFormButton: 'Generate SPL',
+    // splHelperFormLoading: 'Generating...',
+    // splHelperResultTitle: 'Generated SPL Query & Explanation',
+    // splHelperSplQueryLabel: 'SPL Query:',
+    // splHelperExplanationLabel: 'Explanation:',
+    // splHelperQueryLimitReachedTitle: 'Query Limit Reached',
+    // splHelperQueryLimitReachedMessage: 'You\'ve used your two free queries. For further assistance, please get in touch with me!',
+    // splHelperError: 'Could not generate SPL query. Please try again or rephrase your question.',
+    // splHelperCopyToClipboard: "Copy to clipboard",
+    // splHelperCopied: "Copied!",
 
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
