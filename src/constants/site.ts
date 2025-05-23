@@ -22,7 +22,7 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'IKEA', src: 'https://placehold.co/120x60.png', dataAiHint: 'IKEA logo' },
+    { name: 'Gemeente Den Haag', src: 'https://placehold.co/120x60.png', dataAiHint: 'Den Haag logo' },
     { name: 'ICS Cards', src: 'https://placehold.co/120x60.png', dataAiHint: 'ICS Cards logo' },
     { name: 'Rabobank', src: 'https://placehold.co/120x60.png', dataAiHint: 'Rabobank logo' },
     { name: 'Schiphol Airport', src: 'https://placehold.co/120x60.png', dataAiHint: 'Schiphol Airport logo' },
@@ -38,8 +38,8 @@ export const SERVICE_ITEMS = [
 ] as const; // Adding 'as const' for stricter type inference on icon names
 
 export const PUBLICATION_ITEMS = [
-  { 
-    titleKey: 'publication1Title', 
+  {
+    titleKey: 'publication1Title',
     descriptionKey: 'publication1Description',
     link: '#', // Placeholder link
     imageSrc: 'https://placehold.co/600x400.png',
