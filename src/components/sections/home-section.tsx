@@ -19,7 +19,7 @@ const HomeSection: React.FC = () => {
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight">
             {t('homeTitle')}
           </h1>
-          <p className="text-lg md:text-xl text-foreground/80">
+          <p className="text-lg md:text-xl text-foreground/80 font-semibold">
             {t('homeSubtitle')}
           </p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group">

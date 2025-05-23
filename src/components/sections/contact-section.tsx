@@ -16,21 +16,24 @@ const ContactSection: React.FC = () => {
   const contactItems = [
     {
       icon: <Mail className="h-8 w-8 text-accent" />,
-      label: t('contactEmail'),
+      labelKey: 'contactEmail',
       value: SITE_CONFIG.email,
       href: `mailto:${SITE_CONFIG.email}`,
+      buttonLabelKey: 'sendMessage',
     },
     {
       icon: <Phone className="h-8 w-8 text-accent" />,
-      label: t('contactPhone'),
+      labelKey: 'contactPhone',
       value: SITE_CONFIG.phone,
-      href: `tel:${SITE_CONFIG.phone.replace(/\s/g, '')}`,
+      href: `https://wa.me/${SITE_CONFIG.phone.replace(/\s|\+/g, '')}`, // WhatsApp link
+      buttonLabelKey: 'openWhatsApp',
     },
     {
       icon: <LinkedinIconLucide className="h-8 w-8 text-accent" />,
-      label: t('contactLinkedIn'),
-      value: t('by') + ' Tom de Bruijn', // Or simply "Profile"
+      labelKey: 'contactLinkedIn',
+      value: t('by') + ' Tom de Bruijn',
       href: SITE_CONFIG.linkedIn,
+      buttonLabelKey: 'viewProfile',
     },
   ];
 
@@ -54,11 +57,11 @@ const ContactSection: React.FC = () => {
                   <div className="p-3 bg-accent/20 rounded-full mb-4 inline-block">
                      {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                   </div>
-                  <h3 className="text-xl font-semibold mb-2 text-accent">{item.label}</h3>
+                  <h3 className="text-xl font-semibold mb-2 text-accent">{t(item.labelKey)}</h3>
                   <p className="text-primary-foreground/90 mb-4 break-all">{item.value}</p>
                   <Button variant="outline" asChild className="mt-auto border-accent text-accent hover:bg-accent hover:text-accent-foreground group">
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.label === t('contactLinkedIn') ? t('viewProfile') : t('sendMessage')} 
+                      {t(item.buttonLabelKey)}
                       <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"/>
                     </Link>
                   </Button>

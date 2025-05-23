@@ -69,7 +69,8 @@ export interface TranslationContent {
   contactEmail: string;
   contactPhone: string;
   contactLinkedIn: string;
-  sendMessage: string;
+  sendMessage: string; // Will be "Verstuur Email" / "Send Email"
+  openWhatsApp: string; // New key
   viewProfile: string;
   
   // Generic
@@ -91,7 +92,7 @@ export const translations: Translations = {
     navCustomers: 'Klanten',
     navServices: 'Diensten',
     navPublications: 'Publicaties',
-    navProjectInquiry: 'Projectaanvraag',
+    navProjectInquiry: 'Contactformulier', // Changed from Projectaanvraag
     navContact: 'Contact',
     languageToggle: 'Switch to English',
     themeToggleLight: 'Schakel naar lichte modus',
@@ -126,7 +127,7 @@ export const translations: Translations = {
     publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)',
     viewPublication: 'Bekijk Publicatie',
     
-    projectInquiryTitle: 'Projectaanvraag Indienen',
+    projectInquiryTitle: 'Contactformulier', // Changed
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -144,9 +145,10 @@ export const translations: Translations = {
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
-    contactPhone: 'Telefoon',
+    contactPhone: 'Telefoon (WhatsApp)',
     contactLinkedIn: 'LinkedIn Profiel',
-    sendMessage: 'Verstuur Bericht',
+    sendMessage: 'Verstuur Email', // Changed from Verstuur Bericht
+    openWhatsApp: 'Open WhatsApp',
     viewProfile: 'Bekijk Profiel',
 
     loading: 'Laden...',
@@ -160,7 +162,7 @@ export const translations: Translations = {
     navCustomers: 'Customers',
     navServices: 'Services',
     navPublications: 'Publications',
-    navProjectInquiry: 'Project Inquiry',
+    navProjectInquiry: 'Contact Form', // Changed from Project Inquiry
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
     themeToggleLight: 'Switch to light mode',
@@ -195,7 +197,7 @@ export const translations: Translations = {
     publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)',
     viewPublication: 'View Publication',
 
-    projectInquiryTitle: 'Submit Project Inquiry',
+    projectInquiryTitle: 'Contact Form', // Changed
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -213,9 +215,10 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
     contactEmail: 'Email',
-    contactPhone: 'Phone',
+    contactPhone: 'Phone (WhatsApp)',
     contactLinkedIn: 'LinkedIn Profile',
-    sendMessage: 'Send Message',
+    sendMessage: 'Send Email', // Changed from Send Message (for email card)
+    openWhatsApp: 'Open WhatsApp',
     viewProfile: 'View Profile',
     
     loading: 'Loading...',
