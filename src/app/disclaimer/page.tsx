@@ -21,29 +21,29 @@ export default function DisclaimerPage() {
           <div className="space-y-4 text-foreground/90">
             <p>{t('disclaimerIntroP1').replace('{SITE_CONFIG.name}', SITE_CONFIG.name)}</p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerAccuracyTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerAccuracyTitle')}</h3>
             <p>{t('disclaimerAccuracyP1')}</p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerWebsiteAvailabilityTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerWebsiteAvailabilityTitle')}</h3>
             <p>{t('disclaimerWebsiteAvailabilityP1')}</p>
             <ul className="list-disc pl-5 space-y-1">
               <li>{t('disclaimerWebsiteAvailabilityL1')}</li>
               <li>{t('disclaimerWebsiteAvailabilityL2')}</li>
             </ul>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerExternalLinksTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerExternalLinksTitle')}</h3>
             <p>{t('disclaimerExternalLinksP1')}</p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerElectronicCommTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerElectronicCommTitle')}</h3>
             <p>{t('disclaimerElectronicCommP1')}</p>
             
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerNoProAdviceTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerNoProAdviceTitle')}</h3>
             <p>{t('disclaimerNoProAdviceP1')}</p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerLimitationLiabilityTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerLimitationLiabilityTitle')}</h3>
             <p>{t('disclaimerLimitationLiabilityP1')}</p>
 
-            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('disclaimerChangesDisclaimerTitle')}</h3>
+            <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerChangesDisclaimerTitle')}</h3>
             <p>{t('disclaimerChangesDisclaimerP1')}</p>
           </div>
         </article>
