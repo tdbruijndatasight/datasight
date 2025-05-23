@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -57,7 +58,7 @@ const ContactSection: React.FC = () => {
                   <p className="text-primary-foreground/90 mb-4 break-all">{item.value}</p>
                   <Button variant="outline" asChild className="mt-auto border-accent text-accent hover:bg-accent hover:text-accent-foreground group">
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
-                      {item.label === t('contactLinkedIn') ? 'View Profile' : 'Send Message'} 
+                      {item.label === t('contactLinkedIn') ? t('viewProfile') : t('sendMessage')} 
                       <ExternalLink className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1"/>
                     </Link>
                   </Button>
@@ -67,7 +68,7 @@ const ContactSection: React.FC = () => {
           ))}
         </div>
         <AnimatedSection className="text-center mt-16 text-primary-foreground/80">
-          <p>&copy; {new Date().getFullYear()} DataSight Portfolio - Tom de Bruijn. All rights reserved.</p>
+          <p>&copy; {new Date().getFullYear()} DataSight Portfolio - Tom de Bruijn. All rights reserved. | KVK-nummer: 93353413</p>
         </AnimatedSection>
       </div>
     </footer>

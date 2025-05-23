@@ -37,6 +37,8 @@ export interface TranslationContent {
   service3Description: string;
   service4Title: string;
   service4Description: string;
+  service5Title: string; // New service for Trainings
+  service5Description: string; // New service for Trainings
 
   // Publications Section
   publicationsTitle: string;
@@ -67,6 +69,8 @@ export interface TranslationContent {
   contactEmail: string;
   contactPhone: string;
   contactLinkedIn: string;
+  sendMessage: string;
+  viewProfile: string;
   
   // Generic
   loading: string;
@@ -113,6 +117,8 @@ export const translations: Translations = {
     service3Description: 'Advies over data strategie, architectuurontwerp en het opzetten van robuuste data pipelines.',
     service4Title: 'AI-Gedreven Oplossingen',
     service4Description: 'Ontwikkeling van op maat gemaakte AI-tools en -modellen om specifieke bedrijfsproblemen op te lossen.',
+    service5Title: 'Trainingen & Workshops',
+    service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
 
     publicationsTitle: 'Publicaties & Inzichten',
     publicationsSubtitle: 'Artikelen, whitepapers en presentaties over data, analytics en technologie.',
@@ -140,6 +146,8 @@ export const translations: Translations = {
     contactEmail: 'E-mail',
     contactPhone: 'Telefoon',
     contactLinkedIn: 'LinkedIn Profiel',
+    sendMessage: 'Verstuur Bericht',
+    viewProfile: 'Bekijk Profiel',
 
     loading: 'Laden...',
     error: 'Fout',
@@ -178,6 +186,8 @@ export const translations: Translations = {
     service3Description: 'Advice on data strategy, architecture design, and setting up robust data pipelines.',
     service4Title: 'AI-Driven Solutions',
     service4Description: 'Development of custom AI tools and models to solve specific business problems.',
+    service5Title: 'Trainings & Workshops',
+    service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
 
     publicationsTitle: 'Publications & Insights',
     publicationsSubtitle: 'Articles, whitepapers, and presentations on data, analytics, and technology.',
@@ -205,6 +215,8 @@ export const translations: Translations = {
     contactEmail: 'Email',
     contactPhone: 'Phone',
     contactLinkedIn: 'LinkedIn Profile',
+    sendMessage: 'Send Message',
+    viewProfile: 'View Profile',
     
     loading: 'Loading...',
     error: 'Error',

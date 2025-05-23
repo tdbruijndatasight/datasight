@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -5,8 +6,8 @@ import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/com
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SERVICE_ITEMS } from '@/constants/site';
-import { SplunkIcon, CriblIcon, DataStrategyIcon, AiSolutionIcon } from '@/components/icons/custom-icons'; // Assuming these are custom or from a library
-import { BarChartBig, Database, Settings, Brain } from 'lucide-react'; // Fallback icons
+import { SplunkIcon, CriblIcon, DataStrategyIcon, AiSolutionIcon } from '@/components/icons/custom-icons';
+import { BarChartBig, Database, Settings, Brain, Clipboard } from 'lucide-react'; // Changed ClipboardTeacher to Clipboard
 
 // Map icon names to actual components
 const iconComponents: { [key: string]: React.ElementType } = {
@@ -14,10 +15,11 @@ const iconComponents: { [key: string]: React.ElementType } = {
   CriblIcon,
   DataStrategyIcon,
   AiSolutionIcon,
-  BarChartBig, // Fallback
-  Database,     // Fallback
-  Settings,     // Fallback
-  Brain,        // Fallback
+  BarChartBig, 
+  Database,     
+  Settings,     
+  Brain,        
+  ClipboardTeacher: Clipboard, // Mapped 'ClipboardTeacher' key to the actual Clipboard icon
 };
 
 
@@ -36,7 +38,7 @@ const ServicesSection: React.FC = () => {
           </p>
         </AnimatedSection>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6"> {/* Adjusted grid for 5 items */}
           {SERVICE_ITEMS.map((service, index) => {
             const IconComponent = iconComponents[service.icon] || Brain; // Default to Brain icon if specific one not found
             return (
