@@ -375,5 +375,3 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'We reserve the right to modify this disclaimer at any time. Changes will be effective immediately upon posting on the website.',
   },
 };
-
-    
