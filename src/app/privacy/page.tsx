@@ -17,7 +17,7 @@ export default function PrivacyPage() {
           <h1 className="text-3xl font-bold text-primary mb-6">{t('privacyPageTitle')}</h1>
           <p className="text-sm text-muted-foreground mb-6"><strong>{t('privacyLastUpdated')}</strong></p>
           
-          <div className="space-y-4 text-foreground/90">
+          <div className="space-y-4 text-sm text-foreground/90">
             <p>{t('privacyIntro')}</p>
 
             <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('privacyInfoCollectTitle')}</h3>
@@ -63,3 +63,4 @@ export default function PrivacyPage() {
     </>
   );
 }
+

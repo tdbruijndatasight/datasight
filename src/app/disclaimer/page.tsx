@@ -18,7 +18,7 @@ export default function DisclaimerPage() {
           {/* Updated to use SITE_CONFIG.name if needed, or make it static text */}
           <p className="text-sm text-muted-foreground mb-6"><strong>{t('disclaimerValidFrom')}</strong></p>
 
-          <div className="space-y-4 text-foreground/90">
+          <div className="space-y-4 text-sm text-foreground/90">
             <p>{t('disclaimerIntroP1').replace('{SITE_CONFIG.name}', SITE_CONFIG.name)}</p>
 
             <h3 className="text-xl font-semibold text-primary mt-6 mb-3">{t('disclaimerAccuracyTitle')}</h3>
@@ -52,3 +52,4 @@ export default function DisclaimerPage() {
     </>
   );
 }
+
