@@ -206,7 +206,7 @@ export const translations: Translations = {
     by: 'door',
     optionalLabel: 'optioneel',
 
-    legalPrivacy: 'Privacybeleid',
+    legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - NL
@@ -325,7 +325,7 @@ export const translations: Translations = {
     by: 'by',
     optionalLabel: 'optional',
 
-    legalPrivacy: 'Privacy Policy',
+    legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - EN

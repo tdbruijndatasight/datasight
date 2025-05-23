@@ -35,7 +35,7 @@ const Header: React.FC = () => {
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
       {NAV_ITEMS.map((item) => (
-        <Button variant="ghost" asChild key={item.id} onClick={onLinkClick} className="font-semibold text-foreground hover:text-primary hover:bg-primary/10">
+        <Button variant="ghost" asChild key={item.id} onClick={onLinkClick} className="font-medium text-foreground hover:text-primary hover:bg-primary/10">
           <Link href={item.href}>{t(item.labelKey)}</Link>
         </Button>
       ))}
@@ -90,3 +90,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

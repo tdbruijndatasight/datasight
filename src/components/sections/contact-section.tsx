@@ -73,11 +73,11 @@ const ContactSection: React.FC = () => {
         <AnimatedSection className="text-center mt-16 text-primary-foreground/80">
           <p>&copy; {new Date().getFullYear()} DataSight Portfolio - Tom de Bruijn. All rights reserved. | KVK-nummer: 93353413</p>
           <div className="mt-4 space-x-2 md:space-x-4">
-            <Link href="/privacy" className="hover:underline text-sm">
+            <Link href="/privacy" className="hover:underline text-sm font-medium text-primary-foreground/80">
               {t('legalPrivacy')}
             </Link>
             <span className="text-sm">|</span>
-            <Link href="/disclaimer" className="hover:underline text-sm">
+            <Link href="/disclaimer" className="hover:underline text-sm font-medium text-primary-foreground/80">
               {t('legalDisclaimer')}
             </Link>
           </div>
