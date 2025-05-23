@@ -46,3 +46,4 @@ export const PUBLICATION_ITEMS = [
     dataAiHint: 'data report'
   }
 ];
+
