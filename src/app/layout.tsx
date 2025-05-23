@@ -69,7 +69,7 @@ export default function RootLayout({
   return (
     <ThemeProvider defaultTheme="system" storageKey="datasight-theme">
       <LanguageProvider>
-        <html lang="nl" suppressHydrationWarning> {/* Default language set here, suppressHydrationWarning for next-themes */}
+        <html lang="nl" suppressHydrationWarning>{/* Default language set here, suppressHydrationWarning for next-themes */}
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
             {children}
             <StickyContactButtons />
