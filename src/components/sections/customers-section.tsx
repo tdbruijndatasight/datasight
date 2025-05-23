@@ -1,3 +1,4 @@
+
 "use client";
 
 import React from 'react';
@@ -5,10 +6,11 @@ import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SITE_CONFIG } from '@/constants/site';
-import { Card, CardContent } from '@/components/ui/card';
+// Removed Card import as it's no longer used directly for individual logos here
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
+  const logos = SITE_CONFIG.companyLogos;
 
   return (
     <section id="customers" className="bg-background section-min-height">
@@ -23,28 +25,25 @@ const CustomersSection: React.FC = () => {
         </AnimatedSection>
         
         <AnimatedSection delay="delay-200">
-          <div className="relative">
-            <div 
-              className="flex overflow-x-auto space-x-8 pb-4 scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-secondary"
-              style={{ scrollbarWidth: 'thin' }} // For Firefox
-            >
-              {SITE_CONFIG.companyLogos.map((logo, index) => (
-                <Card 
-                  key={index} 
-                  className="flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 bg-card shadow-md hover:shadow-lg transition-shadow duration-300 border-transparent hover:border-primary/30"
+          <div className="logo-carousel-container">
+            <div className="logo-carousel-track">
+              {/* Render logos twice for a seamless loop */}
+              {[...logos, ...logos].map((logo, index) => (
+                <div 
+                  key={`${logo.name}-${index}`} // Unique key for each item, including duplicates
+                  className="logo-item-wrapper flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 mx-4 bg-card rounded-lg shadow-md"
                 >
                   <Image 
                     src={logo.src} 
                     alt={logo.name} 
-                    width={120} 
-                    height={60} 
+                    width={120} // Intrinsic width of the image
+                    height={60} // Intrinsic height of the image
                     className="object-contain"
                     data-ai-hint={logo.dataAiHint}
                   />
-                </Card>
+                </div>
               ))}
             </div>
-            {/* Optional: Add gradient overlays for a fading effect at the edges if desired */}
           </div>
         </AnimatedSection>
       </div>

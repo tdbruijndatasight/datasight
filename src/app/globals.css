@@ -1,3 +1,4 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -120,4 +121,38 @@ body {
 .scroll-animate.is-visible {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* Logo Carousel Styles */
+.logo-carousel-container {
+  width: 100%;
+  overflow: hidden;
+  position: relative; /* For mask or pseudo-elements */
+  /* Fade out effect for the edges */
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+}
+
+.logo-carousel-track {
+  display: flex;
+  width: fit-content; /* Let it be as wide as its content (original + duplicated logos) */
+  animation: scrollLogos 25s linear infinite; /* Adjust duration for speed. 4 logos * ~5s/logo + buffer */
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    /* This should scroll one full set of original logos.
+       Since logos are duplicated, the track is twice the width of one set.
+       So, we scroll by -50% of the total track width. */
+    transform: translateX(-50%); 
+  }
+}
+
+.logo-item-wrapper {
+  /* Styles for individual logo wrappers are now in CustomersSection.tsx for Tailwind utility classes */
+  /* Ensures consistent spacing and sizing */
+  /* Example: flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 mx-4 */
 }

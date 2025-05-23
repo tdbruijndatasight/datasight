@@ -22,11 +22,6 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Company A', src: 'https://placehold.co/120x60.png', dataAiHint: 'company logo' },
-    { name: 'Company B', src: 'https://placehold.co/120x60.png', dataAiHint: 'company logo' },
-    { name: 'Company C', src: 'https://placehold.co/120x60.png', dataAiHint: 'company logo' },
-    { name: 'Company D', src: 'https://placehold.co/120x60.png', dataAiHint: 'company logo' },
-    { name: 'Company E', src: 'https://placehold.co/120x60.png', dataAiHint: 'company logo' },
     { name: 'IKEA', src: 'https://placehold.co/120x60.png', dataAiHint: 'IKEA logo' },
     { name: 'ICS Cards', src: 'https://placehold.co/120x60.png', dataAiHint: 'ICS Cards logo' },
     { name: 'Rabobank', src: 'https://placehold.co/120x60.png', dataAiHint: 'Rabobank logo' },
