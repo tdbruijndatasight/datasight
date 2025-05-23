@@ -20,41 +20,41 @@ export default function PrivacyPage() {
           <div className="space-y-4 text-foreground/90">
             <p>{t('privacyIntro')}</p>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyInfoCollectTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyInfoCollectTitle')}</h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t('privacyInfoCollectGenUsage')}</li>
               <li>{t('privacyInfoCollectContact')}</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyHowWeUseTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyHowWeUseTitle')}</h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t('privacyHowWeUseRespond')}</li>
               <li>{t('privacyHowWeUseImprove')}</li>
               <li>{t('privacyHowWeUseCookies')}</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyInfoSharingTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyInfoSharingTitle')}</h3>
             <ul className="list-disc pl-5 space-y-2">
               <li>{t('privacyInfoSharingNoSell')}</li>
               <li>{t('privacyInfoSharingGov')}</li>
             </ul>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyThirdPartyLinksTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyThirdPartyLinksTitle')}</h3>
             <p>{t('privacyThirdPartyLinksP1')}</p>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacySecurityTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacySecurityTitle')}</h3>
             <p>{t('privacySecurityP1')}</p>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyChangesPolicyTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyChangesPolicyTitle')}</h3>
             <p>{t('privacyChangesPolicyP1')}</p>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyContactUsTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyContactUsTitle')}</h3>
             <p>
               {t('privacyContactUsP1Prefix')}
               <a href={`mailto:${SITE_CONFIG.email}`} className="text-accent hover:underline">{SITE_CONFIG.email}</a>
             </p>
 
-            <h2 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyGoverningLawTitle')}</h2>
+            <h3 className="text-2xl font-semibold text-primary mt-6 mb-3">{t('privacyGoverningLawTitle')}</h3>
             <p>{t('privacyGoverningLawP1')}</p>
           </div>
         </article>
@@ -63,5 +63,3 @@ export default function PrivacyPage() {
     </>
   );
 }
-
-    
