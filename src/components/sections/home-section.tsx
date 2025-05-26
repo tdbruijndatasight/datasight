@@ -1,13 +1,15 @@
+
 "use client";
 
 import React from 'react';
-import Image from 'next/image';
+// Image import removed as it's not used
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import AnimatedHomeTitle from '@/components/animated-home-title'; // Import the new component
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
@@ -16,9 +18,7 @@ const HomeSection: React.FC = () => {
     <section id="home" className="bg-gradient-to-br from-background to-secondary section-min-height">
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection className="space-y-6 text-center md:text-left">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-primary tracking-tight">
-            {t('homeTitle')}
-          </h1>
+          <AnimatedHomeTitle /> {/* Use the new animated title component */}
           <p className="text-lg md:text-xl text-foreground/80 font-semibold">
             {t('homeSubtitle')}
           </p>

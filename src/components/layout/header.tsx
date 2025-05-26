@@ -35,8 +35,22 @@ const Header: React.FC = () => {
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
       {NAV_ITEMS.map((item) => (
-        <Button variant="ghost" asChild key={item.id} onClick={onLinkClick} className="font-medium text-foreground hover:text-primary hover:bg-primary/10">
-          <Link href={item.href}>{t(item.labelKey)}</Link>
+        <Button 
+          variant="ghost" 
+          asChild 
+          key={item.id} 
+          onClick={onLinkClick} 
+          className="group font-medium text-foreground hover:text-primary hover:bg-primary/10 relative px-3 py-2"
+        >
+          <Link href={item.href}>
+            <span className="nav-link-text-wrapper">
+              {t(item.labelKey)}
+              <span className="nav-hover-dots-container">
+                <span className="nav-hover-animation-dot blue"></span>
+                <span className="nav-hover-animation-dot orange"></span>
+              </span>
+            </span>
+          </Link>
         </Button>
       ))}
     </>
@@ -51,7 +65,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-2">
+        <nav className="hidden md:flex items-center space-x-1"> {/* Reduced space for tighter fit with animation */}
           <NavLinks />
           <LanguageToggle />
           <ThemeToggle />
@@ -90,4 +104,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-
