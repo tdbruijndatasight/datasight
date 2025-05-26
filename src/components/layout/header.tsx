@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-40% 0px -60% 0px', // Adjust to bias towards top half of viewport
+      rootMargin: '-49% 0px -49% 0px', // Active when section crosses vertical midpoint
       threshold: 0,
     };
 
@@ -71,8 +71,8 @@ const Header: React.FC = () => {
           key={item.id}
           onClick={onLinkClick}
           className={cn(
-            "group font-medium relative px-3 py-2 text-foreground hover:text-primary", // Base style for all nav links
-            item.id === activeSectionId && "is-active text-primary" // Apply 'is-active' and 'text-primary' if section is active
+            "group font-medium relative px-3 py-2 text-foreground hover:text-primary", 
+            item.id === activeSectionId && "is-active text-primary" 
           )}
         >
           <Link href={item.href}>
