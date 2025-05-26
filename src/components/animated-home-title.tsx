@@ -11,7 +11,7 @@ const AnimatedHomeTitle: FC = () => {
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
-  const [currentWordPhase, setCurrentWordPhase] = useState(0);
+  const [currentWordPhase, setCurrentWordPhase] = useState(0); // Index of targetWords
   const [isTypingFullSentence, setIsTypingFullSentence] = useState(false);
   const [animationComplete, setAnimationComplete] = useState(false);
 
@@ -25,82 +25,69 @@ const AnimatedHomeTitle: FC = () => {
     setCurrentWordPhase(0);
     setIsTypingFullSentence(false);
     setAnimationComplete(false);
-  }, [t]); // Depends on t to reset on language change
+  }, [t]);
 
   useEffect(() => {
     if (animationComplete) return;
 
-    const finalSentence = t(finalSentenceKey); // Get current translation of final sentence
+    const finalSentence = t(finalSentenceKey);
     let timeoutId: NodeJS.Timeout | undefined;
 
     if (!isTypingFullSentence) {
-      // Typing individual words
-      if (currentWordPhase < targetWords.length) {
-        const wordToType = targetWords[currentWordPhase];
-        const prefix = targetWords.slice(0, currentWordPhase).join(" ") + (currentWordPhase > 0 ? " " : "");
-        
-        // Ensure prefix is set before typing the current word
-        if (displayedText !== prefix && !animationComplete) {
-           // This ensures we start typing the new word correctly after the prefix is displayed
-           if (!displayedText.startsWith(prefix)){
-             setDisplayedText(prefix); // Set prefix, next effect run will type the word
-             return; // Allow state to update and re-trigger effect
-           }
-        }
+        // Typing individual words: "Data", then "Data Inzicht", then "Data Inzicht Bedrijfswaarde"
+        if (currentWordPhase < targetWords.length) {
+            const wordToType = targetWords[currentWordPhase];
+            const basePrefix = currentWordPhase > 0 
+                ? targetWords.slice(0, currentWordPhase).join(" ") + " " 
+                : "";
 
-        let charIndex = 0;
-        const typeChar = () => {
-          if (charIndex < wordToType.length) {
-            setDisplayedText(prefix + wordToType.substring(0, charIndex + 1));
-            charIndex++;
-            timeoutId = setTimeout(typeChar, typingSpeed);
-          } else {
-            // Word finished
-            if (currentWordPhase < targetWords.length - 1) {
-              timeoutId = setTimeout(() => {
-                setCurrentWordPhase(prev => prev + 1);
-              }, pauseBetweenWords);
-            } else {
-              // All words typed
-              timeoutId = setTimeout(() => {
-                setIsTypingFullSentence(true);
-                setDisplayedText(""); // Clear for full sentence
-              }, pauseBeforeFullSentence);
+            // Current length of the word being typed, derived from displayedText
+            let currentLengthOfWordPart = 0;
+            if (displayedText.startsWith(basePrefix)) {
+                currentLengthOfWordPart = displayedText.length - basePrefix.length;
+            } else if (currentWordPhase === 0) { // First word
+                currentLengthOfWordPart = displayedText.length;
             }
-          }
-        };
-        // Start typing if prefix is correctly set or it's the first word
-        if (displayedText === prefix || (currentWordPhase === 0 && displayedText.length < targetWords[0].length) ) {
-            typeChar();
-        } else if (currentWordPhase > 0 && displayedText === targetWords.slice(0, currentWordPhase).join(" ")){
-            // This handles the state where prefix is just the completed words without trailing space.
-            // Add space then trigger typeChar.
-            setDisplayedText(prefix); // Ensures the space is added after previous word.
+
+
+            if (currentLengthOfWordPart < wordToType.length) {
+                // Need to type more characters of the current word
+                timeoutId = setTimeout(() => {
+                    setDisplayedText(basePrefix + wordToType.substring(0, currentLengthOfWordPart + 1));
+                }, typingSpeed);
+            } else {
+                // Current word is fully typed
+                if (currentWordPhase < targetWords.length - 1) {
+                    // More words to type
+                    timeoutId = setTimeout(() => {
+                        // Ensure the displayed text has the full current word and a space before moving to next phase
+                        setDisplayedText(basePrefix + wordToType + " ");
+                        setCurrentWordPhase(prev => prev + 1);
+                    }, pauseBetweenWords);
+                } else {
+                    // All initial words are typed
+                    timeoutId = setTimeout(() => {
+                        setIsTypingFullSentence(true);
+                        setDisplayedText(""); // Clear for full sentence animation
+                    }, pauseBeforeFullSentence);
+                }
+            }
         }
-
-
-      }
     } else {
-      // Typing full sentence
-      let charIndex = 0;
-      const typeFullSentenceChar = () => {
-        if (charIndex < finalSentence.length) {
-          setDisplayedText(finalSentence.substring(0, charIndex + 1));
-          charIndex++;
-          timeoutId = setTimeout(typeFullSentenceChar, typingSpeed);
+        // Typing full sentence
+        if (displayedText.length < finalSentence.length) {
+            timeoutId = setTimeout(() => {
+                setDisplayedText(finalSentence.substring(0, displayedText.length + 1));
+            }, typingSpeed);
         } else {
-          setAnimationComplete(true);
+            setAnimationComplete(true);
         }
-      };
-      if(displayedText === "") { // Only start typing if display text is cleared for sentence
-        typeFullSentenceChar();
-      }
     }
 
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [displayedText, currentWordPhase, isTypingFullSentence, finalSentenceKey, t, animationComplete]);
+  }, [displayedText, currentWordPhase, isTypingFullSentence, t, animationComplete, finalSentenceKey, targetWords, typingSpeed, pauseBetweenWords, pauseBeforeFullSentence]);
 
 
   return (

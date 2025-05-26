@@ -23,6 +23,7 @@ const Header: React.FC = () => {
   const { t } = useLanguage();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSectionId, setActiveSectionId] = useState<string>(NAV_ITEMS[0]?.id || 'home');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -32,15 +33,49 @@ const Header: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    const observerOptions = {
+      root: null,
+      rootMargin: '-40% 0px -60% 0px', // Adjust to bias towards top half of viewport
+      threshold: 0,
+    };
+
+    const observerCallback = (entries: IntersectionObserverEntry[]) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          setActiveSectionId(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+    const sections = NAV_ITEMS.map(item => document.getElementById(item.id));
+    
+    sections.forEach(section => {
+      if (section) observer.observe(section);
+    });
+
+    return () => {
+      sections.forEach(section => {
+        if (section) observer.unobserve(section);
+      });
+    };
+  }, []); // NAV_ITEMS is constant, so empty dependency array is fine here
+
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
       {NAV_ITEMS.map((item) => (
-        <Button 
-          variant="ghost" 
-          asChild 
-          key={item.id} 
-          onClick={onLinkClick} 
-          className="group font-medium text-foreground hover:text-primary hover:bg-primary/10 relative px-3 py-2"
+        <Button
+          variant="ghost"
+          asChild
+          key={item.id}
+          onClick={onLinkClick}
+          className={cn(
+            "group font-medium relative px-3 py-2",
+            item.id === activeSectionId 
+              ? "text-primary bg-primary/10" 
+              : "text-foreground hover:text-primary hover:bg-primary/10"
+          )}
         >
           <Link href={item.href}>
             <span className="nav-link-text-wrapper">
@@ -57,7 +92,7 @@ const Header: React.FC = () => {
   );
 
   return (
-    <header 
+    <header
       className={cn(
         "fixed top-0 left-0 right-0 z-50 transition-all duration-300 ease-in-out",
         isScrolled ? "bg-background/95 shadow-lg backdrop-blur-md py-3" : "bg-transparent py-5"
