@@ -36,16 +36,29 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-60% 0px -35% 0px', // Active when section's top is ~60% down the viewport
-      threshold: 0,
+      rootMargin: '-60% 0px -39% 0px', // Defines a 1% high band, 60% from the top. A section's top must enter this.
+      threshold: 0, // Trigger if any pixel intersects the band.
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          setActiveSectionId(entry.target.id);
+      let newActiveCandidateId = activeSectionId; // Default to current active section
+      let foundIntersectingCandidate = false;
+
+      // Iterate through NAV_ITEMS to respect DOM order for precedence
+      for (const navItem of NAV_ITEMS) {
+        const entry = entries.find(e => e.target.id === navItem.id);
+        if (entry && entry.isIntersecting) {
+          newActiveCandidateId = navItem.id;
+          foundIntersectingCandidate = true;
+          break; // Found the first (highest in DOM) intersecting section
         }
-      });
+      }
+      
+      // Only update if a new candidate was found through intersection.
+      // This prevents changing activeId if scrolling to an area where no section specifically hits the band.
+      if (foundIntersectingCandidate) {
+        setActiveSectionId(newActiveCandidateId);
+      }
     };
 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
@@ -55,12 +68,18 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
 
+    // Initial check in case the default section isn't at the very top or observer needs a kick
+    // This can sometimes help ensure the correct initial state if observer doesn't fire immediately
+    // or if the default state doesn't match initial intersections.
+    // However, let's rely on the observer's initial fire. If issues persist, we can reconsider an explicit initial check.
+
+
     return () => {
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
     };
-  }, []);
+  }, []); // activeSectionId removed from dependencies to avoid re-creating observer unnecessarily
 
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
