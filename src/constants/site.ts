@@ -2,11 +2,12 @@
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/logos
-// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.png'; // Temporarily commented out
-// import icsCardsLogo from '@/logos/ics-cards.png'; // Temporarily commented out
+// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
+// import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
 import rabobankLogo from '@/logos/rabobank.svg';
-import schipholLogo from '@/logos/schiphol.png';
+import schipholLogo from '@/logos/schiphol.svg';
 // import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
+import uwvLogo from '@/logos/uwv.svg';
 
 export interface NavItem {
   labelKey: keyof TranslationContent;
@@ -29,11 +30,12 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Gemeente Den Haag', src: 'https://placehold.co/120x60.png', dataAiHint: 'Den Haag logo' }, // Temporarily reverted to placeholder
-    { name: 'ICS Cards', src: 'https://placehold.co/120x60.png', dataAiHint: 'ICS Cards logo' }, // Temporarily reverted to placeholder
+    { name: 'Gemeente Den Haag', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'Den Haag logo' }, // Placeholder
+    { name: 'ICS Cards', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'ICS Cards logo' }, // Placeholder
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo' },
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
-    { name: 'IKEA', src: 'https://placehold.co/120x60.png', dataAiHint: 'IKEA logo' }, // Temporarily reverted to placeholder
+    { name: 'IKEA', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'IKEA logo' }, // Placeholder
+    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ]
 };
 
@@ -42,7 +44,7 @@ export const SERVICE_ITEMS = [
   { titleKey: 'service2Title', descriptionKey: 'service2Description', icon: 'CriblIcon' },
   { titleKey: 'service3Title', descriptionKey: 'service3Description', icon: 'DataStrategyIcon' },
   { titleKey: 'service4Title', descriptionKey: 'service4Description', icon: 'AiSolutionIcon' },
-  { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' }, // Was ClipboardTeacher
+  { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
 
 export const PUBLICATION_ITEMS = [
