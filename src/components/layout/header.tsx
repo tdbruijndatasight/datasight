@@ -68,18 +68,12 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
 
-    // Initial check in case the default section isn't at the very top or observer needs a kick
-    // This can sometimes help ensure the correct initial state if observer doesn't fire immediately
-    // or if the default state doesn't match initial intersections.
-    // However, let's rely on the observer's initial fire. If issues persist, we can reconsider an explicit initial check.
-
-
     return () => {
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
     };
-  }, []); // activeSectionId removed from dependencies to avoid re-creating observer unnecessarily
+  }, []); 
 
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
@@ -90,7 +84,7 @@ const Header: React.FC = () => {
           key={item.id}
           onClick={onLinkClick}
           className={cn(
-            "group font-medium relative px-3 py-2 text-foreground hover:text-primary",
+            "group font-medium relative px-3 py-2 text-foreground hover:text-primary hover:bg-transparent", // Added hover:bg-transparent
             item.id === activeSectionId && "is-active text-primary"
           )}
         >
