@@ -202,14 +202,39 @@ body {
   background-color: hsl(var(--accent));
 }
 
+/* Dots appear on hover */
 .group:hover .nav-hover-animation-dot.blue {
   opacity: 1;
   transform: scale(1) translateX(0);
-  transition-delay: 0s; /* Blue dot appears slightly first */
+  transition-delay: 0s; 
 }
 
 .group:hover .nav-hover-animation-dot.orange {
   opacity: 1;
   transform: scale(1) translateX(0);
-  transition-delay: 0.075s; /* Orange dot appears after blue */
+  transition-delay: 0.075s; 
+}
+
+/* Dots appear for active link */
+.is-active .nav-hover-animation-dot.blue,
+.is-active .nav-hover-animation-dot.orange {
+  opacity: 1;
+  transform: scale(1) translateX(0);
+}
+.is-active .nav-hover-animation-dot.blue {
+  transition-delay: 0s;
+}
+.is-active .nav-hover-animation-dot.orange {
+  transition-delay: 0.075s;
+}
+
+
+/* Subtitle Highlight Animation */
+@keyframes subtitleHighlight {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+.subtitle-highlight-animate {
+  animation: subtitleHighlight 0.6s ease-in-out;
 }

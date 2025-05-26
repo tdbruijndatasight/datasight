@@ -67,9 +67,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider defaultTheme="system" storageKey="datasight-theme">
+    <ThemeProvider defaultTheme="dark" storageKey="datasight-theme">
       <LanguageProvider>
-        <html lang="nl" suppressHydrationWarning>{/* Default language set here, suppressHydrationWarning for next-themes */}
+        {/* Default language set here, suppressHydrationWarning for next-themes and initial FOUT */}
+        <html lang="nl" suppressHydrationWarning>
           <body className={`${geistSans.variable} ${geistMono.variable} antialiased bg-background text-foreground`}>
             {children}
             <StickyContactButtons />

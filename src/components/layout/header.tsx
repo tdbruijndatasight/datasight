@@ -60,7 +60,7 @@ const Header: React.FC = () => {
         if (section) observer.unobserve(section);
       });
     };
-  }, []); // NAV_ITEMS is constant, so empty dependency array is fine here
+  }, []);
 
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
@@ -71,10 +71,8 @@ const Header: React.FC = () => {
           key={item.id}
           onClick={onLinkClick}
           className={cn(
-            "group font-medium relative px-3 py-2",
-            item.id === activeSectionId 
-              ? "text-primary bg-primary/10" 
-              : "text-foreground hover:text-primary hover:bg-primary/10"
+            "group font-medium relative px-3 py-2 text-foreground hover:text-primary", // Base style for all nav links
+            item.id === activeSectionId && "is-active text-primary" // Apply 'is-active' and 'text-primary' if section is active
           )}
         >
           <Link href={item.href}>
@@ -100,7 +98,7 @@ const Header: React.FC = () => {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
         <Logo />
-        <nav className="hidden md:flex items-center space-x-1"> {/* Reduced space for tighter fit with animation */}
+        <nav className="hidden md:flex items-center space-x-1">
           <NavLinks />
           <LanguageToggle />
           <ThemeToggle />

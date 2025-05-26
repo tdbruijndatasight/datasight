@@ -1,25 +1,36 @@
 
 "use client";
 
-import React from 'react';
-// Image import removed as it's not used
+import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
-import AnimatedHomeTitle from '@/components/animated-home-title'; // Import the new component
+import AnimatedHomeTitle from '@/components/animated-home-title';
+import { cn } from '@/lib/utils';
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
+  const [animateSubtitleClass, setAnimateSubtitleClass] = useState("");
+
+  const handleSubtitleAnimate = () => {
+    setAnimateSubtitleClass("subtitle-highlight-animate");
+    setTimeout(() => {
+      setAnimateSubtitleClass(""); // Remove class to allow re-triggering if needed
+    }, 600); // Duration of animation matches CSS (0.6s)
+  };
 
   return (
     <section id="home" className="bg-gradient-to-br from-background to-secondary section-min-height">
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection className="space-y-6 text-center md:text-left">
-          <AnimatedHomeTitle /> {/* Use the new animated title component */}
-          <p className="text-lg md:text-xl text-foreground/80 font-semibold">
+          <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
+          <p className={cn(
+            "text-lg md:text-xl text-foreground/80 font-semibold",
+            animateSubtitleClass
+          )}>
             {t('homeSubtitle')}
           </p>
           <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group">
