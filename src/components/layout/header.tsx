@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions = {
       root: null,
-      rootMargin: '-49% 0px -49% 0px', // Active when section crosses vertical midpoint
+      rootMargin: '-60% 0px -35% 0px', // Active when section's top is ~60% down the viewport
       threshold: 0,
     };
 
@@ -71,8 +71,8 @@ const Header: React.FC = () => {
           key={item.id}
           onClick={onLinkClick}
           className={cn(
-            "group font-medium relative px-3 py-2 text-foreground hover:text-primary", 
-            item.id === activeSectionId && "is-active text-primary" 
+            "group font-medium relative px-3 py-2 text-foreground hover:text-primary",
+            item.id === activeSectionId && "is-active text-primary"
           )}
         >
           <Link href={item.href}>
