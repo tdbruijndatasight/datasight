@@ -8,7 +8,7 @@ import { z } from 'zod';
 import { Button } from '@/components/ui/button';
 import { Textarea } from '@/components/ui/textarea';
 import { Input } from '@/components/ui/input';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
@@ -39,19 +39,40 @@ const ProjectInquirySection: React.FC = () => {
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
-    // In a real app, you would send this data to a backend service
-    // For example: await fetch('/api/inquiry', { method: 'POST', body: JSON.stringify(data) });
-    console.log("Form submitted:", data);
+    try {
+      const response = await fetch('/api/inquiry', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+      });
 
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
+      const result = await response.json();
 
-    toast({
-      title: t('contactFormSuccessTitle'),
-      description: t('contactFormSuccessMessage'),
-      variant: 'default',
-    });
-    form.reset();
+      if (response.ok) {
+        toast({
+          title: t('contactFormSuccessTitle'),
+          description: `${result.message || t('contactFormSuccessMessage')} ${t('contactFormResponseTime')}`,
+          variant: 'default',
+          duration: 7000, // Give more time to read the confirmation
+        });
+        form.reset();
+      } else {
+        toast({
+          variant: "destructive",
+          title: t('error'),
+          description: result.message || t('contactFormError'),
+        });
+      }
+    } catch (error) {
+      console.error("Error submitting inquiry:", error);
+      toast({
+        variant: "destructive",
+        title: t('error'),
+        description: t('contactFormError'),
+      });
+    }
     setIsLoading(false);
   };
 
