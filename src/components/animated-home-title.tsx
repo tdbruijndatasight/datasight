@@ -10,8 +10,10 @@ interface AnimatedHomeTitleProps {
 }
 
 const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) => {
-  const { t } = useLanguage();
-  const initialWords = ["Data...", "Inzicht...", "Bedrijfswaarde..."];
+  const { t, language } = useLanguage();
+
+  const initialWordsNl = ["Data...", "Inzicht...", "Bedrijfswaarde..."];
+  const initialWordsEn = ["Data...", "Insights...", "Business value..."];
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
@@ -21,7 +23,11 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
 
   const typingSpeed = 100;
   const pauseBetweenInitialWords = 3000;
-  const extraPauseBeforeFinalSentence = 1500;
+  const extraPauseBeforeFinalSentence = 1500; // 3s base + 1.5s extra = 4.5s total
+
+  const getCurrentInitialWords = () => {
+    return language === 'en' ? initialWordsEn : initialWordsNl;
+  };
 
   useEffect(() => {
     // Reset animation states when language changes
@@ -29,7 +35,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     setCurrentInitialWordIndex(0);
     setTypingPhase('initialWord');
     setShowCursor(true);
-  }, [t]); // Dependency array includes 't' to reset on language change
+  }, [t, language]); // Dependency array includes 't' and 'language' to reset on language change
 
   useEffect(() => {
     if (typingPhase === 'done') {
@@ -38,10 +44,11 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     }
 
     let timeoutId: NodeJS.Timeout | undefined;
+    const currentInitialWords = getCurrentInitialWords();
 
     if (typingPhase === 'initialWord') {
-      if (currentInitialWordIndex < initialWords.length) {
-        const wordToType = initialWords[currentInitialWordIndex];
+      if (currentInitialWordIndex < currentInitialWords.length) {
+        const wordToType = currentInitialWords[currentInitialWordIndex];
         if (displayedText.length < wordToType.length) {
           // Typing current initial word
           timeoutId = setTimeout(() => {
@@ -49,7 +56,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
           }, typingSpeed);
         } else {
           // Finished typing current initial word, pause, then clear for next or move to final
-          const isLastInitialWord = currentInitialWordIndex === initialWords.length - 1;
+          const isLastInitialWord = currentInitialWordIndex === currentInitialWords.length - 1;
           const nextPauseDuration = isLastInitialWord
             ? pauseBetweenInitialWords + extraPauseBeforeFinalSentence
             : pauseBetweenInitialWords;
@@ -80,7 +87,8 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [displayedText, currentInitialWordIndex, typingPhase, t, initialWords, finalSentenceKey, onSubtitleAnimate, typingSpeed, pauseBetweenInitialWords, extraPauseBeforeFinalSentence]);
+  // Adding language to dependencies to ensure currentInitialWords is up-to-date
+  }, [displayedText, currentInitialWordIndex, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, pauseBetweenInitialWords, extraPauseBeforeFinalSentence, language]);
 
 
   return (

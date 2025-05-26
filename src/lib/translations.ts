@@ -267,7 +267,7 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business Value',
+    homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
     homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize in transforming complex data into actionable insights. As a freelance consultant (ZZP), I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
@@ -375,3 +375,4 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'We reserve the right to modify this disclaimer at any time. Changes will be effective immediately upon posting on the website. Your continued use of the Site after any such changes shall constitute your agreement to the modified disclaimer.',
   },
 };
+
