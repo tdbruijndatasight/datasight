@@ -2,11 +2,11 @@
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/logos
-// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
-// import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
+import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
+import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
 import rabobankLogo from '@/logos/rabobank.svg';
 import schipholLogo from '@/logos/schiphol.svg';
-// import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
+import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
 import uwvLogo from '@/logos/uwv.svg';
 
 export interface NavItem {
@@ -30,11 +30,15 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Gemeente Den Haag', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'Den Haag logo' }, // Placeholder
-    { name: 'ICS Cards', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'ICS Cards logo' }, // Placeholder
+    { name: 'Gemeente Den Haag', src: gemeenteDenHaagLogo, dataAiHint: 'Gemeente Den Haag logo' },
+    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo' },
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo' },
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
-    { name: 'IKEA', src: 'https://placehold.co/120x60.png/E6F7FF/1A2B48?text=Logo', dataAiHint: 'IKEA logo' }, // Placeholder
+    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo' },
+    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
+  ],
+  footerLogos: [
+    { name: 'Gemeente Den Haag', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ]
 };
