@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState } from 'react';
+import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { useLanguage } from '@/hooks/use-language';
@@ -46,9 +47,23 @@ const HomeSection: React.FC = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
-            <CardContent className="space-y-4 text-foreground/90">
-              <p>{t('homeAboutMeP1')}</p>
-              <p>{t('homeAboutMeP2')}</p>
+            <CardContent className="text-foreground/90">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
+                <div className="flex-shrink-0">
+                  <Image
+                    src="https://placehold.co/120x120.png" // Placeholder for LinkedIn photo
+                    alt="Tom de Bruijn" // Replace with actual alt text if you have the image
+                    width={120}
+                    height={120}
+                    className="rounded-full shadow-lg border-2 border-primary/50"
+                    data-ai-hint="profile photo"
+                  />
+                </div>
+                <div className="space-y-4 text-center sm:text-left">
+                  <p>{t('homeAboutMeP1')}</p>
+                  <p>{t('homeAboutMeP2')}</p>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </AnimatedSection>

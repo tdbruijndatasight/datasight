@@ -151,8 +151,8 @@ export const translations: Translations = {
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Over Mij',
-    homeAboutMeP1: 'Met meer dan 10 jaar ervaring in de IT-sector, specialiseer ik mij in het transformeren van complexe data in bruikbare inzichten. Als freelance consultant (ZZP) help ik organisaties de kracht van Splunk en Cribl te benutten om operationele efficiëntie te verbeteren en datagedreven beslissingen te nemen.',
-    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Ik ben toegewijd aan continue leren en het toepassen van de nieuwste technologieën om innovatieve oplossingen te bieden.',
+    homeAboutMeP1: 'Met meer dan 10 jaar ervaring in de IT-sector, specialiseer ik mij als onafhankelijk consultant (ZZP) in het transformeren van complexe data in bruikbare inzichten. Ik help organisaties de kracht van Splunk en Cribl te benutten om operationele efficiëntie te verbeteren en datagedreven beslissingen te nemen.',
+    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Als toegewijd professional blijf ik continu leren en pas ik de nieuwste technologieën toe om innovatieve oplossingen te bieden.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -189,7 +189,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt spoedig een bevestigingsmail.',
+    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt spoedig een bevestigingsmail.', // API response has more details
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
     contactTitle: 'Neem Contact Op',
@@ -270,8 +270,8 @@ export const translations: Translations = {
     homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
-    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize in transforming complex data into actionable insights. As a freelance consultant (ZZP), I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
-    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
+    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an independent consultant (ZZP) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
+    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated professional, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -308,7 +308,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email shortly.',
+    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email shortly.', // API response has more details
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
     contactTitle: 'Get in Touch',
