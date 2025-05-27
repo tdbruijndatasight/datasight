@@ -11,6 +11,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedHomeTitle from '@/components/animated-home-title';
 import { cn } from '@/lib/utils';
+import profilePicture from '@/images/tom-de-bruijn-profile.webp'; // Import profile picture
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
@@ -51,13 +52,13 @@ const HomeSection: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="flex-shrink-0">
                   <Image
-                    src="/images/tom-de-bruijn-profile.webp"
+                    src={profilePicture} // Use imported image
                     alt="Tom de Bruijn"
                     width={120}
                     height={120}
                     className="rounded-full shadow-lg border-2 border-primary/50"
                     priority
-                    data-ai-hint="profile person"
+                    data-ai-hint="profile person" // This hint is less relevant now but can stay
                   />
                 </div>
                 <div className="space-y-4 text-center sm:text-left">

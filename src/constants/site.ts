@@ -1,15 +1,14 @@
 
 import type { Locale, TranslationContent } from '@/lib/translations';
-// Import of StaticImageData is no longer needed if all src are strings
-// import type { StaticImageData } from 'next/image';
+import type { StaticImageData } from 'next/image';
 
-// Removed direct logo imports as they are now in public/images/logos/
-// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Example of removed import
-// import icsLogo from '@/logos/ics.svg';
-// import rabobankLogo from '@/logos/rabobank.svg';
-// import schipholLogo from '@/logos/schiphol.svg';
-// import ikeaLogo from '@/logos/ikea.svg';
-// import uwvLogo from '@/logos/uwv.svg';
+// Import logos from src/logos
+// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
+// import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
+import rabobankLogo from '@/logos/rabobank.svg';
+import schipholLogo from '@/logos/schiphol.svg';
+// import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
+import uwvLogo from '@/logos/uwv.svg';
 
 
 export interface NavItem {
@@ -20,7 +19,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: string; // Changed from string | StaticImageData to just string
+  src: StaticImageData | string; // Allow string for placeholders
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -41,16 +40,16 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Schiphol Airport', src: '/images/logos/schiphol.svg', dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
-    { name: 'Rabobank', src: '/images/logos/rabobank.svg', dataAiHint: 'Rabobank logo', width: 140, height: 55 },
-    { name: 'IKEA', src: '/images/logos/ikea.svg', dataAiHint: 'IKEA logo', width: 140, height: 55 },
-    { name: 'ICS Cards', src: '/images/logos/ics.svg', dataAiHint: 'ICS logo', width: 140, height: 55 },
-    { name: 'UWV', src: '/images/logos/uwv.svg', dataAiHint: 'UWV logo', width: 100, height: 40 },
-    { name: 'Gemeente Den Haag',  src: '/images/logos/gemeente-den-haag.svg', dataAiHint: 'Den Haag logo', width: 140, height: 55 },
+    { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
+    { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
+    { name: 'IKEA', src: 'https://placehold.co/140x55.png', dataAiHint: 'IKEA logo', width: 140, height: 55 }, // Placeholder for IKEA
+    { name: 'ICS Cards', src: 'https://placehold.co/140x55.png', dataAiHint: 'ICS logo', width: 140, height: 55 }, // Placeholder for ICS
+    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
+    { name: 'Gemeente Den Haag',  src: 'https://placehold.co/140x55.png', dataAiHint: 'Den Haag logo', width: 140, height: 55 }, // Placeholder for Gemeente Den Haag
   ] as CompanyLogo[],
-  footerLogos: [ // Assuming these paths also need updating if they were meant to be used
-    { name: 'Schiphol Airport', src: '/images/logos/schiphol.svg', dataAiHint: 'Schiphol Airport logo' },
-    { name: 'UWV', src: '/images/logos/uwv.svg', dataAiHint: 'UWV logo' },
+  footerLogos: [ // This is not currently used, but keeping it for potential future use.
+    { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
+    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ]
 };
 
@@ -62,7 +61,6 @@ export const SERVICE_ITEMS = [
   { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
 
-// Hidden Publications
 // export const PUBLICATION_ITEMS = [
 //   {
 //     titleKey: 'publication1Title',
@@ -73,5 +71,3 @@ export const SERVICE_ITEMS = [
 //   }
 // ];
 export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden
-
-    
