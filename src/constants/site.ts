@@ -1,14 +1,15 @@
 
 import type { Locale, TranslationContent } from '@/lib/translations';
-import type { StaticImageData } from 'next/image';
+// Import of StaticImageData is no longer needed if all src are strings
+// import type { StaticImageData } from 'next/image';
 
-// Import logos from src/logos
-import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg';
-import icsLogo from '@/logos/ics.svg';
-import rabobankLogo from '@/logos/rabobank.svg';
-import schipholLogo from '@/logos/schiphol.svg';
-import ikeaLogo from '@/logos/ikea.svg';
-import uwvLogo from '@/logos/uwv.svg';
+// Removed direct logo imports as they are now in public/images/logos/
+// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Example of removed import
+// import icsLogo from '@/logos/ics.svg';
+// import rabobankLogo from '@/logos/rabobank.svg';
+// import schipholLogo from '@/logos/schiphol.svg';
+// import ikeaLogo from '@/logos/ikea.svg';
+// import uwvLogo from '@/logos/uwv.svg';
 
 
 export interface NavItem {
@@ -19,7 +20,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: string | StaticImageData;
+  src: string; // Changed from string | StaticImageData to just string
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -40,16 +41,16 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
-    { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
-    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 },
-    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 },
-    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 }, // Kept smaller
-    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 },
+    { name: 'Schiphol Airport', src: '/images/logos/schiphol.svg', dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
+    { name: 'Rabobank', src: '/images/logos/rabobank.svg', dataAiHint: 'Rabobank logo', width: 140, height: 55 },
+    { name: 'IKEA', src: '/images/logos/ikea.svg', dataAiHint: 'IKEA logo', width: 140, height: 55 },
+    { name: 'ICS Cards', src: '/images/logos/ics.svg', dataAiHint: 'ICS logo', width: 140, height: 55 },
+    { name: 'UWV', src: '/images/logos/uwv.svg', dataAiHint: 'UWV logo', width: 100, height: 40 },
+    { name: 'Gemeente Den Haag',  src: '/images/logos/gemeente-den-haag.svg', dataAiHint: 'Den Haag logo', width: 140, height: 55 },
   ] as CompanyLogo[],
-  footerLogos: [ 
-    { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
-    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
+  footerLogos: [ // Assuming these paths also need updating if they were meant to be used
+    { name: 'Schiphol Airport', src: '/images/logos/schiphol.svg', dataAiHint: 'Schiphol Airport logo' },
+    { name: 'UWV', src: '/images/logos/uwv.svg', dataAiHint: 'UWV logo' },
   ]
 };
 
@@ -66,10 +67,11 @@ export const SERVICE_ITEMS = [
 //   {
 //     titleKey: 'publication1Title',
 //     descriptionKey: 'publication1Description',
-//     link: '#', 
+//     link: '#',
 //     imageSrc: 'https://placehold.co/600x400.png',
 //     dataAiHint: 'data report'
 //   }
 // ];
 export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden
 
+    
