@@ -35,10 +35,6 @@ const CustomersSection: React.FC = () => {
             <div className="logo-carousel-track">
               {/* Render logos twice for a seamless loop */}
               {[...logos, ...logos].map((logo, index) => {
-                const isUwv = logo.name === 'UWV';
-                const imageWidth = isUwv ? 100 : 120;
-                const imageHeight = isUwv ? 50 : 60;
-                
                 return (
                   <div 
                     key={`${logo.name}-${index}`} // Unique key for each item, including duplicates
@@ -47,8 +43,8 @@ const CustomersSection: React.FC = () => {
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
-                      width={imageWidth} 
-                      height={imageHeight}
+                      width={150} 
+                      height={60}
                       className="object-contain"
                       data-ai-hint={logo.dataAiHint}
                     />
