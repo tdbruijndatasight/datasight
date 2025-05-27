@@ -3,20 +3,17 @@
 
 import React from 'react';
 import Image from 'next/image';
-import type { StaticImageData } from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
-import { SITE_CONFIG } from '@/constants/site';
-
-interface CompanyLogo {
-  name: string;
-  src: string | StaticImageData; // Can be a path string or imported StaticImageData
-  dataAiHint?: string;
-}
+import { SITE_CONFIG, type CompanyLogo } from '@/constants/site';
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
   const logos: CompanyLogo[] = SITE_CONFIG.companyLogos;
+
+  // Default dimensions if not specified on the logo object
+  const defaultWidth = 120;
+  const defaultHeight = 50;
 
   return (
     <section id="customers" className="bg-background section-min-height">
@@ -43,8 +40,8 @@ const CustomersSection: React.FC = () => {
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
-                      width={100} 
-                      height={40} 
+                      width={logo.width || defaultWidth} 
+                      height={logo.height || defaultHeight} 
                       className="object-contain"
                       data-ai-hint={logo.dataAiHint}
                     />
