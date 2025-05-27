@@ -43,8 +43,8 @@ const CustomersSection: React.FC = () => {
                     <Image 
                       src={logo.src} 
                       alt={logo.name} 
-                      width={150} 
-                      height={60}
+                      width={120} // Reduced from 150
+                      height={50} // Reduced from 60
                       className="object-contain"
                       data-ai-hint={logo.dataAiHint}
                     />
