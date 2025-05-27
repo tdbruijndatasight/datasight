@@ -51,7 +51,7 @@ const HomeSection: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="flex-shrink-0">
                   <Image
-                    src="/images/tom-de-bruijn-profile.jpg" // Updated path
+                    src="/images/tom-de-bruijn-profile.webp" // Updated path
                     alt="Tom de Bruijn"
                     width={120}
                     height={120}
