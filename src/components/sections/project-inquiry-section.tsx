@@ -27,6 +27,8 @@ type FormData = z.infer<typeof formSchema>;
 const placeholderKeys: (keyof typeof import('@/lib/translations').translations.en)[] = [
   'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
   'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
+  'inquiryPlaceholder11', 'inquiryPlaceholder12', 'inquiryPlaceholder13', 'inquiryPlaceholder14', 'inquiryPlaceholder15',
+  'inquiryPlaceholder16',
 ];
 
 const ProjectInquirySection: React.FC = () => {
@@ -48,6 +50,7 @@ const ProjectInquirySection: React.FC = () => {
   });
 
   useEffect(() => {
+    // Set initial placeholder text based on current language and index
     setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
     setIsPlaceholderVisible(true); // Ensure initially visible
 
@@ -56,21 +59,23 @@ const ProjectInquirySection: React.FC = () => {
 
       setTimeout(() => {
         setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 500); // Wait for fade out to complete
-    }, 4000); // Time placeholder is fully visible + fade out time
+      }, 800); // Wait for fade out (0.8s) to complete before changing text
+    }, 4800); // Total cycle time: 4s visible + 0.8s fade out/in
 
     return () => clearInterval(intervalId);
-  }, [t, language, currentPlaceholderIndex]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [language]); // Rerun effect if language changes to reset animation with new texts
 
   useEffect(() => {
     // This effect runs when currentPlaceholderIndex changes, to set the new text and fade it in
-    if (!isPlaceholderVisible) { // Only when it's time to show new text after fade out
+     // or when language changes and the effect above has reset currentPlaceholderIndex to 0
+    if (!isPlaceholderVisible || language) { // Trigger if placeholder was faded out OR if language changed (which resets index)
         setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
         setTimeout(() => {
             setIsPlaceholderVisible(true); // Start fade in
         }, 50); // Short delay to ensure text is updated before fade-in starts
     }
-  }, [currentPlaceholderIndex, t, isPlaceholderVisible]);
+  }, [currentPlaceholderIndex, t, isPlaceholderVisible, language]);
 
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {

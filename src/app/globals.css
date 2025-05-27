@@ -242,13 +242,13 @@ body {
 /* Textarea placeholder animation */
 .textarea-placeholder-visible::placeholder {
   opacity: 1;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.8s ease-in-out; /* Smoother transition */
   color: hsl(var(--muted-foreground) / 0.7); /* Slightly less prominent */
 }
 
 .textarea-placeholder-hidden::placeholder {
   opacity: 0;
-  transition: opacity 0.5s ease-in-out;
+  transition: opacity 0.8s ease-in-out; /* Smoother transition */
   color: hsl(var(--muted-foreground) / 0.7); /* Match for smooth transition */
 }
 

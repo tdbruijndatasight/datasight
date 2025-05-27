@@ -58,7 +58,7 @@ const ContactSection: React.FC = () => {
                      {React.cloneElement(item.icon, { className: "h-8 w-8 text-accent" })}
                   </div>
                   <h3 className="text-xl font-semibold mb-2 text-accent">{t(item.labelKey)}</h3>
-                  <p className="text-primary-foreground/90 mb-4 break-all">{item.value}</p>
+                  <p className="text-accent mb-4 break-all">{item.value}</p>
                   <Button variant="outline" asChild className="mt-auto border-accent text-accent hover:bg-accent hover:text-accent-foreground group">
                     <Link href={item.href} target="_blank" rel="noopener noreferrer">
                       {t(item.buttonLabelKey)}

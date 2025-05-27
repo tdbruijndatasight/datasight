@@ -4,7 +4,7 @@ export type Locale = 'nl' | 'en';
 export interface TranslationContent {
   // Header / Nav
   navHome: string;
-  navAbout: string;
+  // navAbout: string; // Assuming this was meant to be part of Home or another section
   navCustomers: string;
   navServices: string;
   // navPublications: string; // Hidden
@@ -40,7 +40,7 @@ export interface TranslationContent {
   service5Title: string;
   service5Description: string;
 
-  // Publications Section (Hidden)
+  // Publications Section (Keys commented out as section is hidden)
   // publicationsTitle: string;
   // publicationsSubtitle: string;
   // publication1Title: string;
@@ -50,7 +50,6 @@ export interface TranslationContent {
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string;
-  // inquiryCoffeePrompt: string; // Removed
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -64,7 +63,7 @@ export interface TranslationContent {
   contactFormSuccessMessage: string;
   contactFormError: string;
 
-  // Animated Placeholders for Inquiry Textarea
+  // Animated Placeholders for Inquiry Textarea (New list of 16)
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
   inquiryPlaceholder3: string;
@@ -75,6 +74,12 @@ export interface TranslationContent {
   inquiryPlaceholder8: string;
   inquiryPlaceholder9: string;
   inquiryPlaceholder10: string;
+  inquiryPlaceholder11: string;
+  inquiryPlaceholder12: string;
+  inquiryPlaceholder13: string;
+  inquiryPlaceholder14: string;
+  inquiryPlaceholder15: string;
+  inquiryPlaceholder16: string;
 
 
   // Contact Section
@@ -152,7 +157,7 @@ export type Translations = {
 export const translations: Translations = {
   nl: {
     navHome: 'Home',
-    navAbout: 'Over Mij',
+    // navAbout: 'Over Mij', // Assuming this was meant to be part of Home or another section
     navCustomers: 'Klanten',
     navServices: 'Diensten',
     // navPublications: 'Publicaties', // Hidden
@@ -165,8 +170,8 @@ export const translations: Translations = {
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Over Mij',
-    homeAboutMeP1: 'Met meer dan 10 jaar ervaring in de IT-sector, specialiseer ik mij als onafhankelijk consultant (ZZP) in het transformeren van complexe data in bruikbare inzichten. Ik help organisaties de kracht van Splunk en Cribl te benutten om operationele efficiëntie te verbeteren en datagedreven beslissingen te nemen.',
-    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Als toegewijd professional en onafhankelijke consultant blijf ik continu leren en pas ik de nieuwste technologieën toe om innovatieve oplossingen te bieden.',
+    homeAboutMeP1: 'Met meer dan 10 jaar ervaring in de IT-sector, specialiseer ik mij als **onafhankelijk consultant** (ZZP) in het transformeren van complexe data in bruikbare inzichten. Ik help organisaties de kracht van Splunk en Cribl te benutten om operationele efficiëntie te verbeteren en datagedreven beslissingen te nemen.',
+    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Als toegewijd **onafhankelijk consultant** blijf ik continu leren en pas ik de nieuwste technologieën toe om innovatieve oplossingen te bieden.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -193,7 +198,6 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
-    // inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕', // Removed
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
@@ -207,16 +211,23 @@ export const translations: Translations = {
     contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
-    inquiryPlaceholder1: "Heeft u een data-uitdaging? Laten we praten...",
-    inquiryPlaceholder2: "Hulp nodig met Splunk of Cribl?",
-    inquiryPlaceholder3: "Nieuwsgierig naar datastrategie? Vraag maar raak...",
-    inquiryPlaceholder4: "Laten we een snelle 30-min Teams-call plannen...",
-    inquiryPlaceholder5: "Ook voor een virtuele koffie en een praatje over data...",
-    inquiryPlaceholder6: "Denkt u aan een AI-oplossing voor uw data?",
-    inquiryPlaceholder7: "Hoe kan ik helpen uw data pipelines te optimaliseren?",
-    inquiryPlaceholder8: "Beschrijf hier uw projectidee...",
-    inquiryPlaceholder9: "Vastgelopen op een complex dataprobleem?",
-    inquiryPlaceholder10: "Wilt u de mogelijkheden verkennen? Neem contact op!",
+    inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? Laat het me weten – ik denk graag mee.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯 Stuur gerust een berichtje.",
+    inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking – plan hier eenvoudig 30 minuten in je agenda 📅.",
+    inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? Laten we even bellen.",
+    inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍 Laat het me weten – ik denk graag mee.",
+    inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? Ik geef ook hands-on trainingen die precies aansluiten bij jouw situatie.",
+    inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊 Ik help je graag op weg.",
+    inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈 Laten we samen kijken wat er mogelijk is.",
+    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? 🛠️ Stuur gerust een berichtje.",
+    inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? Ik bied maatwerk – praktisch, begrijpelijk en direct toepasbaar.",
+    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? Stuur me gerust een berichtje!",
+    inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? 💡 Ik help je slimme keuzes maken met Splunk & Cribl.",
+    inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? Plan 'm hier in 🎧.",
+    inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? Mijn trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
+    inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? Ik begeleid je praktisch, op jouw tempo.",
+    inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰 Ik kijk graag met je mee naar efficiënte oplossingen.",
+
 
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
@@ -283,7 +294,7 @@ export const translations: Translations = {
   },
   en: {
     navHome: 'Home',
-    navAbout: 'About Me',
+    // navAbout: 'About Me', // Assuming this was meant to be part of Home or another section
     navCustomers: 'Customers',
     navServices: 'Services',
     // navPublications: 'Publications', // Hidden
@@ -296,8 +307,8 @@ export const translations: Translations = {
     homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
-    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an independent consultant (freelancer) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
-    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated professional and independent consultant, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
+    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an **independent consultant** (freelancer) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
+    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated **independent consultant**, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -324,7 +335,6 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
-    // inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕', // Removed
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -338,16 +348,22 @@ export const translations: Translations = {
     contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
-    inquiryPlaceholder1: "Have a data challenge? Let's talk...",
-    inquiryPlaceholder2: "Need help with Splunk or Cribl?",
-    inquiryPlaceholder3: "Curious about data strategy? Ask me anything...",
-    inquiryPlaceholder4: "Let's schedule a quick 30-min Teams call to discuss...",
-    inquiryPlaceholder5: "Even for a virtual coffee and a chat about data...",
-    inquiryPlaceholder6: "Thinking about an AI solution for your data?",
-    inquiryPlaceholder7: "How can I help optimize your data pipelines?",
-    inquiryPlaceholder8: "Describe your project idea here...",
-    inquiryPlaceholder9: "Stuck on a complex data problem?",
-    inquiryPlaceholder10: "Just want to explore possibilities? Reach out!",
+    inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? Let me know – I'm happy to brainstorm with you.",
+    inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯 Feel free to send a message.",
+    inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction – easily schedule 30 minutes in your calendar here 📅.",
+    inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? Let's have a call.",
+    inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍 Let me know – I'm happy to think along.",
+    inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? I also provide hands-on training tailored to your situation.",
+    inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊 I'm happy to help you get started.",
+    inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈 Let's explore the possibilities together.",
+    inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? 🛠️ Feel free to send a message.",
+    inquiryPlaceholder10: "Need training, but not a standard package? I offer custom solutions – practical, understandable, and directly applicable.",
+    inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? Feel free to send me a message!",
+    inquiryPlaceholder12: "Want to gain more insight with less data? 💡 I help you make smart choices with Splunk & Cribl.",
+    inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? Schedule it here 🎧.",
+    inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? My trainings are hands-on, custom, and without unnecessary theory.",
+    inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? I guide you practically, at your own pace.",
+    inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? 💰 I'm happy to look into efficient solutions with you.",
 
 
     contactTitle: 'Get in Touch',
@@ -414,3 +430,4 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
+
