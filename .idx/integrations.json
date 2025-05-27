@@ -1,4 +1,6 @@
 {
-  "firebase_hosting": {},
+  "firebase_hosting": {
+    "deploymentHostingUrl": "https://datasight-portfolio.web.app"
+  },
   "gemini_api": {}
 }

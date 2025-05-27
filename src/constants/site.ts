@@ -2,11 +2,11 @@
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/logos
-import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
-import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
+// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
+// import icsLogo from '@/logos/ics.svg'; // Temporarily commented out
 import rabobankLogo from '@/logos/rabobank.svg';
 import schipholLogo from '@/logos/schiphol.svg';
-import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
+// import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
 import uwvLogo from '@/logos/uwv.svg';
 
 export interface NavItem {
@@ -16,12 +16,12 @@ export interface NavItem {
 }
 
 export const NAV_ITEMS: NavItem[] = [
-  { labelKey: 'navHome', href: '#home', id: 'home' },
-  { labelKey: 'navCustomers', href: '#customers', id: 'customers' },
-  { labelKey: 'navServices', href: '#services', id: 'services' },
-  { labelKey: 'navPublications', href: '#publications', id: 'publications' },
-  { labelKey: 'navProjectInquiry', href: '#inquiry', id: 'inquiry' },
-  { labelKey: 'navContact', href: '#contact', id: 'contact' },
+  { labelKey: 'navHome', href: '/#home', id: 'home' },
+  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' },
+  { labelKey: 'navServices', href: '/#services', id: 'services' },
+  { labelKey: 'navPublications', href: '/#publications', id: 'publications' },
+  { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
+  { labelKey: 'navContact', href: '/#contact', id: 'contact' },
 ];
 
 export const SITE_CONFIG = {
@@ -30,11 +30,11 @@ export const SITE_CONFIG = {
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
-    { name: 'Gemeente Den Haag', src: gemeenteDenHaagLogo, dataAiHint: 'Gemeente Den Haag logo' },
-    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo' },
+    { name: 'Gemeente Den Haag', src: 'https://placehold.co/120x60.png', dataAiHint: 'Den Haag logo' }, // Temporarily placeholder
+    { name: 'ICS Cards', src: 'https://placehold.co/120x60.png', dataAiHint: 'ICS logo' }, // Temporarily placeholder
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo' },
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
-    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo' },
+    { name: 'IKEA', src: 'https://placehold.co/120x60.png', dataAiHint: 'IKEA logo' }, // Temporarily placeholder
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ],
   footerLogos: [
@@ -60,3 +60,4 @@ export const PUBLICATION_ITEMS = [
     dataAiHint: 'data report'
   }
 ];
+
