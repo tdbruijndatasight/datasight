@@ -35,10 +35,10 @@ export const SITE_CONFIG = {
     { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo' },
     { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo' },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
-    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Gemeente Den Haag logo' },
+    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo' },
   ],
-  footerLogos: [ // This array seems unused, but I'll keep it as is unless asked to remove.
-    { name: 'Gemeente Den Haag', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' }, // Example, might need actual logo
+  footerLogos: [
+    { name: 'Gemeente Den Haag', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ]
 };
@@ -48,14 +48,14 @@ export const SERVICE_ITEMS = [
   { titleKey: 'service2Title', descriptionKey: 'service2Description', icon: 'CriblIcon' },
   { titleKey: 'service3Title', descriptionKey: 'service3Description', icon: 'DataStrategyIcon' },
   { titleKey: 'service4Title', descriptionKey: 'service4Description', icon: 'AiSolutionIcon' },
-  { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
+  { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' }, // Changed from ClipboardTeacher
 ] as const;
 
 export const PUBLICATION_ITEMS = [
   {
     titleKey: 'publication1Title',
     descriptionKey: 'publication1Description',
-    link: '#', // Intentionally kept as '#', can be updated later
+    link: '#',
     imageSrc: 'https://placehold.co/600x400.png',
     dataAiHint: 'data report'
   }
