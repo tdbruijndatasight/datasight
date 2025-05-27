@@ -59,8 +59,8 @@ const ProjectInquirySection: React.FC = () => {
 
       setTimeout(() => {
         setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 800); // Wait for fade out (0.8s) to complete before changing text
-    }, 4800); // Total cycle time: 4s visible + 0.8s fade out/in
+      }, 1000); // Wait for fade out (1s) to complete before changing text - Updated to 1000ms
+    }, 9000); // Total cycle time: 8s visible + 1s fade out/in - Updated to 9000ms
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
