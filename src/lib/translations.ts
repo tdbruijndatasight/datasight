@@ -91,6 +91,12 @@ export interface TranslationContent {
   sendMessage: string;
   openWhatsApp: string;
   viewProfile: string;
+  emailCopiedSuccess: string;
+  copyErrorTitle: string;
+  copyErrorDescription: string;
+  copyToClipboardTooltip: string;
+  callDirectlyTooltip: string;
+
 
   // Generic
   loading: string;
@@ -232,11 +238,16 @@ export const translations: Translations = {
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
-    contactPhone: 'Telefoon (WhatsApp)',
+    contactPhone: 'Telefoon',
     contactLinkedIn: 'LinkedIn Profiel',
     sendMessage: 'Verstuur Email',
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'Bekijk Profiel',
+    emailCopiedSuccess: "E-mailadres gekopieerd!",
+    copyErrorTitle: "Kopiëren Mislukt",
+    copyErrorDescription: "Kon het e-mailadres niet naar het klembord kopiëren.",
+    copyToClipboardTooltip: "Kopieer naar klembord",
+    callDirectlyTooltip: "Direct bellen",
 
     loading: 'Laden...',
     error: 'Fout',
@@ -369,11 +380,17 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
     contactEmail: 'Email',
-    contactPhone: 'Phone (WhatsApp)',
+    contactPhone: 'Phone',
     contactLinkedIn: 'LinkedIn Profile',
     sendMessage: 'Send Email',
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'View Profile',
+    emailCopiedSuccess: "Email address copied!",
+    copyErrorTitle: "Copy Failed",
+    copyErrorDescription: "Could not copy email address to clipboard.",
+    copyToClipboardTooltip: "Copy to clipboard",
+    callDirectlyTooltip: "Call directly",
+
 
     loading: 'Loading...',
     error: 'Error',
