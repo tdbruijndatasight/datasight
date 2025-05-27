@@ -51,12 +51,12 @@ const HomeSection: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="flex-shrink-0">
                   <Image
-                    src="https://placehold.co/120x120.png" // Placeholder for LinkedIn photo
-                    alt="Tom de Bruijn" // Replace with actual alt text if you have the image
+                    src="/images/tom-de-bruijn-profile.jpg" // Updated path
+                    alt="Tom de Bruijn"
                     width={120}
                     height={120}
                     className="rounded-full shadow-lg border-2 border-primary/50"
-                    data-ai-hint="profile photo"
+                    priority // Good to add for LCP images
                   />
                 </div>
                 <div className="space-y-4 text-center sm:text-left">
