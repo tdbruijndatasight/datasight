@@ -62,6 +62,7 @@ export interface TranslationContent {
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
+  // inquiryCoffeePrompt: string; // Removed
 
   // Animated Placeholders for Inquiry Textarea (New list of 16)
   inquiryPlaceholder1: string;
@@ -176,8 +177,8 @@ export const translations: Translations = {
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Over Mij',
-    homeAboutMeP1: 'Met meer dan 10 jaar praktische ervaring in IT, werk ik als onafhankelijk consultant en help ik organisaties complexe data om te zetten in heldere, bruikbare inzichten. Als gecertificeerd expert in zowel Splunk als Cribl, help ik organisaties de kracht van deze platformen te benutten om operationele efficiëntie te verbeteren en slimmere, datagedreven beslissingen te nemen. Ik breng diepgaande kennis van reële omgevingen mee naar elk project—of dat nu betekent het optimaliseren van prestaties, het verbeteren van zichtbaarheid, of het oplossen van complexe technische problemen. Het doel is altijd om dingen beter te laten werken, niet alleen om er beter uit te zien.',
-    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Elk project is een kans om te verbeteren, en ik ben toegewijd aan continu leren en het toepassen van de nieuwste technologieën om innovatieve oplossingen te bieden. Klanten waarderen mijn mix van diepgaande technische ervaring, eerlijk advies, en een no-nonsense, nuchtere aanpak. Op zoek naar iemand met ervaring, makkelijk om mee samen te werken, en oprecht geïnvesteerd in uw succes? Laten we contact opnemen.',
+    homeAboutMeP1: 'Onafhankelijk consultant met meer dan 10 jaar praktische IT-ervaring, die organisaties helpt complexe data om te zetten in heldere, bruikbare inzichten. Gecertificeerd expert in Splunk en Cribl, en bied consultancy, advies en trainingen op maat. Gepassioneerd door het oplossen van uitdagende dataproblemen en het leveren van resultaten, ben ik toegewijd aan continu leren en het benutten van AI en de nieuwste technologieën om innovatie te stimuleren.',
+    homeAboutMeP2: 'Vertrouwd vanwege diepgaande technische kennis, eerlijk advies en een no-nonsense, nuchtere aanpak. Op zoek naar iemand met ervaring, makkelijk om mee samen te werken en oprecht geïnvesteerd in uw succes? Laten we contact opnemen.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -214,8 +215,9 @@ export const translations: Translations = {
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.', // Kept concise as API response and contactFormResponseTime provide details
+    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
+    // inquiryCoffeePrompt: "Ook voor een (virtuele) kop koffie! ☕", // Removed
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? Laat het me weten – ik denk graag mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯 Stuur gerust een berichtje.",
@@ -238,9 +240,9 @@ export const translations: Translations = {
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
-    contactPhone: 'Telefoon', // Changed from 'Telefoon (WhatsApp)'
+    contactPhone: 'Telefoon',
     contactLinkedIn: 'LinkedIn Profiel',
-    sendMessage: 'Verstuur Email', // Changed from 'Verstuur Bericht'
+    sendMessage: 'Verstuur Email',
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'Bekijk Profiel',
     emailCopiedSuccess: "E-mailadres gekopieerd!",
@@ -254,7 +256,7 @@ export const translations: Translations = {
     by: 'door',
     optionalLabel: 'optioneel',
 
-    legalPrivacy: 'Privacy', // Changed from 'Privacybeleid'
+    legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - NL
@@ -315,11 +317,11 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business value', // Corrected "Value" to "value"
+    homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
-    homeAboutMeP1: 'With over 10 years of hands-on experience in IT, I work as an independent consultant, helping organizations turn complex data into clear, actionable insights. As a certified expert in both Splunk and Cribl, I help organizations leverage the power of these platforms to improve operational efficiency and make smarter, data-driven decisions. I bring deep knowledge of real-world environments to every project—whether that means optimizing performance, improving visibility, or solving complex technical issues. The goal is always to make things work better, not just look better.',
-    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. Every project is an opportunity to improve, and I’m committed to continuous learning and applying the latest technologies to provide innovative solutions. Clients value my mix of deep technical experience, honest advice, and a no-nonsense, down-to-earth approach. Looking for someone experienced, easy to work with, and genuinely invested in your success? Let’s connect.',
+    homeAboutMeP1: 'Independent consultant with 10+ years of hands-on IT experience, helping organizations turn complex data into clear, actionable insights. Certified expert in Splunk and Cribl, offering consultancy, advice, and tailored training. Passionate about solving tough data challenges and delivering results, I’m committed to continuous learning and leveraging AI and the latest technologies to drive innovation.',
+    homeAboutMeP2: 'Trusted for deep technical know-how, honest advice, and a no-nonsense, down-to-earth approach. Looking for someone experienced, easy to work with, and genuinely invested in your success? Let’s connect.',
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -356,8 +358,9 @@ export const translations: Translations = {
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'You will receive a confirmation email shortly.', // Kept concise
+    contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
+    // inquiryCoffeePrompt: "Also up for a (virtual) cup of coffee! ☕", // Removed
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? Let me know – I'm happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯 Feel free to send a message.",
@@ -380,7 +383,7 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
     contactEmail: 'Email',
-    contactPhone: 'Phone', // Changed from 'Phone (WhatsApp)'
+    contactPhone: 'Phone',
     contactLinkedIn: 'LinkedIn Profile',
     sendMessage: 'Send Email',
     openWhatsApp: 'Open WhatsApp',
@@ -448,3 +451,5 @@ export const translations: Translations = {
   },
 };
 
+
+    
