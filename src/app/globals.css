@@ -243,16 +243,16 @@ body {
 .textarea-placeholder-visible::placeholder {
   opacity: 1;
   transition: opacity 0.8s ease-in-out; /* Smoother transition */
-  color: hsl(var(--muted-foreground) / 0.7); /* Slightly less prominent */
+  color: hsl(var(--muted-foreground)); /* Use full muted-foreground color */
 }
 
 .textarea-placeholder-hidden::placeholder {
   opacity: 0;
   transition: opacity 0.8s ease-in-out; /* Smoother transition */
-  color: hsl(var(--muted-foreground) / 0.7); /* Match for smooth transition */
+  color: hsl(var(--muted-foreground)); /* Match for smooth transition */
 }
 
 .dark .textarea-placeholder-visible::placeholder,
 .dark .textarea-placeholder-hidden::placeholder {
-  color: hsl(var(--muted-foreground) / 0.6); /* Adjust for dark mode if needed */
+  color: hsl(var(--muted-foreground)); /* Use full muted-foreground color in dark mode too */
 }
