@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -14,6 +14,7 @@ import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { Loader2, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
+import { cn } from '@/lib/utils';
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -23,18 +24,19 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const CurvedArrowCoffee: React.FC = () => (
-  <svg width="80" height="120" viewBox="0 0 80 120" fill="none" xmlns="http://www.w3.org/2000/svg" className="absolute -left-12 md:-left-20 top-1/2 transform -translate-y-1/2 text-primary opacity-70">
-    <path d="M75 5C75 5 45.2785 5.79631 30.9732 30.0262C16.6679 54.2561 29.4891 75.0001 29.4891 75.0001C29.4891 75.0001 42.3104 94.4947 29.4891 115" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-    <path d="M34.3848 119.895L29.4892 115L24.5937 119.895" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"/>
-  </svg>
-);
-
+const placeholderKeys: (keyof typeof import('@/lib/translations').translations.en)[] = [
+  'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
+  'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
+];
 
 const ProjectInquirySection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
+
+  const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
+  const [animatedPlaceholder, setAnimatedPlaceholder] = useState("");
+  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(true);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -44,6 +46,32 @@ const ProjectInquirySection: React.FC = () => {
       question: "",
     },
   });
+
+  useEffect(() => {
+    setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
+    setIsPlaceholderVisible(true); // Ensure initially visible
+
+    const intervalId = setInterval(() => {
+      setIsPlaceholderVisible(false); // Start fade out
+
+      setTimeout(() => {
+        setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
+      }, 500); // Wait for fade out to complete
+    }, 4000); // Time placeholder is fully visible + fade out time
+
+    return () => clearInterval(intervalId);
+  }, [t, language, currentPlaceholderIndex]);
+
+  useEffect(() => {
+    // This effect runs when currentPlaceholderIndex changes, to set the new text and fade it in
+    if (!isPlaceholderVisible) { // Only when it's time to show new text after fade out
+        setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
+        setTimeout(() => {
+            setIsPlaceholderVisible(true); // Start fade in
+        }, 50); // Short delay to ensure text is updated before fade-in starts
+    }
+  }, [currentPlaceholderIndex, t, isPlaceholderVisible]);
+
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
@@ -63,7 +91,7 @@ const ProjectInquirySection: React.FC = () => {
           title: t('contactFormSuccessTitle'),
           description: `${result.message || t('contactFormSuccessMessage')} ${t('contactFormResponseTime')}`,
           variant: 'default',
-          duration: 7000, 
+          duration: 7000,
         });
         form.reset();
       } else {
@@ -97,15 +125,9 @@ const ProjectInquirySection: React.FC = () => {
           </p>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative"> {/* Added relative for arrow positioning */}
-          <div className="max-w-2xl mx-auto relative"> {/* Inner relative for more precise control if needed */}
-            {/* Coffee Invitation - positioned to the left of the card */}
-            <div className="hidden md:block absolute -left-40 top-1/2 transform -translate-y-1/2 w-32 text-center z-10">
-              <CurvedArrowCoffee />
-              <p className="text-sm text-primary/90 mt-20">{t('inquiryCoffeePrompt')}</p>
-            </div>
-
-            <Card className="shadow-xl bg-card border-primary/20 relative z-0"> {/* z-0 to be behind arrow if it overlaps */}
+        <AnimatedSection delay="delay-200" className="relative">
+          <div className="max-w-2xl mx-auto relative">
+            <Card className="shadow-xl bg-card border-primary/20 relative z-0">
               <CardContent className="p-6 md:p-8">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -155,8 +177,11 @@ const ProjectInquirySection: React.FC = () => {
                           <FormLabel className="text-lg text-primary">{t('questionLabel')}</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder={t('questionPlaceholder')}
-                              className="min-h-[150px] resize-y focus:ring-accent focus:border-accent"
+                              placeholder={animatedPlaceholder}
+                              className={cn(
+                                "min-h-[150px] resize-y focus:ring-accent focus:border-accent",
+                                isPlaceholderVisible ? 'textarea-placeholder-visible' : 'textarea-placeholder-hidden'
+                              )}
                               {...field}
                               aria-label={t('questionLabel')}
                             />

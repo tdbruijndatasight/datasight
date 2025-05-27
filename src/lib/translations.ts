@@ -50,19 +50,32 @@ export interface TranslationContent {
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string;
-  inquiryCoffeePrompt: string; // New key for coffee invitation
+  // inquiryCoffeePrompt: string; // Removed
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
   phonePlaceholder: string;
   questionLabel: string;
-  questionPlaceholder: string;
+  questionPlaceholder: string; // Original static placeholder, can be kept as fallback or removed if not needed
   submitInquiryButton: string;
   submitInquiryLoading: string;
   contactFormResponseTime: string;
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
+
+  // Animated Placeholders for Inquiry Textarea
+  inquiryPlaceholder1: string;
+  inquiryPlaceholder2: string;
+  inquiryPlaceholder3: string;
+  inquiryPlaceholder4: string;
+  inquiryPlaceholder5: string;
+  inquiryPlaceholder6: string;
+  inquiryPlaceholder7: string;
+  inquiryPlaceholder8: string;
+  inquiryPlaceholder9: string;
+  inquiryPlaceholder10: string;
+
 
   // Contact Section
   contactTitle: string;
@@ -180,19 +193,30 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
-    inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕',
+    // inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕', // Removed
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
     phonePlaceholder: 'Bijv. +31 6 12345678',
     questionLabel: 'Uw vraag of projectbeschrijving',
-    questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...',
+    questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...', // Fallback
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
     contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
+
+    inquiryPlaceholder1: "Heeft u een data-uitdaging? Laten we praten...",
+    inquiryPlaceholder2: "Hulp nodig met Splunk of Cribl?",
+    inquiryPlaceholder3: "Nieuwsgierig naar datastrategie? Vraag maar raak...",
+    inquiryPlaceholder4: "Laten we een snelle 30-min Teams-call plannen...",
+    inquiryPlaceholder5: "Ook voor een virtuele koffie en een praatje over data...",
+    inquiryPlaceholder6: "Denkt u aan een AI-oplossing voor uw data?",
+    inquiryPlaceholder7: "Hoe kan ik helpen uw data pipelines te optimaliseren?",
+    inquiryPlaceholder8: "Beschrijf hier uw projectidee...",
+    inquiryPlaceholder9: "Vastgelopen op een complex dataprobleem?",
+    inquiryPlaceholder10: "Wilt u de mogelijkheden verkennen? Neem contact op!",
 
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
@@ -272,7 +296,7 @@ export const translations: Translations = {
     homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
-    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an independent consultant (ZZP) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
+    homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an independent consultant (freelancer) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
     homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated professional and independent consultant, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
     homeCTA: 'Get in Touch',
 
@@ -300,19 +324,31 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
-    inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕',
+    // inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕', // Removed
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
     phonePlaceholder: 'E.g., +44 7123 456789',
     questionLabel: 'Your Question or Project Description',
-    questionPlaceholder: 'Describe your data challenge, project idea, or question here...',
+    questionPlaceholder: 'Describe your data challenge, project idea, or question here...', // Fallback
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
     contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
+
+    inquiryPlaceholder1: "Have a data challenge? Let's talk...",
+    inquiryPlaceholder2: "Need help with Splunk or Cribl?",
+    inquiryPlaceholder3: "Curious about data strategy? Ask me anything...",
+    inquiryPlaceholder4: "Let's schedule a quick 30-min Teams call to discuss...",
+    inquiryPlaceholder5: "Even for a virtual coffee and a chat about data...",
+    inquiryPlaceholder6: "Thinking about an AI solution for your data?",
+    inquiryPlaceholder7: "How can I help optimize your data pipelines?",
+    inquiryPlaceholder8: "Describe your project idea here...",
+    inquiryPlaceholder9: "Stuck on a complex data problem?",
+    inquiryPlaceholder10: "Just want to explore possibilities? Reach out!",
+
 
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',

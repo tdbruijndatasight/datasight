@@ -238,3 +238,21 @@ body {
 .subtitle-highlight-animate {
   animation: subtitleHighlight 0.6s ease-in-out;
 }
+
+/* Textarea placeholder animation */
+.textarea-placeholder-visible::placeholder {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+  color: hsl(var(--muted-foreground) / 0.7); /* Slightly less prominent */
+}
+
+.textarea-placeholder-hidden::placeholder {
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out;
+  color: hsl(var(--muted-foreground) / 0.7); /* Match for smooth transition */
+}
+
+.dark .textarea-placeholder-visible::placeholder,
+.dark .textarea-placeholder-hidden::placeholder {
+  color: hsl(var(--muted-foreground) / 0.6); /* Adjust for dark mode if needed */
+}
