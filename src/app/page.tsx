@@ -3,8 +3,7 @@ import Header from '@/components/layout/header';
 import HomeSection from '@/components/sections/home-section';
 import CustomersSection from '@/components/sections/customers-section';
 import ServicesSection from '@/components/sections/services-section';
-// import SplQueryHelperSection from '@/components/sections/spl-query-helper-section'; // Removed
-import PublicationsSection from '@/components/sections/publications-section';
+// import PublicationsSection from '@/components/sections/publications-section'; // Hidden
 import ProjectInquirySection from '@/components/sections/project-inquiry-section';
 import ContactSection from '@/components/sections/contact-section';
 
@@ -16,8 +15,7 @@ export default function HomePage() {
         <HomeSection />
         <CustomersSection />
         <ServicesSection />
-        {/* <SplQueryHelperSection /> */} {/* Removed */}
-        <PublicationsSection />
+        {/* <PublicationsSection /> */} {/* Hidden */}
         <ProjectInquirySection />
         <ContactSection />
       </main>

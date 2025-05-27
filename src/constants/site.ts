@@ -3,12 +3,13 @@ import type { Locale, TranslationContent } from '@/lib/translations';
 import type { StaticImageData } from 'next/image';
 
 // Import logos from src/logos
-import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Assuming this file exists
+// import gemeenteDenHaagLogo from '@/logos/gemeente-den-haag.svg'; // Temporarily commented out
 import icsLogo from '@/logos/ics.svg'; // Assuming this file exists
 import rabobankLogo from '@/logos/rabobank.svg';
 import schipholLogo from '@/logos/schiphol.svg';
-import ikeaLogo from '@/logos/ikea.svg'; // Assuming this file exists
+// import ikeaLogo from '@/logos/ikea.svg'; // Temporarily commented out
 import uwvLogo from '@/logos/uwv.svg';
+
 
 export interface NavItem {
   labelKey: keyof TranslationContent;
@@ -28,7 +29,7 @@ export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
   { labelKey: 'navCustomers', href: '/#customers', id: 'customers' },
   { labelKey: 'navServices', href: '/#services', id: 'services' },
-  { labelKey: 'navPublications', href: '/#publications', id: 'publications' },
+  // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
   { labelKey: 'navContact', href: '/#contact', id: 'contact' },
 ];
@@ -41,13 +42,16 @@ export const SITE_CONFIG = {
   companyLogos: [
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
-    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 },
-    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 },
+    // { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 }, // Temporarily using placeholder if ikeaLogo is commented
+    { name: 'IKEA', src: 'https://placehold.co/140x55.png', dataAiHint: 'IKEA logo', width: 140, height: 55 }, // Placeholder
+    // { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 }, // Temporarily using placeholder if icsLogo is commented
+    { name: 'ICS Cards', src: 'https://placehold.co/140x55.png', dataAiHint: 'ICS logo', width: 140, height: 55 }, // Placeholder
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
-    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 },
+    // { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 }, // Temporarily using placeholder if gemeenteDenHaagLogo is commented
+    { name: 'Gemeente Den Haag',  src: 'https://placehold.co/140x55.png', dataAiHint: 'Den Haag logo', width: 140, height: 55 }, // Placeholder
   ] as CompanyLogo[],
-  footerLogos: [ // This seems unused, but keeping structure if needed later
-    { name: 'Gemeente Den Haag', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
+  footerLogos: [ 
+    { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo' },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo' },
   ]
 };
@@ -60,12 +64,14 @@ export const SERVICE_ITEMS = [
   { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
 
-export const PUBLICATION_ITEMS = [
-  {
-    titleKey: 'publication1Title',
-    descriptionKey: 'publication1Description',
-    link: '#', // Consider updating this link if it's a real publication
-    imageSrc: 'https://placehold.co/600x400.png',
-    dataAiHint: 'data report'
-  }
-];
+// Hidden Publications
+// export const PUBLICATION_ITEMS = [
+//   {
+//     titleKey: 'publication1Title',
+//     descriptionKey: 'publication1Description',
+//     link: '#', 
+//     imageSrc: 'https://placehold.co/600x400.png',
+//     dataAiHint: 'data report'
+//   }
+// ];
+export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden

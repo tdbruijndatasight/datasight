@@ -7,7 +7,7 @@ export interface TranslationContent {
   navAbout: string;
   navCustomers: string;
   navServices: string;
-  navPublications: string;
+  // navPublications: string; // Hidden
   navProjectInquiry: string;
   navContact: string;
   languageToggle: string;
@@ -40,16 +40,17 @@ export interface TranslationContent {
   service5Title: string;
   service5Description: string;
 
-  // Publications Section
-  publicationsTitle: string;
-  publicationsSubtitle: string;
-  publication1Title: string;
-  publication1Description: string;
-  viewPublication: string;
+  // Publications Section (Hidden)
+  // publicationsTitle: string;
+  // publicationsSubtitle: string;
+  // publication1Title: string;
+  // publication1Description: string;
+  // viewPublication: string;
 
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string;
+  inquiryCoffeePrompt: string; // New key for coffee invitation
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -141,7 +142,7 @@ export const translations: Translations = {
     navAbout: 'Over Mij',
     navCustomers: 'Klanten',
     navServices: 'Diensten',
-    navPublications: 'Publicaties',
+    // navPublications: 'Publicaties', // Hidden
     navProjectInquiry: 'Contactformulier',
     navContact: 'Contact',
     languageToggle: 'Switch to English',
@@ -152,7 +153,7 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Over Mij',
     homeAboutMeP1: 'Met meer dan 10 jaar ervaring in de IT-sector, specialiseer ik mij als onafhankelijk consultant (ZZP) in het transformeren van complexe data in bruikbare inzichten. Ik help organisaties de kracht van Splunk en Cribl te benutten om operationele efficiëntie te verbeteren en datagedreven beslissingen te nemen.',
-    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Als toegewijd professional blijf ik continu leren en pas ik de nieuwste technologieën toe om innovatieve oplossingen te bieden.',
+    homeAboutMeP2: 'Mijn passie ligt in het oplossen van uitdagende dataproblemen en het leveren van meetbare resultaten voor mijn klanten. Als toegewijd professional en onafhankelijke consultant blijf ik continu leren en pas ik de nieuwste technologieën toe om innovatieve oplossingen te bieden.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -171,14 +172,15 @@ export const translations: Translations = {
     service5Title: 'Trainingen & Workshops',
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
 
-    publicationsTitle: 'Publicaties & Inzichten',
-    publicationsSubtitle: 'Artikelen, whitepapers en presentaties over data, analytics en technologie.',
-    publication1Title: 'De Toekomst van Data Observability met Cribl',
-    publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)',
-    viewPublication: 'Bekijk Publicatie',
+    // publicationsTitle: 'Publicaties & Inzichten', // Hidden
+    // publicationsSubtitle: 'Artikelen, whitepapers en presentaties over data, analytics en technologie.', // Hidden
+    // publication1Title: 'De Toekomst van Data Observability met Cribl', // Hidden
+    // publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)', // Hidden
+    // viewPublication: 'Bekijk Publicatie', // Hidden
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
+    inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
@@ -189,7 +191,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt spoedig een bevestigingsmail.', // API response has more details
+    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
     contactTitle: 'Neem Contact Op',
@@ -212,55 +214,55 @@ export const translations: Translations = {
     // Privacy Policy Page - NL
     privacyPageTitle: 'Privacybeleid voor DataSight Portfolio',
     privacyLastUpdated: 'Laatst bijgewerkt: 1 april 2024',
-    privacyIntro: 'DataSight Portfolio ("wij", "ons", of "onze"), beheerd door Tom de Bruijn, hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight Portfolio (de "Site") gebruikt en de diensten die wij aanbieden.',
+    privacyIntro: 'DataSight Portfolio ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight Portfolio (de "Site") gebruikt en de diensten die wij aanbieden.',
     privacyInfoCollectTitle: 'Informatie die Wij Verzamelen',
-    privacyInfoCollectGenUsage: 'Algemene Gebruiksgegevens: Wanneer u de Site bezoekt, kunnen we automatisch bepaalde informatie over uw apparaat verzamelen, inclusief informatie over uw webbrowser, IP-adres, tijdzone en enkele van de cookies die op uw apparaat zijn geïnstalleerd. Daarnaast verzamelen we, terwijl u door de Site browst, informatie over de individuele webpagina\'s of producten die u bekijkt, welke websites of zoektermen u naar de Site hebben verwezen, en informatie over hoe u met de Site omgaat. We verwijzen naar deze automatisch verzamelde informatie als "Apparaatinformatie". Apparaatinformatie wordt voornamelijk verzameld met behulp van cookies. Deze gegevens helpen ons onze website en diensten te verbeteren. Deze gegevens identificeren u niet persoonlijk.',
-    privacyInfoCollectContact: 'Contactinformatie: Als u contact met ons opneemt via ons aanvraagformulier of direct, verzamelen wij de informatie die u verstrekt, zoals uw naam, e-mailadres, telefoonnummer (optioneel) en uw bericht, om op uw vragen te reageren.',
+    privacyInfoCollectGenUsage: 'Algemene Gebruiksgegevens: Informatie zoals uw IP-adres en browsegedrag kan anoniem worden verzameld om onze website te verbeteren. Dit identificeert u niet persoonlijk.',
+    privacyInfoCollectContact: 'Contactinformatie: Als u ons contactformulier gebruikt, verzamelen wij uw naam, e-mail, optioneel telefoonnummer en bericht om te kunnen reageren.',
     privacyHowWeUseTitle: 'Hoe Wij Uw Informatie Gebruiken',
-    privacyHowWeUseRespond: 'Om op uw aanvragen te reageren en de gevraagde diensten te leveren.',
-    privacyHowWeUseImprove: 'Om onze website te verbeteren en af te stemmen op de behoeften van gebruikers, en voor interne analyses.',
-    privacyHowWeUseCookies: 'Cookies worden gebruikt voor websitefunctionaliteit en om uw voorkeuren te onthouden (zoals taalinstellingen). U kunt cookies uitschakelen in uw browserinstellingen, hoewel dit uw website-ervaring kan beïnvloeden.',
+    privacyHowWeUseRespond: 'Om op uw aanvragen te reageren.',
+    privacyHowWeUseImprove: 'Voor websiteverbetering en analyse.',
+    privacyHowWeUseCookies: 'Cookies worden gebruikt voor basis websitefunctionaliteit en voorkeuren. U kunt cookies beheren via uw browserinstellingen.',
     privacyInfoSharingTitle: 'Informatie Delen',
-    privacyInfoSharingNoSell: 'Wij verkopen, verhandelen of verhuren uw persoonlijke identificeerbare informatie niet aan derden.',
-    privacyInfoSharingGov: 'Wij kunnen uw informatie delen met overheids- of regelgevende instanties indien wettelijk verplicht als onderdeel van een onderzoek, of om onze rechten te beschermen.',
+    privacyInfoSharingNoSell: 'Wij verkopen uw persoonlijke gegevens niet.',
+    privacyInfoSharingGov: 'Informatie kan worden gedeeld met autoriteiten indien wettelijk verplicht.',
     privacyThirdPartyLinksTitle: 'Links naar Derden',
-    privacyThirdPartyLinksP1: 'Onze website kan links naar andere websites bevatten. Wij zijn niet verantwoordelijk voor de privacypraktijken van deze externe sites. Wij moedigen u aan hun privacybeleid te lezen.',
+    privacyThirdPartyLinksP1: 'Onze site kan links naar andere websites bevatten. Wij zijn niet verantwoordelijk voor hun privacybeleid.',
     privacySecurityTitle: 'Beveiliging',
-    privacySecurityP1: 'Wij nemen redelijke administratieve, technische en fysieke veiligheidsmaatregelen om uw persoonlijke informatie te beschermen tegen verlies, diefstal en misbruik, evenals ongeautoriseerde toegang, openbaarmaking, wijziging en vernietiging. Geen enkele internettransmissie is echter volledig veilig of foutloos.',
+    privacySecurityP1: 'Wij nemen redelijke maatregelen om uw gegevens te beschermen, maar geen enkele online transmissie is 100% veilig.',
     privacyChangesPolicyTitle: 'Wijzigingen in dit Beleid',
-    privacyChangesPolicyP1: 'Wij kunnen dit Privacybeleid van tijd tot tijd bijwerken. Eventuele wijzigingen worden op deze pagina geplaatst met een bijgewerkte "Laatst bijgewerkt" datum. Wij moedigen u aan om dit Privacybeleid periodiek te herzien.',
+    privacyChangesPolicyP1: 'Dit beleid kan wijzigen. Wijzigingen worden op deze pagina gepubliceerd.',
     privacyContactUsTitle: 'Neem Contact Met Ons Op',
-    privacyContactUsP1Prefix: 'Als u vragen heeft over dit Privacybeleid, neem dan contact met ons op via: ',
+    privacyContactUsP1Prefix: 'Vragen over dit beleid? Mail ons op: ',
     privacyGoverningLawTitle: 'Toepasselijk Recht',
-    privacyGoverningLawP1: 'Dit Privacybeleid wordt beheerst door en geïnterpreteerd in overeenstemming met de wetten van Nederland. Eventuele geschillen die voortvloeien uit of verband houden met dit beleid zullen worden voorgelegd aan de exclusieve jurisdictie van de bevoegde rechtbank in Den Haag.',
+    privacyGoverningLawP1: 'Nederlands recht is van toepassing. Geschillen worden voorgelegd aan de bevoegde rechtbank in Den Haag.',
 
     // Disclaimer Page - NL
     disclaimerPageTitle: 'Disclaimer voor DataSight Portfolio',
     disclaimerValidFrom: 'Geldig vanaf: 1 april 2024',
-    disclaimerIntroP1: 'De informatie verstrekt door DataSight Portfolio ("wij," "ons," of "onze") op deze website (DataSight Portfolio) is uitsluitend bedoeld voor algemene informatieve doeleinden. Alle informatie op de site wordt te goeder trouw verstrekt, echter geven wij geen enkele verklaring of garantie van welke aard dan ook, expliciet of impliciet, met betrekking tot de nauwkeurigheid, toereikendheid, geldigheid, betrouwbaarheid, beschikbaarheid of volledigheid van enige informatie op de site.',
+    disclaimerIntroP1: 'De informatie op de website van DataSight Portfolio (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
     disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
-    disclaimerAccuracyP1: 'Wij doen er alles aan om ervoor te zorgen dat de informatie op onze website accuraat en actueel is. We kunnen echter niet garanderen dat alle informatie volledig vrij is van fouten of omissies. Wij aanvaarden geen aansprakelijkheid voor eventuele fouten of omissies in de inhoud van de site. Wij behouden ons het recht voor om de inhoud van deze website op elk moment zonder kennisgeving te wijzigen.',
+    disclaimerAccuracyP1: 'Wij doen ons best om de informatie actueel en correct te houden, maar fouten zijn mogelijk. Wij zijn niet aansprakelijk voor onjuistheden.',
     disclaimerWebsiteAvailabilityTitle: 'Website Beschikbaarheid',
-    disclaimerWebsiteAvailabilityP1: 'DataSight Portfolio garandeert niet dat de website ononderbroken zal werken of vrij zal zijn van fouten of virussen. Wij zijn niet aansprakelijk voor enige schade die voortvloeit uit:',
-    disclaimerWebsiteAvailabilityL1: 'Onnauwkeurigheden of omissies in de verstrekte informatie.',
-    disclaimerWebsiteAvailabilityL2: 'Problemen veroorzaakt door of inherent aan de verspreiding van informatie via internet (bijv. storingen, onderbrekingen, fouten of vertragingen in de levering van informatie).',
+    disclaimerWebsiteAvailabilityP1: 'Wij garanderen geen foutloze of ononderbroken werking van de website.',
+    disclaimerWebsiteAvailabilityL1: 'Schade door onjuistheden of weglatingen.',
+    disclaimerWebsiteAvailabilityL2: 'Problemen door internetdistributie (storingen, vertragingen).',
     disclaimerExternalLinksTitle: 'Externe Links',
-    disclaimerExternalLinksP1: 'Deze website kan links naar websites van derden bevatten, of u kunt via links van websites van derden naar onze site worden geleid. Wij zijn niet verantwoordelijk voor de inhoud of nauwkeurigheid van deze externe sites en onderschrijven niet noodzakelijkerwijs de daarin geuite meningen. Wij kunnen niet garanderen dat deze hyperlinks altijd correct of actief zullen zijn. Het opnemen van links impliceert geen aanbeveling of goedkeuring van de sites.',
+    disclaimerExternalLinksP1: 'Links naar websites van derden vallen buiten onze verantwoordelijkheid. Wij onderschrijven niet noodzakelijkerwijs de inhoud van gelinkte sites.',
     disclaimerElectronicCommTitle: 'Elektronische Communicatie',
-    disclaimerElectronicCommP1: 'Wij garanderen niet dat e-mails of andere elektronische berichten die naar ons worden verzonden, tijdig worden ontvangen of verwerkt. Wij aanvaarden geen aansprakelijkheid voor gevolgen van het niet of vertraagd ontvangen of verwerken van dergelijke communicatie.',
+    disclaimerElectronicCommP1: 'Wij garanderen niet dat e-mails tijdig worden ontvangen of verwerkt en aanvaarden geen aansprakelijkheid voor de gevolgen hiervan.',
     disclaimerNoProAdviceTitle: 'Geen Professioneel Advies',
-    disclaimerNoProAdviceP1: 'De informatie op deze website is niet bedoeld als professioneel advies (bijv. financieel, juridisch of anderszins). Het is bedoeld voor algemene informatiedoeleinden. U dient een gekwalificeerde professional te raadplegen voordat u beslissingen neemt op basis van de inhoud van deze site. Het vertrouwen op enige informatie die op deze site wordt verstrekt, is uitsluitend op eigen risico.',
+    disclaimerNoProAdviceP1: 'De informatie op deze site is geen professioneel advies. Raadpleeg een deskundige voor specifieke situaties. Gebruik van de informatie is op eigen risico.',
     disclaimerLimitationLiabilityTitle: 'Beperking van Aansprakelijkheid',
-    disclaimerLimitationLiabilityP1: 'Voor zover toegestaan door de toepasselijke wetgeving, is DataSight Portfolio, Tom de Bruijn, niet aansprakelijk voor enige directe, indirecte, incidentele, speciale, gevolg- of punitieve schade, of enig verlies van winst of inkomsten, direct of indirect opgelopen, of enig verlies van gegevens, gebruik, goodwill of andere immateriële verliezen, als gevolg van (i) uw toegang tot of gebruik van of onvermogen tot toegang tot of gebruik van de website; (ii) enig gedrag of inhoud van een derde partij op de website.',
+    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
     disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
-    disclaimerChangesDisclaimerP1: 'Wij behouden ons het recht voor om deze disclaimer op elk moment te wijzigen. Wijzigingen worden onmiddellijk van kracht na plaatsing op de website. Uw voortgezet gebruik van de site na dergelijke wijzigingen houdt in dat u akkoord gaat met de gewijzigde disclaimer.',
+    disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
   },
   en: {
     navHome: 'Home',
     navAbout: 'About Me',
     navCustomers: 'Customers',
     navServices: 'Services',
-    navPublications: 'Publications',
+    // navPublications: 'Publications', // Hidden
     navProjectInquiry: 'Contact Form',
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
@@ -271,7 +273,7 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'About Me',
     homeAboutMeP1: 'With over 10 years of experience in the IT sector, I specialize as an independent consultant (ZZP) in transforming complex data into actionable insights. I help organizations leverage the power of Splunk and Cribl to improve operational efficiency and make data-driven decisions.',
-    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated professional, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
+    homeAboutMeP2: 'My passion lies in solving challenging data problems and delivering measurable results for my clients. As a dedicated professional and independent consultant, I am committed to continuous learning and applying the latest technologies to provide innovative solutions.',
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -290,14 +292,15 @@ export const translations: Translations = {
     service5Title: 'Trainings & Workshops',
     service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
 
-    publicationsTitle: 'Publications & Insights',
-    publicationsSubtitle: 'Articles, whitepapers, and presentations on data, analytics, and technology.',
-    publication1Title: 'The Future of Data Observability with Cribl',
-    publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)',
-    viewPublication: 'View Publication',
+    // publicationsTitle: 'Publications & Insights', // Hidden
+    // publicationsSubtitle: 'Articles, whitepapers, and presentations on data, analytics, and technology.', // Hidden
+    // publication1Title: 'The Future of Data Observability with Cribl', // Hidden
+    // publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)', // Hidden
+    // viewPublication: 'View Publication', // Hidden
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
+    inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -308,7 +311,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email shortly.', // API response has more details
+    contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
     contactTitle: 'Get in Touch',
@@ -331,48 +334,47 @@ export const translations: Translations = {
     // Privacy Policy Page - EN
     privacyPageTitle: 'Privacy Policy for DataSight Portfolio',
     privacyLastUpdated: 'Last Updated: April 1, 2024',
-    privacyIntro: 'DataSight Portfolio ("we", "us", or "our"), operated by Tom de Bruijn, values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight Portfolio (the "Site"), and the services we offer.',
+    privacyIntro: 'DataSight Portfolio ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight Portfolio (the "Site"), and the services we offer.',
     privacyInfoCollectTitle: 'Information We Collect',
-    privacyInfoCollectGenUsage: 'General Usage Data: When you visit the Site, we may automatically collect certain information about your device, including information about your web browser, IP address, time zone, and some of the cookies that are installed on your device. Additionally, as you browse the Site, we collect information about the individual web pages or products that you view, what websites or search terms referred you to the Site, and information about how you interact with the Site. We refer to this automatically-collected information as "Device Information". Device Information is primarily collected using cookies. This data helps us improve our website and services. This data does not personally identify you.',
-    privacyInfoCollectContact: 'Contact Information: If you contact us via our inquiry form or directly, we will collect the information you provide, such as your name, email address, phone number (optional), and your message, in order to respond to your queries.',
+    privacyInfoCollectGenUsage: 'General Usage Data: Information like your IP address and browsing behavior may be collected anonymously to improve our website. This does not personally identify you.',
+    privacyInfoCollectContact: 'Contact Information: If you use our contact form, we collect your name, email, optional phone number, and message to respond.',
     privacyHowWeUseTitle: 'How We Use Your Information',
-    privacyHowWeUseRespond: 'To respond to your inquiries and provide the services you request.',
-    privacyHowWeUseImprove: 'To improve our website and tailor it to user needs, and for internal analytics.',
-    privacyHowWeUseCookies: 'Cookies are used for website functionality and to remember your preferences (such as language settings). You can disable cookies in your browser settings, though this may affect your website experience.',
+    privacyHowWeUseRespond: 'To respond to your inquiries.',
+    privacyHowWeUseImprove: 'For website improvement and analytics.',
+    privacyHowWeUseCookies: 'Cookies are used for basic website functionality and preferences. You can manage cookies through your browser settings.',
     privacyInfoSharingTitle: 'Information Sharing',
-    privacyInfoSharingNoSell: 'We do not sell, trade, or otherwise rent your personally identifiable information to third parties.',
-    privacyInfoSharingGov: 'We may share your information with government or regulatory bodies if legally required to do so as part of an investigation, or to protect our rights.',
+    privacyInfoSharingNoSell: 'We do not sell your personal data.',
+    privacyInfoSharingGov: 'Information may be shared with authorities if legally required.',
     privacyThirdPartyLinksTitle: 'Third-Party Links',
-    privacyThirdPartyLinksP1: 'Our website may contain links to other websites. We are not responsible for the privacy practices of these third-party sites. We encourage you to read their privacy policies.',
+    privacyThirdPartyLinksP1: 'Our site may link to other websites. We are not responsible for their privacy practices.',
     privacySecurityTitle: 'Security',
-    privacySecurityP1: 'We take reasonable administrative, technical, and physical security measures to protect your personal information from loss, theft, and misuse, as well as unauthorized access, disclosure, alteration, and destruction. However, no internet transmission is completely secure or error-free.',
+    privacySecurityP1: 'We take reasonable measures to protect your data, but no online transmission is 100% secure.',
     privacyChangesPolicyTitle: 'Changes to This Policy',
-    privacyChangesPolicyP1: 'We may update this Privacy Policy from time to time. Any changes will be posted on this page with an updated "Last Updated" date. We encourage you to review this Privacy Policy periodically.',
+    privacyChangesPolicyP1: 'This policy may change. Updates will be posted on this page.',
     privacyContactUsTitle: 'Contact Us',
-    privacyContactUsP1Prefix: 'If you have any questions about this Privacy Policy, please contact us at: ',
+    privacyContactUsP1Prefix: 'Questions about this policy? Email us at: ',
     privacyGoverningLawTitle: 'Governing Law',
-    privacyGoverningLawP1: 'This Privacy Policy is governed by and construed in accordance with the laws of the Netherlands. Any disputes arising out of or relating to this policy shall be submitted to the exclusive jurisdiction of the competent court in The Hague.',
+    privacyGoverningLawP1: 'Dutch law applies. Disputes will be submitted to the competent court in The Hague.',
 
     // Disclaimer Page - EN
     disclaimerPageTitle: 'Disclaimer for DataSight Portfolio',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
-    disclaimerIntroP1: 'The information provided by DataSight Portfolio ("we," "us," or "our") on this website (DataSight Portfolio) is for general informational purposes only. All information on the Site is provided in good faith, however, we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the Site.',
+    disclaimerIntroP1: 'The information on the DataSight Portfolio website (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
     disclaimerAccuracyTitle: 'Accuracy of Information',
-    disclaimerAccuracyP1: 'We make every effort to ensure the information on our website is accurate and up-to-date. However, we cannot guarantee that all information is completely free of errors or omissions. We accept no liability for any errors or omissions in the content of the Site. We reserve the right to change the content on this website at any time without notice.',
+    disclaimerAccuracyP1: 'We do our best to keep information current and correct, but errors are possible. We are not liable for inaccuracies.',
     disclaimerWebsiteAvailabilityTitle: 'Website Availability',
-    disclaimerWebsiteAvailabilityP1: 'DataSight Portfolio does not guarantee that the website will operate without interruption or be error-free or virus-free. We are not liable for any damages arising from:',
-    disclaimerWebsiteAvailabilityL1: 'Inaccuracies or omissions in the information provided.',
-    disclaimerWebsiteAvailabilityL2: 'Problems caused by or inherent to the distribution of information via the internet (e.g., breakdowns, interruptions, errors, or delays in the provision of information).',
+    disclaimerWebsiteAvailabilityP1: 'We do not guarantee error-free or uninterrupted operation of the website.',
+    disclaimerWebsiteAvailabilityL1: 'Damages from inaccuracies or omissions.',
+    disclaimerWebsiteAvailabilityL2: 'Problems due to internet distribution (failures, delays).',
     disclaimerExternalLinksTitle: 'External Links',
-    disclaimerExternalLinksP1: 'This website may contain links to third-party websites, or you may be C-hannel to our Site from links on third-party websites. We are not responsible for the content or accuracy of these external sites and do not necessarily endorse the views expressed within them. We cannot guarantee that these hyperlinks will always be correct or active. The inclusion of any links does not necessarily imply a recommendation or endorse the sites.',
+    disclaimerExternalLinksP1: 'Links to third-party websites are outside our responsibility. We do not necessarily endorse the content of linked sites.',
     disclaimerElectronicCommTitle: 'Electronic Communication',
-    disclaimerElectronicCommP1: 'We do not guarantee that emails or other electronic messages sent to us will be received or processed in a timely manner. We accept no liability for any consequences of not receiving or processing such communications, or for delays in doing so.',
+    disclaimerElectronicCommP1: 'We do not guarantee timely receipt or processing of emails and accept no liability for the consequences thereof.',
     disclaimerNoProAdviceTitle: 'No Professional Advice',
-    disclaimerNoProAdviceP1: 'The information on this website is not intended as professional advice (e.g., financial, legal, or otherwise). It is for general informational purposes only. You should consult with a qualified professional before making any decisions based on the content of this site. Reliance on any information provided by this site is solely at your own risk.',
+    disclaimerNoProAdviceP1: 'The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.',
     disclaimerLimitationLiabilityTitle: 'Limitation of Liability',
-    disclaimerLimitationLiabilityP1: 'To the fullest extent permitted by applicable law, DataSight Portfolio, Tom de Bruijn, shall not be liable for any direct, indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses, resulting from (i) your access to or use of or inability to access or use the website; (ii) any conduct or content of any third party on the website.',
+    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is not liable for any direct or indirect damages arising from the use of this website, except in cases of willful misconduct or gross negligence.',
     disclaimerChangesDisclaimerTitle: 'Changes to This Disclaimer',
-    disclaimerChangesDisclaimerP1: 'We reserve the right to modify this disclaimer at any time. Changes will be effective immediately upon posting on the website. Your continued use of the Site after any such changes shall constitute your agreement to the modified disclaimer.',
+    disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
-
