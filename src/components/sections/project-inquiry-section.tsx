@@ -59,8 +59,8 @@ const ProjectInquirySection: React.FC = () => {
 
       setTimeout(() => {
         setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 1000); // Wait for fade out (1s) to complete before changing text - Updated to 1000ms
-    }, 9000); // Total cycle time: 8s visible + 1s fade out/in - Updated to 9000ms
+      }, 1000); // Wait for fade out (1s) to complete before changing text
+    }, 9000); // Total cycle time: 8s visible + 1s fade out/in
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -118,7 +118,7 @@ const ProjectInquirySection: React.FC = () => {
   };
 
   return (
-    <section id="inquiry" className="bg-secondary section-min-height">
+    <section id="inquiry" className="bg-background section-min-height"> {/* Changed from bg-secondary to bg-background */}
       <div className="container mx-auto">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
