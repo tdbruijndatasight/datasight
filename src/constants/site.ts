@@ -3,12 +3,12 @@ import type { StaticImageData } from 'next/image';
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/images/logos
-import schipholLogo from '@/images/logos/schiphol.svg';
+import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
+import icsLogo from '@/images/logos/ics.svg';
 import rabobankLogo from '@/images/logos/rabobank.svg';
-import ikeaLogo from '@/images/logos/ikea.svg'; // Temporarily commented out
-import icsLogo from '@/images/logos/ics.svg'; // Temporarily commented out
+import schipholLogo from '@/images/logos/schiphol.svg';
+import ikeaLogo from '@/images/logos/ikea.svg';
 import uwvLogo from '@/images/logos/uwv.svg';
-// import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg'; // Temporarily commented out
 
 
 export interface NavItem {
@@ -19,7 +19,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: StaticImageData | string; // Allow string for placeholders
+  src: StaticImageData; 
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -42,17 +42,17 @@ export const SITE_CONFIG = {
   companyLogos: [
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
-    { name: 'IKEA', src: "https://placehold.co/140x55.png", dataAiHint: 'IKEA logo', width: 140, height: 55 },
-    { name: 'ICS Cards', src: "https://placehold.co/140x55.png", dataAiHint: 'ICS logo', width: 140, height: 55 },
+    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 },
+    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
-    { name: 'Gemeente Den Haag',  src: "https://placehold.co/140x55.png", dataAiHint: 'Den Haag logo', width: 140, height: 55 },
+    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 },
   ] as CompanyLogo[],
 };
 
 export interface ServiceItemConstant {
   titleKey: keyof TranslationContent;
-  descriptionKey: keyof TranslationContent;
-  icon: string; // Icon name as string, mapped to component in ServicesSection
+  descriptionKey: keyof TranslationContent; // For the card
+  icon: string; 
 }
 
 export const SERVICE_ITEMS: ServiceItemConstant[] = [

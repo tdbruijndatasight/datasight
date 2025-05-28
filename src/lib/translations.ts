@@ -12,6 +12,7 @@ export interface TranslationContent {
   languageToggle: string;
   themeToggleLight: string;
   themeToggleDark: string;
+  loading: string;
 
   // Home Section
   homeTitle: string;
@@ -20,8 +21,6 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
-  // homeAboutMeP4: string; // Merged into P3
-
   homeCTA: string;
 
   // Customers Section
@@ -35,7 +34,7 @@ export interface TranslationContent {
   servicesSubtitle: string;
 
   service1Title: string;
-  service1Description: string;
+  service1Description: string; // Short desc for card
   service1DetailTitle: string;
   service1DetailDesc: string;
   service1DetailBullet1: string;
@@ -46,7 +45,7 @@ export interface TranslationContent {
   service1DetailCTA: string;
 
   service2Title: string;
-  service2Description: string;
+  service2Description: string; // Short desc for card
   service2DetailTitle: string;
   service2DetailDesc: string;
   service2DetailBullet1: string;
@@ -56,30 +55,8 @@ export interface TranslationContent {
   service2DetailBullet5: string;
   service2DetailCTA: string;
 
-  // service3Title: string; // Removed
-  // service3Description: string; // Removed
-  // service3DetailTitle: string; // Removed
-  // service3DetailDesc: string; // Removed
-  // service3DetailBullet1: string; // Removed
-  // service3DetailBullet2: string; // Removed
-  // service3DetailBullet3: string; // Removed
-  // service3DetailBullet4: string; // Removed
-  // service3DetailBullet5: string; // Removed
-  // service3DetailCTA: string; // Removed
-
-  // service4Title: string; // Removed
-  // service4Description: string; // Removed
-  // service4DetailTitle: string; // Removed
-  // service4DetailDesc: string; // Removed
-  // service4DetailBullet1: string; // Removed
-  // service4DetailBullet2: string; // Removed
-  // service4DetailBullet3: string; // Removed
-  // service4DetailBullet4: string; // Removed
-  // service4DetailBullet5: string; // Removed
-  // service4DetailCTA: string; // Removed
-
   service5Title: string;
-  service5Description: string;
+  service5Description: string; // Short desc for card
   service5DetailTitle: string;
   service5DetailDesc: string;
   service5DetailBullet1: string;
@@ -90,16 +67,9 @@ export interface TranslationContent {
   service5DetailCTA: string;
 
 
-  // Publications Section (Keys commented out as section is hidden)
-  // publicationsTitle: string;
-  // publicationsSubtitle: string;
-  // publication1Title: string;
-  // publication1Description: string;
-  // viewPublication: string;
-
   // Project Inquiry Section
   projectInquiryTitle: string;
-  projectInquirySubtitle: string; // This is now the animated text
+  // projectInquirySubtitle: string; // This is now animated
   questionStaticPlaceholder: string; // For the actual textarea
   emailLabel: string;
   emailPlaceholder: string;
@@ -148,7 +118,6 @@ export interface TranslationContent {
 
 
   // Generic
-  loading: string;
   error: string;
   by: string;
   optionalLabel: string;
@@ -221,6 +190,7 @@ export const translations: Translations = {
     languageToggle: 'Switch to English',
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
+    loading: 'Laden...',
 
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
@@ -228,7 +198,6 @@ export const translations: Translations = {
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
-
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Vertrouwd',
@@ -236,12 +205,11 @@ export const translations: Translations = {
     customersTitlePart3: 'bedrijven zoals',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
-
     servicesTitle: 'Dienstverlening',
     servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
     
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen zoals ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen.', // Shorter card description
     service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw Data Potentieel',
     service1DetailDesc: 'Wij bieden diepgaande Splunk expertise om de volledige waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). Ons doel is om uw Splunk-omgeving niet alleen te laten werken, maar excelleren.',
     service1DetailBullet1: 'Uitgebreide Splunk health checks en performance optimalisatie.',
@@ -252,7 +220,7 @@ export const translations: Translations = {
     service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream, Edge en Search voor maximale efficiëntie en controle.',
+    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream en Edge.', // Shorter card description
     service2DetailTitle: 'Cribl Consultancy: Intelligente Data Pipelines',
     service2DetailDesc: 'Beheers uw datastromen en reduceer kosten met onze Cribl expertise. Wij helpen u bij het ontwerpen, implementeren en optimaliseren van oplossingen met Cribl Stream voor data routing en transformatie, Cribl Edge voor dataverzameling aan de bron, en Cribl Search voor federated querying. Krijg grip op uw data, ongeacht waar het zich bevindt.',
     service2DetailBullet1: 'Architectuur en implementatie van Cribl Stream en Cribl Edge.',
@@ -263,7 +231,7 @@ export const translations: Translations = {
     service2DetailCTA: 'Neem contact op',
 
     service5Title: 'Trainingen & Workshops',
-    service5Description: 'Maatwerk trainingen en workshops voor Splunk & Cribl. Prijzen op aanvraag.',
+    service5Description: 'Maatwerk trainingen voor Splunk & Cribl. Prijzen op aanvraag.', // Shorter card description
     service5DetailTitle: 'Praktijkgerichte Trainingen & Workshops',
     service5DetailDesc: "Versterk uw team met praktische, hands-on trainingen voor Splunk en Cribl, volledig afgestemd op uw behoeften. Onze trainingen zijn ontworpen om direct toepasbare kennis en vaardigheden te leveren. **Prijzen zijn op aanvraag en worden afgestemd op de scope en duur van de training.**",
     service5DetailBullet1: 'Maatwerk curriculum gebaseerd op de specifieke behoeften van uw team.',
@@ -274,7 +242,6 @@ export const translations: Translations = {
     service5DetailCTA: 'Neem contact op',
 
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en wij nemen contact met u op.', // Placeholder, will be replaced by animated text
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -284,27 +251,26 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'Bedankt voor uw bericht.',
+    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
     contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.',
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nWij sturen gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
-    inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nLaten we even bellen.",
-    inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nLaat het ons weten – wij denken graag mee.",
+    inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.",
+    inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nWij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
-    inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nLaten we samen kijken wat er mogelijk is.",
+    inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nWij kijken samen wat er mogelijk is.",
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nWij sturen gerust een berichtje.",
     inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.",
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nWij sturen gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
-    inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in.",
+    inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.",
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
     inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.",
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met je mee naar efficiënte oplossingen.",
-
 
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe wij uw organisatie kunnen helpen met uw data-uitdagingen.',
@@ -320,8 +286,6 @@ export const translations: Translations = {
     copyToClipboardTooltip: "Kopieer naar klembord",
     callDirectlyTooltip: "Direct bellen",
 
-
-    loading: 'Laden...',
     error: 'Fout',
     by: 'door',
     optionalLabel: 'optioneel',
@@ -386,6 +350,7 @@ export const translations: Translations = {
     languageToggle: 'Schakel naar Nederlands',
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
+    loading: 'Loading...',
 
     homeTitle: 'Data > Insight > Value, Simple.',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
@@ -393,7 +358,6 @@ export const translations: Translations = {
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
-
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Trusted',
@@ -405,7 +369,7 @@ export const translations: Translations = {
     servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions like ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions.', // Shorter card description
     service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
     service1DetailDesc: 'We offer in-depth Splunk expertise to extract the full value from your data. From administrative tasks like upgrades and health checks to implementing and optimizing advanced solutions such as Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). Our goal is to make your Splunk environment not just work, but excel.',
     service1DetailBullet1: 'Comprehensive Splunk health checks and performance optimization.',
@@ -416,7 +380,7 @@ export const translations: Translations = {
     service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimize your data pipelines with Cribl Stream, Edge, and Search for maximum efficiency and control.',
+    service2Description: 'Optimize your data pipelines with Cribl Stream and Edge.', // Shorter card description
     service2DetailTitle: 'Cribl Consultancy: Intelligent Data Pipelines',
     service2DetailDesc: 'Master your data flows and reduce costs with our Cribl expertise. We assist in designing, implementing, and optimizing solutions with Cribl Stream for data routing and transformation, Cribl Edge for data collection at the source, and Cribl Search for federated querying. Gain control over your data, wherever it resides.',
     service2DetailBullet1: 'Architecture and implementation of Cribl Stream and Cribl Edge.',
@@ -427,7 +391,7 @@ export const translations: Translations = {
     service2DetailCTA: 'Get in touch',
     
     service5Title: 'Trainings & Workshops',
-    service5Description: 'Customized trainings and workshops for Splunk & Cribl. Pricing on consultation.',
+    service5Description: 'Customized trainings for Splunk & Cribl. Pricing on consultation.', // Shorter card description
     service5DetailTitle: 'Practical Trainings & Workshops',
     service5DetailDesc: "Empower your team with practical, hands-on training for Splunk and Cribl, fully tailored to your needs. Our trainings are designed to deliver immediately applicable knowledge and skills. **Pricing is on consultation and tailored to the scope and duration of the training.**",
     service5DetailBullet1: "Customized curriculum based on your team's specific needs.",
@@ -438,7 +402,6 @@ export const translations: Translations = {
     service5DetailCTA: 'Get in touch',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Do you have a data challenge? Describe your situation, and we will contact you.', // Placeholder, will be replaced by animated text
     questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -448,23 +411,23 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'Thank you for your message.',
+    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
     contactFormResponseTime: 'We typically respond within 5 business days.',
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nWe're happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nWe'll gladly send you a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction.\nEasily schedule 30 minutes in your calendar here 📅.",
-    inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nLet's have a call.",
-    inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nLet us know – we're happy to think along.",
+    inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nWe're happy to call.",
+    inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nWe're happy to think along.",
     inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? 🛠️\nWe also provide hands-on training tailored to your situation.",
     inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊\nWe're happy to help you get started.",
-    inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nLet's explore the possibilities together.",
+    inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nWe'll explore the possibilities together.",
     inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nWe'll gladly send you a message.",
     inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.",
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nWe'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nWe help you make smart choices with Splunk & Cribl.",
-    inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here.",
+    inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.",
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\nOur trainings are hands-on, custom, and without unnecessary theory.",
     inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.",
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? 💰\nWe're happy to look into efficient solutions with you.",
@@ -483,9 +446,7 @@ export const translations: Translations = {
     copyToClipboardTooltip: "Copy to clipboard",
     callDirectlyTooltip: "Call directly",
 
-
-    loading: 'Loading...',
-    error: 'Error',
+    error: 'Fout',
     by: 'by',
     optionalLabel: 'optional',
     closeButton: 'Close',
@@ -548,7 +509,7 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
     const key = `inquiryPlaceholder${i}` as keyof TranslationContent;
     if (!en[key]) {
       // If an English key is missing, try to use the Dutch one or a generic prompt.
-      const nlText = nl[key] || `Tell us about your data challenge... (Placeholder ${i})`;
+      const nlText = nl[key] || `Tell us about your data challenge... (Placeholder ${i})\nWe are happy to help.`;
       // Basic "translation" attempt for pronouns if falling back from Dutch to English for placeholders
       en[key] = nlText.replace(/\bWij\b/g, 'We').replace(/\bwij\b/g, 'we').replace(/\bme\b/g, 'us').replace(/\bje\b/g, 'you').replace(/\bjouw\b/g, 'your');
     }

@@ -119,7 +119,7 @@ const Header: React.FC = () => {
       });
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [NAV_ITEMS]); // Rerun if NAV_ITEMS changes (though it's const)
+  }, []); 
 
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
