@@ -51,7 +51,8 @@ const HomeSection: React.FC = () => {
             </CardHeader>
             <CardContent className="text-foreground/90 space-y-3">
               <div className="flex flex-col sm:flex-row items-start gap-4">
-                <div className="flex-shrink-0">
+                {/* Image */}
+                <div className="flex-shrink-0 mx-auto sm:mx-0">
                   <Image
                     src={profilePicture}
                     alt="Tom de Bruijn"
@@ -62,11 +63,13 @@ const HomeSection: React.FC = () => {
                     data-ai-hint="profile person"
                   />
                 </div>
-                <div className="flex-grow text-center sm:text-left">
+                {/* Text block for P1 and P2 (next to image) */}
+                <div className="flex-grow text-center sm:text-left space-y-2">
                   <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
+                  <p>{t('homeAboutMeP2')}</p>
                 </div>
               </div>
-              <p>{t('homeAboutMeP2')}</p>
+              {/* P3 - Full width below the image and P1/P2 block */}
               <p>{t('homeAboutMeP3')}</p>
             </CardContent>
           </Card>
@@ -77,5 +80,3 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
-
-    
