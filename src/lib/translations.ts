@@ -51,7 +51,7 @@ export interface TranslationContent {
 
   // Project Inquiry Section
   projectInquiryTitle: string;
-  projectInquirySubtitle: string; // This is now the animated text
+  // projectInquirySubtitle: string; // This is now the animated text
   questionStaticPlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
@@ -179,6 +179,7 @@ export const translations: Translations = {
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+    // homeAboutMeP4: "Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
 
     homeCTA: 'Neem Contact Op',
 
@@ -187,8 +188,8 @@ export const translations: Translations = {
     customersTitlePart3: 'Bedrijven zoals',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
-    servicesTitle: 'Mijn Diensten',
-    servicesSubtitle: 'Hoe ik u kan helpen uw data potentieel te maximaliseren.',
+    servicesTitle: 'Onze Dienstverlening',
+    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen uw datapotentieel te maximaliseren.',
     service1Title: 'Splunk Consultancy',
     service1Description: 'Implementatie, optimalisatie en beheer van Splunk-omgevingen voor data-analyse en monitoring.',
     service2Title: 'Cribl Expertise',
@@ -201,7 +202,7 @@ export const translations: Translations = {
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
     
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Heeft u een data-uitdaging?\nBeschrijf uw situatie en ik neem contact met u op.', // This is now static, the animation is in the placeholder list
+    // projectInquirySubtitle: 'Heeft u een data-uitdaging?\nBeschrijf uw situatie en ik neem contact met u op.', // This is now static, the animation is in the placeholder list
     questionStaticPlaceholder: 'Beschrijf hier uw vraag, projectidee of uitdaging...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -315,6 +316,8 @@ export const translations: Translations = {
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+    // homeAboutMeP4: "Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+
 
     homeCTA: 'Get in Touch',
 
@@ -323,8 +326,8 @@ export const translations: Translations = {
     customersTitlePart3: 'Companies like',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
-    servicesTitle: 'My Services',
-    servicesSubtitle: 'How I can help you maximize your data potential.',
+    servicesTitle: 'Our Services',
+    servicesSubtitle: 'Discover how we can help you maximize your data potential.',
     service1Title: 'Splunk Consultancy',
     service1Description: 'Implementation, optimization, and management of Splunk environments for data analysis and monitoring.',
     service2Title: 'Cribl Expertise',
@@ -337,7 +340,7 @@ export const translations: Translations = {
     service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Have a data challenge?\nDescribe your situation, and I\'ll get in touch.', // This is now static, the animation is in the placeholder list
+    // projectInquirySubtitle: 'Have a data challenge?\nDescribe your situation, and I\'ll get in touch.', // This is now static, the animation is in the placeholder list
     questionStaticPlaceholder: 'Describe your question, project idea, or challenge here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -452,3 +455,4 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   }
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
+
