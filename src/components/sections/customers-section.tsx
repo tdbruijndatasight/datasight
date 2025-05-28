@@ -1,6 +1,7 @@
 
 "use client";
 
+import type { StaticImageData } from 'next/image';
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
@@ -23,7 +24,7 @@ const CustomersSection: React.FC = () => {
             </span>
             {t('customersTitlePart2')}&nbsp;{t('customersTitlePart3')}
           </h2>
-          <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto">
+          <p className="text-lg text-foreground/80 mb-12 max-w-4xl mx-auto"> {/* Changed to max-w-4xl */}
             {t('customersDescription')}
           </p>
         </AnimatedSection>
@@ -33,13 +34,14 @@ const CustomersSection: React.FC = () => {
             <div className="logo-carousel-track">
               {/* Render logos twice for a seamless loop */}
               {[...logos, ...logos].map((logo, index) => {
+                const logoSrc = logo.src as StaticImageData | string; // Type assertion for src
                 return (
                   <div 
                     key={`${logo.name}-${index}`} // Unique key for each item, including duplicates
                     className="logo-item-wrapper flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 mx-4 bg-card rounded-lg shadow-md"
                   >
                     <Image 
-                      src={logo.src} 
+                      src={logoSrc} 
                       alt={logo.name} 
                       width={logo.width || 120} 
                       height={logo.height || 50}
@@ -58,5 +60,8 @@ const CustomersSection: React.FC = () => {
 };
 
 export default CustomersSection;
+
+    
+
 
     

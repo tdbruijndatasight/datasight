@@ -25,9 +25,9 @@ export interface TranslationContent {
   homeCTA: string;
 
   // Customers Section
-  customersTitlePart1: string; // Changed from customersTitle
-  customersTitlePart2: string; // New key
-  customersTitlePart3: string; // Renamed from customersTitlePart2
+  customersTitlePart1: string;
+  customersTitlePart2: string;
+  customersTitlePart3: string;
   customersDescription: string;
 
   // Services Section
@@ -63,7 +63,6 @@ export interface TranslationContent {
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
-  // inquiryCoffeePrompt: string; // Removed
   
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
@@ -179,12 +178,13 @@ export const translations: Translations = {
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Vertrouwd',
     customersTitlePart2: 'door',
     customersTitlePart3: 'Bedrijven zoals',
-    customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat hen verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
+    customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
     servicesTitle: 'Mijn Diensten',
     servicesSubtitle: 'Hoe ik u kan helpen uw data potentieel te maximaliseren.',
@@ -212,7 +212,6 @@ export const translations: Translations = {
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
     contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
-    // inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕', // Removed
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? Laat het me weten – ik denk graag mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯 Stuur gerust een berichtje.",
@@ -314,12 +313,14 @@ export const translations: Translations = {
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+
+
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Trusted',
     customersTitlePart2: 'by',
     customersTitlePart3: 'Companies like',
-    customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us their need to navigate complex transitions where ICT, and obviously data, plays an essential role.',
+    customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
     servicesTitle: 'My Services',
     servicesSubtitle: 'How I can help you maximize your data potential.',
@@ -347,7 +348,6 @@ export const translations: Translations = {
     contactFormSuccessTitle: 'Inquiry Received!',
     contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
-    // inquiryCoffeePrompt: 'Also up for a (virtual) cup of coffee! ☕', // Removed
     
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? Let me know – I'm happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯 Feel free to send a message.",
@@ -429,13 +429,15 @@ export const translations: Translations = {
     disclaimerNoProAdviceP1: 'The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.',
     disclaimerLimitationLiabilityTitle: 'Limitation of Liability',
     disclaimerLimitationLiabilityP1: 'DataSight Portfolio is not liable for any direct or indirect damages arising from the use of this website, except in cases of willful misconduct or gross negligence.',
-    disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer', // Note: This key was not translated from Dutch in the original provided text for EN. Assuming it should be "Changes to This Disclaimer".
-    disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.', // Note: This key was not translated. Assuming it should be "This disclaimer may be changed. Changes are effective immediately upon publication."
+    disclaimerChangesDisclaimerTitle: "Changes to This Disclaimer",
+    disclaimerChangesDisclaimerP1: "This disclaimer may be changed. Changes are effective immediately upon publication.",
   },
 };
 
 // Manual translation for the untranslated disclaimer keys for English:
 translations.en.disclaimerChangesDisclaimerTitle = "Changes to This Disclaimer";
 translations.en.disclaimerChangesDisclaimerP1 = "This disclaimer may be changed. Changes are effective immediately upon publication.";
+
+    
 
     
