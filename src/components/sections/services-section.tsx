@@ -115,17 +115,18 @@ const ServicesSection: React.FC = () => {
               <DialogTitle className="text-2xl md:text-3xl font-bold text-primary">
                 {t(selectedService.detailTitleKey)}
               </DialogTitle>
-                 <DialogClose className="absolute right-4 top-4 rounded-sm opacity-70 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-accent data-[state=open]:text-muted-foreground">
-                    <CloseIcon className="h-5 w-5" />
-                    <span className="sr-only">{t('closeButton')}</span>
-                </DialogClose>
+                 {/* Default DialogClose from ShadCN's DialogContent will handle closing. No need for manual DialogClose here. */}
             </DialogHeader>
             <div className="max-h-[70vh] overflow-y-auto pr-2 space-y-4 scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-secondary">
                 <p className="text-base text-foreground/90">{t(selectedService.detailDescKey)}</p>
                 <ul className="list-disc pl-5 space-y-1.5 text-foreground/80">
-                    {selectedService.detailBulletKeys.map((bulletKey, i) => (
-                    <li key={i} className="text-sm">{t(bulletKey)}</li>
-                    ))}
+                    {selectedService.detailBulletKeys.map((bulletKey, i) => {
+                        const bulletText = t(bulletKey);
+                        // Only render li if bulletText is not empty or just the key itself (fallback)
+                        return bulletText && bulletText !== bulletKey ? (
+                             <li key={i} className="text-sm">{bulletText}</li>
+                        ) : null;
+                    })}
                 </ul>
                 <div className="pt-4">
                     <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-md transition-transform hover:scale-105 group font-semibold">
@@ -144,4 +145,3 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
-

@@ -36,25 +36,33 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: "0px 0px -66% 0px", // Observe the top 33% of the viewport
-      threshold: 0.01, // Trigger if at least 1% of the section is in this zone
+      rootMargin: "-30% 0px -60% 0px", // Observe a band from 30% to 40% of viewport height
+      threshold: 0.01, 
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
       let newActiveCandidateId = activeSectionId; 
       let foundIntersectingCandidate = false;
 
+      // Iterate through NAV_ITEMS which are in the desired DOM order
       for (const navItem of NAV_ITEMS) {
         const entry = entries.find(e => e.target.id === navItem.id);
         if (entry && entry.isIntersecting) {
           newActiveCandidateId = navItem.id;
           foundIntersectingCandidate = true;
-          break; 
+          break; // Found the highest section in the DOM that's intersecting the target zone
         }
       }
       
       if (foundIntersectingCandidate) {
         setActiveSectionId(newActiveCandidateId);
+      } else {
+        // If no sections are in the specific trigger zone,
+        // check if we're scrolled near the top; if so, default to "home".
+        // This handles cases where fast scrolling might miss the narrow band for "home".
+        if (window.scrollY < window.innerHeight * 0.3) { // If less than 30% of first viewport height scrolled
+           setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
+        }
       }
     };
 
@@ -65,33 +73,47 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
 
-    // Initial check in case a section other than home is in view on load (e.g. from a hash link)
-    // Triggering manually for initial load if needed by re-evaluating intersections
-    const initialEntries = sections.map(section => {
-        if (!section) return null;
-        const rect = section.getBoundingClientRect();
-        // A simplified check for initial visibility - might need refinement based on actual use case
-        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0; 
-        // For observer like check - this is a mock. Real check is done by observer.
-        // This initial manual trigger can be tricky. For robust initial active set,
-        // consider checking window.location.hash or scroll position on mount.
-        return {
-            target: section,
-            isIntersecting: isVisible && (rect.top < (window.innerHeight * 0.34)) && (rect.bottom > 0) , // Simplified: top 34% check
-            boundingClientRect: rect,
-            intersectionRatio: 0, // Mock values
-            intersectionRect: {} as DOMRectReadOnly,
-            rootBounds: null,
-            time: 0
+    // Initial check for active section on load
+    const initialCheck = () => {
+      let currentHighestVisibleSectionId = NAV_ITEMS[0]?.id || 'home';
+      let highestVisibleRatio = 0;
+
+      for (const navItem of NAV_ITEMS) {
+        const section = document.getElementById(navItem.id);
+        if (section) {
+          const rect = section.getBoundingClientRect();
+          // Check if section is within viewport at all
+          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+          if (isVisible) {
+            // Check if this section is higher than the current highest or more visible
+            // A simple check: if top is closer to 0 or negative, it's higher.
+            // This is a simplified heuristic for initial load.
+            // A more robust way might be to calculate intersection with the rootMargin zone.
+            // For now, if it's visible and higher than others, it's a candidate.
+            const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+            const ratio = visibleHeight / rect.height;
+
+            if (rect.top < (window.innerHeight * 0.35) && ratio > highestVisibleRatio) { // Prioritize sections in upper 35%
+                currentHighestVisibleSectionId = navItem.id;
+                highestVisibleRatio = ratio;
+            } else if (highestVisibleRatio === 0 && rect.top >= 0 && rect.top < window.innerHeight) {
+                // If nothing is high up, take the first one fully in view
+                currentHighestVisibleSectionId = navItem.id;
+                highestVisibleRatio = 0.001; // Mark as found
+            }
+          }
         }
-    }).filter(entry => entry !== null) as IntersectionObserverEntry[];
+      }
+      setActiveSectionId(currentHighestVisibleSectionId);
+    };
     
-    if (initialEntries.length > 0) {
-        observerCallback(initialEntries);
-    }
+    initialCheck(); // Run check on mount
+    // Additionally, a small timeout can help if elements are still shifting on load
+    const timeoutId = setTimeout(initialCheck, 100);
 
 
     return () => {
+      clearTimeout(timeoutId);
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });

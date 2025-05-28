@@ -228,17 +228,16 @@ export const translations: Translations = {
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
 
-
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Vertrouwd',
     customersTitlePart2: 'door',
-    customersTitlePart3: 'Bedrijven zoals',
+    customersTitlePart3: 'bedrijven zoals',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
 
     servicesTitle: 'Dienstverlening',
-    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen uw datapotentieel te maximaliseren.',
+    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
     service1Title: 'Splunk Consultancy',
     service1Description: 'Implementatie, optimalisatie en beheer van Splunk-omgevingen voor data-analyse en monitoring.',
     service1DetailTitle: 'Diepgaande Splunk Consultancy',
@@ -295,7 +294,7 @@ export const translations: Translations = {
     service5DetailCTA: 'Verhoog de expertise van uw team. Vraag naar onze op maat gemaakte trainingsprogramma\'s.',
 
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.',
+    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -310,16 +309,16 @@ export const translations: Translations = {
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
-    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur ons gerust een berichtje.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nWij sturen je gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
     inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nLaten we even bellen.",
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nLaat het ons weten – wij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nLaten we samen kijken wat er mogelijk is.",
-    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur ons gerust een berichtje.",
+    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nWij sturen je gerust een berichtje.",
     inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.",
-    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur ons gerust een berichtje!",
+    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nWij sturen je gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
     inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in.",
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
@@ -420,12 +419,12 @@ export const translations: Translations = {
 
     customersTitlePart1: 'Trusted',
     customersTitlePart2: 'by',
-    customersTitlePart3: 'Companies like',
+    customersTitlePart3: 'companies like',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
 
     servicesTitle: 'Services',
-    servicesSubtitle: 'Discover how we can help you maximize your data potential.',
+    servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
     service1Title: 'Splunk Consultancy',
     service1Description: 'Implementation, optimization, and management of Splunk environments for data analysis and monitoring.',
     service1DetailTitle: 'In-Depth Splunk Consultancy',
@@ -482,7 +481,7 @@ export const translations: Translations = {
     service5DetailCTA: 'Upskill your team. Inquire about our tailored training programs.',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.',
+    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
     questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -497,16 +496,16 @@ export const translations: Translations = {
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nWe're happy to brainstorm with you.",
-    inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nFeel free to send us a message.",
+    inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nWe'll gladly send you a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction.\nEasily schedule 30 minutes in your calendar here 📅.",
     inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nLet's have a call.",
     inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nLet us know – we're happy to think along.",
     inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? 🛠️\nWe also provide hands-on training tailored to your situation.",
     inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊\nWe're happy to help you get started.",
     inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nLet's explore the possibilities together.",
-    inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nFeel free to send us a message.",
+    inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nWe'll gladly send you a message.",
     inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.",
-    inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nFeel free to send us a message!",
+    inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nWe'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nWe help you make smart choices with Splunk & Cribl.",
     inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here.",
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\nOur trainings are hands-on, custom, and without unnecessary theory.",
@@ -599,26 +598,3 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   }
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
-
-// Manual translation for the untranslated disclaimer keys for English:
-translations.en.disclaimerPageTitle = "Disclaimer for DataSight Portfolio.";
-translations.en.disclaimerValidFrom = "Valid from: April 1, 2024";
-translations.en.disclaimerIntroP1 = 'The information on the DataSight Portfolio website (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.';
-translations.en.disclaimerAccuracyTitle = "Accuracy of Information";
-translations.en.disclaimerAccuracyP1 = "We do our best to keep information current and correct, but errors are possible. We are not liable for inaccuracies.";
-translations.en.disclaimerWebsiteAvailabilityTitle = "Website Availability";
-translations.en.disclaimerWebsiteAvailabilityP1 = "We do not guarantee error-free or uninterrupted operation of the website.";
-translations.en.disclaimerWebsiteAvailabilityL1 = "Damage from inaccuracies or omissions.";
-translations.en.disclaimerWebsiteAvailabilityL2 = "Problems due to internet distribution (disruptions, delays).";
-translations.en.disclaimerExternalLinksTitle = "External Links";
-translations.en.disclaimerExternalLinksP1 = "Links to third-party websites are beyond our responsibility. We do not necessarily endorse the content of linked sites.";
-translations.en.disclaimerElectronicCommTitle = "Electronic Communication";
-translations.en.disclaimerElectronicCommP1 = "We do not guarantee that emails will be received or processed in a timely manner and accept no liability for the consequences thereof.";
-translations.en.disclaimerNoProAdviceTitle = "No Professional Advice";
-translations.en.disclaimerNoProAdviceP1 = "The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.";
-translations.en.disclaimerLimitationLiabilityTitle = "Limitation of Liability";
-translations.en.disclaimerLimitationLiabilityP1 = "DataSight Portfolio is not liable for any direct or indirect damage resulting from the use of this website, unless there is intent or gross negligence.";
-translations.en.disclaimerChangesDisclaimerTitle = "Changes to This Disclaimer";
-translations.en.disclaimerChangesDisclaimerP1 = "This disclaimer may be changed. Changes are effective immediately upon publication.";
-
-    
