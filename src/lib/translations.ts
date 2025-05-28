@@ -20,7 +20,6 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
-  // homeAboutMeP4: string; // Merged into P3 or removed
 
   homeCTA: string;
 
@@ -171,9 +170,9 @@ export const translations: Translations = {
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
 
-    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde', // Ensure 'waarde' is lowercase
+    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
-    homeAboutMeTitle: 'Welkom bij DataSight',
+    homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
@@ -197,7 +196,6 @@ export const translations: Translations = {
     
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
-    // inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕', // Removed
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
@@ -249,7 +247,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    privacyPageTitle: 'Privacybeleid voor DataSight Portfolio',
+    privacyPageTitle: 'Privacybeleid voor DataSight Portfolio.',
     privacyLastUpdated: 'Laatst bijgewerkt: 1 april 2024',
     privacyIntro: 'DataSight Portfolio ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight Portfolio (de "Site") gebruikt en de diensten die wij aanbieden.',
     privacyInfoCollectTitle: 'Informatie die Wij Verzamelen',
@@ -273,7 +271,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Toepasselijk Recht',
     privacyGoverningLawP1: 'Nederlands recht is van toepassing. Geschillen worden voorgelegd aan de bevoegde rechtbank in Den Haag.',
 
-    disclaimerPageTitle: 'Disclaimer voor DataSight Portfolio',
+    disclaimerPageTitle: 'Disclaimer voor DataSight Portfolio.',
     disclaimerValidFrom: 'Geldig vanaf: 1 april 2024',
     disclaimerIntroP1: 'De informatie op de website van DataSight Portfolio (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
     disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
@@ -304,9 +302,9 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business value', // Ensure 'value' is lowercase
+    homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
-    homeAboutMeTitle: 'Welcome at DataSight',
+    homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
@@ -330,7 +328,6 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
-    // inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕', // Removed
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -382,7 +379,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    privacyPageTitle: 'Privacy Policy for DataSight Portfolio',
+    privacyPageTitle: 'Privacy Policy for DataSight Portfolio.',
     privacyLastUpdated: 'Last Updated: April 1, 2024',
     privacyIntro: 'DataSight Portfolio ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight Portfolio (the "Site"), and the services we offer.',
     privacyInfoCollectTitle: 'Information We Collect',
@@ -406,7 +403,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Governing Law',
     privacyGoverningLawP1: 'Dutch law applies. Disputes will be submitted to the competent court in The Hague.',
 
-    disclaimerPageTitle: 'Disclaimer for DataSight Portfolio',
+    disclaimerPageTitle: 'Disclaimer for DataSight Portfolio.',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
     disclaimerIntroP1: 'The information on the DataSight Portfolio website (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
     disclaimerAccuracyTitle: 'Accuracy of Information',
@@ -428,4 +425,5 @@ export const translations: Translations = {
   },
 };
 
+    
     

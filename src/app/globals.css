@@ -229,26 +229,39 @@ body {
 }
 
 
-/* Subtitle Highlight Animation */
-@keyframes subtitleHighlight {
-  0%, 100% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+/* Subtitle Line Animation */
+.subtitle-line-base {
+  position: relative;
+  display: inline-block; /* Or block, depending on desired layout */
+  padding-bottom: 5px; /* Adjust to make space for the line */
 }
 
-.subtitle-highlight-animate {
-  animation: subtitleHighlight 0.6s ease-in-out;
+.subtitle-line-base::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px; /* Line thickness */
+  background-color: hsl(var(--primary)); /* Line color */
+  width: 0;
+  transition: width 0.6s ease-out; /* Animation duration and easing */
 }
+
+.subtitle-line-base.is-drawing::after {
+  width: 100%;
+}
+
 
 /* Textarea placeholder animation */
 .textarea-placeholder-visible::placeholder {
   opacity: 1;
-  transition: opacity 1s ease-in-out; /* Smoother transition - Updated to 1s */
+  transition: opacity 1s ease-in-out;
   color: hsl(var(--muted-foreground)); 
 }
 
 .textarea-placeholder-hidden::placeholder {
   opacity: 0;
-  transition: opacity 1s ease-in-out; /* Smoother transition - Updated to 1s */
+  transition: opacity 1s ease-in-out;
   color: hsl(var(--muted-foreground)); 
 }
 
@@ -256,3 +269,6 @@ body {
 .dark .textarea-placeholder-hidden::placeholder {
   color: hsl(var(--muted-foreground)); 
 }
+
+
+    

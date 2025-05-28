@@ -15,13 +15,12 @@ import profilePicture from '@/images/tom-de-bruijn-profile.webp';
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
-  const [animateSubtitleClass, setAnimateSubtitleClass] = useState("");
+  const [shouldAnimateSubtitleLine, setShouldAnimateSubtitleLine] = useState(false);
 
   const handleSubtitleAnimate = () => {
-    setAnimateSubtitleClass("subtitle-highlight-animate");
-    setTimeout(() => {
-      setAnimateSubtitleClass("");
-    }, 600);
+    setShouldAnimateSubtitleLine(true);
+    // Optionally, if you want the animation to reset or only trigger once, you can manage state here
+    // For a line that draws and stays, setting to true is enough.
   };
 
   return (
@@ -30,8 +29,8 @@ const HomeSection: React.FC = () => {
         <AnimatedSection className="space-y-6 text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
-            "text-lg md:text-xl text-foreground/80 font-semibold",
-            animateSubtitleClass
+            "text-lg md:text-xl text-foreground/80 font-semibold subtitle-line-base",
+            shouldAnimateSubtitleLine && "is-drawing"
           )}>
             {t('homeSubtitle')}
           </p>
@@ -78,3 +77,4 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
+
