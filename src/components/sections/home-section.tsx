@@ -24,7 +24,8 @@ const HomeSection: React.FC = () => {
   return (
     <section id="home" className="bg-gradient-to-br from-background to-secondary section-min-height">
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <AnimatedSection className="space-y-6 text-center md:text-left">
+        {/* Changed className here for explicit flex layout */}
+        <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
             "text-lg md:text-xl text-foreground/80 font-semibold subtitle-line-base",
@@ -40,7 +41,7 @@ const HomeSection: React.FC = () => {
           </Button>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative z-10"> {/* Added relative z-10 */}
+        <AnimatedSection delay="delay-200" className="relative z-10">
           <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
@@ -58,7 +59,7 @@ const HomeSection: React.FC = () => {
                 />
               </div>
               <div className="overflow-hidden"> {/* Clearfix for float */}
-                <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
+                <p className={cn("font-semibold text-foreground")}>{t('homeAboutMeP1')}</p>
                 <p className="mt-2">{t('homeAboutMeP2')}</p>
                 <p className="mt-2">{t('homeAboutMeP3')}</p>
               </div>
