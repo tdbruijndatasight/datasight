@@ -178,7 +178,7 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight',
     homeAboutMeP1: 'Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.',
-    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. We zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
+    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -321,7 +321,7 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight',
     homeAboutMeP1: 'At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.',
-    homeAboutMeP2: 'We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We\'re fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.',
+    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -450,8 +450,5 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
-
-
-    
 
     
