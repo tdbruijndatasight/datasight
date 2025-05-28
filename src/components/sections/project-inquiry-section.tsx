@@ -50,30 +50,27 @@ const ProjectInquirySection: React.FC = () => {
   });
 
   useEffect(() => {
-    // Set initial placeholder text based on current language and index
     setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
-    setIsPlaceholderVisible(true); // Ensure initially visible
+    setIsPlaceholderVisible(true); 
 
     const intervalId = setInterval(() => {
-      setIsPlaceholderVisible(false); // Start fade out
+      setIsPlaceholderVisible(false); 
 
       setTimeout(() => {
         setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 1000); // Wait for fade out (1s) to complete before changing text
-    }, 9000); // Total cycle time: 8s visible + 1s fade out/in
+      }, 1000); 
+    }, 9000); 
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]); // Rerun effect if language changes to reset animation with new texts
+  }, [language]); 
 
   useEffect(() => {
-    // This effect runs when currentPlaceholderIndex changes, to set the new text and fade it in
-     // or when language changes and the effect above has reset currentPlaceholderIndex to 0
-    if (!isPlaceholderVisible || language) { // Trigger if placeholder was faded out OR if language changed (which resets index)
+    if (!isPlaceholderVisible || language) { 
         setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
         setTimeout(() => {
-            setIsPlaceholderVisible(true); // Start fade in
-        }, 50); // Short delay to ensure text is updated before fade-in starts
+            setIsPlaceholderVisible(true); 
+        }, 50); 
     }
   }, [currentPlaceholderIndex, t, isPlaceholderVisible, language]);
 
@@ -118,16 +115,14 @@ const ProjectInquirySection: React.FC = () => {
   };
 
   return (
-    <section id="inquiry" className="bg-background section-min-height"> {/* Changed from bg-secondary to bg-background */}
+    <section id="inquiry" className="bg-background section-min-height">
       <div className="container mx-auto">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
             <Send className="h-8 w-8 text-accent" />
             {t('projectInquiryTitle')}
           </h2>
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            {t('projectInquirySubtitle')}
-          </p>
+          {/* Subtitle paragraph moved from here */}
         </AnimatedSection>
 
         <AnimatedSection delay="delay-200" className="relative">
@@ -214,6 +209,13 @@ const ProjectInquirySection: React.FC = () => {
               </CardContent>
             </Card>
           </div>
+        </AnimatedSection>
+
+        {/* Subtitle paragraph moved here, below the form card */}
+        <AnimatedSection delay="delay-300" className="text-center mt-12">
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            {t('projectInquirySubtitle')}
+          </p>
         </AnimatedSection>
       </div>
     </section>
