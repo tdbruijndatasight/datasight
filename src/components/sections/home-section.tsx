@@ -32,7 +32,11 @@ const HomeSection: React.FC = () => {
           )}>
             {t('homeSubtitle')}
           </p>
-          <Button asChild size="lg" className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group font-semibold">
+          <Button
+            asChild
+            size="default" // Changed from "lg". Corresponds to h-10 px-4 py-2
+            className="text-foreground hover:text-primary hover:bg-primary/10 font-semibold transition-colors group" // New custom styling
+          >
             <Link href="#contact">
               {t('homeCTA')}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
@@ -52,7 +56,7 @@ const HomeSection: React.FC = () => {
                   alt="Tom de Bruijn"
                   width={120}
                   height={120}
-                  quality={95} // Increased quality setting
+                  quality={95}
                   className="rounded-full shadow-lg border-2 border-primary/50"
                   priority
                   data-ai-hint="profile person"
