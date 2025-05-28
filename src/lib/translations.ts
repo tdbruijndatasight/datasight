@@ -51,7 +51,8 @@ export interface TranslationContent {
 
   // Project Inquiry Section
   projectInquiryTitle: string;
-  projectInquirySubtitle: string;
+  // projectInquirySubtitle: string; // This will be replaced by animated placeholders
+  questionStaticPlaceholder: string; // New static placeholder for Textarea
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -200,7 +201,8 @@ export const translations: Translations = {
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
     
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
+    // projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.', // Replaced by animated text
+    questionStaticPlaceholder: 'Beschrijf hier uw vraag, projectidee of uitdaging...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
@@ -314,7 +316,6 @@ export const translations: Translations = {
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
 
-
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Trusted',
@@ -336,7 +337,8 @@ export const translations: Translations = {
     service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
+    // projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.', // Replaced by animated text
+    questionStaticPlaceholder: 'Describe your question, project idea, or challenge here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -437,7 +439,3 @@ export const translations: Translations = {
 // Manual translation for the untranslated disclaimer keys for English:
 translations.en.disclaimerChangesDisclaimerTitle = "Changes to This Disclaimer";
 translations.en.disclaimerChangesDisclaimerP1 = "This disclaimer may be changed. Changes are effective immediately upon publication.";
-
-    
-
-    

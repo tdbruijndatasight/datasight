@@ -250,22 +250,3 @@ body {
 .subtitle-line-base.is-drawing::after {
   width: 100%;
 }
-
-
-/* Textarea placeholder animation */
-.textarea-placeholder-visible::placeholder {
-  opacity: 1;
-  transition: opacity 1s ease-in-out;
-  color: hsl(var(--muted-foreground)); 
-}
-
-.textarea-placeholder-hidden::placeholder {
-  opacity: 0;
-  transition: opacity 1s ease-in-out;
-  color: hsl(var(--muted-foreground)); 
-}
-
-.dark .textarea-placeholder-visible::placeholder,
-.dark .textarea-placeholder-hidden::placeholder {
-  color: hsl(var(--muted-foreground)); 
-}

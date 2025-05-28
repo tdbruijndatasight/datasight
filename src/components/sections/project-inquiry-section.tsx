@@ -36,9 +36,9 @@ const ProjectInquirySection: React.FC = () => {
   const { toast } = useToast();
   const [isLoading, setIsLoading] = useState(false);
 
-  const [currentPlaceholderIndex, setCurrentPlaceholderIndex] = useState(0);
-  const [animatedPlaceholder, setAnimatedPlaceholder] = useState("");
-  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState(true);
+  const [animatedSubtitle, setAnimatedSubtitle] = useState("");
+  const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
+  const [isSubtitleVisible, setIsSubtitleVisible] = useState(true);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -50,35 +50,32 @@ const ProjectInquirySection: React.FC = () => {
   });
 
   useEffect(() => {
-    // Initialize placeholder and visibility on language change or initial load
-    setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
-    setIsPlaceholderVisible(true);
+    setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
+    setIsSubtitleVisible(true); // Ensure it's visible on first load or language change
 
     const intervalId = setInterval(() => {
-      setIsPlaceholderVisible(false); // Start fade-out
+      setIsSubtitleVisible(false); // Start fade-out
 
       setTimeout(() => {
-        setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-        // Note: The actual text update and fade-in trigger will be handled by the next useEffect
-      }, 1000); // Duration of fade-out (must match CSS)
-    }, 9000); // 8s visible + 1s fade-out
+        setCurrentSubtitleIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
+      }, 1000); // Duration of fade-out
+    }, 9000); // 8s visible + 1s fade-out/in
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]); // Rerun when language changes
+  }, [language]);
 
   useEffect(() => {
-    // This effect handles updating the text and triggering fade-in
-    // after currentPlaceholderIndex changes or if placeholder becomes invisible
-    if (!isPlaceholderVisible || language) { // Condition to re-trigger if language changes mid-animation
-        setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
+    if (!isSubtitleVisible) { // Only update and fade in if it was just faded out
+        setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
         // Short timeout to allow CSS to apply hidden state before transitioning to visible
         setTimeout(() => {
-            setIsPlaceholderVisible(true); // Start fade-in
+            setIsSubtitleVisible(true); // Start fade-in
         }, 50); // Small delay
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentPlaceholderIndex, t, language]); // Rerun when index, t, or language changes
+  }, [currentSubtitleIndex, t]);
+
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
@@ -127,9 +124,12 @@ const ProjectInquirySection: React.FC = () => {
             <Send className="h-8 w-8 text-accent" />
             {t('projectInquiryTitle')}
           </h2>
-          {/* Subtitle paragraph restored to its original position */}
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            {t('projectInquirySubtitle')}
+          <p className={cn(
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[3em] md:min-h-[2.5em]", // Added min-height
+            "transition-opacity duration-1000 ease-in-out",
+            isSubtitleVisible ? "opacity-100" : "opacity-0"
+          )}>
+            {animatedSubtitle || t(placeholderKeys[0])}{/* Fallback to first placeholder if animatedSubtitle is briefly empty */}
           </p>
         </AnimatedSection>
 
@@ -185,11 +185,8 @@ const ProjectInquirySection: React.FC = () => {
                           <FormLabel className="text-lg text-primary">{t('questionLabel')}</FormLabel>
                           <FormControl>
                             <Textarea
-                              placeholder={animatedPlaceholder}
-                              className={cn(
-                                "min-h-[150px] resize-y focus:ring-accent focus:border-accent",
-                                isPlaceholderVisible ? 'textarea-placeholder-visible' : 'textarea-placeholder-hidden'
-                              )}
+                              placeholder={t('questionStaticPlaceholder')}
+                              className="min-h-[150px] resize-y focus:ring-accent focus:border-accent"
                               {...field}
                               aria-label={t('questionLabel')}
                             />
