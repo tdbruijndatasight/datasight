@@ -36,32 +36,32 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: "-30% 0px -60% 0px", // Observe a band from 30% to 40% of viewport height
+      rootMargin: "-40% 0px -50% 0px", // Zone: 40% from top to 50% from top
       threshold: 0.01, 
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      let newActiveCandidateId = activeSectionId; 
-      let foundIntersectingCandidate = false;
-
-      // Iterate through NAV_ITEMS which are in the desired DOM order
+      let currentActiveId: string | null = null;
       for (const navItem of NAV_ITEMS) {
         const entry = entries.find(e => e.target.id === navItem.id);
         if (entry && entry.isIntersecting) {
-          newActiveCandidateId = navItem.id;
-          foundIntersectingCandidate = true;
-          break; // Found the highest section in the DOM that's intersecting the target zone
+          currentActiveId = navItem.id;
+          break;
         }
       }
-      
-      if (foundIntersectingCandidate) {
-        setActiveSectionId(newActiveCandidateId);
-      } else {
-        // If no sections are in the specific trigger zone,
-        // check if we're scrolled near the top; if so, default to "home".
-        // This handles cases where fast scrolling might miss the narrow band for "home".
-        if (window.scrollY < window.innerHeight * 0.3) { // If less than 30% of first viewport height scrolled
-           setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
+
+      if (currentActiveId && currentActiveId !== activeSectionId) {
+        setActiveSectionId(currentActiveId);
+      } else if (!currentActiveId) {
+        // Fallback if nothing is intersecting the main rootMargin (e.g. at very top or bottom)
+        if (window.scrollY < window.innerHeight * 0.2) { // Near top of page
+          if (activeSectionId !== (NAV_ITEMS[0]?.id || 'home')) {
+            setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
+          }
+        } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150) { // Near bottom of page
+            if (activeSectionId !== (NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact')) {
+              setActiveSectionId(NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact');
+            }
         }
       }
     };
@@ -72,48 +72,47 @@ const Header: React.FC = () => {
     sections.forEach(section => {
       if (section) observer.observe(section);
     });
-
-    // Initial check for active section on load
-    const initialCheck = () => {
-      let currentHighestVisibleSectionId = NAV_ITEMS[0]?.id || 'home';
-      let highestVisibleRatio = 0;
-
-      for (const navItem of NAV_ITEMS) {
-        const section = document.getElementById(navItem.id);
+    
+    // Trigger initial check via observer for consistency
+    // Manually trigger a check for all observed elements.
+    // This helps set the correct initial active section based on current scroll position.
+    const initialObserverTrigger = () => {
+      const entries = sections.reduce((acc, section) => {
         if (section) {
           const rect = section.getBoundingClientRect();
-          // Check if section is within viewport at all
-          const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-          if (isVisible) {
-            // Check if this section is higher than the current highest or more visible
-            // A simple check: if top is closer to 0 or negative, it's higher.
-            // This is a simplified heuristic for initial load.
-            // A more robust way might be to calculate intersection with the rootMargin zone.
-            // For now, if it's visible and higher than others, it's a candidate.
-            const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-            const ratio = visibleHeight / rect.height;
-
-            if (rect.top < (window.innerHeight * 0.35) && ratio > highestVisibleRatio) { // Prioritize sections in upper 35%
-                currentHighestVisibleSectionId = navItem.id;
-                highestVisibleRatio = ratio;
-            } else if (highestVisibleRatio === 0 && rect.top >= 0 && rect.top < window.innerHeight) {
-                // If nothing is high up, take the first one fully in view
-                currentHighestVisibleSectionId = navItem.id;
-                highestVisibleRatio = 0.001; // Mark as found
-            }
-          }
+          // Simulate an IntersectionObserverEntry. This is a simplified mock.
+          // A more robust solution might involve a brief timeout to let layout settle,
+          // then checking real intersection status or manually calculating.
+          // For now, let's assume if it's near the top, it might be active.
+           const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+           if (isVisible) { // A basic check if it's in viewport at all
+            acc.push({
+              target: section,
+              isIntersecting: (rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.4), // Crude check for "in target zone"
+              boundingClientRect: rect,
+              intersectionRatio: 0, // Mocked
+              intersectionRect: rect, // Mocked
+              rootBounds: null, // Mocked
+              time: 0, // Mocked
+            } as IntersectionObserverEntry);
+           }
         }
+        return acc;
+      }, [] as IntersectionObserverEntry[]);
+      if (entries.length > 0) {
+        observerCallback(entries);
+      } else {
+        // Default to home if no sections are somehow "intersecting" initially
+         if (activeSectionId !== (NAV_ITEMS[0]?.id || 'home')) setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
       }
-      setActiveSectionId(currentHighestVisibleSectionId);
     };
-    
-    initialCheck(); // Run check on mount
-    // Additionally, a small timeout can help if elements are still shifting on load
-    const timeoutId = setTimeout(initialCheck, 100);
+
+    // A small delay for initial check can sometimes help with elements rendering/layout shifts
+    const initialCheckTimeoutId = setTimeout(initialObserverTrigger, 100);
 
 
     return () => {
-      clearTimeout(timeoutId);
+      clearTimeout(initialCheckTimeoutId);
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
