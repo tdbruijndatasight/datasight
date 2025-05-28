@@ -23,7 +23,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
 
   const typingSpeed = 100;
   const pauseBetweenInitialWords = 3000;
-  const extraPauseBeforeFinalSentence = 1500; // 3s base + 1.5s extra = 4.5s total
+  const extraPauseBeforeFinalSentence = 500; // Changed from 1500 to 500
 
   const getCurrentInitialWords = () => {
     return language === 'en' ? initialWordsEn : initialWordsNl;
