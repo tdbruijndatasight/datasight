@@ -20,6 +20,7 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
+  // homeAboutMeP4: string; // Merged into P3
 
   homeCTA: string;
 
@@ -32,6 +33,7 @@ export interface TranslationContent {
   // Services Section
   servicesTitle: string;
   servicesSubtitle: string;
+
   service1Title: string;
   service1Description: string;
   service1DetailTitle: string;
@@ -54,27 +56,27 @@ export interface TranslationContent {
   service2DetailBullet5: string;
   service2DetailCTA: string;
 
-  service3Title: string;
-  service3Description: string;
-  service3DetailTitle: string;
-  service3DetailDesc: string;
-  service3DetailBullet1: string;
-  service3DetailBullet2: string;
-  service3DetailBullet3: string;
-  service3DetailBullet4: string;
-  service3DetailBullet5: string;
-  service3DetailCTA: string;
+  // service3Title: string; // Removed
+  // service3Description: string; // Removed
+  // service3DetailTitle: string; // Removed
+  // service3DetailDesc: string; // Removed
+  // service3DetailBullet1: string; // Removed
+  // service3DetailBullet2: string; // Removed
+  // service3DetailBullet3: string; // Removed
+  // service3DetailBullet4: string; // Removed
+  // service3DetailBullet5: string; // Removed
+  // service3DetailCTA: string; // Removed
 
-  service4Title: string;
-  service4Description: string;
-  service4DetailTitle: string;
-  service4DetailDesc: string;
-  service4DetailBullet1: string;
-  service4DetailBullet2: string;
-  service4DetailBullet3: string;
-  service4DetailBullet4: string;
-  service4DetailBullet5: string;
-  service4DetailCTA: string;
+  // service4Title: string; // Removed
+  // service4Description: string; // Removed
+  // service4DetailTitle: string; // Removed
+  // service4DetailDesc: string; // Removed
+  // service4DetailBullet1: string; // Removed
+  // service4DetailBullet2: string; // Removed
+  // service4DetailBullet3: string; // Removed
+  // service4DetailBullet4: string; // Removed
+  // service4DetailBullet5: string; // Removed
+  // service4DetailCTA: string; // Removed
 
   service5Title: string;
   service5Description: string;
@@ -98,7 +100,7 @@ export interface TranslationContent {
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string; // This is now the animated text
-  questionStaticPlaceholder: string;
+  questionStaticPlaceholder: string; // For the actual textarea
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -237,63 +239,42 @@ export const translations: Translations = {
 
     servicesTitle: 'Dienstverlening',
     servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
+    
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Implementatie, optimalisatie en beheer van Splunk-omgevingen voor data-analyse en monitoring.',
-    service1DetailTitle: 'Diepgaande Splunk Consultancy',
-    service1DetailDesc: 'Optimaliseer uw Splunk-implementatie, van architectuur tot geavanceerd zoeken en dashboarding, om de maximale waarde uit uw data te halen.',
-    service1DetailBullet1: 'Splunk architectuur review en health checks.',
-    service1DetailBullet2: 'Performance tuning en optimalisatie van zoekopdrachten en datamodellen.',
-    service1DetailBullet3: 'Geavanceerde data onboarding, parsing en field extracties (CIM).',
-    service1DetailBullet4: 'Ontwikkeling van maatwerk dashboards, rapportages en alerts.',
-    service1DetailBullet5: 'Splunk App ontwikkeling en integratie met andere systemen.',
+    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen zoals ITSI & ES.',
+    service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw Data Potentieel',
+    service1DetailDesc: 'Wij bieden diepgaande Splunk expertise om de volledige waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). Ons doel is om uw Splunk-omgeving niet alleen te laten werken, maar excelleren.',
+    service1DetailBullet1: 'Uitgebreide Splunk health checks en performance optimalisatie.',
+    service1DetailBullet2: 'Beheer en uitvoering van Splunk upgrades en migraties.',
+    service1DetailBullet3: 'Implementatie en configuratie van Splunk ITSI voor AIOps.',
+    service1DetailBullet4: 'Opzet en verfijning van Splunk Enterprise Security voor SIEM.',
+    service1DetailBullet5: 'Ontwikkeling van maatwerk dashboards, alerts en data-integraties.',
     service1DetailCTA: 'Neem contact op',
 
-    service2Title: 'Cribl Expertise',
-    service2Description: 'Ontwerp en implementatie van Cribl-oplossingen voor efficiënt data management en routing.',
-    service2DetailTitle: 'Beheers uw Dataflow met Cribl',
-    service2DetailDesc: 'Wij helpen u bij het ontwerpen, implementeren en beheren van Cribl-oplossingen voor maximale efficiëntie en kostenbesparing in uw dataverwerking.',
-    service2DetailBullet1: 'Cribl Stream/Edge architectuurontwerp en implementatie.',
-    service2DetailBullet2: 'Pipeline-ontwerp voor data routing, filtering, verrijking en maskering.',
-    service2DetailBullet3: 'Naadloze integratie met Splunk, SIEM-systemen en andere bestemmingen.',
-    service2DetailBullet4: 'Kostenoptimalisatiestrategieën voor data-ingest en -opslag.',
-    service2DetailBullet5: 'Implementatie en optimalisatie van Cribl Search.',
+    service2Title: 'Cribl Consultancy',
+    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream, Edge en Search voor maximale efficiëntie en controle.',
+    service2DetailTitle: 'Cribl Consultancy: Intelligente Data Pipelines',
+    service2DetailDesc: 'Beheers uw datastromen en reduceer kosten met onze Cribl expertise. Wij helpen u bij het ontwerpen, implementeren en optimaliseren van oplossingen met Cribl Stream voor data routing en transformatie, Cribl Edge voor dataverzameling aan de bron, en Cribl Search voor federated querying. Krijg grip op uw data, ongeacht waar het zich bevindt.',
+    service2DetailBullet1: 'Architectuur en implementatie van Cribl Stream en Cribl Edge.',
+    service2DetailBullet2: 'Ontwerp van efficiënte data processing pipelines (filteren, routen, verrijken).',
+    service2DetailBullet3: 'Integratie met Splunk, SIEM-oplossingen en diverse databestemmingen.',
+    service2DetailBullet4: 'Kostenbesparingsstrategieën door slimme data routing en reductie.',
+    service2DetailBullet5: 'Implementatie en gebruik van Cribl Search voor federated data access.',
     service2DetailCTA: 'Neem contact op',
 
-    service3Title: 'Data Strategie & Architectuur',
-    service3Description: 'Advies over data strategie, architectuurontwerp en het opzetten van robuuste data pipelines.',
-    service3DetailTitle: 'Toekomstbestendige Data Strategie en Architectuur',
-    service3DetailDesc: 'Ontwikkel een solide datastrategie en een robuuste, schaalbare architectuur die perfect aansluit bij uw bedrijfsdoelstellingen.',
-    service3DetailBullet1: 'Uitgebreide data maturity assessments en GAP-analyses.',
-    service3DetailBullet2: 'Ontwikkeling van roadmaps voor modernisering van dataplatformen.',
-    service3DetailBullet3: 'Implementatie van data governance en data quality frameworks.',
-    service3DetailBullet4: 'Ontwerp van cloud, on-premise en hybride data-architecturen.',
-    service3DetailBullet5: 'Optimalisatie en ontwerp van ETL/ELT data pipelines.',
-    service3DetailCTA: 'Neem contact op',
-
-    service4Title: 'AI-Gedreven Oplossingen',
-    service4Description: 'Ontwikkeling van op maat gemaakte AI-tools en -modellen om specifieke bedrijfsproblemen op te lossen.',
-    service4DetailTitle: 'Innovatie met AI-Gedreven Oplossingen',
-    service4DetailDesc: 'Benut de kracht van Artificial Intelligence om uw meest urgente bedrijfsuitdagingen aan te pakken. Wij ontwikkelen maatwerk AI-modellen en tools.',
-    service4DetailBullet1: 'Ontwikkeling van custom machine learning modellen (predictive maintenance, fraud detection, etc.).',
-    service4DetailBullet2: 'AI-ondersteunde log analyse en geavanceerde anomaly detection.',
-    service4DetailBullet3: 'Natural Language Processing (NLP) voor analyse van tekstuele data.',
-    service4DetailBullet4: 'Voorspellende analyses en forecasting modellen.',
-    service4DetailBullet5: 'Integratie van Generative AI oplossingen voor content creatie en procesautomatisering.',
-    service4DetailCTA: 'Neem contact op',
-
     service5Title: 'Trainingen & Workshops',
-    service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
+    service5Description: 'Maatwerk trainingen en workshops voor Splunk & Cribl. Prijzen op aanvraag.',
     service5DetailTitle: 'Praktijkgerichte Trainingen & Workshops',
-    service5DetailDesc: 'Versterk uw team met praktische, hands-on trainingen voor Splunk, Cribl en moderne data practices, volledig afgestemd op uw behoeften.',
-    service5DetailBullet1: 'Maatwerk curriculum gebaseerd op de specifieke behoeften en het niveau van uw team.',
-    service5DetailBullet2: 'Splunk & Cribl cursussen voor beginners tot gevorderden (Admin, Architect, User).',
-    service5DetailBullet3: 'Workshops over data best practices, datagedreven werken en nieuwe technologieën.',
-    service5DetailBullet4: 'Interactieve labs, real-world use cases en Q&A sessies.',
-    service5DetailBullet5: 'Nazorg en toegang tot aanvullende leermiddelen.',
+    service5DetailDesc: "Versterk uw team met praktische, hands-on trainingen voor Splunk en Cribl, volledig afgestemd op uw behoeften. Onze trainingen zijn ontworpen om direct toepasbare kennis en vaardigheden te leveren. **Prijzen zijn op aanvraag en worden afgestemd op de scope en duur van de training.**",
+    service5DetailBullet1: 'Maatwerk curriculum gebaseerd op de specifieke behoeften van uw team.',
+    service5DetailBullet2: 'Splunk & Cribl cursussen: van basis tot geavanceerd (Admin, Architect, User).',
+    service5DetailBullet3: 'Focus op real-world use cases en best practices.',
+    service5DetailBullet4: 'Interactieve labs en Q&A sessies voor diepgaand begrip.',
+    service5DetailBullet5: 'Flexibele leveringsopties: on-site of remote.',
     service5DetailCTA: 'Neem contact op',
 
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
+    projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en wij nemen contact met u op.', // Placeholder, will be replaced by animated text
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -303,7 +284,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'Bedankt voor uw bericht.', // API response will add more detail + response time
+    contactFormSuccessMessage: 'Bedankt voor uw bericht.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
     contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.',
 
@@ -413,7 +394,6 @@ export const translations: Translations = {
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
 
-
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Trusted',
@@ -421,66 +401,44 @@ export const translations: Translations = {
     customersTitlePart3: 'companies like',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
-
     servicesTitle: 'Services',
     servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
+
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Implementation, optimization, and management of Splunk environments for data analysis and monitoring.',
-    service1DetailTitle: 'In-Depth Splunk Consultancy',
-    service1DetailDesc: 'Optimize your Splunk deployment, from architecture to advanced searching and dashboarding, to extract maximum value from your data.',
-    service1DetailBullet1: 'Splunk architecture review and health checks.',
-    service1DetailBullet2: 'Performance tuning and optimization of searches and data models.',
-    service1DetailBullet3: 'Advanced data onboarding, parsing, and field extractions (CIM).',
-    service1DetailBullet4: 'Custom dashboard, report, and alert creation.',
-    service1DetailBullet5: 'Splunk App development and integration with other systems.',
+    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions like ITSI & ES.',
+    service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
+    service1DetailDesc: 'We offer in-depth Splunk expertise to extract the full value from your data. From administrative tasks like upgrades and health checks to implementing and optimizing advanced solutions such as Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). Our goal is to make your Splunk environment not just work, but excel.',
+    service1DetailBullet1: 'Comprehensive Splunk health checks and performance optimization.',
+    service1DetailBullet2: 'Management and execution of Splunk upgrades and migrations.',
+    service1DetailBullet3: 'Implementation and configuration of Splunk ITSI for AIOps.',
+    service1DetailBullet4: 'Setup and refinement of Splunk Enterprise Security for SIEM.',
+    service1DetailBullet5: 'Development of custom dashboards, alerts, and data integrations.',
     service1DetailCTA: 'Get in touch',
 
-    service2Title: 'Cribl Expertise',
-    service2Description: 'Design and implementation of Cribl solutions for efficient data management and routing.',
-    service2DetailTitle: 'Master Your Dataflow with Cribl',
-    service2DetailDesc: 'We help you design, implement, and manage Cribl solutions for maximum efficiency and cost savings in your data processing.',
-    service2DetailBullet1: 'Cribl Stream/Edge architecture design and implementation.',
-    service2DetailBullet2: 'Pipeline design for data routing, filtering, enrichment, and masking.',
-    service2DetailBullet3: 'Seamless integration with Splunk, SIEM systems, and other destinations.',
-    service2DetailBullet4: 'Cost optimization strategies for data ingest and storage.',
-    service2DetailBullet5: 'Cribl Search implementation and optimization.',
+    service2Title: 'Cribl Consultancy',
+    service2Description: 'Optimize your data pipelines with Cribl Stream, Edge, and Search for maximum efficiency and control.',
+    service2DetailTitle: 'Cribl Consultancy: Intelligent Data Pipelines',
+    service2DetailDesc: 'Master your data flows and reduce costs with our Cribl expertise. We assist in designing, implementing, and optimizing solutions with Cribl Stream for data routing and transformation, Cribl Edge for data collection at the source, and Cribl Search for federated querying. Gain control over your data, wherever it resides.',
+    service2DetailBullet1: 'Architecture and implementation of Cribl Stream and Cribl Edge.',
+    service2DetailBullet2: 'Design of efficient data processing pipelines (filtering, routing, enriching).',
+    service2DetailBullet3: 'Integration with Splunk, SIEM solutions, and various data destinations.',
+    service2DetailBullet4: 'Cost-saving strategies through smart data routing and reduction.',
+    service2DetailBullet5: 'Implementation and use of Cribl Search for federated data access.',
     service2DetailCTA: 'Get in touch',
-
-    service3Title: 'Data Strategy & Architecture',
-    service3Description: 'Advice on data strategy, architecture design, and setting up robust data pipelines.',
-    service3DetailTitle: 'Future-Proof Data Strategy & Architecture',
-    service3DetailDesc: 'Develop a solid data strategy and a robust, scalable architecture that perfectly aligns with your business objectives.',
-    service3DetailBullet1: 'Comprehensive data maturity assessments and GAP analyses.',
-    service3DetailBullet2: 'Roadmap development for data platform modernization.',
-    service3DetailBullet3: 'Implementation of data governance and data quality frameworks.',
-    service3DetailBullet4: 'Design of cloud, on-premise, and hybrid data architectures.',
-    service3DetailBullet5: 'Optimization and design of ETL/ELT data pipelines.',
-    service3DetailCTA: 'Get in touch',
-
-    service4Title: 'AI-Driven Solutions',
-    service4Description: 'Development of custom AI tools and models to solve specific business problems.',
-    service4DetailTitle: 'Innovation with AI-Driven Solutions',
-    service4DetailDesc: 'Leverage the power of Artificial Intelligence to tackle your most pressing business challenges. We develop custom AI models and tools.',
-    service4DetailBullet1: 'Custom machine learning model development (predictive maintenance, fraud detection, etc.).',
-    service4DetailBullet2: 'AI-assisted log analysis and advanced anomaly detection.',
-    service4DetailBullet3: 'Natural Language Processing (NLP) for textual data analysis.',
-    service4DetailBullet4: 'Predictive analytics and forecasting models.',
-    service4DetailBullet5: 'Integration of Generative AI solutions for content creation and process automation.',
-    service4DetailCTA: 'Get in touch',
-
+    
     service5Title: 'Trainings & Workshops',
-    service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
+    service5Description: 'Customized trainings and workshops for Splunk & Cribl. Pricing on consultation.',
     service5DetailTitle: 'Practical Trainings & Workshops',
-    service5DetailDesc: 'Empower your team with practical, hands-on training for Splunk, Cribl, and modern data practices, fully tailored to your needs.',
-    service5DetailBullet1: 'Customized curriculum based on your team\'s specific needs and skill level.',
-    service5DetailBullet2: 'Beginner to advanced Splunk & Cribl courses (Admin, Architect, User).',
-    service5DetailBullet3: 'Workshops on data best practices, data-driven work, and new technologies.',
-    service5DetailBullet4: 'Interactive labs, real-world use cases, and Q&A sessions.',
-    service5DetailBullet5: 'Post-training support and access to additional learning resources.',
+    service5DetailDesc: "Empower your team with practical, hands-on training for Splunk and Cribl, fully tailored to your needs. Our trainings are designed to deliver immediately applicable knowledge and skills. **Pricing is on consultation and tailored to the scope and duration of the training.**",
+    service5DetailBullet1: "Customized curriculum based on your team's specific needs.",
+    service5DetailBullet2: "Splunk & Cribl courses: from basic to advanced (Admin, Architect, User).",
+    service5DetailBullet3: "Focus on real-world use cases and best practices.",
+    service5DetailBullet4: "Interactive labs and Q&A sessions for in-depth understanding.",
+    service5DetailBullet5: "Flexible delivery options: on-site or remote.",
     service5DetailCTA: 'Get in touch',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
+    projectInquirySubtitle: 'Do you have a data challenge? Describe your situation, and we will contact you.', // Placeholder, will be replaced by animated text
     questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -490,7 +448,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'Thank you for your message.', // API response will add more detail + response time
+    contactFormSuccessMessage: 'Thank you for your message.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
     contactFormResponseTime: 'We typically respond within 5 business days.',
 
@@ -564,22 +522,22 @@ export const translations: Translations = {
     disclaimerPageTitle: 'Disclaimer for DataSight Portfolio.',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
     disclaimerIntroP1: 'The information on the DataSight Portfolio website (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
-    disclaimerAccuracyTitle: 'Accuracy of Information',
-    disclaimerAccuracyP1: 'We do our best to keep information current and correct, but errors are possible. We are not liable for inaccuracies.',
-    disclaimerWebsiteAvailabilityTitle: 'Website Availability',
-    disclaimerWebsiteAvailabilityP1: 'We do not guarantee error-free or uninterrupted operation of the website.',
-    disclaimerWebsiteAvailabilityL1: 'Damage from inaccuracies or omissions.',
-    disclaimerWebsiteAvailabilityL2: 'Problems due to internet distribution (disruptions, delays).',
-    disclaimerExternalLinksTitle: 'External Links',
-    disclaimerExternalLinksP1: 'Links to third-party websites are beyond our responsibility. We do not necessarily endorse the content of linked sites.',
-    disclaimerElectronicCommTitle: 'Electronic Communication',
-    disclaimerElectronicCommP1: 'We do not guarantee that emails will be received or processed in a timely manner and accept no liability for the consequences thereof.',
-    disclaimerNoProAdviceTitle: 'No Professional Advice',
-    disclaimerNoProAdviceP1: 'The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.',
-    disclaimerLimitationLiabilityTitle: 'Limitation of Liability',
-    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is not liable for any direct or indirect damage resulting from the use of this website, unless there is intent or gross negligence.',
-    disclaimerChangesDisclaimerTitle: "Changes to This Disclaimer",
-    disclaimerChangesDisclaimerP1: "This disclaimer may be changed. Changes are effective immediately upon publication.",
+    disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
+    disclaimerAccuracyP1: 'Wij doen ons best om de informatie actueel en correct te houden, maar fouten zijn mogelijk. Wij zijn niet aansprakelijk voor onjuistheden.',
+    disclaimerWebsiteAvailabilityTitle: 'Website Beschikbaarheid',
+    disclaimerWebsiteAvailabilityP1: 'Wij garanderen geen foutloze of ononderbroken werking van de website.',
+    disclaimerWebsiteAvailabilityL1: 'Schade door onjuistheden of weglatingen.',
+    disclaimerWebsiteAvailabilityL2: 'Problemen door internetdistributie (storingen, vertragingen).',
+    disclaimerExternalLinksTitle: 'Externe Links',
+    disclaimerExternalLinksP1: 'Links naar websites van derden vallen buiten onze verantwoordelijkheid. Wij onderschrijven niet noodzakelijkerwijs de inhoud van gelinkte sites.',
+    disclaimerElectronicCommTitle: 'Elektronische Communicatie',
+    disclaimerElectronicCommP1: 'Wij garanderen niet dat e-mails tijdig worden ontvangen of verwerkt en aanvaarden geen aansprakelijkheid voor de gevolgen hiervan.',
+    disclaimerNoProAdviceTitle: 'Geen Professioneel Advies',
+    disclaimerNoProAdviceP1: 'De informatie op deze site is geen professioneel advies. Raadpleeg een deskundige voor specifieke situaties. Gebruik van de informatie is op eigen risico.',
+    disclaimerLimitationLiabilityTitle: 'Beperking van Aansprakelijkheid',
+    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
+    disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
+    disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
   },
 };
 

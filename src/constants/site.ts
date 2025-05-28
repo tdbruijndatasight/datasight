@@ -1,14 +1,14 @@
 
-import type { Locale, TranslationContent } from '@/lib/translations';
 import type { StaticImageData } from 'next/image';
+import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/images/logos
 import schipholLogo from '@/images/logos/schiphol.svg';
 import rabobankLogo from '@/images/logos/rabobank.svg';
-import ikeaLogo from '@/images/logos/ikea.svg';
-import icsLogo from '@/images/logos/ics.svg';
+import ikeaLogo from '@/images/logos/ikea.svg'; // Temporarily commented out
+import icsLogo from '@/images/logos/ics.svg'; // Temporarily commented out
 import uwvLogo from '@/images/logos/uwv.svg';
-import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
+// import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg'; // Temporarily commented out
 
 
 export interface NavItem {
@@ -19,7 +19,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: StaticImageData;
+  src: StaticImageData | string; // Allow string for placeholders
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -35,17 +35,17 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'DataSight Portfolio',
+  name: 'DataSight Portfolio.',
   email: 'info.tomdebruijn@gmail.com',
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
   companyLogos: [
     { name: 'Schiphol Airport', src: schipholLogo, dataAiHint: 'Schiphol Airport logo', width: 140, height: 55 },
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
-    { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 },
-    { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 },
+    { name: 'IKEA', src: "https://placehold.co/140x55.png", dataAiHint: 'IKEA logo', width: 140, height: 55 },
+    { name: 'ICS Cards', src: "https://placehold.co/140x55.png", dataAiHint: 'ICS logo', width: 140, height: 55 },
     { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
-    { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 },
+    { name: 'Gemeente Den Haag',  src: "https://placehold.co/140x55.png", dataAiHint: 'Den Haag logo', width: 140, height: 55 },
   ] as CompanyLogo[],
 };
 
@@ -58,8 +58,6 @@ export interface ServiceItemConstant {
 export const SERVICE_ITEMS: ServiceItemConstant[] = [
   { titleKey: 'service1Title', descriptionKey: 'service1Description', icon: 'SplunkIcon' },
   { titleKey: 'service2Title', descriptionKey: 'service2Description', icon: 'CriblIcon' },
-  { titleKey: 'service3Title', descriptionKey: 'service3Description', icon: 'DataStrategyIcon' },
-  { titleKey: 'service4Title', descriptionKey: 'service4Description', icon: 'AiSolutionIcon' },
   { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
 
@@ -73,4 +71,3 @@ export const SERVICE_ITEMS: ServiceItemConstant[] = [
 //   }
 // ];
 export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden
-
