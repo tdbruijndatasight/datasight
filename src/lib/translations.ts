@@ -176,9 +176,9 @@ export const translations: Translations = {
 
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
-    homeAboutMeTitle: 'Over Mij',
-    homeAboutMeP1: 'Onafhankelijk consultant met meer dan 10 jaar praktische IT-ervaring, die organisaties helpt complexe data om te zetten in heldere, bruikbare inzichten. Gecertificeerd expert in Splunk en Cribl, en bied consultancy, advies en trainingen op maat. Gepassioneerd door het oplossen van uitdagende dataproblemen en het leveren van resultaten, ben ik toegewijd aan continu leren en het benutten van AI en de nieuwste technologieën om innovatie te stimuleren.',
-    homeAboutMeP2: 'Vertrouwd vanwege diepgaande technische kennis, eerlijk advies en een no-nonsense, nuchtere aanpak. Op zoek naar iemand met ervaring, makkelijk om mee samen te werken en oprecht geïnvesteerd in uw succes? Laten we contact opnemen.',
+    homeAboutMeTitle: 'Welkom bij DataSight',
+    homeAboutMeP1: 'Onze missie is helder: organisaties helpen complexe data om te zetten in duidelijke, direct toepasbare inzichten. Dit bereiken we door persoonlijke aandacht, voortdurende investeringen in diepgaande technische kennis en de nieuwste technologieën om innovatie te stimuleren. U kunt rekenen op eerlijk, pragmatisch en realistisch advies, afgestemd op uw unieke situatie.',
+    homeAboutMeP2: 'Wij bieden gespecialiseerde consultancy, advies en maatwerk trainingen voor Splunk en Cribl. Bent u op zoek naar een ervaren partner die oprecht geïnvesteerd is in uw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -319,9 +319,9 @@ export const translations: Translations = {
 
     homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
-    homeAboutMeTitle: 'About Me',
-    homeAboutMeP1: 'Independent consultant with 10+ years of hands-on IT experience, helping organizations turn complex data into clear, actionable insights. Certified expert in Splunk and Cribl, offering consultancy, advice, and tailored training. Passionate about solving tough data challenges and delivering results, I’m committed to continuous learning and leveraging AI and the latest technologies to drive innovation.',
-    homeAboutMeP2: 'Trusted for deep technical know-how, honest advice, and a no-nonsense, down-to-earth approach. Looking for someone experienced, easy to work with, and genuinely invested in your success? Let’s connect.',
+    homeAboutMeTitle: 'Welcome at DataSight',
+    homeAboutMeP1: "Our mission is clear: helping organizations turn complex data into clear, actionable insights. We achieve this through personal attention, continuous investment in deep technical know-how, and leveraging the latest technologies to drive innovation. You can count on honest, pragmatic, and realistic advice tailored to your unique situation.",
+    homeAboutMeP2: "We offer specialized consultancy, advice, and tailored training for Splunk and Cribl. Are you looking for an experienced partner genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -451,5 +451,7 @@ export const translations: Translations = {
   },
 };
 
+
+    
 
     
