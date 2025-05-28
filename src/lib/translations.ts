@@ -20,7 +20,6 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
-  // homeAboutMeP4: string; // Merged into P3
 
   homeCTA: string;
 
@@ -107,10 +106,10 @@ export interface TranslationContent {
   questionLabel: string;
   submitInquiryButton: string;
   submitInquiryLoading: string;
-  // contactFormResponseTime: string; // Removed from form display, still used in API response toast
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
+  contactFormResponseTime: string;
 
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
@@ -247,7 +246,7 @@ export const translations: Translations = {
     service1DetailBullet3: 'Geavanceerde data onboarding, parsing en field extracties (CIM).',
     service1DetailBullet4: 'Ontwikkeling van maatwerk dashboards, rapportages en alerts.',
     service1DetailBullet5: 'Splunk App ontwikkeling en integratie met andere systemen.',
-    service1DetailCTA: 'Klaar om het volledige potentieel van Splunk te benutten? Neem contact op.',
+    service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Expertise',
     service2Description: 'Ontwerp en implementatie van Cribl-oplossingen voor efficiënt data management en routing.',
@@ -258,7 +257,7 @@ export const translations: Translations = {
     service2DetailBullet3: 'Naadloze integratie met Splunk, SIEM-systemen en andere bestemmingen.',
     service2DetailBullet4: 'Kostenoptimalisatiestrategieën voor data-ingest en -opslag.',
     service2DetailBullet5: 'Implementatie en optimalisatie van Cribl Search.',
-    service2DetailCTA: 'Krijg controle over uw data pipeline. Laten we praten over Cribl.',
+    service2DetailCTA: 'Neem contact op',
 
     service3Title: 'Data Strategie & Architectuur',
     service3Description: 'Advies over data strategie, architectuurontwerp en het opzetten van robuuste data pipelines.',
@@ -269,7 +268,7 @@ export const translations: Translations = {
     service3DetailBullet3: 'Implementatie van data governance en data quality frameworks.',
     service3DetailBullet4: 'Ontwerp van cloud, on-premise en hybride data-architecturen.',
     service3DetailBullet5: 'Optimalisatie en ontwerp van ETL/ELT data pipelines.',
-    service3DetailCTA: 'Bouw een datafundament voor succes. Bespreek uw strategie met ons.',
+    service3DetailCTA: 'Neem contact op',
 
     service4Title: 'AI-Gedreven Oplossingen',
     service4Description: 'Ontwikkeling van op maat gemaakte AI-tools en -modellen om specifieke bedrijfsproblemen op te lossen.',
@@ -280,7 +279,7 @@ export const translations: Translations = {
     service4DetailBullet3: 'Natural Language Processing (NLP) voor analyse van tekstuele data.',
     service4DetailBullet4: 'Voorspellende analyses en forecasting modellen.',
     service4DetailBullet5: 'Integratie van Generative AI oplossingen voor content creatie en procesautomatisering.',
-    service4DetailCTA: 'Innoveer met AI. Ontdek vandaag nog maatwerkoplossingen.',
+    service4DetailCTA: 'Neem contact op',
 
     service5Title: 'Trainingen & Workshops',
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
@@ -291,7 +290,7 @@ export const translations: Translations = {
     service5DetailBullet3: 'Workshops over data best practices, datagedreven werken en nieuwe technologieën.',
     service5DetailBullet4: 'Interactieve labs, real-world use cases en Q&A sessies.',
     service5DetailBullet5: 'Nazorg en toegang tot aanvullende leermiddelen.',
-    service5DetailCTA: 'Verhoog de expertise van uw team. Vraag naar onze op maat gemaakte trainingsprogramma\'s.',
+    service5DetailCTA: 'Neem contact op',
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
@@ -303,22 +302,22 @@ export const translations: Translations = {
     questionLabel: 'Uw vraag of projectbeschrijving',
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
-    // contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.', // Removed from form display
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
     contactFormSuccessMessage: 'Bedankt voor uw bericht.', // API response will add more detail + response time
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
+    contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.',
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
-    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nWij sturen je gerust een berichtje.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nWij sturen gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
     inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nLaten we even bellen.",
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nLaat het ons weten – wij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nLaten we samen kijken wat er mogelijk is.",
-    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nWij sturen je gerust een berichtje.",
+    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nWij sturen gerust een berichtje.",
     inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.",
-    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nWij sturen je gerust een berichtje!",
+    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nWij sturen gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
     inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in.",
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
@@ -434,7 +433,7 @@ export const translations: Translations = {
     service1DetailBullet3: 'Advanced data onboarding, parsing, and field extractions (CIM).',
     service1DetailBullet4: 'Custom dashboard, report, and alert creation.',
     service1DetailBullet5: 'Splunk App development and integration with other systems.',
-    service1DetailCTA: 'Ready to unlock Splunk\'s full potential? Contact us.',
+    service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Expertise',
     service2Description: 'Design and implementation of Cribl solutions for efficient data management and routing.',
@@ -445,7 +444,7 @@ export const translations: Translations = {
     service2DetailBullet3: 'Seamless integration with Splunk, SIEM systems, and other destinations.',
     service2DetailBullet4: 'Cost optimization strategies for data ingest and storage.',
     service2DetailBullet5: 'Cribl Search implementation and optimization.',
-    service2DetailCTA: 'Take control of your data pipeline. Let\'s talk Cribl.',
+    service2DetailCTA: 'Get in touch',
 
     service3Title: 'Data Strategy & Architecture',
     service3Description: 'Advice on data strategy, architecture design, and setting up robust data pipelines.',
@@ -456,7 +455,7 @@ export const translations: Translations = {
     service3DetailBullet3: 'Implementation of data governance and data quality frameworks.',
     service3DetailBullet4: 'Design of cloud, on-premise, and hybrid data architectures.',
     service3DetailBullet5: 'Optimization and design of ETL/ELT data pipelines.',
-    service3DetailCTA: 'Build a data foundation for success. Discuss your strategy with us.',
+    service3DetailCTA: 'Get in touch',
 
     service4Title: 'AI-Driven Solutions',
     service4Description: 'Development of custom AI tools and models to solve specific business problems.',
@@ -467,7 +466,7 @@ export const translations: Translations = {
     service4DetailBullet3: 'Natural Language Processing (NLP) for textual data analysis.',
     service4DetailBullet4: 'Predictive analytics and forecasting models.',
     service4DetailBullet5: 'Integration of Generative AI solutions for content creation and process automation.',
-    service4DetailCTA: 'Innovate with AI. Explore custom solutions today.',
+    service4DetailCTA: 'Get in touch',
 
     service5Title: 'Trainings & Workshops',
     service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
@@ -478,7 +477,7 @@ export const translations: Translations = {
     service5DetailBullet3: 'Workshops on data best practices, data-driven work, and new technologies.',
     service5DetailBullet4: 'Interactive labs, real-world use cases, and Q&A sessions.',
     service5DetailBullet5: 'Post-training support and access to additional learning resources.',
-    service5DetailCTA: 'Upskill your team. Inquire about our tailored training programs.',
+    service5DetailCTA: 'Get in touch',
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Placeholder subtitle, will be replaced by animated text.', // This key is actually for the animated text now
@@ -490,10 +489,10 @@ export const translations: Translations = {
     questionLabel: 'Your Question or Project Description',
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
-    // contactFormResponseTime: 'We typically respond within 5 business days.', // Removed from form display
     contactFormSuccessTitle: 'Inquiry Received!',
     contactFormSuccessMessage: 'Thank you for your message.', // API response will add more detail + response time
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
+    contactFormResponseTime: 'We typically respond within 5 business days.',
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nWe're happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nWe'll gladly send you a message.",
