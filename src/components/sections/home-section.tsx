@@ -12,7 +12,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedHomeTitle from '@/components/animated-home-title';
 import { cn } from '@/lib/utils';
-import profilePicture from '@/images/tom-de-bruijn-profile.webp'; // Import profile picture
+import profilePicture from '@/images/tom-de-bruijn-profile.webp';
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
@@ -21,8 +21,8 @@ const HomeSection: React.FC = () => {
   const handleSubtitleAnimate = () => {
     setAnimateSubtitleClass("subtitle-highlight-animate");
     setTimeout(() => {
-      setAnimateSubtitleClass(""); // Remove class to allow re-triggering if needed
-    }, 600); // Duration of animation matches CSS (0.6s)
+      setAnimateSubtitleClass(""); 
+    }, 600); 
   };
 
   return (
@@ -49,12 +49,11 @@ const HomeSection: React.FC = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
-            <CardContent className="text-foreground/90 space-y-3"> {/* Main container for all text content */}
-              {/* Row for Image and P1 (Mission) */}
+            <CardContent className="text-foreground/90 space-y-3">
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <div className="flex-shrink-0">
                   <Image
-                    src={profilePicture as StaticImageData}
+                    src={profilePicture}
                     alt="Tom de Bruijn"
                     width={120}
                     height={120}
@@ -64,14 +63,10 @@ const HomeSection: React.FC = () => {
                   />
                 </div>
                 <div className="flex-grow space-y-1 text-center sm:text-left">
-                  <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p> {/* Mission */}
+                  <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
+                  <p>{t('homeAboutMeP2')}</p>
                 </div>
               </div>
-
-              {/* P2, P3, and P4 rendered below the image/P1 row, taking full width */}
-              <p>{t('homeAboutMeP2')}</p>
-              <p>{t('homeAboutMeP3')}</p>
-              <p>{t('homeAboutMeP4')}</p>
             </CardContent>
           </Card>
         </AnimatedSection>
