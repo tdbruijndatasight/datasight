@@ -219,13 +219,13 @@ export const translations: Translations = {
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
 
-    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde>', 
+    homeTitle: 'Data > Inzicht > Waarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
-    
+
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Vertrouwd',
@@ -291,7 +291,7 @@ export const translations: Translations = {
     service5DetailCTA: 'Verhoog de expertise van uw team. Vraag naar onze op maat gemaakte trainingsprogramma\'s.',
 
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: 'Heeft u een data-uitdaging, een projectidee, of wilt u gewoon even sparren? \nLaat hieronder uw bericht achter en wij nemen contact met u op.',
+    projectInquirySubtitle: 'Heeft u een data-uitdaging, een projectidee, of wilt u gewoon even sparren? \nLaat hieronder uw bericht achter en wij nemen contact met u op.', // This will be the animated text
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -301,7 +301,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.', 
+    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nLaat het ons weten – wij denken graag mee.",
@@ -321,6 +321,7 @@ export const translations: Translations = {
     inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.",
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met je mee naar efficiënte oplossingen.",
 
+
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe wij uw organisatie kunnen helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
@@ -335,6 +336,7 @@ export const translations: Translations = {
     copyToClipboardTooltip: "Kopieer naar klembord",
     callDirectlyTooltip: "Direct bellen",
 
+
     loading: 'Laden...',
     error: 'Fout',
     by: 'door',
@@ -344,6 +346,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
+    // Privacy Policy Page
     privacyPageTitle: 'Privacybeleid voor DataSight Portfolio.',
     privacyLastUpdated: 'Laatst bijgewerkt: 1 april 2024',
     privacyIntro: 'DataSight Portfolio ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight Portfolio (de "Site") gebruikt en de diensten die wij aanbieden.',
@@ -368,6 +371,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Toepasselijk Recht',
     privacyGoverningLawP1: 'Nederlands recht is van toepassing. Geschillen worden voorgelegd aan de bevoegde rechtbank in Den Haag.',
 
+    // Disclaimer Page
     disclaimerPageTitle: 'Disclaimer voor DataSight Portfolio.',
     disclaimerValidFrom: 'Geldig vanaf: 1 april 2024',
     disclaimerIntroP1: 'De informatie op de website van DataSight Portfolio (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
@@ -399,7 +403,7 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business value>', 
+    homeTitle: 'Data > Insight > Value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
@@ -471,7 +475,7 @@ export const translations: Translations = {
     service5DetailCTA: 'Upskill your team. Inquire about our tailored training programs.',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: 'Do you have a data challenge, a project idea, or just want to brainstorm? \nLeave your message below and we will contact you.',
+    projectInquirySubtitle: 'Do you have a data challenge, a project idea, or just want to brainstorm? \nLeave your message below and we will contact you.', // This is the animated text
     questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -481,7 +485,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'You will receive a confirmation email shortly.', 
+    contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nLet us know – we're happy to brainstorm with you.",
@@ -515,6 +519,7 @@ export const translations: Translations = {
     copyToClipboardTooltip: "Copy to clipboard",
     callDirectlyTooltip: "Call directly",
 
+
     loading: 'Loading...',
     error: 'Error',
     by: 'by',
@@ -524,6 +529,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
+    // Privacy Policy Page
     privacyPageTitle: 'Privacy Policy for DataSight Portfolio.',
     privacyLastUpdated: 'Last Updated: April 1, 2024',
     privacyIntro: 'DataSight Portfolio ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight Portfolio (the "Site"), and the services we offer.',
@@ -548,6 +554,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Governing Law',
     privacyGoverningLawP1: 'Dutch law applies. Disputes will be submitted to the competent court in The Hague.',
 
+    // Disclaimer Page
     disclaimerPageTitle: 'Disclaimer for DataSight Portfolio.',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
     disclaimerIntroP1: 'De informatie op de website van DataSight Portfolio (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
