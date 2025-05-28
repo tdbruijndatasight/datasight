@@ -50,31 +50,34 @@ const ProjectInquirySection: React.FC = () => {
   });
 
   useEffect(() => {
+    // Initialize with the first placeholder
     setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
-    setIsSubtitleVisible(true); // Ensure it's visible on first load or language change
+    setIsSubtitleVisible(true);
 
     const intervalId = setInterval(() => {
       setIsSubtitleVisible(false); // Start fade-out
 
       setTimeout(() => {
         setCurrentSubtitleIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 1000); // Duration of fade-out
-    }, 9000); // 8s visible + 1s fade-out/in
+      }, 1000); // Duration of fade-out (1s)
+    }, 9000); // 8s visible + 1s fade-out/in cycle
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]);
+  }, [language]); // Reset animation on language change
 
   useEffect(() => {
-    if (!isSubtitleVisible) { // Only update and fade in if it was just faded out
-        setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
-        // Short timeout to allow CSS to apply hidden state before transitioning to visible
-        setTimeout(() => {
-            setIsSubtitleVisible(true); // Start fade-in
-        }, 50); // Small delay
+    // This effect handles updating the text and triggering fade-in
+    // after currentSubtitleIndex has changed.
+    if (!isSubtitleVisible) { 
+      setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
+      // Short timeout to allow CSS to apply hidden state before transitioning to visible
+      setTimeout(() => {
+        setIsSubtitleVisible(true); // Start fade-in
+      }, 50); 
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSubtitleIndex, t]);
+  }, [currentSubtitleIndex, t]); // Rerun when index or translations change
 
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -125,11 +128,11 @@ const ProjectInquirySection: React.FC = () => {
             {t('projectInquiryTitle')}
           </h2>
           <p className={cn(
-            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[3em] md:min-h-[2.5em]", // Added min-height
-            "transition-opacity duration-1000 ease-in-out",
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height for 2 lines
+            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // Added whitespace-pre-line
             isSubtitleVisible ? "opacity-100" : "opacity-0"
           )}>
-            {animatedSubtitle || t(placeholderKeys[0])}{/* Fallback to first placeholder if animatedSubtitle is briefly empty */}
+            {animatedSubtitle || t(placeholderKeys[0])}
           </p>
         </AnimatedSection>
 
@@ -195,7 +198,7 @@ const ProjectInquirySection: React.FC = () => {
                         </FormItem>
                       )}
                     />
-                    <p className="text-sm text-muted-foreground text-center">{t('contactFormResponseTime')}</p>
+                    {/* Removed the "response in 5 days" static text from here */}
                     <Button type="submit" disabled={isLoading} size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-md">
                       {isLoading ? (
                         <>
@@ -221,3 +224,4 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
+
