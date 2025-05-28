@@ -4,10 +4,8 @@ export type Locale = 'nl' | 'en';
 export interface TranslationContent {
   // Header / Nav
   navHome: string;
-  // navAbout: string; // Assuming this was meant to be part of Home or another section
   navCustomers: string;
   navServices: string;
-  // navPublications: string; // Hidden
   navProjectInquiry: string;
   navContact: string;
   languageToggle: string;
@@ -18,8 +16,9 @@ export interface TranslationContent {
   homeTitle: string;
   homeSubtitle: string;
   homeAboutMeTitle: string;
-  homeAboutMeP1: string;
-  homeAboutMeP2: string;
+  homeAboutMeP1: string; // Mission statement
+  homeAboutMeP2: string; // "We do this through..." / "Wij zijn volledig gecertificeerd..."
+  homeAboutMeP3: string; // "Looking for an experienced partner..."
   homeCTA: string;
 
   // Customers Section
@@ -55,16 +54,14 @@ export interface TranslationContent {
   phoneLabel: string;
   phonePlaceholder: string;
   questionLabel: string;
-  questionPlaceholder: string; // Original static placeholder, can be kept as fallback or removed if not needed
+  questionPlaceholder: string; 
   submitInquiryButton: string;
   submitInquiryLoading: string;
   contactFormResponseTime: string;
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
-  // inquiryCoffeePrompt: string; // Removed
-
-  // Animated Placeholders for Inquiry Textarea (New list of 16)
+  
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
   inquiryPlaceholder3: string;
@@ -164,10 +161,8 @@ export type Translations = {
 export const translations: Translations = {
   nl: {
     navHome: 'Home',
-    // navAbout: 'Over Mij', // Assuming this was meant to be part of Home or another section
     navCustomers: 'Klanten',
     navServices: 'Diensten',
-    // navPublications: 'Publicaties', // Hidden
     navProjectInquiry: 'Contactformulier',
     navContact: 'Contact',
     languageToggle: 'Switch to English',
@@ -178,7 +173,8 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight',
     homeAboutMeP1: 'Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.',
-    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
+    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau.',
+    homeAboutMeP3: 'Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -197,12 +193,6 @@ export const translations: Translations = {
     service5Title: 'Trainingen & Workshops',
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
 
-    // publicationsTitle: 'Publicaties & Inzichten', // Hidden
-    // publicationsSubtitle: 'Artikelen, whitepapers en presentaties over data, analytics en technologie.', // Hidden
-    // publication1Title: 'De Toekomst van Data Observability met Cribl', // Hidden
-    // publication1Description: 'Een diepgaande analyse van hoe Cribl de manier waarop we data beheren en observeren transformeert. (Voorbeeld publicatie)', // Hidden
-    // viewPublication: 'Bekijk Publicatie', // Hidden
-
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
     emailLabel: 'E-mailadres',
@@ -210,15 +200,14 @@ export const translations: Translations = {
     phoneLabel: 'Telefoonnummer',
     phonePlaceholder: 'Bijv. +31 6 12345678',
     questionLabel: 'Uw vraag of projectbeschrijving',
-    questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...', // Fallback
+    questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...', 
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
     contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
-    // inquiryCoffeePrompt: "Ook voor een (virtuele) kop koffie! ☕", // Removed
-
+    
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? Laat het me weten – ik denk graag mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯 Stuur gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking – plan hier eenvoudig 30 minuten in je agenda 📅.",
@@ -307,10 +296,8 @@ export const translations: Translations = {
   },
   en: {
     navHome: 'Home',
-    // navAbout: 'About Me', // Assuming this was meant to be part of Home or another section
     navCustomers: 'Customers',
     navServices: 'Services',
-    // navPublications: 'Publications', // Hidden
     navProjectInquiry: 'Contact Form',
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
@@ -321,7 +308,8 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight',
     homeAboutMeP1: 'At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.',
-    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels.",
+    homeAboutMeP3: "Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -340,12 +328,6 @@ export const translations: Translations = {
     service5Title: 'Trainings & Workshops',
     service5Description: 'Customized trainings and workshops for Splunk, Cribl, and data strategy to empower your team.',
 
-    // publicationsTitle: 'Publications & Insights', // Hidden
-    // publicationsSubtitle: 'Articles, whitepapers, and presentations on data, analytics, and technology.', // Hidden
-    // publication1Title: 'The Future of Data Observability with Cribl', // Hidden
-    // publication1Description: 'An in-depth analysis of how Cribl is transforming the way we manage and observe data. (Example publication)', // Hidden
-    // viewPublication: 'View Publication', // Hidden
-
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
     emailLabel: 'Email Address',
@@ -353,15 +335,14 @@ export const translations: Translations = {
     phoneLabel: 'Phone Number',
     phonePlaceholder: 'E.g., +44 7123 456789',
     questionLabel: 'Your Question or Project Description',
-    questionPlaceholder: 'Describe your data challenge, project idea, or question here...', // Fallback
+    questionPlaceholder: 'Describe your data challenge, project idea, or question here...', 
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
     contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
-    // inquiryCoffeePrompt: "Also up for a (virtual) cup of coffee! ☕", // Removed
-
+    
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? Let me know – I'm happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯 Feel free to send a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction – easily schedule 30 minutes in your calendar here 📅.",
@@ -379,7 +360,6 @@ export const translations: Translations = {
     inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? I guide you practically, at your own pace.",
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? 💰 I'm happy to look into efficient solutions with you.",
 
-
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
     contactEmail: 'Email',
@@ -393,7 +373,6 @@ export const translations: Translations = {
     copyErrorDescription: "Could not copy email address to clipboard.",
     copyToClipboardTooltip: "Copy to clipboard",
     callDirectlyTooltip: "Call directly",
-
 
     loading: 'Loading...',
     error: 'Error',
@@ -450,5 +429,3 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
-
-    
