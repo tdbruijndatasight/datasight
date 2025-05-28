@@ -6,6 +6,7 @@ export interface TranslationContent {
   navHome: string;
   navCustomers: string;
   navServices: string;
+  // navPublications: string; // Hidden
   navProjectInquiry: string;
   navContact: string;
   languageToggle: string;
@@ -16,10 +17,11 @@ export interface TranslationContent {
   homeTitle: string;
   homeSubtitle: string;
   homeAboutMeTitle: string;
-  homeAboutMeP1: string; // Mission statement / Independent consultant...
-  homeAboutMeP2: string; // Combined "Certified expert..." through "Let's connect."
-  // homeAboutMeP3 is now merged into P2
-  // homeAboutMeP4 is now merged into P2
+  homeAboutMeP1: string;
+  homeAboutMeP2: string;
+  homeAboutMeP3: string;
+  // homeAboutMeP4: string; // Merged into P3 or removed
+
   homeCTA: string;
 
   // Customers Section
@@ -41,8 +43,6 @@ export interface TranslationContent {
   service5Description: string;
 
   // Publications Section (Keys commented out as section is hidden)
-  // publicationsTitle: string;
-  // publicationsSubtitle: string;
   // publication1Title: string;
   // publication1Description: string;
   // viewPublication: string;
@@ -50,12 +50,12 @@ export interface TranslationContent {
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string;
+  // inquiryCoffeePrompt: string; // Removed
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
   phonePlaceholder: string;
   questionLabel: string;
-  // questionPlaceholder: string; // Replaced by animated placeholders
   submitInquiryButton: string;
   submitInquiryLoading: string;
   contactFormResponseTime: string;
@@ -164,17 +164,19 @@ export const translations: Translations = {
     navHome: 'Home',
     navCustomers: 'Klanten',
     navServices: 'Diensten',
+    // navPublications: 'Publicaties', // Hidden
     navProjectInquiry: 'Contactformulier',
     navContact: 'Contact',
     languageToggle: 'Switch to English',
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
 
-    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
+    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde', // Ensure 'waarde' is lowercase
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight',
-    homeAboutMeP1: "Onafhankelijk consultant met 10+ jaar hands-on IT-ervaring, helpt organisaties complexe data om te zetten in duidelijke, bruikbare inzichten.",
-    homeAboutMeP2: "Gecertificeerd expert in Splunk en Cribl, biedt consultancy, advies en trainingen op maat. Gepassioneerd door het oplossen van lastige data-uitdagingen en het leveren van resultaten, ben ik toegewijd aan continu leren en het benutten van AI en de nieuwste technologieën om innovatie te stimuleren. Erkend voor diepgaande technische kennis, eerlijk advies en een nuchtere, 'down-to-earth' aanpak. Op zoek naar iemand die ervaren is, makkelijk in de omgang en oprecht betrokken bij uw succes? Laten we kennismaken.",
+    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
+    homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
+    homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -195,12 +197,12 @@ export const translations: Translations = {
     
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
+    // inquiryCoffeePrompt: 'Ook voor een (virtuele) kop koffie! ☕', // Removed
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
     phonePlaceholder: 'Bijv. +31 6 12345678',
     questionLabel: 'Uw vraag of projectbeschrijving',
-    // questionPlaceholder: 'Beschrijf hier uw data-uitdaging, projectidee of vraag...', // Replaced
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
@@ -295,17 +297,19 @@ export const translations: Translations = {
     navHome: 'Home',
     navCustomers: 'Customers',
     navServices: 'Services',
+    // navPublications: 'Publications', // Hidden
     navProjectInquiry: 'Contact Form',
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business value',
+    homeTitle: 'Transforming Data Insights into Business value', // Ensure 'value' is lowercase
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight',
-    homeAboutMeP1: "Independent consultant with 10+ years of hands-on IT experience, helping organizations turn complex data into clear, actionable insights.",
-    homeAboutMeP2: "Certified expert in Splunk and Cribl, offering, consultancy, advice, tailored training. Passionate about solving tough data challenges and delivering results, I’m committed to continuous learning and leveraging AI and the latest technologies to drive innovation. Trusted for deep technical know-how, honest advice, and a no-nonsense, down-to-earth approach. Looking for someone experienced, easy to work with, and genuinely invested in your success? Let’s connect.",
+    homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
+    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
+    homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -326,12 +330,12 @@ export const translations: Translations = {
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: 'Have a data challenge? Describe your situation, and I\'ll get in touch.',
+    // inquiryCoffeePrompt: 'Also for a (virtual) cup of coffee! ☕', // Removed
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
     phonePlaceholder: 'E.g., +44 7123 456789',
     questionLabel: 'Your Question or Project Description',
-    // questionPlaceholder: 'Describe your data challenge, project idea, or question here...', // Replaced
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',

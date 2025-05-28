@@ -50,7 +50,7 @@ const HomeSection: React.FC = () => {
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
             <CardContent className="text-foreground/90 space-y-3">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
+              <div className="flex flex-col sm:flex-row items-start gap-4">
                 <div className="flex-shrink-0">
                   <Image
                     src={profilePicture}
@@ -62,11 +62,12 @@ const HomeSection: React.FC = () => {
                     data-ai-hint="profile person"
                   />
                 </div>
-                <div className="flex-grow space-y-1 text-center sm:text-left">
+                <div className="flex-grow text-center sm:text-left">
                   <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
-                  <p>{t('homeAboutMeP2')}</p>
                 </div>
               </div>
+              <p>{t('homeAboutMeP2')}</p>
+              <p>{t('homeAboutMeP3')}</p>
             </CardContent>
           </Card>
         </AnimatedSection>
