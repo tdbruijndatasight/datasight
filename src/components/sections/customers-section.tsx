@@ -20,12 +20,14 @@ const CustomersSection: React.FC = () => {
     <section id="customers" className="bg-background section-min-height">
       <div className="container mx-auto text-center">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-1">
             {t('customersTitlePart1')}
-            <Heart className="h-6 w-6 text-red-500 fill-red-500" /> {/* Added heart icon */}
-            {t('customersTitlePart2')}
+            <span className="relative inline-block mx-1"> {/* Adjusted mx for tighter spacing */}
+              <Heart className="h-5 w-5 text-red-500 fill-red-500 relative -top-0.5" /> {/* Adjusted size and vertical position */}
+            </span>
+            {t('customersTitlePart2')}&nbsp;{t('customersTitlePart3')} {/* Added non-breaking space */}
           </h2>
-          <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto"> {/* Changed to max-w-3xl */}
+          <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto">
             {t('customersDescription')}
           </p>
         </AnimatedSection>
