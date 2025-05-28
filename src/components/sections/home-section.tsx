@@ -11,7 +11,7 @@ import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
 import AnimatedHomeTitle from '@/components/animated-home-title';
 import { cn } from '@/lib/utils';
-import profilePicture from '@/images/tom-de-bruijn-profile.webp';
+import profilePicture from '@/images/tom-de-bruijn-profile.jpeg';
 
 const HomeSection: React.FC = () => {
   const { t } = useLanguage();
