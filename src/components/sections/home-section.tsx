@@ -1,7 +1,6 @@
 
 "use client";
 
-import type { StaticImageData } from 'next/image';
 import React, { useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
@@ -21,8 +20,8 @@ const HomeSection: React.FC = () => {
   const handleSubtitleAnimate = () => {
     setAnimateSubtitleClass("subtitle-highlight-animate");
     setTimeout(() => {
-      setAnimateSubtitleClass(""); 
-    }, 600); 
+      setAnimateSubtitleClass("");
+    }, 600);
   };
 
   return (
@@ -49,10 +48,10 @@ const HomeSection: React.FC = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
-            <CardContent className="text-foreground/90 space-y-3">
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                {/* Image */}
-                <div className="flex-shrink-0 mx-auto sm:mx-0">
+            <CardContent className="text-foreground/90">
+              {/* Container to clear the float */}
+              <div className="overflow-hidden">
+                <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0">
                   <Image
                     src={profilePicture}
                     alt="Tom de Bruijn"
@@ -63,14 +62,13 @@ const HomeSection: React.FC = () => {
                     data-ai-hint="profile person"
                   />
                 </div>
-                {/* Text block for P1 and P2 (next to image) */}
-                <div className="flex-grow text-center sm:text-left space-y-2">
+                {/* Text block that wraps around the image */}
+                <div className="space-y-2">
                   <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
                   <p>{t('homeAboutMeP2')}</p>
+                  <p>{t('homeAboutMeP3')}</p>
                 </div>
               </div>
-              {/* P3 - Full width below the image and P1/P2 block */}
-              <p>{t('homeAboutMeP3')}</p>
             </CardContent>
           </Card>
         </AnimatedSection>
