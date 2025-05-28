@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SITE_CONFIG, type CompanyLogo } from '@/constants/site';
+import { Heart } from 'lucide-react'; // Import Heart icon
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
@@ -19,10 +20,12 @@ const CustomersSection: React.FC = () => {
     <section id="customers" className="bg-background section-min-height">
       <div className="container mx-auto text-center">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            {t('customersTitle')}
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
+            {t('customersTitlePart1')}
+            <Heart className="h-6 w-6 text-red-500 fill-red-500" /> {/* Added heart icon */}
+            {t('customersTitlePart2')}
           </h2>
-          <p className="text-lg text-foreground/80 mb-12 max-w-2xl mx-auto">
+          <p className="text-lg text-foreground/80 mb-12 max-w-3xl mx-auto"> {/* Changed to max-w-3xl */}
             {t('customersDescription')}
           </p>
         </AnimatedSection>
@@ -57,3 +60,5 @@ const CustomersSection: React.FC = () => {
 };
 
 export default CustomersSection;
+
+    

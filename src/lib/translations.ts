@@ -20,12 +20,13 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
-  // homeAboutMeP4: string; // Merged into P3 or removed
+  // homeAboutMeP4: string; // Merged into P3
 
   homeCTA: string;
 
   // Customers Section
-  customersTitle: string;
+  customersTitlePart1: string;
+  customersTitlePart2: string;
   customersDescription: string;
 
   // Services Section
@@ -50,7 +51,6 @@ export interface TranslationContent {
   // Project Inquiry Section
   projectInquiryTitle: string;
   projectInquirySubtitle: string;
-  // inquiryCoffeePrompt: string; // Removed
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -181,7 +181,8 @@ export const translations: Translations = {
 
     homeCTA: 'Neem Contact Op',
 
-    customersTitle: 'Vertrouwd door Bedrijven zoals',
+    customersTitlePart1: 'Vertrouwd door',
+    customersTitlePart2: 'Bedrijven zoals',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat hen verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
     servicesTitle: 'Mijn Diensten',
@@ -314,7 +315,8 @@ export const translations: Translations = {
 
     homeCTA: 'Get in Touch',
 
-    customersTitle: 'Trusted by Companies like',
+    customersTitlePart1: 'Trusted by',
+    customersTitlePart2: 'Companies like',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us their need to navigate complex transitions where ICT, and obviously data, plays an essential role.',
 
     servicesTitle: 'My Services',
@@ -424,7 +426,9 @@ export const translations: Translations = {
     disclaimerNoProAdviceP1: 'The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.',
     disclaimerLimitationLiabilityTitle: 'Limitation of Liability',
     disclaimerLimitationLiabilityP1: 'DataSight Portfolio is not liable for any direct or indirect damages arising from the use of this website, except in cases of willful misconduct or gross negligence.',
-    disclaimerChangesDisclaimerTitle: 'Changes to This Disclaimer',
-    disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
+    disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
+    disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
   },
 };
+
+    
