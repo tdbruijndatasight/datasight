@@ -20,6 +20,7 @@ export interface TranslationContent {
   homeAboutMeP1: string;
   homeAboutMeP2: string;
   homeAboutMeP3: string;
+  // homeAboutMeP4: string; // Merged into P3 or removed
 
   homeCTA: string;
 
@@ -170,16 +171,18 @@ export const translations: Translations = {
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
 
-    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
+    homeTitle: 'Data... Inzicht... Bedrijfswaarde...', // Used by animation logic
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+
+
     homeCTA: 'Neem Contact Op',
 
-    customersTitle: 'Vertrouwd door Bedrijven Zoals',
-    customersDescription: 'Een selectie van organisaties waarmee ik heb samengewerkt om hun data uitdagingen aan te gaan.',
+    customersTitle: 'Vertrouwd door Bedrijven zoals',
+    customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat hen verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
     servicesTitle: 'Mijn Diensten',
     servicesSubtitle: 'Hoe ik u kan helpen uw data potentieel te maximaliseren.',
@@ -302,16 +305,17 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Transforming Data Insights into Business value',
+    homeTitle: 'Data... Insights... Business value...', // Used by animation logic
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
     homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+
     homeCTA: 'Get in Touch',
 
-    customersTitle: 'Trusted by Companies Like',
-    customersDescription: 'A selection of organizations I have collaborated with to tackle their data challenges.',
+    customersTitle: 'Trusted by Companies like',
+    customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us their need to navigate complex transitions where ICT, and obviously data, plays an essential role.',
 
     servicesTitle: 'My Services',
     servicesSubtitle: 'How I can help you maximize your data potential.',
@@ -424,6 +428,3 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
-
-    
-    

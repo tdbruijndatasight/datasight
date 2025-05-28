@@ -13,7 +13,7 @@ import { NAV_ITEMS } from '@/constants/site';
 import { cn } from '@/lib/utils';
 
 const Logo = () => (
-  <Link href="#home" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
+  <Link href="/#home" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
     <Brain className="h-8 w-8" />
     <span className="text-2xl font-bold">DataSight</span>
   </Link>
@@ -34,28 +34,25 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const observerOptions = {
+    const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: '-60% 0px -39% 0px', // Defines a 1% high band, 60% from the top. A section's top must enter this.
-      threshold: 0, // Trigger if any pixel intersects the band.
+      rootMargin: "0px 0px -66% 0px", // Observe the top 33% of the viewport
+      threshold: 0.01, // Trigger if at least 1% of the section is in this zone
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      let newActiveCandidateId = activeSectionId; // Default to current active section
+      let newActiveCandidateId = activeSectionId; 
       let foundIntersectingCandidate = false;
 
-      // Iterate through NAV_ITEMS to respect DOM order for precedence
       for (const navItem of NAV_ITEMS) {
         const entry = entries.find(e => e.target.id === navItem.id);
         if (entry && entry.isIntersecting) {
           newActiveCandidateId = navItem.id;
           foundIntersectingCandidate = true;
-          break; // Found the first (highest in DOM) intersecting section
+          break; 
         }
       }
       
-      // Only update if a new candidate was found through intersection.
-      // This prevents changing activeId if scrolling to an area where no section specifically hits the band.
       if (foundIntersectingCandidate) {
         setActiveSectionId(newActiveCandidateId);
       }
@@ -68,12 +65,39 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
 
+    // Initial check in case a section other than home is in view on load (e.g. from a hash link)
+    // Triggering manually for initial load if needed by re-evaluating intersections
+    const initialEntries = sections.map(section => {
+        if (!section) return null;
+        const rect = section.getBoundingClientRect();
+        // A simplified check for initial visibility - might need refinement based on actual use case
+        const isVisible = rect.top < window.innerHeight && rect.bottom >= 0; 
+        // For observer like check - this is a mock. Real check is done by observer.
+        // This initial manual trigger can be tricky. For robust initial active set,
+        // consider checking window.location.hash or scroll position on mount.
+        return {
+            target: section,
+            isIntersecting: isVisible && (rect.top < (window.innerHeight * 0.34)) && (rect.bottom > 0) , // Simplified: top 34% check
+            boundingClientRect: rect,
+            intersectionRatio: 0, // Mock values
+            intersectionRect: {} as DOMRectReadOnly,
+            rootBounds: null,
+            time: 0
+        }
+    }).filter(entry => entry !== null) as IntersectionObserverEntry[];
+    
+    if (initialEntries.length > 0) {
+        observerCallback(initialEntries);
+    }
+
+
     return () => {
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
     };
-  }, []); 
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [NAV_ITEMS]); // Rerun if NAV_ITEMS changes (though it's const)
 
   const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
     <>
@@ -84,7 +108,7 @@ const Header: React.FC = () => {
           key={item.id}
           onClick={onLinkClick}
           className={cn(
-            "group font-medium relative px-3 py-2 text-foreground hover:text-primary hover:bg-transparent", // Added hover:bg-transparent
+            "group font-medium relative px-3 py-2 text-foreground hover:text-primary hover:bg-transparent",
             item.id === activeSectionId && "is-active text-primary"
           )}
         >
