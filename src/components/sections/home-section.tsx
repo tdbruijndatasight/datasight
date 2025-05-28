@@ -40,29 +40,27 @@ const HomeSection: React.FC = () => {
           </Button>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200">
+        <AnimatedSection delay="delay-200" className="relative z-10"> {/* Added relative z-10 */}
           <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
             <CardContent className="text-foreground/90">
-              <div className="overflow-hidden"> {/* This div is for clearfix if float is used */}
-                <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0 sm:-ml-[84px]"> {/* Adjusted margin */}
-                  <Image
-                    src={profilePicture}
-                    alt="Tom de Bruijn"
-                    width={120}
-                    height={120}
-                    className="rounded-full shadow-lg border-2 border-primary/50"
-                    priority
-                    data-ai-hint="profile person"
-                  />
-                </div>
-                <div className="space-y-3">
-                    <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
-                    <p>{t('homeAboutMeP2')}</p>
-                    <p>{t('homeAboutMeP3')}</p>
-                </div>
+              <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0 sm:-ml-[84px]">
+                <Image
+                  src={profilePicture}
+                  alt="Tom de Bruijn"
+                  width={120}
+                  height={120}
+                  className="rounded-full shadow-lg border-2 border-primary/50"
+                  priority
+                  data-ai-hint="profile person"
+                />
+              </div>
+              <div className="overflow-hidden"> {/* Clearfix for float */}
+                <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
+                <p className="mt-2">{t('homeAboutMeP2')}</p>
+                <p className="mt-2">{t('homeAboutMeP3')}</p>
               </div>
             </CardContent>
           </Card>
