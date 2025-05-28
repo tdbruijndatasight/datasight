@@ -12,8 +12,8 @@ interface AnimatedHomeTitleProps {
 const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) => {
   const { t, language } = useLanguage();
 
-  const initialWordsNl = ["Data>", "Inzicht>", "Bedrijfswaarde>"];
-  const initialWordsEn = ["Data>", "Insights>", "Value>"];
+  const initialWordsNl = ["Data...", "Inzicht...", "Bedrijfswaarde..."];
+  const initialWordsEn = ["Data...", "Insights...", "Value..."];
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
@@ -58,7 +58,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
           // Finished typing current initial word, pause, then clear for next or move to final
           const isLastInitialWord = currentInitialWordIndex === currentInitialWords.length - 1;
           const nextPauseDuration = isLastInitialWord
-            ? (pauseBetweenInitialWords - 2000 + extraPauseBeforeFinalSentence) // 3s base + 0.5s extra for last word = 3.5s total before final sentence
+            ? (pauseBetweenInitialWords - 2000 + extraPauseBeforeFinalSentence) 
             : pauseBetweenInitialWords;
 
           timeoutId = setTimeout(() => {

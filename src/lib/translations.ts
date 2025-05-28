@@ -96,7 +96,7 @@ export interface TranslationContent {
 
   // Project Inquiry Section
   projectInquiryTitle: string;
-  // projectInquirySubtitle: string; // This is now the animated text
+  projectInquirySubtitle: string; // This is now the animated text
   questionStaticPlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
@@ -219,13 +219,13 @@ export const translations: Translations = {
     themeToggleLight: 'Schakel naar lichte modus',
     themeToggleDark: 'Schakel naar donkere modus',
 
-    homeTitle: 'Data... Inzicht... Bedrijfswaarde...', // Used by animation logic
+    homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde>', 
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
-
+    
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Vertrouwd',
@@ -291,7 +291,8 @@ export const translations: Translations = {
     service5DetailCTA: 'Verhoog de expertise van uw team. Vraag naar onze op maat gemaakte trainingsprogramma\'s.',
 
     projectInquiryTitle: 'Contactformulier',
-    questionStaticPlaceholder: 'Beschrijf hier uw vraag, projectidee of uitdaging...',
+    projectInquirySubtitle: 'Heeft u een data-uitdaging, een projectidee, of wilt u gewoon even sparren? \nLaat hieronder uw bericht achter en wij nemen contact met u op.',
+    questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
     phoneLabel: 'Telefoonnummer',
@@ -300,25 +301,25 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.', // API adds "We'll get back to you in 5 days"
+    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.', 
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
 
-    inquiryPlaceholder1: "Werkt u met Splunk of Cribl en loopt u ergens tegenaan? 🤔\nLaat het ons weten – wij denken graag mee.",
-    inquiryPlaceholder2: "Heeft u een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur gerust een berichtje.",
-    inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in uw agenda 📅.",
-    inquiryPlaceholder4: "Op zoek naar een training op maat voor uw team in Splunk of Cribl? 🎓\nLaten we even bellen.",
+    inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nLaat het ons weten – wij denken graag mee.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur gerust een berichtje.",
+    inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
+    inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nLaten we even bellen.",
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nLaat het ons weten – wij denken graag mee.",
-    inquiryPlaceholder6: "Wilt u efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij uw situatie.",
-    inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen u graag op weg.",
-    inquiryPlaceholder8: "Beheert u Cribl Stream of Edge en wilt u het maximale eruit halen? 📈\nLaten we samen kijken wat er mogelijk is.",
+    inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
+    inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
+    inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nLaten we samen kijken wat er mogelijk is.",
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur gerust een berichtje.",
     inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.",
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur ons gerust een berichtje!",
-    inquiryPlaceholder12: "Wilt u met minder data meer inzicht krijgen? ✨\nWij helpen u slimme keuzes maken met Splunk & Cribl.",
-    inquiryPlaceholder13: "Een snelle call om uw Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in.",
-    inquiryPlaceholder14: "Wilt u met uw team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
-    inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden u praktisch, op uw tempo.",
-    inquiryPlaceholder16: "Wilt u kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met u mee naar efficiënte oplossingen.",
+    inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
+    inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in.",
+    inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
+    inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.",
+    inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met je mee naar efficiënte oplossingen.",
 
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe wij uw organisatie kunnen helpen met uw data-uitdagingen.',
@@ -398,7 +399,7 @@ export const translations: Translations = {
     themeToggleLight: 'Switch to light mode',
     themeToggleDark: 'Switch to dark mode',
 
-    homeTitle: 'Data... Insights... Business value...', // Used by animation logic
+    homeTitle: 'Transforming Data Insights into Business value>', 
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
@@ -470,7 +471,8 @@ export const translations: Translations = {
     service5DetailCTA: 'Upskill your team. Inquire about our tailored training programs.',
 
     projectInquiryTitle: 'Contact Form',
-    questionStaticPlaceholder: 'Describe your question, project idea, or challenge here...',
+    projectInquirySubtitle: 'Do you have a data challenge, a project idea, or just want to brainstorm? \nLeave your message below and we will contact you.',
+    questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -479,7 +481,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'You will receive a confirmation email shortly.', // API adds "We'll get back to you in 5 days"
+    contactFormSuccessMessage: 'You will receive a confirmation email shortly.', 
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nLet us know – we're happy to brainstorm with you.",
@@ -548,21 +550,21 @@ export const translations: Translations = {
 
     disclaimerPageTitle: 'Disclaimer for DataSight Portfolio.',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
-    disclaimerIntroP1: 'The information on the DataSight Portfolio website (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
-    disclaimerAccuracyTitle: 'Accuracy of Information',
-    disclaimerAccuracyP1: 'We do our best to keep information current and correct, but errors are possible. We are not liable for inaccuracies.',
-    disclaimerWebsiteAvailabilityTitle: 'Website Availability',
-    disclaimerWebsiteAvailabilityP1: 'We do not guarantee error-free or uninterrupted operation of the website.',
-    disclaimerWebsiteAvailabilityL1: 'Damages from inaccuracies or omissions.',
-    disclaimerWebsiteAvailabilityL2: 'Problems due to internet distribution (failures, delays).',
-    disclaimerExternalLinksTitle: 'External Links',
-    disclaimerExternalLinksP1: 'Links to third-party websites are outside our responsibility. We do not necessarily endorse the content of linked sites.',
-    disclaimerElectronicCommTitle: 'Electronic Communication',
-    disclaimerElectronicCommP1: 'We do not guarantee timely receipt or processing of emails and accept no liability for the consequences thereof.',
-    disclaimerNoProAdviceTitle: 'No Professional Advice',
-    disclaimerNoProAdviceP1: 'The information on this site is not professional advice. Consult an expert for specific situations. Use of the information is at your own risk.',
-    disclaimerLimitationLiabilityTitle: 'Limitation of Liability',
-    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is not liable for any direct or indirect damages arising from the use of this website, except in cases of willful misconduct or gross negligence.',
+    disclaimerIntroP1: 'De informatie op de website van DataSight Portfolio (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
+    disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
+    disclaimerAccuracyP1: 'Wij doen ons best om de informatie actueel en correct te houden, maar fouten zijn mogelijk. Wij zijn niet aansprakelijk voor onjuistheden.',
+    disclaimerWebsiteAvailabilityTitle: 'Website Beschikbaarheid',
+    disclaimerWebsiteAvailabilityP1: 'Wij garanderen geen foutloze of ononderbroken werking van de website.',
+    disclaimerWebsiteAvailabilityL1: 'Schade door onjuistheden of weglatingen.',
+    disclaimerWebsiteAvailabilityL2: 'Problemen door internetdistributie (storingen, vertragingen).',
+    disclaimerExternalLinksTitle: 'Externe Links',
+    disclaimerExternalLinksP1: 'Links naar websites van derden vallen buiten onze verantwoordelijkheid. Wij onderschrijven niet noodzakelijkerwijs de inhoud van gelinkte sites.',
+    disclaimerElectronicCommTitle: 'Elektronische Communicatie',
+    disclaimerElectronicCommP1: 'Wij garanderen niet dat e-mails tijdig worden ontvangen of verwerkt en aanvaarden geen aansprakelijkheid voor de gevolgen hiervan.',
+    disclaimerNoProAdviceTitle: 'Geen Professioneel Advies',
+    disclaimerNoProAdviceP1: 'De informatie op deze site is geen professioneel advies. Raadpleeg een deskundige voor specifieke situaties. Gebruik van de informatie is op eigen risico.',
+    disclaimerLimitationLiabilityTitle: 'Beperking van Aansprakelijkheid',
+    disclaimerLimitationLiabilityP1: 'DataSight Portfolio is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
     disclaimerChangesDisclaimerTitle: "Changes to This Disclaimer",
     disclaimerChangesDisclaimerP1: "This disclaimer may be changed. Changes are effective immediately upon publication.",
   },
