@@ -24,7 +24,6 @@ const HomeSection: React.FC = () => {
   return (
     <section id="home" className="bg-gradient-to-br from-background to-secondary section-min-height">
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
-        {/* Changed className here for explicit flex layout */}
         <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
@@ -47,12 +46,13 @@ const HomeSection: React.FC = () => {
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
             <CardContent className="text-foreground/90">
-              <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0 sm:-ml-[84px]">
+              <div className="sm:float-left sm:mr-4 mb-3 sm:-ml-[84px] flex-shrink-0">
                 <Image
                   src={profilePicture}
                   alt="Tom de Bruijn"
                   width={120}
                   height={120}
+                  quality={95} // Increased quality setting
                   className="rounded-full shadow-lg border-2 border-primary/50"
                   priority
                   data-ai-hint="profile person"
