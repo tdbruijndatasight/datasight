@@ -25,8 +25,6 @@ export interface TranslationContent {
 
   // Customers Section
   customersTitlePart1: string;
-  customersTitlePart2: string;
-  customersTitlePart3: string;
   customersDescription: string;
 
   // Services Section
@@ -195,18 +193,16 @@ export const translations: Translations = {
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
-    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte bedrijfswaarde opleveren.",
+    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen bij complexe datavraagstukken, door middels heldere- bruikbare inzichten, échte waarde te leveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
     homeAboutMeP3: "Wij zijn gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
-    customersTitlePart1: 'Vertrouwd',
-    customersTitlePart2: 'door',
-    customersTitlePart3: 'bedrijven zoals',
+    customersTitlePart1: 'Onze klanten',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
     servicesTitle: 'Dienstverlening',
-    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
+    servicesSubtitle: 'Ontdek hoe wij u kunnen ondersteunen bij het optimaal benutten van uw data.',
     
     service1Title: 'Splunk Consultancy',
     service1Description: 'Expert Splunk Consultancy voor beheer, optimalisatie en uitnutten van uw omgeving.', // Shorter card description
@@ -360,13 +356,11 @@ export const translations: Translations = {
     homeAboutMeP3: "We're certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
-    customersTitlePart1: 'Trusted',
-    customersTitlePart2: 'by',
-    customersTitlePart3: 'companies like',
+    customersTitlePart1: 'Our Clients',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
     servicesTitle: 'Services',
-    servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
+    servicesSubtitle: 'Learn how we can support you in leveraging your data to its full potential.',
 
     service1Title: 'Splunk Consultancy',
     service1Description: 'Expert Splunk consultancy for management, optimization, and implementation of advanced solutions.', // Shorter card description

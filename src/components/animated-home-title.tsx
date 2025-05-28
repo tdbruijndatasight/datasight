@@ -12,7 +12,7 @@ interface AnimatedHomeTitleProps {
 const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) => {
   const { t, language } = useLanguage();
 
-  const initialWordsNl = ["Data...", "Inzicht...", "Bedrijfswaarde..."];
+  const initialWordsNl = ["Data...", "Inzicht...", "Waarde..."];
   const initialWordsEn = ["Data...", "Insights...", "Value..."];
   const finalSentenceKey = 'homeTitle';
 

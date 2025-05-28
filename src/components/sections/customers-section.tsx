@@ -22,7 +22,6 @@ const CustomersSection: React.FC = () => {
             <span className="relative inline-block mr-1"> {/* Added mr-1 for spacing on the right */}
               <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" /> {/* Adjusted vertical position */}
             </span>
-            {t('customersTitlePart2')}&nbsp;{t('customersTitlePart3')}
           </h2>
           <p className="text-lg text-foreground/80 mb-12 max-w-4xl mx-auto"> {/* Changed to max-w-4xl */}
             {t('customersDescription')}

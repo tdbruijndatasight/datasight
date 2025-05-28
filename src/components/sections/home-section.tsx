@@ -22,7 +22,10 @@ const HomeSection: React.FC = () => {
   };
 
   return (
-    <section id="home" className="bg-gradient-to-br from-background to-secondary section-min-height">
+    <section 
+      id="home" 
+      className="bg-gradient-to-br from-background to-secondary section-min-height pt-28 pb-12 md:py-16" // Increased mobile top padding
+    >
       <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
@@ -34,8 +37,8 @@ const HomeSection: React.FC = () => {
           </p>
           <Button
             asChild
-            size="lg" // Reverted to lg
-            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group font-semibold" // Reverted to accent styling
+            size="lg"
+            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group font-semibold"
           >
             <Link href="#contact">
               {t('homeCTA')}
@@ -56,7 +59,7 @@ const HomeSection: React.FC = () => {
                   alt="Tom de Bruijn"
                   width={120}
                   height={120}
-                  quality={95}
+                  quality={100}
                   className="rounded-full shadow-lg border-2 border-primary/50"
                   priority
                   data-ai-hint="profile person"
