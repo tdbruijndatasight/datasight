@@ -17,8 +17,9 @@ export interface TranslationContent {
   homeSubtitle: string;
   homeAboutMeTitle: string;
   homeAboutMeP1: string; // Mission statement
-  homeAboutMeP2: string; // "We do this through..." / "Wij zijn volledig gecertificeerd..."
-  homeAboutMeP3: string; // "Looking for an experienced partner..."
+  homeAboutMeP2: string; // The "how"
+  homeAboutMeP3: string; // Certifications and services
+  homeAboutMeP4: string; // CTA: "Looking for an experienced partner..."
   homeCTA: string;
 
   // Customers Section
@@ -54,7 +55,7 @@ export interface TranslationContent {
   phoneLabel: string;
   phonePlaceholder: string;
   questionLabel: string;
-  questionPlaceholder: string; 
+  questionPlaceholder: string;
   submitInquiryButton: string;
   submitInquiryLoading: string;
   contactFormResponseTime: string;
@@ -173,8 +174,9 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight',
     homeAboutMeP1: 'Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.',
-    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau.',
-    homeAboutMeP3: 'Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
+    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.',
+    homeAboutMeP3: 'Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau.',
+    homeAboutMeP4: 'Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -192,7 +194,7 @@ export const translations: Translations = {
     service4Description: 'Ontwikkeling van op maat gemaakte AI-tools en -modellen om specifieke bedrijfsproblemen op te lossen.',
     service5Title: 'Trainingen & Workshops',
     service5Description: 'Maatwerk trainingen en workshops voor Splunk, Cribl en datastrategie om uw team te versterken.',
-
+    
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: 'Heeft u een data-uitdaging? Beschrijf uw situatie en ik neem contact met u op.',
     emailLabel: 'E-mailadres',
@@ -205,7 +207,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormResponseTime: 'U kunt binnen 5 werkdagen een reactie verwachten.',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.',
+    contactFormSuccessMessage: 'U ontvangt spoedig een bevestigingsmail.', // Simplified, API response will add more context
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
     
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? Laat het me weten – ik denk graag mee.",
@@ -225,13 +227,12 @@ export const translations: Translations = {
     inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? Ik begeleid je praktisch, op jouw tempo.",
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰 Ik kijk graag met je mee naar efficiënte oplossingen.",
 
-
     contactTitle: 'Neem Contact Op',
     contactSubtitle: 'Laten we bespreken hoe ik uw organisatie kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
-    contactPhone: 'Telefoon',
+    contactPhone: 'Telefoon', // Changed from 'Telefoon (WhatsApp)'
     contactLinkedIn: 'LinkedIn Profiel',
-    sendMessage: 'Verstuur Email',
+    sendMessage: 'Verstuur Email', // Changed from 'Verstuur Bericht'
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'Bekijk Profiel',
     emailCopiedSuccess: "E-mailadres gekopieerd!",
@@ -245,7 +246,7 @@ export const translations: Translations = {
     by: 'door',
     optionalLabel: 'optioneel',
 
-    legalPrivacy: 'Privacy',
+    legalPrivacy: 'Privacy', // Changed from 'Privacybeleid' for footer link
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - NL
@@ -308,8 +309,9 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight',
     homeAboutMeP1: 'At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.',
-    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels.",
-    homeAboutMeP3: "Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+    homeAboutMeP2: 'We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.',
+    homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels.",
+    homeAboutMeP4: "Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',
@@ -340,7 +342,7 @@ export const translations: Translations = {
     submitInquiryLoading: 'Sending...',
     contactFormResponseTime: 'You can expect a response within 5 business days.',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'You will receive a confirmation email shortly.',
+    contactFormSuccessMessage: 'You will receive a confirmation email shortly.', // Simplified
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
     
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? Let me know – I'm happy to brainstorm with you.",
@@ -363,9 +365,9 @@ export const translations: Translations = {
     contactTitle: 'Get in Touch',
     contactSubtitle: 'Let\'s discuss how I can help your organization with its data challenges.',
     contactEmail: 'Email',
-    contactPhone: 'Phone',
+    contactPhone: 'Phone', // Changed
     contactLinkedIn: 'LinkedIn Profile',
-    sendMessage: 'Send Email',
+    sendMessage: 'Send Email', // Changed
     openWhatsApp: 'Open WhatsApp',
     viewProfile: 'View Profile',
     emailCopiedSuccess: "Email address copied!",
@@ -379,7 +381,7 @@ export const translations: Translations = {
     by: 'by',
     optionalLabel: 'optional',
 
-    legalPrivacy: 'Privacy',
+    legalPrivacy: 'Privacy', // Changed for footer
     legalDisclaimer: 'Disclaimer',
 
     // Privacy Policy Page - EN
@@ -429,3 +431,5 @@ export const translations: Translations = {
     disclaimerChangesDisclaimerP1: 'This disclaimer may be amended. Changes are effective immediately upon posting.',
   },
 };
+
+    

@@ -49,8 +49,9 @@ const HomeSection: React.FC = () => {
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
-            <CardContent className="text-foreground/90">
-              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4"> {/* Changed gap-6 to gap-4 */}
+            <CardContent className="text-foreground/90 space-y-3"> {/* Main container for all text content */}
+              {/* Row for Image and P1 (Mission) */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-start gap-4">
                 <div className="flex-shrink-0">
                   <Image
                     src={profilePicture as StaticImageData}
@@ -62,12 +63,15 @@ const HomeSection: React.FC = () => {
                     data-ai-hint="profile person"
                   />
                 </div>
-                <div className="space-y-4 text-center sm:text-left">
-                  <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
-                  <p>{t('homeAboutMeP2')}</p>
-                  <p>{t('homeAboutMeP3')}</p>
+                <div className="flex-grow space-y-1 text-center sm:text-left">
+                  <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p> {/* Mission */}
                 </div>
               </div>
+
+              {/* P2, P3, and P4 rendered below the image/P1 row, taking full width */}
+              <p>{t('homeAboutMeP2')}</p>
+              <p>{t('homeAboutMeP3')}</p>
+              <p>{t('homeAboutMeP4')}</p>
             </CardContent>
           </Card>
         </AnimatedSection>
@@ -77,3 +81,5 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
+
+    
