@@ -177,8 +177,8 @@ export const translations: Translations = {
     homeTitle: 'Data-inzichten Transformeren in Bedrijfswaarde',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight',
-    homeAboutMeP1: 'Onze missie is helder: organisaties helpen complexe data om te zetten in duidelijke, direct toepasbare inzichten. Dit bereiken we door persoonlijke aandacht, voortdurende investeringen in diepgaande technische kennis en de nieuwste technologieën om innovatie te stimuleren. U kunt rekenen op eerlijk, pragmatisch en realistisch advies, afgestemd op uw unieke situatie.',
-    homeAboutMeP2: 'Wij bieden gespecialiseerde consultancy, advies en maatwerk trainingen voor Splunk en Cribl. Bent u op zoek naar een ervaren partner die oprecht geïnvesteerd is in uw succes? Laten we kennismaken.',
+    homeAboutMeP1: 'Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.',
+    homeAboutMeP2: 'Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen. We zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitle: 'Vertrouwd door Bedrijven Zoals',
@@ -320,8 +320,8 @@ export const translations: Translations = {
     homeTitle: 'Transforming Data Insights into Business value',
     homeSubtitle: 'Tom de Bruijn | Freelance Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight',
-    homeAboutMeP1: "Our mission is clear: helping organizations turn complex data into clear, actionable insights. We achieve this through personal attention, continuous investment in deep technical know-how, and leveraging the latest technologies to drive innovation. You can count on honest, pragmatic, and realistic advice tailored to your unique situation.",
-    homeAboutMeP2: "We offer specialized consultancy, advice, and tailored training for Splunk and Cribl. Are you looking for an experienced partner genuinely invested in your success? Let’s connect.",
+    homeAboutMeP1: 'At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.',
+    homeAboutMeP2: 'We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals. We\'re fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.',
     homeCTA: 'Get in Touch',
 
     customersTitle: 'Trusted by Companies Like',

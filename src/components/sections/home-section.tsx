@@ -58,11 +58,11 @@ const HomeSection: React.FC = () => {
                     height={120}
                     className="rounded-full shadow-lg border-2 border-primary/50"
                     priority
-                    data-ai-hint="profile person" // This hint is less relevant now but can stay
+                    data-ai-hint="profile person" 
                   />
                 </div>
                 <div className="space-y-4 text-center sm:text-left">
-                  <p>{t('homeAboutMeP1')}</p>
+                  <p className="font-semibold text-primary">{t('homeAboutMeP1')}</p>
                   <p>{t('homeAboutMeP2')}</p>
                 </div>
               </div>
@@ -75,3 +75,4 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
+
