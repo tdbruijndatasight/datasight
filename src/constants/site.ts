@@ -3,12 +3,12 @@ import type { Locale, TranslationContent } from '@/lib/translations';
 import type { StaticImageData } from 'next/image';
 
 // Import logos from src/images/logos
-import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
-import icsLogo from '@/images/logos/ics.svg';
-import rabobankLogo from '@/images/logos/rabobank.svg';
 import schipholLogo from '@/images/logos/schiphol.svg';
+import rabobankLogo from '@/images/logos/rabobank.svg';
 import ikeaLogo from '@/images/logos/ikea.svg';
+import icsLogo from '@/images/logos/ics.svg';
 import uwvLogo from '@/images/logos/uwv.svg';
+import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
 
 
 export interface NavItem {
@@ -19,7 +19,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: StaticImageData | string; // Allow string for placeholders if an import fails
+  src: StaticImageData;
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -49,7 +49,13 @@ export const SITE_CONFIG = {
   ] as CompanyLogo[],
 };
 
-export const SERVICE_ITEMS = [
+export interface ServiceItemConstant {
+  titleKey: keyof TranslationContent;
+  descriptionKey: keyof TranslationContent;
+  icon: string; // Icon name as string, mapped to component in ServicesSection
+}
+
+export const SERVICE_ITEMS: ServiceItemConstant[] = [
   { titleKey: 'service1Title', descriptionKey: 'service1Description', icon: 'SplunkIcon' },
   { titleKey: 'service2Title', descriptionKey: 'service2Description', icon: 'CriblIcon' },
   { titleKey: 'service3Title', descriptionKey: 'service3Description', icon: 'DataStrategyIcon' },
@@ -67,3 +73,4 @@ export const SERVICE_ITEMS = [
 //   }
 // ];
 export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden
+
