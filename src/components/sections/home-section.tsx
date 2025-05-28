@@ -51,12 +51,13 @@ const HomeSection: React.FC = () => {
               <div className="flex flex-col sm:flex-row items-center sm:items-start gap-6">
                 <div className="flex-shrink-0">
                   <Image
-                    src="/images/tom-de-bruijn-profile.webp" // Updated path
+                    src="/images/tom-de-bruijn-profile.webp"
                     alt="Tom de Bruijn"
                     width={120}
                     height={120}
                     className="rounded-full shadow-lg border-2 border-primary/50"
-                    priority // Good to add for LCP images
+                    priority
+                    data-ai-hint="profile person"
                   />
                 </div>
                 <div className="space-y-4 text-center sm:text-left">
