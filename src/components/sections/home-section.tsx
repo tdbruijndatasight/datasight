@@ -19,8 +19,6 @@ const HomeSection: React.FC = () => {
 
   const handleSubtitleAnimate = () => {
     setShouldAnimateSubtitleLine(true);
-    // Optionally, if you want the animation to reset or only trigger once, you can manage state here
-    // For a line that draws and stays, setting to true is enough.
   };
 
   return (
@@ -48,9 +46,8 @@ const HomeSection: React.FC = () => {
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
             <CardContent className="text-foreground/90">
-              {/* Container to clear the float */}
-              <div className="overflow-hidden">
-                <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0">
+              <div className="overflow-hidden"> {/* This div is for clearfix if float is used */}
+                <div className="sm:float-left sm:mr-4 mb-3 flex-shrink-0 sm:-ml-[84px]"> {/* Adjusted margin */}
                   <Image
                     src={profilePicture}
                     alt="Tom de Bruijn"
@@ -61,11 +58,10 @@ const HomeSection: React.FC = () => {
                     data-ai-hint="profile person"
                   />
                 </div>
-                {/* Text block that wraps around the image */}
-                <div className="space-y-2">
-                  <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
-                  <p>{t('homeAboutMeP2')}</p>
-                  <p>{t('homeAboutMeP3')}</p>
+                <div className="space-y-3">
+                    <p className="font-semibold text-foreground">{t('homeAboutMeP1')}</p>
+                    <p>{t('homeAboutMeP2')}</p>
+                    <p>{t('homeAboutMeP3')}</p>
                 </div>
               </div>
             </CardContent>
@@ -77,4 +73,3 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
-
