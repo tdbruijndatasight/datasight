@@ -50,30 +50,35 @@ const ProjectInquirySection: React.FC = () => {
   });
 
   useEffect(() => {
+    // Initialize placeholder and visibility on language change or initial load
     setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
-    setIsPlaceholderVisible(true); 
+    setIsPlaceholderVisible(true);
 
     const intervalId = setInterval(() => {
-      setIsPlaceholderVisible(false); 
+      setIsPlaceholderVisible(false); // Start fade-out
 
       setTimeout(() => {
         setCurrentPlaceholderIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
-      }, 1000); 
-    }, 9000); 
+        // Note: The actual text update and fade-in trigger will be handled by the next useEffect
+      }, 1000); // Duration of fade-out (must match CSS)
+    }, 9000); // 8s visible + 1s fade-out
 
     return () => clearInterval(intervalId);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]); 
+  }, [language]); // Rerun when language changes
 
   useEffect(() => {
-    if (!isPlaceholderVisible || language) { 
+    // This effect handles updating the text and triggering fade-in
+    // after currentPlaceholderIndex changes or if placeholder becomes invisible
+    if (!isPlaceholderVisible || language) { // Condition to re-trigger if language changes mid-animation
         setAnimatedPlaceholder(t(placeholderKeys[currentPlaceholderIndex]));
+        // Short timeout to allow CSS to apply hidden state before transitioning to visible
         setTimeout(() => {
-            setIsPlaceholderVisible(true); 
-        }, 50); 
+            setIsPlaceholderVisible(true); // Start fade-in
+        }, 50); // Small delay
     }
-  }, [currentPlaceholderIndex, t, isPlaceholderVisible, language]);
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [currentPlaceholderIndex, t, language]); // Rerun when index, t, or language changes
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     setIsLoading(true);
@@ -122,7 +127,10 @@ const ProjectInquirySection: React.FC = () => {
             <Send className="h-8 w-8 text-accent" />
             {t('projectInquiryTitle')}
           </h2>
-          {/* Subtitle paragraph moved from here */}
+          {/* Subtitle paragraph restored to its original position */}
+          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            {t('projectInquirySubtitle')}
+          </p>
         </AnimatedSection>
 
         <AnimatedSection delay="delay-200" className="relative">
@@ -209,13 +217,6 @@ const ProjectInquirySection: React.FC = () => {
               </CardContent>
             </Card>
           </div>
-        </AnimatedSection>
-
-        {/* Subtitle paragraph moved here, below the form card */}
-        <AnimatedSection delay="delay-300" className="text-center mt-12">
-          <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
-            {t('projectInquirySubtitle')}
-          </p>
         </AnimatedSection>
       </div>
     </section>
