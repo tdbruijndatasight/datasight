@@ -34,8 +34,8 @@ const HomeSection: React.FC = () => {
           </p>
           <Button
             asChild
-            size="default" // Changed from "lg". Corresponds to h-10 px-4 py-2
-            className="text-foreground hover:text-primary hover:bg-primary/10 font-semibold transition-colors group" // New custom styling
+            size="lg" // Reverted to lg
+            className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group font-semibold" // Reverted to accent styling
           >
             <Link href="#contact">
               {t('homeCTA')}
@@ -64,8 +64,8 @@ const HomeSection: React.FC = () => {
               </div>
               <div className="overflow-hidden"> {/* Clearfix for float */}
                 <p className={cn("font-semibold text-foreground")}>{t('homeAboutMeP1')}</p>
-                <p className="mt-2">{t('homeAboutMeP2')}</p>
-                <p className="mt-2">{t('homeAboutMeP3')}</p>
+                <p className="mt-3">{t('homeAboutMeP2')}</p>
+                <p className="mt-3">{t('homeAboutMeP3')}</p>
               </div>
             </CardContent>
           </Card>
