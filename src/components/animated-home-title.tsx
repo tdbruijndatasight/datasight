@@ -12,8 +12,8 @@ interface AnimatedHomeTitleProps {
 const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) => {
   const { t, language } = useLanguage();
 
-  const initialWordsNl = ["Data...", "Inzicht...", "Bedrijfswaarde..."];
-  const initialWordsEn = ["Data...", "Insights...", "Business value..."];
+  const initialWordsNl = ["Data>", "Inzicht>", "Bedrijfswaarde>"];
+  const initialWordsEn = ["Data>", "Insights>", "Value>"];
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
@@ -23,7 +23,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
 
   const typingSpeed = 100;
   const pauseBetweenInitialWords = 3000;
-  const extraPauseBeforeFinalSentence = 500; // Changed from 1500 to 500
+  const extraPauseBeforeFinalSentence = 500; 
 
   const getCurrentInitialWords = () => {
     return language === 'en' ? initialWordsEn : initialWordsNl;
@@ -35,7 +35,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     setCurrentInitialWordIndex(0);
     setTypingPhase('initialWord');
     setShowCursor(true);
-  }, [t, language]); // Dependency array includes 't' and 'language' to reset on language change
+  }, [t, language]); 
 
   useEffect(() => {
     if (typingPhase === 'done') {
@@ -58,7 +58,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
           // Finished typing current initial word, pause, then clear for next or move to final
           const isLastInitialWord = currentInitialWordIndex === currentInitialWords.length - 1;
           const nextPauseDuration = isLastInitialWord
-            ? pauseBetweenInitialWords + extraPauseBeforeFinalSentence
+            ? (pauseBetweenInitialWords - 2000 + extraPauseBeforeFinalSentence) // 3s base + 0.5s extra for last word = 3.5s total before final sentence
             : pauseBetweenInitialWords;
 
           timeoutId = setTimeout(() => {
@@ -87,7 +87,6 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  // Adding language to dependencies to ensure currentInitialWords is up-to-date
   }, [displayedText, currentInitialWordIndex, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, pauseBetweenInitialWords, extraPauseBeforeFinalSentence, language]);
 
 
