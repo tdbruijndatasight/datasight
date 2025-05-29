@@ -17,7 +17,6 @@ import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import type { TranslationContent } from '@/lib/translations';
 
-
 const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
   'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
   'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
@@ -32,7 +31,6 @@ const keysToRemoveFromPlaceholders = new Set<keyof TranslationContent>([
 const activePlaceholderKeys = allOriginalPlaceholderKeys.filter(
   key => !keysToRemoveFromPlaceholders.has(key)
 );
-
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -51,8 +49,13 @@ const ProjectInquirySection: React.FC = () => {
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
   const [isSubtitleVisible, setIsSubtitleVisible] = useState(true);
   const [isFormInteracted, setIsFormInteracted] = useState(false);
+  
   const intervalRef = useRef<NodeJS.Timeout | null>(null);
+  const isFormInteractedRef = useRef(isFormInteracted);
 
+  useEffect(() => {
+    isFormInteractedRef.current = isFormInteracted;
+  }, [isFormInteracted]);
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -63,59 +66,65 @@ const ProjectInquirySection: React.FC = () => {
     },
   });
 
-  // Effect for handling form interaction to stop animation
+  // Reset animation index when language changes AND form is not interacted with
   useEffect(() => {
-    if (isFormInteracted && intervalRef.current) {
-      clearInterval(intervalRef.current);
-      intervalRef.current = null; // Clear the ref to prevent further operations on it
+    if (!isFormInteracted) {
+      setCurrentSubtitleIndex(0);
     }
-  }, [isFormInteracted]);
+  }, [language, isFormInteracted]);
+
 
   // Effect for subtitle animation
   useEffect(() => {
-    if (isFormInteracted || activePlaceholderKeys.length === 0) {
-      if (intervalRef.current) { // Ensure interval is cleared if interaction happened or no keys
+    // If form has been interacted with, stop the animation and ensure text is visible.
+    if (isFormInteracted) {
+      if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
-      return; // Stop if form interacted or no keys
+      setIsSubtitleVisible(true); // Ensure current text stays visible
+      return; // Stop further execution of this effect
     }
 
-    // Initialize or reset animation state
-    let localCurrentIndex = 0;
-    // Ensure currentSubtitleIndex is reset if language changes or activePlaceholderKeys list changes
-    // This effect hook is sensitive to 'language' and 't', so it will re-initialize on language change.
-    setAnimatedSubtitle(t(activePlaceholderKeys[localCurrentIndex]));
-    setCurrentSubtitleIndex(localCurrentIndex); // Sync state
+    // If no placeholder keys, nothing to animate.
+    if (activePlaceholderKeys.length === 0) {
+      setAnimatedSubtitle(""); 
+      return;
+    }
+    
+    // Set initial subtitle for the current language/index
+    setAnimatedSubtitle(t(activePlaceholderKeys[currentSubtitleIndex] || ""));
     setIsSubtitleVisible(true);
 
     intervalRef.current = setInterval(() => {
       setIsSubtitleVisible(false); // Start fade-out
 
       setTimeout(() => {
-        // Check isFormInteracted again before updating state
-        // This ensures that if interaction happened during the fade-out, we don't proceed
-        if (intervalRef.current === null) return; // Animation was stopped
-
-        localCurrentIndex = (localCurrentIndex + 1) % activePlaceholderKeys.length;
-        setAnimatedSubtitle(t(activePlaceholderKeys[localCurrentIndex]));
-        setCurrentSubtitleIndex(localCurrentIndex); // Sync state
-
-        // Short timeout to allow CSS to apply hidden state before transitioning to visible
-        setTimeout(() => {
-           if (intervalRef.current === null) return; // Animation was stopped
-          setIsSubtitleVisible(true); // Start fade-in
-        }, 50); // Small delay for fade-in effect
-      }, 1000); // Duration of fade-out (1s)
-    }, 12000); // 11s visible + 1s fade-out cycle
+        // Check if interaction happened during fade-out or if component unmounted
+        if (!intervalRef.current || isFormInteractedRef.current ) {
+          if (isFormInteractedRef.current) setIsSubtitleVisible(true);
+          return;
+        }
+        
+        // Move to the next subtitle
+        setCurrentSubtitleIndex(prevIndex => {
+          const nextIndex = (prevIndex + 1) % activePlaceholderKeys.length;
+          setAnimatedSubtitle(t(activePlaceholderKeys[nextIndex] || "")); 
+          setIsSubtitleVisible(true); 
+          return nextIndex;
+        });
+      }, 1000); // Wait 1s for fade-out to complete before changing text and fading in
+    }, 10000); // Total cycle time: 9s visible + 1s transition = 10s
 
     return () => {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
+        intervalRef.current = null;
       }
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language, t, isFormInteracted]); // Dependencies: t and language will trigger re-initialization. isFormInteracted stops/starts.
+  }, [language, t, isFormInteracted, currentSubtitleIndex]); // currentSubtitleIndex triggers re-setup for new initial text after language change.
+
 
   const handleFocus = () => {
     setIsFormInteracted(true);
@@ -138,12 +147,12 @@ const ProjectInquirySection: React.FC = () => {
       if (response.ok) {
         toast({
           title: t('contactFormSuccessTitle'),
-          description: `${result.message || t('contactFormSuccessMessage')} ${t('contactFormResponseTime')}`,
+          description: `${result.message || t('contactFormSuccessMessage')}`,
           variant: 'default',
           duration: 7000,
         });
         form.reset();
-        setIsFormInteracted(false); // Optionally reset interaction state after successful submission
+        setIsFormInteracted(false); 
       } else {
         toast({
           variant: "destructive",
@@ -170,12 +179,12 @@ const ProjectInquirySection: React.FC = () => {
             <Send className="h-8 w-8 text-accent" />
             {t('projectInquiryTitle')}
           </h2>
-          <p className={cn(
-            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]",
-            "transition-opacity duration-1000 ease-in-out whitespace-pre-line",
-            isSubtitleVisible && !isFormInteracted ? "opacity-100" : "opacity-0" // Hide if form interacted or during fade
+           <p className={cn(
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height for two lines
+            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // duration-1000 for 1s fade
+            (isFormInteracted || isSubtitleVisible) ? "opacity-100" : "opacity-0"
           )}>
-            {animatedSubtitle || (activePlaceholderKeys.length > 0 ? t(activePlaceholderKeys[0]) : "")}
+            {animatedSubtitle}
           </p>
         </AnimatedSection>
 
@@ -269,3 +278,5 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
+
+    
