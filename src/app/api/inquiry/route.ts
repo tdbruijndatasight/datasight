@@ -48,13 +48,13 @@ export async function POST(req: NextRequest) {
       },
     });
 
-    const emailFrom = process.env.EMAIL_FROM || `"DataSight Portfolio" <${process.env.EMAIL_USER}>`;
+    const emailFrom = process.env.EMAIL_FROM || `"DataSight" <${process.env.EMAIL_USER}>`;
 
     // 1. Send email to admin
     await transporter.sendMail({
       from: emailFrom,
       to: adminEmail,
-      subject: `New Project Inquiry from ${email}`,
+      subject: `New Project Inquiry from ${email} via DataSight`,
       html: `
         <h1>New Project Inquiry</h1>
         <p>You have received a new project inquiry with the following details:</p>
@@ -65,7 +65,7 @@ export async function POST(req: NextRequest) {
         <p><strong>Question/Message:</strong></p>
         <p style="white-space: pre-wrap;">${question}</p>
         <hr>
-        <p><em>This email was sent from the DataSight Portfolio contact form.</em></p>
+        <p><em>This email was sent from the DataSight contact form.</em></p>
       `,
     });
 
@@ -73,11 +73,11 @@ export async function POST(req: NextRequest) {
     await transporter.sendMail({
       from: emailFrom,
       to: email,
-      subject: 'Your Inquiry to DataSight Portfolio Has Been Received',
+      subject: 'Your Inquiry to DataSight Has Been Received',
       html: `
         <h1>Thank You for Your Inquiry!</h1>
         <p>Dear User,</p>
-        <p>Thank you for contacting DataSight Portfolio. We have received your inquiry and appreciate your interest.</p>
+        <p>Thank you for contacting DataSight. We have received your inquiry and appreciate your interest.</p>
         <p><strong>Your submitted details:</strong></p>
         <ul>
           <li><strong>Email:</strong> ${email}</li>
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
         <p style="white-space: pre-wrap;">${question}</p>
         <hr>
         <p>We will review your message and get back to you as soon as possible, typically within 5 business days.</p>
-        <p>Best regards,<br>Tom de Bruijn<br>DataSight Portfolio</p>
+        <p>Best regards,<br>Tom de Bruijn<br>DataSight</p>
       `,
     });
 

@@ -35,7 +35,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'DataSight Portfolio.',
+  name: 'DataSight.', // Changed from DataSight Portfolio.
   email: 'info.tomdebruijn@gmail.com',
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',

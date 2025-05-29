@@ -36,7 +36,7 @@ const Header: React.FC = () => {
   useEffect(() => {
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: "-40% 0px -50% 0px", // Zone: 40% from top to 50% from top
+      rootMargin: "-50% 0px -50% 0px", // Target the center line of the viewport
       threshold: 0.01, 
     };
 
@@ -46,19 +46,19 @@ const Header: React.FC = () => {
         const entry = entries.find(e => e.target.id === navItem.id);
         if (entry && entry.isIntersecting) {
           currentActiveId = navItem.id;
-          break;
+          break; // Prioritize the first one in NAV_ITEMS order that is intersecting
         }
       }
 
       if (currentActiveId && currentActiveId !== activeSectionId) {
         setActiveSectionId(currentActiveId);
       } else if (!currentActiveId) {
-        // Fallback if nothing is intersecting the main rootMargin (e.g. at very top or bottom)
-        if (window.scrollY < window.innerHeight * 0.2) { // Near top of page
+        // Fallback logic for very top or bottom of the page
+        if (window.scrollY < window.innerHeight * 0.3) { 
           if (activeSectionId !== (NAV_ITEMS[0]?.id || 'home')) {
             setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
           }
-        } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150) { // Near bottom of page
+        } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150) { 
             if (activeSectionId !== (NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact')) {
               setActiveSectionId(NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact');
             }
@@ -73,46 +73,34 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
     
-    // Trigger initial check via observer for consistency
-    // Manually trigger a check for all observed elements.
-    // This helps set the correct initial active section based on current scroll position.
-    const initialObserverTrigger = () => {
-      const entries = sections.reduce((acc, section) => {
+    // Initial check to set active section on load
+    const initialEntries = sections.reduce((acc, section) => {
         if (section) {
-          const rect = section.getBoundingClientRect();
-          // Simulate an IntersectionObserverEntry. This is a simplified mock.
-          // A more robust solution might involve a brief timeout to let layout settle,
-          // then checking real intersection status or manually calculating.
-          // For now, let's assume if it's near the top, it might be active.
-           const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
-           if (isVisible) { // A basic check if it's in viewport at all
-            acc.push({
-              target: section,
-              isIntersecting: (rect.top < window.innerHeight * 0.5 && rect.bottom > window.innerHeight * 0.4), // Crude check for "in target zone"
-              boundingClientRect: rect,
-              intersectionRatio: 0, // Mocked
-              intersectionRect: rect, // Mocked
-              rootBounds: null, // Mocked
-              time: 0, // Mocked
-            } as IntersectionObserverEntry);
-           }
+            const rect = section.getBoundingClientRect();
+            const isIntersecting = (rect.top <= window.innerHeight * 0.5) && (rect.bottom >= window.innerHeight * 0.5);
+            if (isIntersecting) {
+                acc.push({
+                    target: section,
+                    isIntersecting: true,
+                    boundingClientRect: rect, 
+                    intersectionRatio: 1, 
+                    intersectionRect: rect, 
+                    rootBounds: null,
+                    time: performance.now()
+                } as IntersectionObserverEntry);
+            }
         }
         return acc;
-      }, [] as IntersectionObserverEntry[]);
-      if (entries.length > 0) {
-        observerCallback(entries);
-      } else {
-        // Default to home if no sections are somehow "intersecting" initially
-         if (activeSectionId !== (NAV_ITEMS[0]?.id || 'home')) setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
-      }
-    };
+    }, [] as IntersectionObserverEntry[]);
 
-    // A small delay for initial check can sometimes help with elements rendering/layout shifts
-    const initialCheckTimeoutId = setTimeout(initialObserverTrigger, 100);
+    if (initialEntries.length > 0) {
+        observerCallback(initialEntries);
+    } else if (window.scrollY < window.innerHeight * 0.3) {
+        setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
+    }
 
 
     return () => {
-      clearTimeout(initialCheckTimeoutId);
       sections.forEach(section => {
         if (section) observer.unobserve(section);
       });
@@ -120,7 +108,7 @@ const Header: React.FC = () => {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []); 
 
-  const NavLinks: React.FC<{ onLinkClick?: () => void }> = ({ onLinkClick }) => (
+  const NavLinks: React.FC<{ onLinkClick?: () => void; isMobile?: boolean }> = ({ onLinkClick, isMobile }) => (
     <>
       {NAV_ITEMS.map((item) => (
         <Button
@@ -130,7 +118,8 @@ const Header: React.FC = () => {
           onClick={onLinkClick}
           className={cn(
             "group font-medium relative px-3 py-2 text-foreground hover:text-primary hover:bg-transparent",
-            item.id === activeSectionId && "is-active text-primary"
+            item.id === activeSectionId && "is-active text-primary",
+            isMobile && "w-full justify-start text-lg py-3" // Mobile specific styling
           )}
         >
           <Link href={item.href}>
@@ -162,6 +151,7 @@ const Header: React.FC = () => {
           <ThemeToggle />
         </nav>
         <div className="md:hidden flex items-center gap-2">
+          <LanguageToggle iconOnly={true} />
           <ThemeToggle />
           <Sheet open={isMobileMenuOpen} onOpenChange={setIsMobileMenuOpen}>
             <SheetTrigger asChild>
@@ -173,18 +163,12 @@ const Header: React.FC = () => {
               <div className="flex flex-col space-y-6 h-full">
                 <div className="flex justify-between items-center mb-6">
                    <Logo />
-                   <SheetClose asChild>
-                     <Button variant="ghost" size="icon">
-                       <X className="h-6 w-6 text-primary" />
-                     </Button>
-                   </SheetClose>
+                   {/* Rely on default SheetClose from SheetContent */}
                 </div>
-                <nav className="flex flex-col space-y-3">
-                  <NavLinks onLinkClick={() => setIsMobileMenuOpen(false)} />
+                <nav className="flex flex-col space-y-1">
+                  <NavLinks onLinkClick={() => setIsMobileMenuOpen(false)} isMobile={true} />
                 </nav>
-                <div className="mt-auto pt-6 border-t border-border">
-                  <LanguageToggle />
-                </div>
+                {/* LanguageToggle already moved outside for mobile */}
               </div>
             </SheetContent>
           </Sheet>
