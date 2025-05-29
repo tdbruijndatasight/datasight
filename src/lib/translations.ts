@@ -192,21 +192,19 @@ export const translations: Translations = {
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
-    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen complexe datavraagstukken op te lossen en te vertalen naar heldere, bruikbare inzichten die échte businesswaarde opleveren.",
+    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen bij complexe datavraagstukken, door middels heldere- bruikbare inzichten, échte waarde te leveren.",
     homeAboutMeP2: "Dit doen we met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – om praktische en impactvolle oplossingen te bieden. Reken op onafhankelijk, eerlijk en realistisch advies dat is afgestemd op jouw specifieke doelen.",
-    homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+    homeAboutMeP3: "Wij zijn gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
-    customersTitlePart1: 'Vertrouwd',
-    customersTitlePart2: 'door',
-    customersTitlePart3: 'bedrijven zoals',
+    customersTitlePart1: 'Onze klanten',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
 
     servicesTitle: 'Dienstverlening',
-    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
+    servicesSubtitle: 'Ontdek hoe wij u kunnen ondersteunen bij het optimaal benutten van uw data.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen zoals ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy voor beheer, en waarde optimalisatie van uw omvgeving.',
     service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw Data Potentieel',
     service1DetailDesc: 'Wij bieden diepgaande Splunk expertise om de volledige waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). Ons doel is om uw Splunk-omgeving niet alleen te laten werken, maar excelleren.',
     service1DetailBullet1: 'Uitgebreide Splunk health checks en performance optimalisatie.',
@@ -217,18 +215,18 @@ export const translations: Translations = {
     service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream, Edge en Search voor maximale efficiëntie en controle.',
+    service2Description: 'Optimaliseer uw data pipelines met Cribl',
     service2DetailTitle: 'Cribl Consultancy: Intelligente Data Pipelines',
     service2DetailDesc: 'Beheers uw datastromen en reduceer kosten met onze Cribl expertise. Wij helpen u bij het ontwerpen, implementeren en optimaliseren van oplossingen met Cribl Stream voor data routing en transformatie, Cribl Edge voor dataverzameling aan de bron, en Cribl Search voor federated querying. Krijg grip op uw data, ongeacht waar het zich bevindt.',
     service2DetailBullet1: 'Architectuur en implementatie van Cribl Stream en Cribl Edge.',
     service2DetailBullet2: 'Ontwerp van efficiënte data processing pipelines (filteren, routen, verrijken).',
     service2DetailBullet3: 'Integratie met Splunk, SIEM-oplossingen en diverse databestemmingen.',
     service2DetailBullet4: 'Kostenbesparingsstrategieën door slimme data routing en reductie.',
-    service2DetailBullet5: '', 
+    service2DetailBullet5: '', // Removed
     service2DetailCTA: 'Neem contact op',
 
     service5Title: 'Trainingen & Workshops',
-    service5Description: 'Maatwerk trainingen en workshops voor Splunk & Cribl. Prijzen op aanvraag.',
+    service5Description: 'Maatwerk trainingen voor Splunk & Cribl. Prijzen op aanvraag.', // Shorter card description,
     service5DetailTitle: 'Praktijkgerichte Trainingen & Workshops',
     service5DetailDesc: "Versterk uw team met praktische, hands-on trainingen voor Splunk en Cribl, volledig afgestemd op uw behoeften. Onze trainingen zijn ontworpen om direct toepasbare kennis en vaardigheden te leveren. **Prijzen zijn op aanvraag en worden afgestemd op de scope en duur van de training.**",
     service5DetailBullet1: 'Maatwerk curriculum gebaseerd op de specifieke behoeften van uw team.',
@@ -249,21 +247,21 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'U ontvangt een bevestigingsmail.',
+    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
     // contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.', // Removed from form
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
-    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nWij sturen gerust een berichtje.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\Stuur ons gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
     // inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.", // Removed
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nWij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nWij kijken samen wat er mogelijk is.",
-    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nWij sturen gerust een berichtje.",
+    inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur ons gerust een berichtje.",
     // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed
-    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nWij sturen gerust een berichtje!",
+    inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur ons gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
     // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
@@ -358,16 +356,14 @@ export const translations: Translations = {
     homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
-    customersTitlePart1: 'Trusted',
-    customersTitlePart2: 'by',
-    customersTitlePart3: 'companies like',
+    customersTitlePart1: 'Our clients',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
 
     servicesTitle: 'Services',
-    servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
+    servicesSubtitle: 'Learn how we can support you in leveraging your data to its full potential.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions like ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy for management, optimization, and implementation of advanced solutions.', // Shorter card description
     service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
     service1DetailDesc: 'We offer in-depth Splunk expertise to extract the full value from your data. From administrative tasks like upgrades and health checks to implementing and optimizing advanced solutions such as Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). Our goal is to make your Splunk environment not just work, but excel.',
     service1DetailBullet1: 'Comprehensive Splunk health checks and performance optimization.',
@@ -385,7 +381,7 @@ export const translations: Translations = {
     service2DetailBullet2: 'Design of efficient data processing pipelines (filtering, routing, enriching).',
     service2DetailBullet3: 'Integration with Splunk, SIEM solutions, and various data destinations.',
     service2DetailBullet4: 'Cost-saving strategies through smart data routing and reduction.',
-    service2DetailBullet5: '',
+    service2DetailBullet5: '', // Removed
     service2DetailCTA: 'Get in touch',
 
     service5Title: 'Trainings & Workshops',
@@ -410,7 +406,7 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'You will receive a confirmation email.',
+    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
     // contactFormResponseTime: 'We typically respond within 5 business days.', // Removed
 
