@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -15,6 +15,24 @@ import AnimatedSection from '@/components/animated-section';
 import { Loader2, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
+import type { TranslationContent } from '@/lib/translations';
+
+
+const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
+  'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
+  'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
+  'inquiryPlaceholder11', 'inquiryPlaceholder12', 'inquiryPlaceholder13', 'inquiryPlaceholder14', 'inquiryPlaceholder15',
+  'inquiryPlaceholder16',
+];
+
+const keysToRemoveFromPlaceholders = new Set<keyof TranslationContent>([
+  'inquiryPlaceholder4', 'inquiryPlaceholder10', 'inquiryPlaceholder13', 'inquiryPlaceholder15'
+]);
+
+const activePlaceholderKeys = allOriginalPlaceholderKeys.filter(
+  key => !keysToRemoveFromPlaceholders.has(key)
+);
+
 
 const formSchema = z.object({
   email: z.string().email({ message: "Please enter a valid email address." }),
@@ -24,13 +42,6 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-const placeholderKeys: (keyof typeof import('@/lib/translations').translations.en)[] = [
-  'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
-  'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
-  'inquiryPlaceholder11', 'inquiryPlaceholder12', 'inquiryPlaceholder13', 'inquiryPlaceholder14', 'inquiryPlaceholder15',
-  'inquiryPlaceholder16',
-];
-
 const ProjectInquirySection: React.FC = () => {
   const { t, language } = useLanguage();
   const { toast } = useToast();
@@ -39,6 +50,9 @@ const ProjectInquirySection: React.FC = () => {
   const [animatedSubtitle, setAnimatedSubtitle] = useState("");
   const [currentSubtitleIndex, setCurrentSubtitleIndex] = useState(0);
   const [isSubtitleVisible, setIsSubtitleVisible] = useState(true);
+  const [isFormInteracted, setIsFormInteracted] = useState(false);
+  const intervalRef = useRef<NodeJS.Timeout | null>(null);
+
 
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -49,35 +63,63 @@ const ProjectInquirySection: React.FC = () => {
     },
   });
 
+  // Effect for handling form interaction to stop animation
   useEffect(() => {
-    // Initialize with the first placeholder
-    setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
+    if (isFormInteracted && intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null; // Clear the ref to prevent further operations on it
+    }
+  }, [isFormInteracted]);
+
+  // Effect for subtitle animation
+  useEffect(() => {
+    if (isFormInteracted || activePlaceholderKeys.length === 0) {
+      if (intervalRef.current) { // Ensure interval is cleared if interaction happened or no keys
+        clearInterval(intervalRef.current);
+        intervalRef.current = null;
+      }
+      return; // Stop if form interacted or no keys
+    }
+
+    // Initialize or reset animation state
+    let localCurrentIndex = 0;
+    // Ensure currentSubtitleIndex is reset if language changes or activePlaceholderKeys list changes
+    // This effect hook is sensitive to 'language' and 't', so it will re-initialize on language change.
+    setAnimatedSubtitle(t(activePlaceholderKeys[localCurrentIndex]));
+    setCurrentSubtitleIndex(localCurrentIndex); // Sync state
     setIsSubtitleVisible(true);
 
-    const intervalId = setInterval(() => {
+    intervalRef.current = setInterval(() => {
       setIsSubtitleVisible(false); // Start fade-out
 
       setTimeout(() => {
-        setCurrentSubtitleIndex((prevIndex) => (prevIndex + 1) % placeholderKeys.length);
+        // Check isFormInteracted again before updating state
+        // This ensures that if interaction happened during the fade-out, we don't proceed
+        if (intervalRef.current === null) return; // Animation was stopped
+
+        localCurrentIndex = (localCurrentIndex + 1) % activePlaceholderKeys.length;
+        setAnimatedSubtitle(t(activePlaceholderKeys[localCurrentIndex]));
+        setCurrentSubtitleIndex(localCurrentIndex); // Sync state
+
+        // Short timeout to allow CSS to apply hidden state before transitioning to visible
+        setTimeout(() => {
+           if (intervalRef.current === null) return; // Animation was stopped
+          setIsSubtitleVisible(true); // Start fade-in
+        }, 50); // Small delay for fade-in effect
       }, 1000); // Duration of fade-out (1s)
-    }, 9000); // 8s visible + 1s fade-out/in cycle
+    }, 12000); // 11s visible + 1s fade-out cycle
 
-    return () => clearInterval(intervalId);
+    return () => {
+      if (intervalRef.current) {
+        clearInterval(intervalRef.current);
+      }
+    };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language]); // Reset animation on language change
+  }, [language, t, isFormInteracted]); // Dependencies: t and language will trigger re-initialization. isFormInteracted stops/starts.
 
-  useEffect(() => {
-    // This effect handles updating the text and triggering fade-in
-    // after currentSubtitleIndex has changed.
-    if (!isSubtitleVisible) { 
-      setAnimatedSubtitle(t(placeholderKeys[currentSubtitleIndex]));
-      // Short timeout to allow CSS to apply hidden state before transitioning to visible
-      setTimeout(() => {
-        setIsSubtitleVisible(true); // Start fade-in
-      }, 50); 
-    }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [currentSubtitleIndex, t]); // Rerun when index or translations change
+  const handleFocus = () => {
+    setIsFormInteracted(true);
+  };
 
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
@@ -101,6 +143,7 @@ const ProjectInquirySection: React.FC = () => {
           duration: 7000,
         });
         form.reset();
+        setIsFormInteracted(false); // Optionally reset interaction state after successful submission
       } else {
         toast({
           variant: "destructive",
@@ -128,11 +171,11 @@ const ProjectInquirySection: React.FC = () => {
             {t('projectInquiryTitle')}
           </h2>
           <p className={cn(
-            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height for 2 lines
-            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // Added whitespace-pre-line
-            isSubtitleVisible ? "opacity-100" : "opacity-0"
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]",
+            "transition-opacity duration-1000 ease-in-out whitespace-pre-line",
+            isSubtitleVisible && !isFormInteracted ? "opacity-100" : "opacity-0" // Hide if form interacted or during fade
           )}>
-            {animatedSubtitle || t(placeholderKeys[0])}
+            {animatedSubtitle || (activePlaceholderKeys.length > 0 ? t(activePlaceholderKeys[0]) : "")}
           </p>
         </AnimatedSection>
 
@@ -154,6 +197,7 @@ const ProjectInquirySection: React.FC = () => {
                               placeholder={t('emailPlaceholder')}
                               className="focus:ring-accent focus:border-accent"
                               {...field}
+                              onFocus={handleFocus}
                               aria-label={t('emailLabel')}
                             />
                           </FormControl>
@@ -173,6 +217,7 @@ const ProjectInquirySection: React.FC = () => {
                               placeholder={t('phonePlaceholder')}
                               className="focus:ring-accent focus:border-accent"
                               {...field}
+                              onFocus={handleFocus}
                               aria-label={t('phoneLabel')}
                             />
                           </FormControl>
@@ -191,6 +236,7 @@ const ProjectInquirySection: React.FC = () => {
                               placeholder={t('questionStaticPlaceholder')}
                               className="min-h-[150px] resize-y focus:ring-accent focus:border-accent"
                               {...field}
+                              onFocus={handleFocus}
                               aria-label={t('questionLabel')}
                             />
                           </FormControl>
@@ -198,7 +244,6 @@ const ProjectInquirySection: React.FC = () => {
                         </FormItem>
                       )}
                     />
-                    {/* Removed the "response in 5 days" static text from here */}
                     <Button type="submit" disabled={isLoading} size="lg" className="w-full bg-accent hover:bg-accent/90 text-accent-foreground shadow-md">
                       {isLoading ? (
                         <>
@@ -224,4 +269,3 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
-
