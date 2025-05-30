@@ -1,7 +1,7 @@
 
 import Header from '@/components/layout/header';
 import HomeSection from '@/components/sections/home-section';
-import CustomersSection from '@/components/sections/customers-section'; // Restored
+// import CustomersSection from '@/components/sections/customers-section'; // Hidden
 import ServicesSection from '@/components/sections/services-section';
 // import PublicationsSection from '@/components/sections/publications-section'; // Hidden
 import ProjectInquirySection from '@/components/sections/project-inquiry-section';
@@ -13,7 +13,7 @@ export default function HomePage() {
       <Header />
       <main className="flex flex-col">
         <HomeSection />
-        <CustomersSection /> {/* Restored */}
+        {/* <CustomersSection /> */} {/* Hidden */}
         <ServicesSection />
         {/* <PublicationsSection /> */} {/* Hidden */}
         <ProjectInquirySection />

@@ -19,7 +19,7 @@ export interface NavItem {
 
 export interface CompanyLogo {
   name: string;
-  src: StaticImageData; 
+  src: StaticImageData;
   dataAiHint?: string;
   width?: number;
   height?: number;
@@ -27,7 +27,7 @@ export interface CompanyLogo {
 
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
-  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' },
+  // { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Hidden
   { labelKey: 'navServices', href: '/#services', id: 'services' },
   // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
@@ -52,7 +52,7 @@ export const SITE_CONFIG = {
 export interface ServiceItemConstant {
   titleKey: keyof TranslationContent;
   descriptionKey: keyof TranslationContent; // For the card
-  icon: string; 
+  icon: string;
 }
 
 export const SERVICE_ITEMS: ServiceItemConstant[] = [
