@@ -1,19 +1,18 @@
+
 import React from 'react';
 
-// Example Splunk-like Icon (simplified)
+// Splunk Icon
 export const SplunkIcon = ({ className }: { className?: string }) => (
   <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 3v2.66M8.5 6.5L6.84 5.16M6.5 11h-2.66M6.84 18.84L8.5 17.5M12 21v-2.66M15.5 17.5l1.66 1.34M17.5 13h2.66M17.16 5.16L15.5 6.5" />
-    <circle cx="12" cy="12" r="2.5" />
+    <path d="M12 17.5l-4.5-4.5 4.5-4.5 4.5 4.5z" /> {/* Example: a diamond shape */}
+    <circle cx="12" cy="12" r="10" /> {/* Example: circle around it */}
   </svg>
 );
 
-// Example Cribl-like Icon (simplified)
+// Cribl Icon
 export const CriblIcon = ({ className }: { className?: string }) => (
-  <svg className={className} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-    <path d="M12 2 L2 7 L12 12 L22 7 L12 2 Z" />
-    <path d="M2 17 L12 22 L22 17" />
-    <path d="M2 12 L12 17 L22 12" />
+  <svg className={className} viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+     <path d="M4 4 l16 8 l-16 8 Z" /> {/* Example: a different triangle */}
   </svg>
 );
 

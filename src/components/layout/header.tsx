@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, X, Brain } from 'lucide-react';
+import { Menu, Brain } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import LanguageToggle from './language-toggle';
@@ -25,6 +25,14 @@ const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSectionId, setActiveSectionId] = useState<string>(NAV_ITEMS[0]?.id || 'home');
 
+  const handleNavLinkClick = (sectionId: string) => {
+    setActiveSectionId(sectionId);
+    // Close mobile menu if open
+    if (isMobileMenuOpen) {
+      setIsMobileMenuOpen(false);
+    }
+  };
+  
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -34,47 +42,57 @@ const Header: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const topOffset = 100; // px from top to start observation band, adjust if header height changes
-    const bandHeight = 100; // px height of the observation band
-    // Ensure bottom margin doesn't result in negative value if viewport is too small
-    const bottomMarginForBand = Math.max(0, window.innerHeight - (topOffset + bandHeight));
-    const dynamicRootMargin = `-${topOffset}px 0px -${bottomMarginForBand}px 0px`;
-
     const observerOptions: IntersectionObserverInit = {
       root: null,
-      rootMargin: dynamicRootMargin,
-      threshold: 0.1, // At least 10% of the section should be in the band
+      rootMargin: "-50% 0px -50% 0px", // Target the center line of the viewport
+      threshold: 0, // Trigger as soon as any part of the section enters/leaves the rootMargin
     };
 
     const observerCallback = (entries: IntersectionObserverEntry[]) => {
-      let newActiveSectionId = null;
-
-      // Prioritize scroll position for top and bottom extremes
+      let currentActive: string | null = null;
+       // Check for extreme scroll positions first
       if (window.scrollY < 50) {
-        newActiveSectionId = NAV_ITEMS[0]?.id || 'home';
-      } else if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 150) {
-        newActiveSectionId = NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact';
+        currentActive = NAV_ITEMS[0]?.id || 'home';
+      } else if ((window.innerHeight + Math.round(window.scrollY)) >= document.body.offsetHeight - 150) {
+        currentActive = NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact';
       } else {
-        // Find the topmost section intersecting the observation band based on NAV_ITEMS order
+        // Find the topmost section intersecting the observation band
         for (const navItem of NAV_ITEMS) {
           const entry = entries.find(e => e.target.id === navItem.id);
           if (entry && entry.isIntersecting) {
-            newActiveSectionId = navItem.id;
+            currentActive = navItem.id;
             break; 
           }
         }
       }
 
-      if (newActiveSectionId && newActiveSectionId !== activeSectionId) {
-        setActiveSectionId(newActiveSectionId);
-      } else if (!newActiveSectionId && activeSectionId !== (NAV_ITEMS[0]?.id || 'home') && activeSectionId !== (NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact')) {
-        // If no section is in the band, and we're not at extremes, try to find the closest one above the band
-        // This helps if scrolling fast or sections are short.
-        // For simplicity, we can also choose to just keep the last active one if no new one is found in band.
-        // The current logic will keep activeSectionId if newActiveSectionId is null from the loop.
+      if (currentActive && currentActive !== activeSectionId) {
+        setActiveSectionId(currentActive);
+      } else if (!currentActive && activeSectionId !== (NAV_ITEMS[0]?.id || 'home') && activeSectionId !== (NAV_ITEMS[NAV_ITEMS.length - 1]?.id || 'contact')) {
+        // If no section is intersecting the band (e.g., scrolling fast between distant sections)
+        // and we are not at page extremes, find the one closest to the top of the viewport
+        // that has already passed the observation line.
+        let closestSectionAbove: string | null = null;
+        let minDistance = Infinity;
+        for (const navItem of NAV_ITEMS) {
+          const section = document.getElementById(navItem.id);
+          if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.bottom < (window.innerHeight / 2)) { // Section's bottom is above the center line
+              const distance = (window.innerHeight / 2) - rect.bottom;
+              if (distance < minDistance) {
+                minDistance = distance;
+                closestSectionAbove = navItem.id;
+              }
+            }
+          }
+        }
+        // if (closestSectionAbove && closestSectionAbove !== activeSectionId) {
+        //    setActiveSectionId(closestSectionAbove);
+        // }
       }
     };
-
+    
     const observer = new IntersectionObserver(observerCallback, observerOptions);
     const sections = NAV_ITEMS.map(item => document.getElementById(item.id));
     
@@ -82,35 +100,34 @@ const Header: React.FC = () => {
       if (section) observer.observe(section);
     });
     
-    // Initial check on load for the very top of the page
+    // Initial active section on load
     if (window.scrollY < 50) {
-      setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
+        setActiveSectionId(NAV_ITEMS[0]?.id || 'home');
     } else {
-      // Trigger an initial check based on current intersections
-      const initialEntries = sections.reduce((acc, section) => {
-        if (section) {
-            const rect = section.getBoundingClientRect();
-            // Check if section intersects the dynamicRootMargin (simplified check)
-            const intersectsTopBand = rect.top < (topOffset + bandHeight) && rect.bottom > topOffset;
-            if (intersectsTopBand) {
-                acc.push({
-                    target: section,
-                    isIntersecting: true,
-                    boundingClientRect: rect, 
-                    intersectionRatio: 0.1, // Dummy value, actual calculation is complex
-                    intersectionRect: rect, 
-                    rootBounds: null,
-                    time: performance.now()
-                } as IntersectionObserverEntry);
+        // Trigger an initial check based on current intersections
+        const initialEntries = sections.reduce((acc, section) => {
+            if (section) {
+                const rect = section.getBoundingClientRect();
+                // Check if section intersects the dynamicRootMargin (simplified check)
+                const intersectsCenterBand = rect.top < (window.innerHeight / 2) && rect.bottom > (window.innerHeight / 2);
+                if (intersectsCenterBand) {
+                    acc.push({
+                        target: section,
+                        isIntersecting: true,
+                        boundingClientRect: rect, 
+                        intersectionRatio: 0.01, 
+                        intersectionRect: rect, 
+                        rootBounds: null,
+                        time: performance.now()
+                    } as IntersectionObserverEntry);
+                }
             }
+            return acc;
+        }, [] as IntersectionObserverEntry[]);
+        if (initialEntries.length > 0) {
+            observerCallback(initialEntries);
         }
-        return acc;
-      }, [] as IntersectionObserverEntry[]);
-      if (initialEntries.length > 0) {
-        observerCallback(initialEntries);
-      }
     }
-
 
     return () => {
       sections.forEach(section => {
@@ -118,7 +135,7 @@ const Header: React.FC = () => {
       });
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []); // Removed activeSectionId from dependencies to prevent potential loops
+  }, []); 
 
   const NavLinks: React.FC<{ onLinkClick?: () => void; isMobile?: boolean }> = ({ onLinkClick, isMobile }) => (
     <>
@@ -128,9 +145,8 @@ const Header: React.FC = () => {
           asChild
           key={item.id}
           onClick={() => {
-            if (onLinkClick) onLinkClick();
-            // Temporarily set active section on click for faster feedback, observer will confirm
-            // setActiveSectionId(item.id); 
+            handleNavLinkClick(item.id);
+            if (onLinkClick && isMobile) onLinkClick();
           }}
           className={cn(
             "group font-medium relative px-3 py-2 text-foreground hover:text-primary hover:bg-transparent",
@@ -193,4 +209,3 @@ const Header: React.FC = () => {
 };
 
 export default Header;
-    

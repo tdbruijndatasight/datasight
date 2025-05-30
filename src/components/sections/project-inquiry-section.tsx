@@ -66,55 +66,50 @@ const ProjectInquirySection: React.FC = () => {
     },
   });
 
-  // Reset animation index when language changes AND form is not interacted with
   useEffect(() => {
     if (!isFormInteracted) {
-      setCurrentSubtitleIndex(0);
+      setCurrentSubtitleIndex(0); // Reset index on language change if form not touched
     }
   }, [language, isFormInteracted]);
 
 
-  // Effect for subtitle animation
   useEffect(() => {
-    // If form has been interacted with, stop the animation and ensure text is visible.
     if (isFormInteracted) {
       if (intervalRef.current) {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
-      setIsSubtitleVisible(true); // Ensure current text stays visible
-      return; // Stop further execution of this effect
+      setIsSubtitleVisible(true); // Keep current text visible
+      return; // Stop animation
     }
 
-    // If no placeholder keys, nothing to animate.
     if (activePlaceholderKeys.length === 0) {
-      setAnimatedSubtitle(""); 
+      setAnimatedSubtitle(""); // Handle case where no keys are active
       return;
     }
     
-    // Set initial subtitle for the current language/index
-    setAnimatedSubtitle(t(activePlaceholderKeys[currentSubtitleIndex] || ""));
+    // Set initial subtitle text
+    setAnimatedSubtitle(t(activePlaceholderKeys[currentSubtitleIndex] || activePlaceholderKeys[0]));
     setIsSubtitleVisible(true);
 
     intervalRef.current = setInterval(() => {
       setIsSubtitleVisible(false); // Start fade-out
 
       setTimeout(() => {
-        // Check if interaction happened during fade-out or if component unmounted
+        // Check again if form has been interacted with during fade-out
         if (!intervalRef.current || isFormInteractedRef.current ) {
-          if (isFormInteractedRef.current) setIsSubtitleVisible(true);
+          if (isFormInteractedRef.current) setIsSubtitleVisible(true); // Ensure text is visible if interaction occurred
           return;
         }
         
-        // Move to the next subtitle
         setCurrentSubtitleIndex(prevIndex => {
           const nextIndex = (prevIndex + 1) % activePlaceholderKeys.length;
-          setAnimatedSubtitle(t(activePlaceholderKeys[nextIndex] || "")); 
-          setIsSubtitleVisible(true); 
+          setAnimatedSubtitle(t(activePlaceholderKeys[nextIndex] || activePlaceholderKeys[0])); // Set new text
+          setIsSubtitleVisible(true); // Start fade-in
           return nextIndex;
         });
-      }, 1000); // Wait 1s for fade-out to complete before changing text and fading in
-    }, 10000); // Total cycle time: 9s visible + 1s transition = 10s
+      }, 1000); // Duration of fade-out animation (1s)
+    }, 10000); // Total cycle time: 9s visible + 1s fade = 10s
 
     return () => {
       if (intervalRef.current) {
@@ -123,7 +118,7 @@ const ProjectInquirySection: React.FC = () => {
       }
     };
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language, t, isFormInteracted, currentSubtitleIndex]); // currentSubtitleIndex triggers re-setup for new initial text after language change.
+  }, [language, t, isFormInteracted, currentSubtitleIndex]); // Added currentSubtitleIndex
 
 
   const handleFocus = () => {
@@ -152,7 +147,7 @@ const ProjectInquirySection: React.FC = () => {
           duration: 7000,
         });
         form.reset();
-        setIsFormInteracted(false); 
+        setIsFormInteracted(false); // Reset interaction state
       } else {
         toast({
           variant: "destructive",
@@ -180,8 +175,8 @@ const ProjectInquirySection: React.FC = () => {
             {t('projectInquiryTitle')}
           </h2>
            <p className={cn(
-            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height for two lines
-            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // duration-1000 for 1s fade
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height
+            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // Slower transition
             (isFormInteracted || isSubtitleVisible) ? "opacity-100" : "opacity-0"
           )}>
             {animatedSubtitle}
@@ -278,5 +273,3 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
-
-    
