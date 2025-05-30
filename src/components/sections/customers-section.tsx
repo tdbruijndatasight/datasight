@@ -7,24 +7,24 @@ import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SITE_CONFIG, type CompanyLogo } from '@/constants/site';
-import { Wrench } from 'lucide-react'; // Added Wrench icon
+import { Wrench, Heart } from 'lucide-react'; 
 import Link from 'next/link';
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
   
+  // Find the Schiphol logo
   const schipholLogo = SITE_CONFIG.companyLogos.find(logo => logo.name === 'Schiphol Airport');
 
   return (
     <section id="customers" className="bg-background section-min-height">
       <div className="container mx-auto text-center">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            {/* The title structure depends on whether customersTitlePart1, 2, 3 are still in translations.ts 
-                Assuming only customersTitlePart1 is used or the structure is simple as per prior request to simplify.
-                If only customersTitlePart1 exists and is "Onze klanten" / "Our clients": 
-            */}
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-x-1">
             {t('customersTitlePart1')}
+            <span className="inline-block mx-0.5"> {/* Adjusted for tighter spacing */}
+              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" /> {/* Adjusted size and vertical position */}
+            </span>
           </h2>
           <p className="text-lg text-foreground/80 mb-8 max-w-4xl mx-auto">
             {t('customersDescription')}
@@ -48,11 +48,9 @@ const CustomersSection: React.FC = () => {
           </AnimatedSection>
         )}
 
-        {/* Removed original customersClarificationText rendering */}
-
         <AnimatedSection delay="delay-200" className="mt-8">
           <p className="text-sm italic text-foreground/70 max-w-4xl mx-auto">
-            {t('customersLinkedInClarification').replace('{SITE_CONFIG.linkedIn}', SITE_CONFIG.linkedIn)} 
+            {t('customersLinkedInClarification')}
             {' '}
             <Link href={SITE_CONFIG.linkedIn} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
               LinkedIn
@@ -72,7 +70,6 @@ const CustomersSection: React.FC = () => {
             {t('customersCTAPleasure')}
           </p>
         </AnimatedSection>
-
       </div>
     </section>
   );
