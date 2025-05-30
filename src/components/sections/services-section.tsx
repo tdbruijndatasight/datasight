@@ -4,13 +4,13 @@
 import React, { useState } from 'react';
 import type { Key } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'; // Removed DialogClose
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SERVICE_ITEMS, type ServiceItemConstant } from '@/constants/site';
-import { SplunkIcon, CriblIcon } from '@/components/icons/custom-icons';
-import { Brain, Clipboard, ArrowRight } from 'lucide-react';
+import { SplunkIcon, CriblIcon } from '@/components/icons/custom-icons'; // Removed DataStrategyIcon, AiSolutionIcon
+import { Brain, Clipboard, ArrowRight } from 'lucide-react'; // Removed BarChartBig, Database, Settings
 import type { TranslationContent } from '@/lib/translations';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -27,6 +27,7 @@ interface ServiceItemWithDetails extends ServiceItemConstant {
   detailDescKey: keyof TranslationContent;
   detailBulletKeys: (keyof TranslationContent)[];
   detailCTAKey: keyof TranslationContent;
+  dialogFooterTextKey?: keyof TranslationContent;
 }
 
 
@@ -41,22 +42,51 @@ const ServicesSection: React.FC = () => {
     .filter(item => activeServiceKeys.includes(item.titleKey as string))
     .map((item) => {
       let serviceNumber = 0;
-      if (item.titleKey === 'service1Title') serviceNumber = 1;
-      else if (item.titleKey === 'service2Title') serviceNumber = 2;
-      else if (item.titleKey === 'service5Title') serviceNumber = 5;
+      let dialogFooterTextKey: keyof TranslationContent | undefined = undefined;
+
+      if (item.titleKey === 'service1Title') {
+        serviceNumber = 1;
+        dialogFooterTextKey = 'service1DialogFooterText';
+      } else if (item.titleKey === 'service2Title') {
+        serviceNumber = 2;
+        dialogFooterTextKey = 'service2DialogFooterText';
+      } else if (item.titleKey === 'service5Title') {
+        serviceNumber = 5;
+        dialogFooterTextKey = 'service5DialogFooterText';
+      }
+
+      // Construct keys using string concatenation
+      const baseKey = 'service' + serviceNumber;
+      const currentDetailTitleKey = (baseKey + 'DetailTitle') as keyof TranslationContent;
+      const currentDetailDescKey = (baseKey + 'DetailDesc') as keyof TranslationContent;
+      const currentDetailCTAKey = (baseKey + 'DetailCTA') as keyof TranslationContent;
+      
+      const currentBulletKeys = [
+        (baseKey + 'DetailBullet1') as keyof TranslationContent,
+        (baseKey + 'DetailBullet2') as keyof TranslationContent,
+        (baseKey + 'DetailBullet3') as keyof TranslationContent,
+        (baseKey + 'DetailBullet4') as keyof TranslationContent,
+        (baseKey + 'DetailBullet5') as keyof TranslationContent,
+      ];
+      
+      const filteredBulletKeys = currentBulletKeys.filter(key => {
+        // For service 2, explicitly remove bullet 5 if its translation is empty or matches key
+        if (serviceNumber === 2 && key === (('service' + serviceNumber + 'DetailBullet5') as keyof TranslationContent)) {
+          const translatedText = t(key);
+          return translatedText && translatedText !== key; // Only include if actually translated
+        }
+        // For all other bullets, only include if a translation exists and is not empty.
+        const translatedText = t(key);
+        return translatedText && translatedText !== key;
+      });
 
       return {
         ...item,
-        detailTitleKey: `service${serviceNumber}DetailTitle` as keyof TranslationContent,
-        detailDescKey: `service${serviceNumber}DetailDesc` as keyof TranslationContent,
-        detailBulletKeys: [
-          `service${serviceNumber}DetailBullet1` as keyof TranslationContent,
-          `service${serviceNumber}DetailBullet2` as keyof TranslationContent,
-          `service${serviceNumber}DetailBullet3` as keyof TranslationContent,
-          `service${serviceNumber}DetailBullet4` as keyof TranslationContent,
-          `service${serviceNumber}DetailBullet5` as keyof TranslationContent,
-        ].filter(key => t(key) !== ''), // Filter out keys that would result in empty strings
-        detailCTAKey: `service${serviceNumber}DetailCTA` as keyof TranslationContent,
+        detailTitleKey: currentDetailTitleKey,
+        detailDescKey: currentDetailDescKey,
+        detailBulletKeys: filteredBulletKeys,
+        detailCTAKey: currentDetailCTAKey,
+        dialogFooterTextKey: dialogFooterTextKey,
       };
     });
 
@@ -116,22 +146,38 @@ const ServicesSection: React.FC = () => {
       {selectedService && (
         <Dialog open={isOverlayOpen} onOpenChange={setIsOverlayOpen}>
           <DialogContent className="sm:max-w-2xl bg-card border-primary/30 text-card-foreground p-6 md:p-8">
-            <DialogHeader className="mb-4">
-              <DialogTitle className="text-2xl md:text-3xl font-bold text-primary">
-                {t(selectedService.detailTitleKey)}
-              </DialogTitle>
+            <DialogHeader className="mb-4 text-left">
+              {(() => {
+                const fullTitle = t(selectedService.detailTitleKey);
+                const titleParts = fullTitle.split(': ');
+                const mainTitle = titleParts[0];
+                const subTitle = titleParts.length > 1 ? titleParts.slice(1).join(': ') : null;
+
+                return (
+                  <>
+                    <DialogTitle className="text-2xl md:text-3xl font-bold text-primary">
+                      {mainTitle}
+                    </DialogTitle>
+                    {subTitle && (
+                      <p className="text-md text-foreground/80 -mt-1">{subTitle}</p>
+                    )}
+                  </>
+                );
+              })()}
             </DialogHeader>
-            <div className="max-h-[70vh] overflow-y-auto pr-2 space-y-4 scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-secondary">
+            <div className="max-h-[65vh] overflow-y-auto pr-2 space-y-4 scrollbar-thin scrollbar-thumb-primary/50 scrollbar-track-secondary">
                 <p className="text-base text-foreground/90">{t(selectedService.detailDescKey)}</p>
                 <ul className="list-disc pl-5 space-y-1.5 text-foreground/80">
                     {selectedService.detailBulletKeys.map((bulletKey, i) => {
                         const bulletText = t(bulletKey);
-                        // Only render if bulletText is not empty and not just the key itself (fallback)
-                        return bulletText && bulletText !== bulletKey && !bulletKey.startsWith('service2DetailBullet5') ? ( 
+                        return bulletText && bulletText !== bulletKey ? ( 
                              <li key={i} className="text-sm">{bulletText}</li>
                         ) : null;
                     })}
                 </ul>
+                {selectedService.dialogFooterTextKey && (
+                   <p className="text-sm text-foreground/80 pt-3">{t(selectedService.dialogFooterTextKey)}</p>
+                )}
                 <div className="pt-4">
                     <Button 
                       asChild 
