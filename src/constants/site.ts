@@ -3,12 +3,12 @@ import type { StaticImageData } from 'next/image';
 import type { Locale, TranslationContent } from '@/lib/translations';
 
 // Import logos from src/images/logos
-import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
-import icsLogo from '@/images/logos/ics.svg';
-import rabobankLogo from '@/images/logos/rabobank.svg';
 import schipholLogo from '@/images/logos/schiphol.svg';
+import rabobankLogo from '@/images/logos/rabobank.svg';
 import ikeaLogo from '@/images/logos/ikea.svg';
+import icsLogo from '@/images/logos/ics.svg';
 import uwvLogo from '@/images/logos/uwv.svg';
+import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
 
 
 export interface NavItem {
@@ -27,7 +27,7 @@ export interface CompanyLogo {
 
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
-  // { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Hidden
+  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Re-added Customers nav item
   { labelKey: 'navServices', href: '/#services', id: 'services' },
   // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
@@ -35,7 +35,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'DataSight.', // Changed from DataSight Portfolio.
+  name: 'DataSight.',
   email: 'info.tomdebruijn@gmail.com',
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
