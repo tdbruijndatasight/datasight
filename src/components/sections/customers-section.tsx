@@ -22,8 +22,8 @@ const CustomersSection: React.FC = () => {
             <span className="relative inline-block mr-1">
               <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" />
             </span>
-            {t('customersTitlePart2')}
-            <span className="ml-1">{t('customersTitlePart3')}</span>
+            {/* {t('customersTitlePart2')} // Removed */}
+            {/* <span className="ml-1">{t('customersTitlePart3')}</span> // Removed */}
           </h2>
           <p className="text-lg text-foreground/80 mb-2 max-w-4xl mx-auto">
             {t('customersDescription')}
@@ -44,8 +44,8 @@ const CustomersSection: React.FC = () => {
                     <Image 
                       src={logoSrc} 
                       alt={logo.name} 
-                      width={logo.width || 120} 
-                      height={logo.height || 50}
+                      width={logo.width || 140} // Default width if not specified
+                      height={logo.height || 55} // Default height if not specified
                       className="object-contain"
                       data-ai-hint={logo.dataAiHint}
                     />
