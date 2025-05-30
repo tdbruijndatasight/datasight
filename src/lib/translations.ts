@@ -25,14 +25,9 @@ export interface TranslationContent {
 
   // Customers Section
   customersTitlePart1: string;
-  customersTitlePart2: string; // Retained as per base for potential future use or other title structures
-  customersTitlePart3: string; // Retained as per base
+  customersTitlePart2: string;
+  customersTitlePart3: string;
   customersDescription: string;
-  customersClarificationText: string; // This key exists in the base, though the user asked to hide its content from rendering.
-  customersLinkedInClarification: string; // New key from previous request
-  customersCTAChallenge: string; // New key from previous request
-  customersCTAPleasure: string; // New key from previous request
-
 
   // Services Section
   servicesTitle: string;
@@ -177,11 +172,6 @@ export interface TranslationContent {
   disclaimerLimitationLiabilityP1: string;
   disclaimerChangesDisclaimerTitle: string;
   disclaimerChangesDisclaimerP1: string;
-
-  // Cookie Banner
-  cookieBannerMessage: string;
-  cookieBannerPrivacyLink: string;
-  cookieBannerAcceptButton: string;
 }
 
 
@@ -207,7 +197,7 @@ export const translations: Translations = {
     homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen bij complexe datavraagstukken, door middels heldere- bruikbare inzichten, échte waarde te leveren.",
     homeAboutMeP2: "Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – worden praktische en impactvolle oplossingen gerealiseerd.",
-    homeAboutMeP3: "Wij zijn volledig gecertificeerd in Splunk en Cribl en bieden consultancy, advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+    homeAboutMeP3: "Als gecertificeerd specialist in Splunk en Cribl is DataSight inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Onze klanten',
@@ -219,47 +209,47 @@ export const translations: Translations = {
     customersCTAChallenge: "Heeft u een uitdaging of project waarin ik kan meedenken of meewerken?",
     customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking.",
 
-    servicesTitle: 'Dienstverlening',
-    servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
-
+	servicesTitle: 'Services',
+    servicesSubtitle: 'Leer hoe wij kunnen helpen uw datapotentieel optimaal te benutten.',
+	
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen zoals ITSI & ES.',
-    service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw Data Potentieel',
-    service1DetailDesc: 'Wij bieden diepgaande Splunk expertise om de volledige waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). Ons doel is om uw Splunk-omgeving niet alleen te laten werken, maar excelleren.',
-    service1DetailBullet1: 'Uitgebreide Splunk health checks en performance optimalisatie.',
-    service1DetailBullet2: 'Beheer en uitvoering van Splunk upgrades en migraties.',
-    service1DetailBullet3: 'Implementatie en configuratie van Splunk ITSI voor AIOps.',
-    service1DetailBullet4: 'Opzet en verfijning van Splunk Enterprise Security voor SIEM.',
-    service1DetailBullet5: 'Ontwikkeling van maatwerk dashboards, alerts en data-integraties.',
+    service1Description: 'Voor proactief beheer, diepgaande expertise, projecten en waarde optimalisatie van uw omgeving. Lees meer.',
+    service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw data potentieel',
+    service1DetailDesc: 'Met meer dan 10 jaar ervaring biedt DataSight diepgaande Splunk-expertise om maximale waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). DataSight zorgt ervoor dat uw Splunk-omgeving betrouwbaar functioneert en volledig wordt benut.\nOnze diensten omvatten onder andere:',
+    service1DetailBullet1: 'Proactief beheer van uw Splunk-omgeving voor optimale prestaties en continuïteit.',
+    service1DetailBullet2: 'Ondersteuning bij Splunk-upgrades, cloudmigraties en automatisering met tools zoals Ansible.',
+    service1DetailBullet3: 'Implementatie en configuratie van Splunk IT Service Intelligence (ITSI) voor verbeterde IT-service monitoring.',
+    service1DetailBullet4: 'Ondersteunen van een Security Operations Center (SOC), middels implementatie en configuratie van Splunk Enterprise Security (ES).',
+    service1DetailBullet5: 'Ontwikkeling van maatwerk dashboards, alerts en data-integraties, afgestemd op uw specifieke behoeften.',
 	service1DialogFooterText: "Iedere klant- en omgeving, data-uitdaging en project is uniek. Dit overzicht is slechts een greep uit wat DataSight kan bieden. Wij gaan graag eerst met u in gesprek om uw specifieke uitdagingen beter te leren kennen.",
     service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream, Edge en Search voor maximale efficiëntie en controle.',
-    service2DetailTitle: 'Cribl Consultancy: Intelligente Data Pipelines',
-    service2DetailDesc: 'Beheers uw datastromen en reduceer kosten met onze Cribl expertise. Wij helpen u bij het ontwerpen, implementeren en optimaliseren van oplossingen met Cribl Stream voor data routing en transformatie, Cribl Edge voor dataverzameling aan de bron, en Cribl Search voor federated querying. Krijg grip op uw data, ongeacht waar het zich bevindt.',
-    service2DetailBullet1: 'Architectuur en implementatie van Cribl Stream en Cribl Edge.',
-    service2DetailBullet2: 'Ontwerp van efficiënte data processing pipelines (filteren, routen, verrijken).',
-    service2DetailBullet3: 'Integratie met Splunk, SIEM-oplossingen en diverse databestemmingen.',
-    service2DetailBullet4: 'Kostenbesparingsstrategieën door slimme data routing en reductie.',
-    service2DetailBullet5: '', 
+    service2Description: 'Voor volledige controle over uw data en efficiënte observability. Lees meer.',
+    service2DetailTitle: 'Cribl Consultancy: Voor efficiente observability',
+    service2DetailDesc: 'Cribl is een platform dat acteert tussen databronnen en databestemmingen. Met Cribl Stream kunt u data verzamelen, filteren, verrijken, beveiligen en routeren. Met Cribl krijgt u volledig grip en eigenaarschap over uw data en gaat u vendor-locking tegen.\nOnze diensten omvatten:',
+    service2DetailBullet1: 'Implementatie en configuratie van Cribl.',
+    service2DetailBullet2: 'Proactief beheer van uw Cribl Stream omgeving en het aanmaken van processing pipelines voor filtering, routing en verrijking.',
+    service2DetailBullet3: 'Integratie van Cribl met Splunk, SIEM-oplossingen en diverse andere databestemmingen.',
+    service2DetailBullet4: 'Realisatie van kostenbesparingsstrategieën via slimme data routing en reductie met Cribl.',
+    service2DetailBullet5: '', // Removed
 	service2DialogFooterText: "Cribl is op veel manieren inzetbaar. Iedere klant en omgeving is uniek, daarom gaan wij graag eerst het gesprek met u aan om de mogelijkheden te bespreken.",
     service2DetailCTA: 'Neem contact op',
 
     service5Title: 'Trainingen & Workshops',
-    service5Description: 'Maatwerk trainingen en workshops voor Splunk & Cribl. Prijzen op aanvraag.',
-    service5DetailTitle: 'Praktijkgerichte Trainingen & Workshops',
-    service5DetailDesc: 'Versterk uw team met praktische, hands-on trainingen voor Splunk en Cribl, volledig afgestemd op uw behoeften. Onze trainingen zijn ontworpen om direct toepasbare kennis en vaardigheden te leveren. **Prijzen zijn op aanvraag en worden afgestemd op de scope en duur van de training.**',
-    service5DetailBullet1: 'Maatwerk curriculum gebaseerd op de specifieke behoeften van uw team.',
-    service5DetailBullet2: 'Splunk & Cribl cursussen: van basis tot geavanceerd (Admin, Architect, User).',
-    service5DetailBullet3: 'Focus op real-world use cases en best practices.',
+    service5Description: 'Nieuw met Splunk of Cribl, of hulp nodig? Wij leveren maatwerk trainingen en workshops. Lees meer.', // Shorter card description,
+    service5DetailTitle: 'Trainingen & Workshops: Praktische trainingen afgestemd op uw organisatie en behoeften',
+    service5DetailDesc: 'Bij DataSight zijn wij gepassioneerd en enthousiast over ons werk. We delen graag onze kennis en ervaring met anderen. Daarom worden wij regelmatig gevraagd om trainingen en workshops te verzorgen. Of het nu gaat om organisaties die nieuw zijn met Splunk of Cribl, of om klanten die meer uit hun tools willen halen, alles behoort tot de mogelijkheden.\nWij geloven in maatwerk, zodat we specifiek kunnen inspelen op uw wensen en daarmee maximaal resultaat kunnen bieden. We verzorgen trainingen op locatie of remote, op uw eigen (Splunk/Cribl) omgeving, maar ook via een eigen demo-omgeving. Daarbij bieden wij zowel 1-op-1 sessies als groepssessies, variërend van één dag tot meerdere dagen.\nOnze trainingsmogelijkheden omvatten:',
+    service5DetailBullet1: 'Maatwerk trainingen afgestemd op de behoeften van uw organisatie.',
+    service5DetailBullet2: 'Trainingen voor beginners en gevorderden in Splunk en Cribl.',
+    service5DetailBullet3: 'Flexibele trainingsvormen: individueel of in groepsverband.',
     service5DetailBullet4: 'Interactieve labs en Q&A sessies voor diepgaand begrip.',
-    service5DetailBullet5: 'Flexibele leveringsopties: on-site of remote.',
+    service5DetailBullet5: 'Trainingen op locatie of remote, op eigen of demo-omgeving.',
 	service5DialogFooterText: "Neem gerust contact met ons op om de mogelijkheden te bespreken. Prijzen zijn vanwege maatwerk in overleg.",
     service5DetailCTA: 'Neem contact op',
 
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: "Heeft u een data-uitdaging? Beschrijf uw situatie en wij nemen contact met u op.", 
+    projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys", // Placeholder comment
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -271,19 +261,23 @@ export const translations: Translations = {
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
     contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt een bevestigingsmail.',
     contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
-    
+    // contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.', // Removed from form
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
-    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur ons gerust een berichtje.",
+    inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\Stuur ons gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
+    // inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.", // Removed
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nWij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nWij kijken samen wat er mogelijk is.",
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur ons gerust een berichtje.",
+    // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur ons gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
+    // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
+    // inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.", // Removed
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met je mee naar efficiënte oplossingen.",
 
     contactTitle: 'Neem Contact Op',
@@ -308,7 +302,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    
+    // Privacy Policy Page
     privacyPageTitle: 'Privacybeleid voor DataSight',
     privacyLastUpdated: 'Laatst bijgewerkt: 1 april 2024',
     privacyIntro: 'DataSight ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight (de "Site") gebruikt en de diensten die wij aanbieden.',
@@ -333,7 +327,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Toepasselijk Recht',
     privacyGoverningLawP1: 'Nederlands recht is van toepassing. Geschillen worden voorgelegd aan de bevoegde rechtbank in Den Haag.',
 
-    
+    // Disclaimer Page
     disclaimerPageTitle: 'Disclaimer voor DataSight',
     disclaimerValidFrom: 'Geldig vanaf: 1 april 2024',
     disclaimerIntroP1: 'De informatie op de website van {SITE_CONFIG.name} (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
@@ -353,11 +347,6 @@ export const translations: Translations = {
     disclaimerLimitationLiabilityP1: 'DataSight is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
     disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
     disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
-
-    // Cookie Banner
-    cookieBannerMessage: "Wij houden niet van tracking cookies, maar wel van een lekker koekje! 🍪 Deze site gebruikt alleen essentiële cookies om goed te werken en je voorkeuren te onthouden.",
-    cookieBannerPrivacyLink: "Meer info in ons Privacybeleid.",
-    cookieBannerAcceptButton: "Prima!",
   },
   en: {
     navHome: 'Home',
@@ -375,8 +364,8 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
-    homeAboutMeP2: "We do this through deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions. Expect independent, honest, realistic advice tailored to your specific goals.",
-    homeAboutMeP3: "We're fully certified in Splunk and Cribl and offer consultancy, guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+    homeAboutMeP2: "This is achieved by deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions.",
+    homeAboutMeP3: "Certified in Splunk and Cribl, DataSight provides sultancy, strategic guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Our clients',
@@ -389,46 +378,46 @@ export const translations: Translations = {
     customersCTAPleasure: "We would be happy to get in touch for a no-obligation introduction.",
 
     servicesTitle: 'Services',
-    servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
+    servicesSubtitle: 'Learn how we can support you in leveraging your data to its full potential.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions like ITSI & ES.',
+    service1Description: 'For proactive management, in-depth expertise, projects, and value optimization of your environment. Read more.', // Shorter card description
     service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
-    service1DetailDesc: 'We offer in-depth Splunk expertise to extract the full value from your data. From administrative tasks like upgrades and health checks to implementing and optimizing advanced solutions such as Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). Our goal is to make your Splunk environment not just work, but excel.',
-    service1DetailBullet1: 'Comprehensive Splunk health checks and performance optimization.',
-    service1DetailBullet2: 'Management and execution of Splunk upgrades and migrations.',
-    service1DetailBullet3: 'Implementation and configuration of Splunk ITSI for AIOps.',
-    service1DetailBullet4: 'Setup and refinement of Splunk Enterprise Security for SIEM.',
+    service1DetailDesc: 'With over 10 years of experience, DataSight offers deep Splunk expertise to unlock the full potential value of your data. From administrative tasks such as upgrades and health checks to implementing and optimizing advanced solutions like Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). DataSight ensures your Splunk environment operates reliably and is fully leveraged.',
+    service1DetailBullet1: 'Proactive management of your Splunk environment for optimal performance and continuity.',
+    service1DetailBullet2: 'Support for Splunk upgrades, cloud migrations, and automation using tools like Ansible.',
+    service1DetailBullet3: 'Implementation and configuration of Splunk IT Service Intelligence (ITSI) for enhanced IT service monitoring.',
+    service1DetailBullet4: 'Operate in a Security Operations Centers (SOC), help with implementation and configuration of Splunk Enterprise Security (ES).',
     service1DetailBullet5: 'Development of custom dashboards, alerts, and data integrations.',
 	service1DialogFooterText: "Every client- and environment, data challenge, and project is unique. This overview is a brief selection of what DataSight can offer. We prefer to first engage in a conversation with you to better understand your specific challenges.",
     service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimize your data pipelines with Cribl Stream, Edge, and Search for maximum efficiency and control.',
-    service2DetailTitle: 'Cribl Consultancy: Intelligent Data Pipelines',
-    service2DetailDesc: 'Master your data flows and reduce costs with our Cribl expertise. We assist in designing, implementing, and optimizing solutions with Cribl Stream for data routing and transformation, Cribl Edge for data collection at the source, and Cribl Search for federated querying. Gain control over your data, wherever it resides.',
-    service2DetailBullet1: 'Architecture and implementation of Cribl Stream and Cribl Edge.',
-    service2DetailBullet2: 'Design of efficient data processing pipelines (filtering, routing, enriching).',
-    service2DetailBullet3: 'Integration with Splunk, SIEM solutions, and various data destinations.',
-    service2DetailBullet4: 'Cost-saving strategies through smart data routing and reduction.',
-    service2DetailBullet5: '', 
+    service2Description: 'For full control over your data and efficient observability. Learn more.',
+    service2DetailTitle: 'Cribl Consultancy: For efficient Observability',
+    service2DetailDesc: 'Cribl is a platform that operates between data sources and data destinations. With Cribl Stream, you can collect, filter, enrich, secure, and route data. Cribl gives you full control and ownership over your data and helps you prevent vendor lock-in.\nOur services include:',
+    service2DetailBullet1: 'Implementation and configuration of Cribl.',
+    service2DetailBullet2: 'Proactive management of your Cribl Stream environment and creation of processing pipelines for filtering, routing, and enrichment.',
+    service2DetailBullet3: 'Integration of Cribl with Splunk, SIEM solutions, and various other data destinations.',
+    service2DetailBullet4: 'Realization of cost-saving strategies through smart data routing and reduction with Cribl.',
+    service2DetailBullet5: '', // Removed
 	service2DialogFooterText: "Cribl is versatile and can be deployed in many ways. Every client and environment is unique; therefore, we prefer to first engage in a conversation with you to discuss the possibilities.",
     service2DetailCTA: 'Get in touch',
 
     service5Title: 'Trainings & Workshops',
-    service5Description: 'Customized trainings and workshops for Splunk & Cribl. Pricing on consultation.',
-    service5DetailTitle: 'Practical Trainings & Workshops',
-    service5DetailDesc: 'Empower your team with practical, hands-on training for Splunk and Cribl, fully tailored to your needs. Our trainings are designed to deliver immediately applicable knowledge and skills. **Pricing is on consultation and tailored to the scope and duration of the training.**',
+    service5Description: 'New to Splunk or Cribl, or need specific help? We provide tailored training and workshops. Learn more.',
+    service5DetailTitle: 'Trainings & Workshops: Practical training designed for your organization and needs',
+    service5DetailDesc: 'At DataSight, we are passionate and enthusiastic about our work. We enjoy sharing our knowledge and experience with others. That is why we are regularly asked to provide training sessions and workshops. Whether it concerns organizations new to Splunk or Cribl, or clients looking to get more out of their tools, all options are possible.\nWe believe in tailored solutions, enabling us to specifically address your needs and deliver maximum results. We offer training on-site or remotely, on your own (Splunk/Cribl) environment, as well as via our own demo environment. Sessions can be one-on-one or in groups, ranging from one day to multiple days.\nOur training offerings include:',
     service5DetailBullet1: "Customized curriculum based on your team's specific needs.",
-    service5DetailBullet2: "Splunk & Cribl courses: from basic to advanced (Admin, Architect, User).",
-    service5DetailBullet3: "Focus on real-world use cases and best practices.",
-    service5DetailBullet4: "Interactive labs and Q&A sessions for in-depth understanding.",
-    service5DetailBullet5: "Flexible delivery options: on-site or remote.",
+    service5DetailBullet2: "Courses for beginners and advanced users of Splunk and Cribl.",
+    service5DetailBullet3: "Flexible formats: individual or group sessions.",
+    service5DetailBullet4: "On-site or remote training.",
+    service5DetailBullet5: "On your own environment, or a demo environment.",
 	service5DialogFooterText: "Please feel free to contact us to discuss the possibilities. Pricing is available upon request due to the customized nature of our services.",
     service5DetailCTA: 'Get in touch',
 
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: "Have a data challenge? Describe your situation, and We'll get in touch.",
+    projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys", // Placeholder comment
     questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
@@ -440,19 +429,23 @@ export const translations: Translations = {
     contactFormSuccessTitle: 'Inquiry Received!',
     contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email.',
     contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
-    
+    // contactFormResponseTime: 'We typically respond within 5 business days.', // Removed
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nWe're happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nWe'll gladly send you a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction.\nEasily schedule 30 minutes in your calendar here 📅.",
+    // inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nWe're happy to call.", // Removed
     inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nWe're happy to think along.",
     inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? 🛠️\nWe also provide hands-on training tailored to your situation.",
     inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊\nWe're happy to help you get started.",
     inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nWe'll explore the possibilities together.",
     inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nWe'll gladly send you a message.",
+    // inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.", // Removed
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nWe'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nWe help you make smart choices with Splunk & Cribl.",
+    // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\nOur trainings are hands-on, custom, and without unnecessary theory.",
+    // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? 💰\nWe're happy to look into efficient solutions with you.",
 
     contactTitle: 'Get in Touch',
@@ -477,7 +470,7 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    
+    // Privacy Policy Page
     privacyPageTitle: 'Privacy Policy for DataSight',
     privacyLastUpdated: 'Last Updated: April 1, 2024',
     privacyIntro: 'DataSight ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight (the "Site"), and the services we offer.',
@@ -502,7 +495,7 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Governing Law',
     privacyGoverningLawP1: 'Dutch law applies. Disputes will be submitted to the competent court in The Hague.',
 
-    
+    // Disclaimer Page
     disclaimerPageTitle: 'Disclaimer for DataSight',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
     disclaimerIntroP1: 'The information on the website of {SITE_CONFIG.name} (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
@@ -522,23 +515,11 @@ export const translations: Translations = {
     disclaimerLimitationLiabilityP1: 'DataSight is not liable for any direct or indirect damage resulting from the use of this website, unless there is intent or gross negligence.',
     disclaimerChangesDisclaimerTitle: 'Changes to This Disclaimer',
     disclaimerChangesDisclaimerP1: 'This disclaimer may be changed. Changes are effective immediately upon publication.',
-    
-    // Cookie Banner
-    cookieBannerMessage: "We're not fans of tracking cookies, but we love a good biscuit! 🍪 This site only uses essential cookies for functionality and to remember your preferences.",
-    cookieBannerPrivacyLink: "More info in our Privacy Policy.",
-    cookieBannerAcceptButton: "Got it!",
   },
 };
 
 // Ensure all placeholder keys for the inquiry form are defined in English as well.
 // Fallback to Dutch if English is missing for a specific key, or a generic prompt.
-// This function will be called with the `translations.en` and `translations.nl` objects.
-// It iterates through a predefined list of placeholder keys.
-// If an English translation for a key is missing or is just the key name itself (meaning it wasn't translated),
-// it takes the Dutch translation for that key.
-// It then performs a very basic replacement of common Dutch pronouns ("Wij", "wij", "me", "je", "jouw")
-// with their English equivalents ("We", "we", "us", "you", "your") in the borrowed Dutch text.
-// This provides a basic fallback so that English users see *something* relevant even if a direct English translation is missing for a placeholder.
 const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationContent) => {
   const placeholderKeys: (keyof TranslationContent)[] = [
     'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3',
@@ -548,13 +529,10 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   ];
   placeholderKeys.forEach(key => {
     if (!en[key] || en[key] === key) { // Check if key is missing or just the key itself
+      // If an English key is missing, try to use the Dutch one or a generic prompt.
       const nlText = nl[key] || `Tell us about your data challenge...\nWe are happy to help. (Placeholder for ${key})`;
-      en[key] = nlText
-        .replace(/\bWij\b/g, 'We')
-        .replace(/\bwij\b/g, 'we')
-        .replace(/\bme\b/g, 'us')
-        .replace(/\bje\b/g, 'you')
-        .replace(/\bjouw\b/g, 'your');
+      // Basic "translation" attempt for pronouns if falling back from Dutch to English for placeholders
+      en[key] = nlText.replace(/\bWij\b/g, 'We').replace(/\bwij\b/g, 'we').replace(/\bme\b/g, 'us').replace(/\bje\b/g, 'you').replace(/\bjouw\b/g, 'your');
     }
   });
 };
