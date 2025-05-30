@@ -29,7 +29,7 @@ export interface TranslationContent {
   customersTitlePart2: string;
   customersTitlePart3: string;
   customersDescription: string;
-  customersClarificationText: string; // New key
+  customersClarificationText: string;
 
   // Services Section
   servicesTitle: string;
@@ -55,11 +55,11 @@ export interface TranslationContent {
   service2DetailBullet2: string;
   service2DetailBullet3: string;
   service2DetailBullet4: string;
-  // service2DetailBullet5: string; // Removed
+  service2DetailBullet5: string; 
   service2DetailCTA: string;
   service2DialogFooterText: string;
 
-  service5Title: string;
+  service5Title: string; // Was service3, now maps to service 5 for "Trainingen"
   service5Description: string;
   service5DetailTitle: string;
   service5DetailDesc: string;
@@ -73,8 +73,8 @@ export interface TranslationContent {
   
   // Project Inquiry Section
   projectInquiryTitle: string;
-  projectInquirySubtitle: string; // This is the animated one
-  questionStaticPlaceholder: string;
+  // projectInquirySubtitle: string; // This key is for the static text, animated text uses inquiryPlaceholder keys
+  questionStaticPlaceholder: string; // New key for static textarea placeholder
   emailLabel: string;
   emailPlaceholder: string;
   phoneLabel: string;
@@ -85,23 +85,23 @@ export interface TranslationContent {
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
-  // contactFormResponseTime: string; // Removed from form display
+  // contactFormResponseTime: string; // Removed
 
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
   inquiryPlaceholder3: string;
-  // inquiryPlaceholder4: string; // Removed
+  // inquiryPlaceholder4: string; // Removed from active list
   inquiryPlaceholder5: string;
   inquiryPlaceholder6: string;
   inquiryPlaceholder7: string;
   inquiryPlaceholder8: string;
   inquiryPlaceholder9: string;
-  // inquiryPlaceholder10: string; // Removed
+  // inquiryPlaceholder10: string; // Removed from active list
   inquiryPlaceholder11: string;
   inquiryPlaceholder12: string;
-  // inquiryPlaceholder13: string; // Removed
+  // inquiryPlaceholder13: string; // Removed from active list
   inquiryPlaceholder14: string;
-  // inquiryPlaceholder15: string; // Removed
+  // inquiryPlaceholder15: string; // Removed from active list
   inquiryPlaceholder16: string;
 
   // Contact Section
@@ -211,13 +211,13 @@ export const translations: Translations = {
     customersTitlePart2: 'door',
     customersTitlePart3: 'bedrijven zoals',
     customersDescription: 'Wij werken voor nationale en internationale bedrijven, profit en non-profit. Wat ons verbindt, is de noodzaak om complexe veranderingen door te maken waarbij IT, en vooral data, cruciaal is.',
-    customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgever, Cinq ICT.",
+    customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgevers, Cinq ICT en Accenture.",
 
     servicesTitle: 'Dienstverlening',
     servicesSubtitle: 'Ontdek hoe wij u kunnen helpen, grip en controle te krijgen over uw data.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen zoals ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy voor optimalisatie, beheer, en geavanceerde oplossingen.',
     service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw Data Potentieel',
     service1DetailDesc: 'Wij bieden diepgaande Splunk expertise om de volledige waarde uit uw data te halen. Van administratieve taken zoals upgrades en health checks tot het implementeren en optimaliseren van geavanceerde oplossingen zoals Splunk IT Service Intelligence (ITSI) en Splunk Enterprise Security (ES). Ons doel is om uw Splunk-omgeving niet alleen te laten werken, maar excelleren.',
     service1DetailBullet1: 'Uitgebreide Splunk health checks en performance optimalisatie.',
@@ -229,14 +229,14 @@ export const translations: Translations = {
     service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimaliseer uw data pipelines met Cribl Stream, Edge en Search voor maximale efficiëntie en controle.',
+    service2Description: 'Optimaliseer uw data pipelines met Cribl voor maximale efficiëntie en controle.',
     service2DetailTitle: 'Cribl Consultancy: Intelligente Data Pipelines',
     service2DetailDesc: 'Beheers uw datastromen en reduceer kosten met onze Cribl expertise. Wij helpen u bij het ontwerpen, implementeren en optimaliseren van oplossingen met Cribl Stream voor data routing en transformatie, Cribl Edge voor dataverzameling aan de bron, en Cribl Search voor federated querying. Krijg grip op uw data, ongeacht waar het zich bevindt.',
     service2DetailBullet1: 'Architectuur en implementatie van Cribl Stream en Cribl Edge.',
     service2DetailBullet2: 'Ontwerp van efficiënte data processing pipelines (filteren, routen, verrijken).',
     service2DetailBullet3: 'Integratie met Splunk, SIEM-oplossingen en diverse databestemmingen.',
     service2DetailBullet4: 'Kostenbesparingsstrategieën door slimme data routing en reductie.',
-    // service2DetailBullet5: '', // Removed
+    service2DetailBullet5: "", 
     service2DialogFooterText: "Cribl is op veel manieren inzetbaar. Iedere klant en omgeving is uniek, daarom gaan wij graag eerst het gesprek met u aan om de mogelijkheden te bespreken.",
     service2DetailCTA: 'Neem contact op',
     
@@ -253,7 +253,7 @@ export const translations: Translations = {
     service5DetailCTA: 'Neem contact op',
     
     projectInquiryTitle: 'Contactformulier',
-    projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys", // Placeholder comment
+    // projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys", // Replaced by animated text directly
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
     emailLabel: 'E-mailadres',
     emailPlaceholder: 'uw.email@voorbeeld.nl',
@@ -263,25 +263,25 @@ export const translations: Translations = {
     submitInquiryButton: 'Verstuur Aanvraag',
     submitInquiryLoading: 'Bezig met versturen...',
     contactFormSuccessTitle: 'Aanvraag Ontvangen!',
-    contactFormSuccessMessage: 'Bedankt voor uw bericht. U ontvangt een bevestigingsmail.',
-    contactFormError: 'Er is een fout opgetreden bij het versturen. Probeer het later opnieuw of neem direct contact op.',
-    // contactFormResponseTime: 'We reageren doorgaans binnen 5 werkdagen.', // Removed from form
+    contactFormSuccessMessage: 'U ontvangt een bevestigingsmail.',
+    contactFormError: 'Er is een fout opgetreden. Probeer het later opnieuw.',
+    // contactFormResponseTime: "Wij reageren doorgaans binnen 5 werkdagen.", // Removed
 
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nWij denken graag mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur ons gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
-    // inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.", // Removed
+    // inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.", // Removed from active list in component
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nWij denken graag mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nWij geven ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nWij helpen je graag op weg.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nWij kijken samen wat er mogelijk is.",
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur ons gerust een berichtje.",
-    // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed
+    // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed from active list
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur ons gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nWij helpen je slimme keuzes maken met Splunk & Cribl.",
-    // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed
+    // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed from active list
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\nOnze trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
-    // inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.", // Removed
+    // inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.", // Removed from active list
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? 💰\nWij kijken graag met je mee naar efficiënte oplossingen.",
 
     contactTitle: 'Neem Contact Op',
@@ -306,10 +306,9 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    // Privacy Policy Page
-    privacyPageTitle: 'Privacybeleid voor DataSight',
+    privacyPageTitle: 'Privacybeleid voor DataSight.',
     privacyLastUpdated: 'Laatst bijgewerkt: 1 april 2024',
-    privacyIntro: 'DataSight ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight (de "Site") gebruikt en de diensten die wij aanbieden.',
+    privacyIntro: 'DataSight. ("wij", "ons", of "onze"), beheerd door Tom de Bruijn (onafhankelijk consultant), hecht waarde aan uw privacy. Dit Privacybeleid legt uit hoe wij met uw gegevens omgaan wanneer u onze website DataSight. (de "Site") gebruikt en de diensten die wij aanbieden.',
     privacyInfoCollectTitle: 'Informatie die Wij Verzamelen',
     privacyInfoCollectGenUsage: 'Algemene Gebruiksgegevens: Informatie zoals uw IP-adres en browsegedrag kan anoniem worden verzameld om onze website te verbeteren. Dit identificeert u niet persoonlijk.',
     privacyInfoCollectContact: 'Contactinformatie: Als u ons contactformulier gebruikt, verzamelen wij uw naam, e-mail, optioneel telefoonnummer en bericht om te kunnen reageren.',
@@ -331,10 +330,9 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Toepasselijk Recht',
     privacyGoverningLawP1: 'Nederlands recht is van toepassing. Geschillen worden voorgelegd aan de bevoegde rechtbank in Den Haag.',
 
-    // Disclaimer Page
-    disclaimerPageTitle: 'Disclaimer voor DataSight',
+    disclaimerPageTitle: 'Disclaimer voor DataSight.',
     disclaimerValidFrom: 'Geldig vanaf: 1 april 2024',
-    disclaimerIntroP1: 'De informatie op de website van {SITE_CONFIG.name} (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
+    disclaimerIntroP1: 'De informatie op de website van DataSight. (beheerd door Tom de Bruijn, onafhankelijk consultant) is voor algemene informatiedoeleinden. Wij streven naar nauwkeurigheid, maar geven geen garanties over de volledigheid of juistheid.',
     disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
     disclaimerAccuracyP1: 'Wij doen ons best om de informatie actueel en correct te houden, maar fouten zijn mogelijk. Wij zijn niet aansprakelijk voor onjuistheden.',
     disclaimerWebsiteAvailabilityTitle: 'Website Beschikbaarheid',
@@ -348,11 +346,10 @@ export const translations: Translations = {
     disclaimerNoProAdviceTitle: 'Geen Professioneel Advies',
     disclaimerNoProAdviceP1: 'De informatie op deze site is geen professioneel advies. Raadpleeg een deskundige voor specifieke situaties. Gebruik van de informatie is op eigen risico.',
     disclaimerLimitationLiabilityTitle: 'Beperking van Aansprakelijkheid',
-    disclaimerLimitationLiabilityP1: 'DataSight is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
+    disclaimerLimitationLiabilityP1: 'DataSight. is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
     disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
     disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
 
-    // Cookie Banner
     cookieBannerMessage: "Wij houden niet van tracking cookies, maar wel van een lekker koekje! 🍪 Deze site gebruikt alleen essentiële cookies om goed te werken en je voorkeuren te onthouden.",
     cookieBannerPrivacyLink: "Meer info in ons Privacybeleid.",
     cookieBannerAcceptButton: "Prima!",
@@ -379,15 +376,15 @@ export const translations: Translations = {
 
     customersTitlePart1: 'Trusted',
     customersTitlePart2: 'by',
-    customersTitlePart3: 'companies like',
+    customersTitlePart3: 'Companies like',
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
-    customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenure at his previous employer, Cinq ICT.",
-
+    customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenures at his previous employers, Cinq ICT and Accenture.",
+    
     servicesTitle: 'Services',
     servicesSubtitle: 'Discover how we can help you gain grip and control over your data.',
 
     service1Title: 'Splunk Consultancy',
-    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions like ITSI & ES.',
+    service1Description: 'Expert Splunk consultancy for optimization, management, and advanced solutions.',
     service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
     service1DetailDesc: 'We offer in-depth Splunk expertise to extract the full value from your data. From administrative tasks like upgrades and health checks to implementing and optimizing advanced solutions such as Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). Our goal is to make your Splunk environment not just work, but excel.',
     service1DetailBullet1: 'Comprehensive Splunk health checks and performance optimization.',
@@ -399,14 +396,14 @@ export const translations: Translations = {
     service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Consultancy',
-    service2Description: 'Optimize your data pipelines with Cribl Stream, Edge, and Search for maximum efficiency and control.',
+    service2Description: 'Optimize your data pipelines with Cribl for maximum efficiency and control.',
     service2DetailTitle: 'Cribl Consultancy: Intelligent Data Pipelines',
     service2DetailDesc: 'Master your data flows and reduce costs with our Cribl expertise. We assist in designing, implementing, and optimizing solutions with Cribl Stream for data routing and transformation, Cribl Edge for data collection at the source, and Cribl Search for federated querying. Gain control over your data, wherever it resides.',
     service2DetailBullet1: 'Architecture and implementation of Cribl Stream and Cribl Edge.',
     service2DetailBullet2: 'Design of efficient data processing pipelines (filtering, routing, enriching).',
     service2DetailBullet3: 'Integration with Splunk, SIEM solutions, and various data destinations.',
     service2DetailBullet4: 'Cost-saving strategies through smart data routing and reduction.',
-    // service2DetailBullet5: '', // Removed
+    service2DetailBullet5: "",
     service2DialogFooterText: "Cribl is versatile and can be deployed in many ways. Every client and environment is unique; therefore, we prefer to first engage in a conversation with you to discuss the possibilities.",
     service2DetailCTA: 'Get in touch',
     
@@ -423,8 +420,8 @@ export const translations: Translations = {
     service5DetailCTA: 'Get in touch',
     
     projectInquiryTitle: 'Contact Form',
-    projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys", // Placeholder comment
-    questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
+    // projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
+    questionStaticPlaceholder: 'Describe your question or project idea here...',
     emailLabel: 'Email Address',
     emailPlaceholder: 'your.email@example.com',
     phoneLabel: 'Phone Number',
@@ -433,25 +430,25 @@ export const translations: Translations = {
     submitInquiryButton: 'Send Inquiry',
     submitInquiryLoading: 'Sending...',
     contactFormSuccessTitle: 'Inquiry Received!',
-    contactFormSuccessMessage: 'Thank you for your message. You will receive a confirmation email.',
-    contactFormError: 'An error occurred while sending your inquiry. Please try again later or contact us directly.',
-    // contactFormResponseTime: 'We typically respond within 5 business days.', // Removed
+    contactFormSuccessMessage: 'You will receive a confirmation email.',
+    contactFormError: 'An error occurred. Please try again later.',
+    // contactFormResponseTime: "We typically respond within 5 business days.", // Removed
 
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nWe're happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nWe'll gladly send you a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction.\nEasily schedule 30 minutes in your calendar here 📅.",
-    // inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nWe're happy to call.", // Removed
+    // inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nWe're happy to call.", // Removed from active list
     inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nWe're happy to think along.",
     inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? 🛠️\nWe also provide hands-on training tailored to your situation.",
     inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊\nWe're happy to help you get started.",
     inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nWe'll explore the possibilities together.",
     inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nWe'll gladly send you a message.",
-    // inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.", // Removed
+    // inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.", // Removed from active list
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nWe'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nWe help you make smart choices with Splunk & Cribl.",
-    // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed
+    // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed from active list
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\nOur trainings are hands-on, custom, and without unnecessary theory.",
-    // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed
+    // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed from active list
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? 💰\nWe're happy to look into efficient solutions with you.",
 
     contactTitle: 'Get in Touch',
@@ -476,13 +473,12 @@ export const translations: Translations = {
     legalPrivacy: 'Privacy',
     legalDisclaimer: 'Disclaimer',
 
-    // Privacy Policy Page
-    privacyPageTitle: 'Privacy Policy for DataSight',
+    privacyPageTitle: 'Privacy Policy for DataSight.',
     privacyLastUpdated: 'Last Updated: April 1, 2024',
-    privacyIntro: 'DataSight ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight (the "Site"), and the services we offer.',
+    privacyIntro: 'DataSight. ("we", "us", or "our"), operated by Tom de Bruijn (independent consultant), values your privacy. This Privacy Policy explains how we handle your information when you use our website, DataSight. (the "Site"), and the services we offer.',
     privacyInfoCollectTitle: 'Information We Collect',
     privacyInfoCollectGenUsage: 'General Usage Data: Information like your IP address and browsing behavior may be collected anonymously to improve our website. This does not personally identify you.',
-    privacyInfoCollectContact: 'Contact Information: If you use our contact form, we collect your name, email, optional phone number, and message to respond.',
+    privacyInfoCollectContact: 'ContactInformation: If you use our contact form, we collect your name, email, optional phone number, and message to respond.',
     privacyHowWeUseTitle: 'How We Use Your Information',
     privacyHowWeUseRespond: 'To respond to your inquiries.',
     privacyHowWeUseImprove: 'For website improvement and analytics.',
@@ -501,10 +497,9 @@ export const translations: Translations = {
     privacyGoverningLawTitle: 'Governing Law',
     privacyGoverningLawP1: 'Dutch law applies. Disputes will be submitted to the competent court in The Hague.',
 
-    // Disclaimer Page
-    disclaimerPageTitle: 'Disclaimer for DataSight',
+    disclaimerPageTitle: 'Disclaimer for DataSight.',
     disclaimerValidFrom: 'Valid from: April 1, 2024',
-    disclaimerIntroP1: 'The information on the website of {SITE_CONFIG.name} (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
+    disclaimerIntroP1: 'The information on the website of DataSight. (operated by Tom de Bruijn, independent consultant) is for general informational purposes. We strive for accuracy but make no guarantees about completeness or correctness.',
     disclaimerAccuracyTitle: 'Nauwkeurigheid van Informatie',
     disclaimerAccuracyP1: 'Wij doen ons best om de informatie actueel en correct te houden, maar fouten zijn mogelijk. Wij zijn niet aansprakelijk voor onjuistheden.',
     disclaimerWebsiteAvailabilityTitle: 'Website Beschikbaarheid',
@@ -518,11 +513,10 @@ export const translations: Translations = {
     disclaimerNoProAdviceTitle: 'Geen Professioneel Advies',
     disclaimerNoProAdviceP1: 'De informatie op deze site is geen professioneel advies. Raadpleeg een deskundige voor specifieke situaties. Gebruik van de informatie is op eigen risico.',
     disclaimerLimitationLiabilityTitle: 'Beperking van Aansprakelijkheid',
-    disclaimerLimitationLiabilityP1: 'DataSight is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
+    disclaimerLimitationLiabilityP1: 'DataSight. is niet aansprakelijk voor enige directe of indirecte schade die voortvloeit uit het gebruik van deze website, tenzij er sprake is van opzet of grove nalatigheid.',
     disclaimerChangesDisclaimerTitle: 'Wijzigingen in Deze Disclaimer',
     disclaimerChangesDisclaimerP1: 'Deze disclaimer kan worden gewijzigd. Wijzigingen zijn direct van kracht na publicatie.',
 
-    // Cookie Banner
     cookieBannerMessage: "We're not fans of tracking cookies, but we love a good biscuit! 🍪 This site only uses essential cookies for functionality and to remember your preferences.",
     cookieBannerPrivacyLink: "More info in our Privacy Policy.",
     cookieBannerAcceptButton: "Got it!",
@@ -554,7 +548,7 @@ const ensureServiceBulletPoints = (localeContent: TranslationContent) => {
   const services = [1, 2, 5]; // service numbers
   services.forEach(serviceNum => {
     for (let i = 1; i <= 5; i++) {
-      const bulletKey = `service${serviceNum}DetailBullet${i}` as keyof TranslationContent;
+      const bulletKey = ('service' + serviceNum + 'DetailBullet' + i) as keyof TranslationContent;
       if (typeof localeContent[bulletKey] === 'undefined') {
         // @ts-ignore
         localeContent[bulletKey] = ""; 

@@ -28,9 +28,6 @@ const CustomersSection: React.FC = () => {
           <p className="text-lg text-foreground/80 mb-2 max-w-4xl mx-auto">
             {t('customersDescription')}
           </p>
-          <p className="text-sm text-foreground/70 mt-4 max-w-4xl mx-auto">
-            {t('customersClarificationText')}
-          </p>
         </AnimatedSection>
         
         <AnimatedSection delay="delay-200" className="mt-12">
@@ -57,6 +54,11 @@ const CustomersSection: React.FC = () => {
               })}
             </div>
           </div>
+        </AnimatedSection>
+         <AnimatedSection delay="delay-300" className="mt-8">
+            <p className="text-sm text-foreground/70 max-w-4xl mx-auto">
+                {t('customersClarificationText')}
+            </p>
         </AnimatedSection>
       </div>
     </section>
