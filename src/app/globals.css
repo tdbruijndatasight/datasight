@@ -103,7 +103,7 @@ body {
     font-family: var(--font-geist-sans);
   }
   section {
-    @apply py-12 md:py-16 px-4 md:px-8; /* Slightly reduced padding */
+    @apply py-12 md:py-12 px-4 md:px-8; /* Reduced desktop vertical padding */
   }
   .section-min-height {
      min-height: calc(100vh - 80px); /* 80px approx header height */
