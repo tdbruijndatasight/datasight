@@ -19,15 +19,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: 'DataSight - Tom de Bruijn | Splunk & Cribl Consultant',
-  description: 'Expert freelance (ZZP) Splunk and Cribl consultancy services. AI-powered data solutions and project proposals. Tom de Bruijn, Data Consultant.',
-  keywords: ['Splunk', 'Cribl', 'Consultant', 'zzp', 'freelance', 'data consultant', 'data solutions', 'Tom de Bruijn', 'DataSight', 'project proposals', 'IT consultant', 'project inquiry'],
+  description: 'Expert Splunk and Cribl consultancy services. AI-powered data solutions and project proposals. Tom de Bruijn, Data Consultant.',
+  keywords: ['Splunk', 'Cribl', 'Cribl Search','Cribl Edge','Cribl Stream','Splunk Enterprise Security (ES)','Splunk IT Service Intelligence (ITSI)', 'Consultant', 'zzp', 'freelance', 'data consultant', 'data solutions', 'Tom de Bruijn', 'DataSight', 'project proposals', 'IT consultant', 'project inquiry'],
   authors: [{ name: 'Tom de Bruijn' }],
   creator: 'Tom de Bruijn',
   publisher: 'Tom de Bruijn',
   openGraph: {
     title: 'DataSight - Tom de Bruijn',
-    description: 'Expert freelance (ZZP) Splunk and Cribl consultancy services.',
-    url: 'https://datasight.tomdebruijn.com', // Replace with actual domain
+    description: 'Expert Splunk and Cribl consultancy services.',
+    url: 'https://datasight.nl', // Replace with actual domain
     siteName: 'DataSight',
     // images: [ // Add a relevant image for social sharing
     //   {
@@ -43,8 +43,8 @@ export const metadata: Metadata = {
   twitter: {
     card: 'summary_large_image',
     title: 'DataSight - Tom de Bruijn',
-    description: 'Expert freelance (ZZP) Splunk and Cribl consultancy services.',
-    // images: ['https://datasight.tomdebruijn.com/twitter-image.png'], // Replace with actual image URL
+    description: 'Expert Splunk and Cribl consultancy services.',
+    // images: ['https://datasight.nl/twitter.png'], // Replace with actual image URL
   },
   // icons: { // Add favicon links if you have them
   //   icon: '/favicon.ico',

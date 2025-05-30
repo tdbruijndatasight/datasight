@@ -203,7 +203,7 @@ export const translations: Translations = {
     customersTitlePart1: 'Onze klanten',
     customersTitlePart2: '', // Kept empty as per user's prior requests to remove this part of title
     customersTitlePart3: '', // Kept empty
-    customersDescription: 'Tom de Bruijn heeft meer dan 10 jaar ervaring in de IT-sector en is sinds 2024 zelfstandig verder gegaan als DataSight. DataSight werkt voor zowel nationale als internationale bedrijven, zowel in de profit- als non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en vooral data cruciaal zijn.',
+    customersDescription: 'Tom de Bruijn heeft meer dan 10 jaar ervaring in de IT-sector en is sinds 2024 zelfstandig verder gegaan als DataSight. DataSight werkt voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
     customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgevers, Cinq ICT en Accenture.", // This key exists in base
     customersLinkedInClarification: "Voor referenties en werkzaamheden uitgevoerd voor diverse klanten bij eerdere werkgevers wordt verwezen naar",
     customersCTAChallenge: "Heeft u een uitdaging of project waarin DataSight kan meedenken of meewerken?",
