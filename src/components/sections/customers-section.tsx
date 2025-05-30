@@ -22,8 +22,8 @@ const CustomersSection: React.FC = () => {
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-x-1">
             {t('customersTitlePart1')}
-            <span className="inline-block mx-0.5"> {/* Adjusted for tighter spacing */}
-              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" /> {/* Adjusted size and vertical position */}
+            <span className="inline-block mx-0.5">
+              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" />
             </span>
           </h2>
           <p className="text-lg text-foreground/80 mb-8 max-w-4xl mx-auto">
@@ -60,8 +60,8 @@ const CustomersSection: React.FC = () => {
 
         <AnimatedSection delay="delay-300" className="mt-10">
           <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center gap-2">
-            <Wrench className="h-5 w-5 text-accent" />
             {t('customersCTAChallenge')}
+            <Wrench className="h-5 w-5 text-accent" />
           </p>
         </AnimatedSection>
 

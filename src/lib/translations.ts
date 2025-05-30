@@ -195,8 +195,8 @@ export const translations: Translations = {
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
-    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen bij complexe datavraagstukken, door middels heldere- bruikbare inzichten, échte waarde te leveren.",
-    homeAboutMeP2: "Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën – waaronder AI – worden praktische en impactvolle oplossingen gerealiseerd.",
+    homeAboutMeP1: "Bij Datasight is onze missie helder: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.",
+    homeAboutMeP2: "Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën worden praktische en impactvolle oplossingen gerealiseerd.",
     homeAboutMeP3: "Als gecertificeerd specialist in Splunk en Cribl is DataSight inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
@@ -205,11 +205,11 @@ export const translations: Translations = {
     customersTitlePart3: '', // Kept empty
     customersDescription: 'Tom de Bruijn heeft meer dan 10 jaar ervaring in de IT-sector en is sinds 2024 zelfstandig verder gegaan als DataSight. DataSight werkt voor zowel nationale als internationale bedrijven, zowel in de profit- als non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en vooral data cruciaal zijn.',
     customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgevers, Cinq ICT en Accenture.", // This key exists in base
-    customersLinkedInClarification: "Voor referenties en werkzaamheden uitgevoerd voor diverse klanten bij eerdere werkgevers verwijs ik graag naar",
-    customersCTAChallenge: "Heeft u een uitdaging of project waarin ik kan meedenken of meewerken?",
-    customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking.",
+    customersLinkedInClarification: "Voor referenties en werkzaamheden uitgevoerd voor diverse klanten bij eerdere werkgevers wordt verwezen naar",
+    customersCTAChallenge: "Heeft u een uitdaging of project waarin DataSight kan meedenken of meewerken?",
+    customersCTAPleasure: "Neem gerust contact op voor een vrijblijvende kennismaking.",
 
-	servicesTitle: 'Services',
+	  servicesTitle: 'Services',
     servicesSubtitle: 'Leer hoe wij kunnen helpen uw datapotentieel optimaal te benutten.',
 	
     service1Title: 'Splunk Consultancy',
@@ -364,7 +364,7 @@ export const translations: Translations = {
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "At Datasight, our mission is clear: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
-    homeAboutMeP2: "This is achieved by deep technical expertise, personal attention, and by using the latest technologies - including AI - to deliver practical, impactful solutions.",
+    homeAboutMeP2: "This is achieved by deep technical expertise, personal attention, and by using the latest technologies to deliver practical, impactful solutions.",
     homeAboutMeP3: "Certified in Splunk and Cribl, DataSight provides sultancy, strategic guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
@@ -372,9 +372,9 @@ export const translations: Translations = {
     customersTitlePart2: '', // Kept empty
     customersTitlePart3: '', // Kept empty
     customersDescription: 'Our clients are national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
-	customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenures at his previous employers, Cinq ICT and Accenture.",
+	  customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenures at his previous employers, Cinq ICT and Accenture.",
     customersLinkedInClarification: "Under previous employers, work was performed for various other clients under an employment contract. For more information, please refer to",
-    customersCTAChallenge: "Do you have a challenge or project where We can contribute or collaborate?",
+    customersCTAChallenge: "Do you have a challenge or project where DataSight can contribute or collaborate?",
     customersCTAPleasure: "We would be happy to get in touch for a no-obligation introduction.",
 
     servicesTitle: 'Services',
