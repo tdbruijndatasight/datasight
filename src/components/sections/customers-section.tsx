@@ -7,64 +7,75 @@ import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SITE_CONFIG, type CompanyLogo } from '@/constants/site';
-import { Heart } from 'lucide-react'; // Import Heart icon
+import { Wrench } from 'lucide-react'; // Added Wrench icon
+import Link from 'next/link';
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
-  const logos: CompanyLogo[] = SITE_CONFIG.companyLogos;
+  
+  const schipholLogo = SITE_CONFIG.companyLogos.find(logo => logo.name === 'Schiphol Airport');
 
   return (
     <section id="customers" className="bg-background section-min-height">
       <div className="container mx-auto text-center">
         <AnimatedSection>
-          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-1">
+          <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
+            {/* The title structure depends on whether customersTitlePart1, 2, 3 are still in translations.ts 
+                Assuming only customersTitlePart1 is used or the structure is simple as per prior request to simplify.
+                If only customersTitlePart1 exists and is "Onze klanten" / "Our clients": 
+            */}
             {t('customersTitlePart1')}
-            <span className="relative inline-block mr-1">
-              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" />
-            </span>
-            {/* {t('customersTitlePart2')} // Removed */}
-            {/* <span className="ml-1">{t('customersTitlePart3')}</span> // Removed */}
           </h2>
-          <p className="text-lg text-foreground/80 mb-2 max-w-4xl mx-auto">
+          <p className="text-lg text-foreground/80 mb-8 max-w-4xl mx-auto">
             {t('customersDescription')}
           </p>
         </AnimatedSection>
         
-        <AnimatedSection delay="delay-200" className="mt-12">
-          <div className="logo-carousel-container">
-            <div className="logo-carousel-track">
-              {/* Render logos twice for a seamless loop */}
-              {[...logos, ...logos].map((logo, index) => {
-                const logoSrc = logo.src as StaticImageData | string; // Type assertion for src
-                return (
-                  <div 
-                    key={`${logo.name}-${index}`} // Unique key for each item, including duplicates
-                    className="logo-item-wrapper flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 mx-4 bg-card rounded-lg shadow-md"
-                  >
-                    <Image 
-                      src={logoSrc} 
-                      alt={logo.name} 
-                      width={logo.width || 140} // Default width if not specified
-                      height={logo.height || 55} // Default height if not specified
-                      className="object-contain"
-                      data-ai-hint={logo.dataAiHint}
-                    />
-                  </div>
-                );
-              })}
+        {schipholLogo && (
+          <AnimatedSection delay="delay-100" className="mt-8 mb-10 flex justify-center">
+            <div 
+              className="logo-item-wrapper flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 bg-card rounded-lg shadow-md"
+            >
+              <Image 
+                src={schipholLogo.src as StaticImageData | string} 
+                alt={schipholLogo.name} 
+                width={schipholLogo.width || 140}
+                height={schipholLogo.height || 55}
+                className="object-contain"
+                data-ai-hint={schipholLogo.dataAiHint}
+              />
             </div>
-          </div>
+          </AnimatedSection>
+        )}
+
+        {/* Removed original customersClarificationText rendering */}
+
+        <AnimatedSection delay="delay-200" className="mt-8">
+          <p className="text-sm italic text-foreground/70 max-w-4xl mx-auto">
+            {t('customersLinkedInClarification').replace('{SITE_CONFIG.linkedIn}', SITE_CONFIG.linkedIn)} 
+            {' '}
+            <Link href={SITE_CONFIG.linkedIn} target="_blank" rel="noopener noreferrer" className="text-accent hover:underline">
+              LinkedIn
+            </Link>.
+          </p>
         </AnimatedSection>
-         <AnimatedSection delay="delay-300" className="mt-8">
-            <p className="text-sm text-foreground/70 max-w-4xl mx-auto">
-                {t('customersClarificationText')}
-            </p>
+
+        <AnimatedSection delay="delay-300" className="mt-10">
+          <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center gap-2">
+            <Wrench className="h-5 w-5 text-accent" />
+            {t('customersCTAChallenge')}
+          </p>
         </AnimatedSection>
+
+        <AnimatedSection delay="delay-400" className="mt-2">
+          <p className="text-lg text-foreground/80 max-w-4xl mx-auto">
+            {t('customersCTAPleasure')}
+          </p>
+        </AnimatedSection>
+
       </div>
     </section>
   );
 };
 
 export default CustomersSection;
-
-    
