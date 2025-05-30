@@ -3,16 +3,18 @@ import React from 'react';
 
 // Splunk Icon
 export const SplunkIcon = ({ className }: { className?: string }) => (
-  <svg className={className} version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1255 1513" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+  <svg className={className} version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1255 1513" fill="currentColor">
     <path id="Layer" fillRule="evenodd" d="m0.4 1512.9v-276l972.1-480.4-972.1-473.5v-282.9l1254.2 630.5v256.7z"/>
   </svg>
 );
 
 // Cribl Icon
 export const CriblIcon = ({ className }: { className?: string }) => (
-  <svg className={className} width="38px" height="auto" fill="currentColor" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-     <path d="M15.7 8.9c.2.1.2.3 0 .4L.5 14.9c-.2.1-.4 0-.4-.2V.3C0 0 .2-.1.4.1zm3.6 2c-.3-.2-.6-.2-.9-.1L.5 17.5c-.3.1-.5.4-.5.7v1.1c0 .2.2.5.5.5h33.6c.3 0 .3-.1.1-.2z"/>
-     <path d="M.4 41.9c-.2.2-.4.1-.4-.2V27.2c.1-.2.3-.2.5-.2l15.2 5.7c.2.1.3.3 0 .4zM34.2 22.4c.2-.1.2-.2-.1-.2H.5c-.2 0-.5.2-.5.5v1.1c0 .3.2.6.5.7l17.9 6.7c.3.1.6.1.9-.1z"/>
+  <svg className={className} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 19 23" version="1.1">
+    <g id="surface1">
+      <path style={{ fillRule: 'nonzero', fillOpacity: 1, fill: 'currentColor' }} d="M 8.695312 4.933594 C 8.808594 4.984375 8.808594 5.09375 8.695312 5.148438 L 0.277344 8.1875 C 0.167969 8.242188 0.0546875 8.1875 0.0546875 8.082031 L 0.0546875 0.261719 C 0 0.101562 0.109375 0.046875 0.222656 0.15625 Z M 10.691406 6.015625 C 10.523438 5.910156 10.359375 5.910156 10.191406 5.964844 L 0.277344 9.601562 C 0.109375 9.65625 0 9.816406 0 9.980469 L 0 10.578125 C 0 10.6875 0.109375 10.847656 0.277344 10.847656 L 18.890625 10.847656 C 19.054688 10.847656 19.054688 10.792969 18.945312 10.738281 Z M 10.691406 6.015625 "/>
+      <path style={{ fillRule: 'nonzero', fillOpacity: 1, fill: 'currentColor' }} d="M 0.222656 22.84375 C 0.109375 22.953125 0 22.898438 0 22.738281 L 0 14.867188 C 0.0546875 14.757812 0.167969 14.757812 0.277344 14.757812 L 8.695312 17.851562 C 8.808594 17.90625 8.863281 18.015625 8.695312 18.066406 Z M 18.945312 12.261719 C 19.054688 12.207031 19.054688 12.152344 18.890625 12.152344 L 0.277344 12.152344 C 0.167969 12.152344 0 12.261719 0 12.421875 L 0 13.019531 C 0 13.183594 0.109375 13.34375 0.277344 13.398438 L 10.191406 17.035156 C 10.359375 17.089844 10.523438 17.089844 10.691406 16.984375 Z M 18.945312 12.261719 "/>
+    </g>
   </svg>
 );
 
