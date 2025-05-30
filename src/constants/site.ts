@@ -27,7 +27,7 @@ export interface CompanyLogo {
 
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
-  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Re-added Customers nav item
+  // { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Hidden
   { labelKey: 'navServices', href: '/#services', id: 'services' },
   // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
@@ -35,7 +35,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'DataSight.',
+  name: 'DataSight', // Updated from DataSight Portfolio
   email: 'info.tomdebruijn@gmail.com',
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
@@ -44,7 +44,7 @@ export const SITE_CONFIG = {
     { name: 'Rabobank', src: rabobankLogo, dataAiHint: 'Rabobank logo', width: 140, height: 55 },
     { name: 'IKEA', src: ikeaLogo, dataAiHint: 'IKEA logo', width: 140, height: 55 },
     { name: 'ICS Cards', src: icsLogo, dataAiHint: 'ICS logo', width: 140, height: 55 },
-    { name: 'UWV', src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
+    { name: 'UWV',  src: uwvLogo, dataAiHint: 'UWV logo', width: 100, height: 40 },
     { name: 'Gemeente Den Haag',  src: gemeenteDenHaagLogo, dataAiHint: 'Den Haag logo', width: 140, height: 55 },
   ] as CompanyLogo[],
 };
