@@ -1,4 +1,3 @@
-
 import type { StaticImageData } from 'next/image';
 import type { Locale, TranslationContent } from '@/lib/translations';
 
@@ -27,7 +26,7 @@ export interface CompanyLogo {
 
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
-  // { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Hidden
+  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Re-enabled
   { labelKey: 'navServices', href: '/#services', id: 'services' },
   // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
@@ -35,7 +34,7 @@ export const NAV_ITEMS: NavItem[] = [
 ];
 
 export const SITE_CONFIG = {
-  name: 'DataSight', // Updated from DataSight Portfolio
+  name: 'DataSight',
   email: 'info.tomdebruijn@gmail.com',
   phone: '+31653483883',
   linkedIn: 'https://www.linkedin.com/in/tcdebruijn/',
@@ -61,13 +60,4 @@ export const SERVICE_ITEMS: ServiceItemConstant[] = [
   { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
 
-// export const PUBLICATION_ITEMS = [ // Hidden
-//   {
-//     titleKey: 'publication1Title',
-//     descriptionKey: 'publication1Description',
-//     link: '#',
-//     imageSrc: 'https://placehold.co/600x400.png',
-//     dataAiHint: 'data report'
-//   }
-// ];
-export const PUBLICATION_ITEMS = [] as const; // Ensure it's an empty array if section is hidden
+export const PUBLICATION_ITEMS = [] as const;
