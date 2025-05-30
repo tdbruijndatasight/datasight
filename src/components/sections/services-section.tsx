@@ -156,7 +156,7 @@ const ServicesSection: React.FC = () => {
                       {mainTitle}
                     </DialogTitle>
                     {subTitle && (
-                      <p className="text-md text-foreground/80 -mt-1 font-semibold">
+                      <p className="text-md text-foreground/90 -mt-1 font-semibold">
                         {subTitle}
                       </p>
                     )}
@@ -169,8 +169,9 @@ const ServicesSection: React.FC = () => {
                 <ul className="list-disc pl-5 space-y-1.5 text-foreground/80">
                     {selectedService.detailBulletKeys.map((bulletKey, i) => {
                         const bulletText = t(bulletKey);
+                        // Ensure only non-empty bullet points are rendered
                         return bulletText && bulletText.trim() !== '' && bulletText !== bulletKey ? ( 
-                             <li key={i} className="text-sm">{bulletText}</li>
+                             <li key={i} className="text-base">{bulletText}</li>
                         ) : null;
                     })}
                 </ul>
@@ -182,9 +183,10 @@ const ServicesSection: React.FC = () => {
                       asChild 
                       size="lg" 
                       className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-md group font-semibold"
+                      onClick={() => setIsOverlayOpen(false)} // Close dialog on button click
                     >
-                        <Link href="/#contact" onClick={() => setIsOverlayOpen(false)}>
-                            {t(selectedService.detailCTAKey)}
+                        <Link href="/#contact">
+                            {t('service1DetailCTA')}
                             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </Button>
@@ -198,4 +200,3 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
-
