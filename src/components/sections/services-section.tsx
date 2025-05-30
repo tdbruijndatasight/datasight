@@ -4,13 +4,13 @@
 import React, { useState } from 'react';
 import type { Key } from 'lucide-react';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog'; // Removed DialogClose
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { SERVICE_ITEMS, type ServiceItemConstant } from '@/constants/site';
-import { SplunkIcon, CriblIcon } from '@/components/icons/custom-icons'; // Removed DataStrategyIcon, AiSolutionIcon
-import { Brain, Clipboard, ArrowRight } from 'lucide-react'; // Removed BarChartBig, Database, Settings
+import { SplunkIcon, CriblIcon } from '@/components/icons/custom-icons';
+import { Brain, Clipboard, ArrowRight } from 'lucide-react';
 import type { TranslationContent } from '@/lib/translations';
 import { cn } from '@/lib/utils';
 import Link from 'next/link';
@@ -46,22 +46,21 @@ const ServicesSection: React.FC = () => {
 
       if (item.titleKey === 'service1Title') {
         serviceNumber = 1;
-        dialogFooterTextKey = 'service1DialogFooterText';
+        dialogFooterTextKey = 'service1DialogFooterText' as keyof TranslationContent;
       } else if (item.titleKey === 'service2Title') {
         serviceNumber = 2;
-        dialogFooterTextKey = 'service2DialogFooterText';
+        dialogFooterTextKey = 'service2DialogFooterText' as keyof TranslationContent;
       } else if (item.titleKey === 'service5Title') {
         serviceNumber = 5;
-        dialogFooterTextKey = 'service5DialogFooterText';
+        dialogFooterTextKey = 'service5DialogFooterText' as keyof TranslationContent;
       }
 
-      // Construct keys using string concatenation
       const baseKey = 'service' + serviceNumber;
       const currentDetailTitleKey = (baseKey + 'DetailTitle') as keyof TranslationContent;
       const currentDetailDescKey = (baseKey + 'DetailDesc') as keyof TranslationContent;
       const currentDetailCTAKey = (baseKey + 'DetailCTA') as keyof TranslationContent;
       
-      const currentBulletKeys = [
+      const currentBulletKeys: (keyof TranslationContent)[] = [
         (baseKey + 'DetailBullet1') as keyof TranslationContent,
         (baseKey + 'DetailBullet2') as keyof TranslationContent,
         (baseKey + 'DetailBullet3') as keyof TranslationContent,
@@ -70,14 +69,8 @@ const ServicesSection: React.FC = () => {
       ];
       
       const filteredBulletKeys = currentBulletKeys.filter(key => {
-        // For service 2, explicitly remove bullet 5 if its translation is empty or matches key
-        if (serviceNumber === 2 && key === (('service' + serviceNumber + 'DetailBullet5') as keyof TranslationContent)) {
-          const translatedText = t(key);
-          return translatedText && translatedText !== key; // Only include if actually translated
-        }
-        // For all other bullets, only include if a translation exists and is not empty.
         const translatedText = t(key);
-        return translatedText && translatedText !== key;
+        return translatedText && translatedText.trim() !== '' && translatedText !== key;
       });
 
       return {
@@ -151,7 +144,11 @@ const ServicesSection: React.FC = () => {
                 const fullTitle = t(selectedService.detailTitleKey);
                 const titleParts = fullTitle.split(': ');
                 const mainTitle = titleParts[0];
-                const subTitle = titleParts.length > 1 ? titleParts.slice(1).join(': ') : null;
+                let subTitle = titleParts.length > 1 ? titleParts.slice(1).join(': ').trim() : null;
+
+                if (subTitle && !subTitle.endsWith('.')) {
+                  subTitle += '.';
+                }
 
                 return (
                   <>
@@ -159,7 +156,9 @@ const ServicesSection: React.FC = () => {
                       {mainTitle}
                     </DialogTitle>
                     {subTitle && (
-                      <p className="text-md text-foreground/80 -mt-1">{subTitle}</p>
+                      <p className="text-md text-foreground/80 -mt-1 font-semibold">
+                        {subTitle}
+                      </p>
                     )}
                   </>
                 );
@@ -170,7 +169,7 @@ const ServicesSection: React.FC = () => {
                 <ul className="list-disc pl-5 space-y-1.5 text-foreground/80">
                     {selectedService.detailBulletKeys.map((bulletKey, i) => {
                         const bulletText = t(bulletKey);
-                        return bulletText && bulletText !== bulletKey ? ( 
+                        return bulletText && bulletText.trim() !== '' && bulletText !== bulletKey ? ( 
                              <li key={i} className="text-sm">{bulletText}</li>
                         ) : null;
                     })}
@@ -199,3 +198,4 @@ const ServicesSection: React.FC = () => {
 };
 
 export default ServicesSection;
+
