@@ -19,16 +19,21 @@ const CustomersSection: React.FC = () => {
         <AnimatedSection>
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-1">
             {t('customersTitlePart1')}
-            <span className="relative inline-block mr-1"> {/* Added mr-1 for spacing on the right */}
-              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" /> {/* Adjusted vertical position */}
+            <span className="relative inline-block mr-1">
+              <Heart className="h-[1.375rem] w-[1.375rem] text-red-500 fill-red-500 relative -top-1.5" />
             </span>
+            {t('customersTitlePart2')}
+            <span className="ml-1">{t('customersTitlePart3')}</span>
           </h2>
-          <p className="text-lg text-foreground/80 mb-12 max-w-4xl mx-auto"> {/* Changed to max-w-4xl */}
+          <p className="text-lg text-foreground/80 mb-2 max-w-4xl mx-auto">
             {t('customersDescription')}
+          </p>
+          <p className="text-sm text-foreground/70 mt-4 max-w-4xl mx-auto">
+            {t('customersClarificationText')}
           </p>
         </AnimatedSection>
         
-        <AnimatedSection delay="delay-200">
+        <AnimatedSection delay="delay-200" className="mt-12">
           <div className="logo-carousel-container">
             <div className="logo-carousel-track">
               {/* Render logos twice for a seamless loop */}
@@ -59,8 +64,5 @@ const CustomersSection: React.FC = () => {
 };
 
 export default CustomersSection;
-
-    
-
 
     
