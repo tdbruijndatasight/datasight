@@ -1,7 +1,6 @@
 
 "use client";
 
-import type { StaticImageData } from 'next/image';
 import React from 'react';
 import Image from 'next/image';
 import { useLanguage } from '@/hooks/use-language';
@@ -37,7 +36,7 @@ const CustomersSection: React.FC = () => {
               className="logo-item-wrapper flex-shrink-0 w-48 h-24 flex items-center justify-center p-4 bg-card rounded-lg shadow-md"
             >
               <Image 
-                src={schipholLogo.src as StaticImageData | string} 
+                src={schipholLogo.src as string | StaticImageData} 
                 alt={schipholLogo.name} 
                 width={schipholLogo.width || 140}
                 height={schipholLogo.height || 55}
@@ -59,9 +58,17 @@ const CustomersSection: React.FC = () => {
         </AnimatedSection>
 
         <AnimatedSection delay="delay-300" className="mt-10">
-          <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center gap-2">
-            {t('customersCTAChallenge')}
-            <Wrench className="h-5 w-5 text-accent" />
+          <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center">
+            {/* Mobile Order: Text then Icon */}
+            <span className="md:hidden flex items-center justify-center gap-2">
+              <span>{t('customersCTAChallenge')}</span>
+              <Wrench className="h-5 w-5 text-accent" />
+            </span>
+            {/* Desktop Order: Icon then Text */}
+            <span className="hidden md:flex items-center justify-center gap-2">
+              <Wrench className="h-5 w-5 text-accent" />
+              <span>{t('customersCTAChallenge')}</span>
+            </span>
           </p>
         </AnimatedSection>
 
@@ -76,3 +83,4 @@ const CustomersSection: React.FC = () => {
 };
 
 export default CustomersSection;
+
