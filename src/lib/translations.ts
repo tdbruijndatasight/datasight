@@ -195,9 +195,9 @@ export const translations: Translations = {
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
-    homeAboutMeP1: 'DataSight heeft een heldere missie: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.",
-    homeAboutMeP2: "Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën worden praktische en impactvolle oplossingen gerealiseerd.",
-    homeAboutMeP3: "Achter Datasight staat Tom de Bruijn, een consultant met meer dan 10 jaar ervaring in data-analyse en observability. Vanuit DataSight ben ik als gecertificeerd specialist in Splunk en Cribl inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
+    homeAboutMeP1: 'DataSight heeft een heldere missie: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.',
+    homeAboutMeP2: 'Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën worden praktische en impactvolle oplossingen gerealiseerd.',
+    homeAboutMeP3: 'Achter Datasight staat Tom de Bruijn, een consultant met meer dan 10 jaar ervaring in data-analyse en observability. Vanuit DataSight ben ik als gecertificeerd specialist in Splunk en Cribl inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
     homeCTA: 'Neem Contact Op',
 
     customersTitlePart1: 'Onze klanten',
