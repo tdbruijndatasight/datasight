@@ -47,7 +47,7 @@ const HomeSection: React.FC = () => {
           </Button>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative z-10">
+        <AnimatedSection delay="delay-200" className="relative z-10 flex justify-center">
           <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
