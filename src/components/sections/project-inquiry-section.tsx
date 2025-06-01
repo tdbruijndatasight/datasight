@@ -167,7 +167,7 @@ const ProjectInquirySection: React.FC = () => {
   };
 
   return (
-    <section id="inquiry" className="bg-background section-min-height">
+    <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto">
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
@@ -273,3 +273,4 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
+
