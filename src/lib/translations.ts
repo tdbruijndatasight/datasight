@@ -25,9 +25,14 @@ export interface TranslationContent {
 
   // Customers Section
   customersTitlePart1: string;
-  customersTitlePart2: string;
-  customersTitlePart3: string;
+  customersTitlePart2: string; // Retained from user's base
+  customersTitlePart3: string; // Retained from user's base
   customersDescription: string;
+  customersClarificationText: string; // Retained from user's base
+  customersLinkedInClarification: string;
+  customersCTAChallenge: string;
+  customersCTAPleasure: string;
+
 
   // Services Section
   servicesTitle: string;
@@ -195,23 +200,23 @@ export const translations: Translations = {
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
-    homeAboutMeP1: 'DataSight heeft een heldere missie: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.',
-    homeAboutMeP2: 'Met diepgaande technische expertise, persoonlijke aandacht en het inzetten van de nieuwste technologieën worden praktische en impactvolle oplossingen gerealiseerd.',
-    homeAboutMeP3: 'Achter Datasight staat Tom de Bruijn, een consultant met meer dan 10 jaar ervaring in data-analyse en observability.\nVanuit DataSight ben ik als gecertificeerd specialist in Splunk en Cribl inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.',
+    homeAboutMeP1: "Mijn naam is Tom de Bruijn en in 2024 heb ik DataSight opgericht. Met DataSight heb ik een heldere missie: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.",
+    homeAboutMeP2: "Met meer dan tien jaar ervaring en een sterke achtergrond in APM en observability, heb ik mij in de afgelopen jaren ontwikkeld tot een veelzijdige en ervaren data engineer.",
+    homeAboutMeP3: "Vanuit DataSight ben ik als gecertificeerd specialist in Splunk en Cribl inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
-    customersTitlePart1: 'Onze klanten',
-    customersTitlePart2: '', // Kept empty as per user's prior requests to remove this part of title
-    customersTitlePart3: '', // Kept empty
-    customersDescription: 'Met meer dan 10 jaar ervaring in de IT-sector is DataSight sinds 2024 actief als zelfstandig Consultancybedrijf. DataSight werkt voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
-    customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgevers, Cinq ICT en Accenture.", // This key exists in base
-    customersLinkedInClarification: "Voor referenties en projecten van Tom de Bruijn bij eerdere werkgevers, zie",
-    customersCTAChallenge: "Heeft u een uitdaging of project waarin DataSight kan meedenken of meewerken?",
-    customersCTAPleasure: "Neem gerust contact op voor een vrijblijvende kennismaking.",
+    customersTitlePart1: 'Onze klanten', // Retained from user's base
+    customersTitlePart2: '', // Retained from user's base
+    customersTitlePart3: '', // Retained from user's base
+    customersDescription: 'DataSight werkt voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
+    customersClarificationText: "De onderstaande logo's vertegenwoordigen projecten die zijn gerealiseerd onder DataSight, projecten van Tom de Bruijn onder persoonlijke titel, en projecten voltooid tijdens zijn dienstverband bij zijn vorige werkgevers, Cinq ICT en Accenture.",
+    customersLinkedInClarification: "Onder voorgaande werkgevers is onder dienstverband werkzaamheden verricht voor diverse andere klanten. Voor meer informatie verwijs ik graag naar",
+    customersCTAChallenge: "Heeft u een uitdaging of project waarin ik kan meedenken of meewerken?",
+    customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking",
 
-	  servicesTitle: 'Services',
-    servicesSubtitle: 'Leer hoe DataSight kan helpen uw datapotentieel optimaal te benutten.',
-	
+    servicesTitle: 'Diensten', // Changed from 'Dienstverlening' to match NAV_ITEMS
+    servicesSubtitle: 'Leer hoe DataSight kan helpen uw datapotentieel optimaal te benutten.', // Adjusted based on previous EN version
+
     service1Title: 'Splunk Consultancy',
     service1Description: 'Voor proactief beheer, diepgaande expertise, projecten en waarde optimalisatie van uw omgeving. Lees meer.',
     service1DetailTitle: 'Splunk Consultancy: Maximaliseer uw data potentieel',
@@ -363,19 +368,19 @@ export const translations: Translations = {
     homeTitle: 'Data > Insight > Value, Simple.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
-    homeAboutMeP1: "DataSight has a clear mission: help organizations solve complex data problems and turn them into clear, actionable insights that drive real business value.",
-    homeAboutMeP2: "This is achieved by deep technical expertise, personal attention, and by using the latest technologies to deliver practical, impactful solutions.",
-    homeAboutMeP3: "Behind Datasight is Tom de Bruijn, a consultant with over 10 years of experience in data analysis and observability.\nCertified in Splunk and Cribl, DataSight provides consultancy, strategic guidance, and tailored training at all levels. Looking for an experienced partner who’s genuinely invested in your success? Let’s connect.",
+    homeAboutMeP1: "My name is Tom de Bruijn and I founded DataSight in 2024. With DataSight, I have a clear mission: to help organizations with complex data issues by providing clear, usable insights that deliver real value.",
+    homeAboutMeP2: "With over ten years of experience and a strong background in APM and observability, I have developed into a versatile and experienced data engineer in recent years.",
+    homeAboutMeP3: "From DataSight, as a certified specialist in Splunk and Cribl, I am available for consultancy, strategic advice, and customized training at all levels. Looking for an experienced partner who is genuinely committed to your success? Let's get acquainted.",
     homeCTA: 'Get in Touch',
 
-    customersTitlePart1: 'Our clients',
-    customersTitlePart2: '', // Kept empty
-    customersTitlePart3: '', // Kept empty
-    customersDescription: 'With over 10 years of experience in the IT sector, DataSight has been operating independently as a consultancy firm since 2024. DataSight works for both national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
-	  customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenures at his previous employers, Cinq ICT and Accenture.",
-    customersLinkedInClarification: "For references and projects by Tom at previous employers, please see",
-    customersCTAChallenge: "Do you have a challenge or project where DataSight can contribute or collaborate?",
-    customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction.",
+    customersTitlePart1: 'Our clients', // Retained from user's base
+    customersTitlePart2: '', // Retained from user's base
+    customersTitlePart3: '', // Retained from user's base
+    customersDescription: 'DataSight works for both national and international companies, profit and non-profit. What binds us is their need to navigate complex transitions in which ICT, and data in particular, play a pivotal role.',
+	customersClarificationText: "The logos below represent projects realized under DataSight, projects by Tom de Bruijn under his personal title, and projects completed during his tenures at his previous employers, Cinq ICT and Accenture.",
+    customersLinkedInClarification: "Under previous employers, work was performed for various other clients under an employment contract. For more information, please refer to",
+    customersCTAChallenge: "Do you have a challenge or project where I can contribute or collaborate?",
+    customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction",
 
     servicesTitle: 'Services',
     servicesSubtitle: 'Learn how DataSight can support you in leveraging your data to its full potential.',
@@ -383,13 +388,13 @@ export const translations: Translations = {
     service1Title: 'Splunk Consultancy',
     service1Description: 'For proactive management, in-depth expertise, projects, and value optimization of your environment. Read more.', // Shorter card description
     service1DetailTitle: 'Splunk Consultancy: Maximize Your Data Potential',
-    service1DetailDesc: 'With over 10 years of experience, DataSight offers deep Splunk expertise to unlock the full potential value of your data. From administrative tasks such as upgrades and health checks to implementing and optimizing advanced solutions like Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). DataSight ensures your Splunk environment operates reliably and is fully leveraged.',
+    service1DetailDesc: 'With over 10 years of experience, DataSight offers deep Splunk expertise to unlock the full potential value of your data. From administrative tasks such as upgrades and health checks to implementing and optimizing advanced solutions like Splunk IT Service Intelligence (ITSI) and Splunk Enterprise Security (ES). DataSight ensures your Splunk environment operates reliably and is fully leveraged.\nOur services include:',
     service1DetailBullet1: 'Proactive management of your Splunk environment for optimal performance and continuity.',
     service1DetailBullet2: 'Support for Splunk upgrades, cloud migrations, and automation using tools like Ansible.',
     service1DetailBullet3: 'Implementation and configuration of Splunk IT Service Intelligence (ITSI) for enhanced IT service monitoring.',
     service1DetailBullet4: 'Operate in a Security Operations Centers (SOC), help with implementation and configuration of Splunk Enterprise Security (ES).',
     service1DetailBullet5: 'Development of custom dashboards, alerts, and data integrations.',
-	service1DialogFooterText: "Every client- and environment, data challenge, and project is unique. This overview is a brief selection of what DataSight can offer. I prefer to first engage in a conversation with you to better understand your specific challenges.",
+	service1DialogFooterText: "Every client- and environment, data challenge, and project is unique. This overview is a brief selection of what DataSight can offer. We prefer to first engage in a conversation with you to better understand your specific challenges.",
     service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Consultancy',
@@ -405,9 +410,9 @@ export const translations: Translations = {
     service2DetailCTA: 'Get in touch',
 
     service5Title: 'Trainings & Workshops',
-    service5Description: 'New to Splunk or Cribl, or need specific help? I provide tailored training and workshops. Learn more.',
+    service5Description: 'New to Splunk or Cribl, or need specific help? We provide tailored training and workshops. Learn more.',
     service5DetailTitle: 'Trainings & Workshops: Practical training designed for your organization and needs',
-    service5DetailDesc: 'At DataSight, we are passionate and enthusiastic about our work. I’m passionate about sharing my expertise in a way that is both practical and easy to apply. That is why we are regularly asked to provide training sessions and workshops. Whether it concerns organizations new to Splunk or Cribl, or clients looking to get more out of their tools, all options are possible.\nWe believe in tailored solutions, enabling us to specifically address your needs and deliver maximum results. DataSight offers training on-site or remotely, on your own (Splunk/Cribl) environment, as well as via our own demo environment. Sessions can be one-on-one or in groups, ranging from one day to multiple days.\nOur training offerings include:',
+    service5DetailDesc: 'At DataSight, we are passionate and enthusiastic about our work. We enjoy sharing our knowledge and experience with others. That is why we are regularly asked to provide training sessions and workshops. Whether it concerns organizations new to Splunk or Cribl, or clients looking to get more out of their tools, all options are possible.\nWe believe in tailored solutions, enabling us to specifically address your needs and deliver maximum results. We offer training on-site or remotely, on your own (Splunk/Cribl) environment, as well as via our own demo environment. Sessions can be one-on-one or in groups, ranging from one day to multiple days.\nOur training offerings include:',
     service5DetailBullet1: "Customized curriculum based on your team's specific needs.",
     service5DetailBullet2: "Courses for beginners and advanced users of Splunk and Cribl.",
     service5DetailBullet3: "Flexible formats: individual or group sessions.",
@@ -444,7 +449,7 @@ export const translations: Translations = {
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nI'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nWe help you make smart choices with Splunk & Cribl.",
     // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed
-    inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\nDaasight trainings are hands-on, custom, and without unnecessary theory.",
+    inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\n Daasight trainings are hands-on, custom, and without unnecessary theory.",
     // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? ✨\nI'am happy to look into efficient solutions with you.",
 

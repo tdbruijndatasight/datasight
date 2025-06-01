@@ -1,3 +1,4 @@
+
 import type { StaticImageData } from 'next/image';
 import type { Locale, TranslationContent } from '@/lib/translations';
 
@@ -26,8 +27,8 @@ export interface CompanyLogo {
 
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
-  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' }, // Re-enabled
   { labelKey: 'navServices', href: '/#services', id: 'services' },
+  { labelKey: 'navCustomers', href: '/#customers', id: 'customers' },
   // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
   { labelKey: 'navContact', href: '/#contact', id: 'contact' },
