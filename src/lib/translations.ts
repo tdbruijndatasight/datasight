@@ -210,7 +210,7 @@ export const translations: Translations = {
     customersDescription: 'Ik werk voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
     customersLinkedInClarification: "Een overzicht van projecten en bedrijven waarvoor ik via eerdere werkgevers heb gewerkt vind je op",
     customersCTAChallenge: "Heeft u een uitdaging of project waarin ik kan meedenken of meewerken?",
-    customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking",
+    customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking.",
 
 
     servicesTitle: 'Diensten',
@@ -231,7 +231,7 @@ export const translations: Translations = {
     service2Title: 'Cribl Consultancy',
     service2Description: 'Voor volledige controle over uw data en efficiënte observability. Lees meer.',
     service2DetailTitle: 'Cribl Consultancy: Voor efficiente observability',
-    service2DetailDesc: 'Cribl is een platform dat fungeert als slimme tussenlaag tussen databronnen en databestemmingen. Met Cribl Stream kun je data verzamelen, filteren, verrijken, beveiligen en gericht routeren. Je kunt hiermee ruwe data opslaan in relatief goedkopere storage en alleen de data die je gericht nodig hebt doorsturen naar verschillende databestemmingen, voor verdere analyse of bijvoorbeeld securitydoeleinden. Het geeft je hiermee volledige grip en eigenaarschap over je data, bespaart onnodige licentie- en opslagkosten en gaat vendor lock-in tegen.\n\nMijn diensten rondom Cribl bestaan onder andere uit:',
+    service2DetailDesc: 'Cribl is een platform dat fungeert als slimme tussenlaag tussen databronnen en databestemmingen. Met Cribl Stream kun je data verzamelen, filteren, verrijken, beveiligen en gericht routeren. Je kunt ruwe data opslaan in relatief goedkopere storage en alleen de data die je gericht nodig hebt doorsturen naar verschillende databestemmingen, voor analyse- of securitydoeleinden. Cribl biedt volledige grip en eigenaarschap over je data, bespaart onnodige licentie- en opslagkosten en gaat vendor lock-in tegen. Mijn diensten rondom Cribl bestaan onder andere uit:',
     service2DetailBullet1: 'Het opstellen van een implementatieplan, alsmede de technische implementatie en configuratie van Cribl.',
     service2DetailBullet2: 'Proactief beheer van de Cribl Stream-omgeving en het bouwen van processing pipelines voor filtering, verrijking, beveiliging en routering van data.',
     service2DetailBullet3: 'Integratie van Cribl met Splunk, SIEM-oplossingen en vele andere databestemmingen.',
@@ -378,7 +378,7 @@ export const translations: Translations = {
     customersDescription: 'I work for both national and international companies in the profit and non-profit sectors. What connects us is the need to implement complex changes where IT and data are crucial.',
     customersLinkedInClarification: "An overview of projects and companies for which I have worked through previous employers can be found on",
     customersCTAChallenge: "Do you have a challenge or project where I can contribute or collaborate?",
-    customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction",
+    customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction.",
 
     servicesTitle: 'Services',
     servicesSubtitle: "With DataSight, I help organizations to truly extract value from their data. I do this not only with the services listed below, but also with the right technical solutions, knowledge, and experience. Whether it's a cloud migration, automation, or deploying products like Splunk ITSI or Enterprise Security – I'm here to think along and assist with the execution.",
@@ -398,7 +398,7 @@ export const translations: Translations = {
     service2Title: 'Cribl Consultancy',
     service2Description: 'For full control over your data and efficient observability. Learn more.',
     service2DetailTitle: 'Cribl Consultancy: For Efficient Observability',
-    service2DetailDesc: 'Cribl is a platform that acts as a smart intermediary layer between data sources and destinations. With Cribl Stream, you can collect, filter, enrich, secure, and strategically route data. This allows you to store raw data in relatively cheaper storage and only forward the data you specifically need to various destinations for further analysis or security purposes, for example. It gives you complete control and ownership of your data, saves unnecessary licensing and storage costs, and prevents vendor lock-in.\n\nMy services around Cribl include, among others:',
+    service2DetailDesc: 'Cribl is a platform that acts as a smart intermediary layer between data sources and destinations. With Cribl Stream, you can collect, filter, enrich, secure, and strategically route data. You can store raw data in relatively cheaper storage and only forward the data you specifically need to various data destinations, for analysis or security purposes. Cribl provides complete control and ownership over your data, saves unnecessary licensing and storage costs, and prevents vendor lock-in. My services around Cribl include, among others:',
     service2DetailBullet1: 'Developing an implementation plan, as well as the technical implementation and configuration of Cribl.',
     service2DetailBullet2: 'Proactive management of the Cribl Stream environment and building processing pipelines for filtering, enriching, securing, and routing data.',
     service2DetailBullet3: 'Integration of Cribl with Splunk, SIEM solutions, and many other data destinations.',
