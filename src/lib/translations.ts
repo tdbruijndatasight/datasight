@@ -4,7 +4,7 @@ export type Locale = 'nl' | 'en';
 export interface TranslationContent {
   // Header / Nav
   navHome: string;
-  navCustomers: string;
+  navExperience: string; // Changed from navCustomers
   navServices: string;
   // navPublications: string; // Hidden
   navProjectInquiry: string;
@@ -186,7 +186,7 @@ export type Translations = {
 export const translations: Translations = {
   nl: {
     navHome: 'Home',
-    navCustomers: 'Klanten',
+    navExperience: 'Ervaring',
     navServices: 'Diensten',
     // navPublications: 'Publicaties', // Hidden
     navProjectInquiry: 'Contactformulier',
@@ -204,7 +204,7 @@ export const translations: Translations = {
     homeAboutMeP3: "Vanuit DataSight ben ik als gecertificeerd specialist in Splunk en Cribl inzetbaar voor consultancy, strategisch advies en op maat gemaakte trainingen op elk niveau. Op zoek naar een ervaren partner die écht betrokken is bij jouw succes? Laten we kennismaken.",
     homeCTA: 'Neem Contact Op',
 
-    customersTitlePart1: 'Klanten',
+    customersTitlePart1: 'Klanten en Referenties',
     customersTitlePart2: '',
     customersTitlePart3: '',
     customersDescription: 'Ik werk voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
@@ -354,7 +354,7 @@ export const translations: Translations = {
   },
   en: {
     navHome: 'Home',
-    navCustomers: 'Customers',
+    navExperience: 'Experience',
     navServices: 'Services',
     // navPublications: 'Publications', // Hidden
     navProjectInquiry: 'Contact Form',
@@ -372,7 +372,7 @@ export const translations: Translations = {
     homeAboutMeP3: "From DataSight, as a certified specialist in Splunk and Cribl, I am available for consultancy, strategic advice, and customized training at all levels. Looking for an experienced partner who is genuinely committed to your success? Let's get acquainted.",
     homeCTA: 'Get in Touch',
 
-    customersTitlePart1: 'Customers',
+    customersTitlePart1: 'Customers and References',
     customersTitlePart2: '',
     customersTitlePart3: '',
     customersDescription: 'I work for both national and international companies in the profit and non-profit sectors. What connects us is the need to implement complex changes where IT and data are crucial.',
@@ -540,8 +540,3 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   });
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
-
-    
-    
-
-    
