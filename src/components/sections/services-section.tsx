@@ -97,7 +97,7 @@ const ServicesSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               {t('servicesTitle')}
             </h2>
-            <p className="text-lg text-foreground/80 max-w-2xl mx-auto">
+            <p className="text-lg text-foreground/80 max-w-3xl mx-auto">
               {t('servicesSubtitle')}
             </p>
           </AnimatedSection>
