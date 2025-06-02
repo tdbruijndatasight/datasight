@@ -46,11 +46,11 @@ export const metadata: Metadata = {
     description: 'Expert Splunk and Cribl consultancy services.',
     // images: ['https://datasight.nl/twitter.png'], // Replace with actual image URL
   },
-  // icons: { // Add favicon links if you have them
-  //   icon: '/favicon.ico',
-  //   shortcut: '/favicon-16x16.png',
-  //   apple: '/apple-touch-icon.png',
-  // },
+  icons: { // Add favicon links if you have them
+    icon: '/favicon.ico',
+    shortcut: '/favicon-16x16.png', // Assuming you have this, or adjust as needed
+    apple: '/apple-touch-icon.png',
+  },
 };
 
 export const viewport: Viewport = {

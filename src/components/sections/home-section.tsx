@@ -21,19 +21,23 @@ const HomeSection: React.FC = () => {
     setShouldAnimateSubtitleLine(true);
   };
 
-  const backgroundImageUrl = "https://down-yuantu.pngtree.com/element_our/20230212/bg/c646d7eb7097c.png?e=1748864954&st=ODYxNjQyMDVhODI4ZWZiMTNjZjUwNzMxNTBlODE2MTg&n=%E2%80%94Pngtree%E2%80%94abstract+technology+network+digital+geometric_9007290.png";
-
   return (
     <section
       id="home"
-      className="section-min-height relative overflow-hidden bg-cover bg-center bg-no-repeat md:py-12 pt-24 pb-8"
-      style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
+      className="section-min-height relative overflow-hidden bg-background md:py-12 pt-24 pb-8"
     >
-      {/* Overlay for tint and blur to improve text readability over the background image */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0"></div>
+      {/* Geometric background image with opacity */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
+        style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
+        data-ai-hint="geometric abstract background"
+      ></div>
 
-      {/* Content wrapper: relative z-10 to sit on top of the overlay, container for layout, and padding for header offset */}
-      <div className="relative z-10 container mx-auto grid md:grid-cols-2 gap-12 items-center"> {/* Padding ensures content is below fixed header */}
+      {/* Overlay for tint and blur on top of the geometric image */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10"></div>
+
+      {/* Content wrapper: relative z-20 to sit on top of all overlays */}
+      <div className="relative z-20 container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
@@ -54,8 +58,8 @@ const HomeSection: React.FC = () => {
           </Button>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative z-10 flex justify-center"> {/* Ensure card is also z-10 if it wasn't implicitly */}
-          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80"> {/* Card has its own semi-transparent background */}
+        <AnimatedSection delay="delay-200" className="flex justify-center">
+          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
