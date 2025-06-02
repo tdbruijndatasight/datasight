@@ -1,9 +1,12 @@
 
 "use client";
 
+import Link from 'next/link';
+import { X } from 'lucide-react';
+import { Button } from '@/components/ui/button';
 import Header from '@/components/layout/header';
 import ContactSection from '@/components/sections/contact-section';
-import { SITE_CONFIG } from '@/constants/site'; // Keep if SITE_CONFIG.name is used, or remove if not.
+import { SITE_CONFIG } from '@/constants/site'; 
 import { useLanguage } from '@/hooks/use-language';
 
 export default function DisclaimerPage() {
@@ -13,9 +16,18 @@ export default function DisclaimerPage() {
     <>
       <Header />
       <main className="container mx-auto px-4 py-16 md:py-20">
-        <article className="max-w-3xl mx-auto bg-card p-6 md:p-8 rounded-lg shadow-lg border border-border">
+        <article className="relative max-w-3xl mx-auto bg-card p-6 md:p-8 rounded-lg shadow-lg border border-border">
+          <Button 
+            asChild 
+            variant="ghost" 
+            size="icon" 
+            className="absolute top-4 right-4 text-muted-foreground hover:text-foreground z-10"
+          >
+            <Link href="/#home" aria-label={t('closeButton')}>
+              <X className="h-6 w-6" />
+            </Link>
+          </Button>
           <h1 className="text-3xl font-bold text-primary mb-6">{t('disclaimerPageTitle')}</h1>
-          {/* Updated to use SITE_CONFIG.name if needed, or make it static text */}
           <p className="text-sm text-muted-foreground mb-6"><strong>{t('disclaimerValidFrom')}</strong></p>
 
           <div className="space-y-4 text-sm text-foreground/90">
@@ -52,4 +64,3 @@ export default function DisclaimerPage() {
     </>
   );
 }
-
