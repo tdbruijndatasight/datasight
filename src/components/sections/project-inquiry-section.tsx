@@ -170,8 +170,8 @@ const ProjectInquirySection: React.FC = () => {
           <Image
             src="/Coffee_Cup_DataSight.png"
             alt="Decorative coffee cup"
-            width={180}
-            height={180}
+            width={300}
+            height={300}
             className="opacity-80"
             data-ai-hint="coffee cup illustration"
           />
