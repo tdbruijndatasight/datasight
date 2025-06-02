@@ -28,14 +28,14 @@ const HomeSection: React.FC = () => {
     >
       {/* Geometrical overlay - more visible and positioned higher */}
       <div
-        className="absolute inset-0 bg-cover bg-[center_20%] bg-no-repeat opacity-75 z-0"
+        className="absolute inset-0 bg-cover bg-[center_top] bg-no-repeat opacity-15 z-0"
         style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
         data-ai-hint="geometric abstract background"
       ></div>
 
       {/* Content wrapper: relative z-10 to sit on top of the geometric overlay */}
       <div className="relative z-10 container mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
+        <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left bg-card/[.85] backdrop-blur-sm p-4 rounded-lg">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
             "text-lg md:text-xl text-foreground/90 font-semibold subtitle-line-base",
@@ -88,3 +88,4 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
+
