@@ -1,0 +1,25 @@
+<svg width="200" height="200" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+  <!-- 'i' element -->
+  <rect x="40" y="90" width="20" height="70" fill="#339FCB" rx="4"/>
+  <!-- Orange bar chart -->
+  <rect x="40" y="65" width="4.18" height="4" fill="#E99905"/>
+  <rect x="45.30" y="61" width="4.18" height="8" fill="#E99905"/>
+  <rect x="50.60" y="57" width="4.18" height="12" fill="#E99905"/>
+  <rect x="55.90" y="53" width="4.18" height="16" fill="#E99905"/>
+  <defs>
+    <clipPath id="cut-off-top">
+      <!-- Clip everything *above* y=70 (shows only bottom half) -->
+      <rect x="0" y="70" width="100" height="10" />
+    </clipPath>
+  </defs>
+  
+  <!-- Circle clipped to show only the bottom half -->
+  <circle cx="50" cy="70" r="10" fill="#E99905" clip-path="url(#cut-off-top)"/>
+  <!-- Open curved 'D' with no fill -->
+  <path d="M40 40
+           Q150 40 150 100
+           Q150 150 55 150"
+        stroke="#339FCB"
+        stroke-width="20"
+        fill="none" />
+</svg>
