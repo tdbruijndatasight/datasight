@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
 
 const Logo = () => (
   <Link href="/#home" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
-    <img src="/id.svg" alt="DataSight Logo" className="h-8 w-8" />
+    <img src="/barchart.svg" alt="DataSight Logo" className="h-8 w-8" />
     <span className="text-2xl font-bold">DataSight</span>
   </Link>
 );
