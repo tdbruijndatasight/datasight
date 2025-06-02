@@ -28,7 +28,7 @@ const HomeSection: React.FC = () => {
     >
       {/* Geometrical overlay - more visible and positioned higher */}
       <div
-        className="absolute inset-0 bg-cover bg-top bg-no-repeat opacity-75 z-0"
+        className="absolute inset-0 bg-cover bg-[center_20%] bg-no-repeat opacity-75 z-0"
         style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
         data-ai-hint="geometric abstract background"
       ></div>
