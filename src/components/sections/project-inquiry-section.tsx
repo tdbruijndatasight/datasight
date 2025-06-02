@@ -172,7 +172,6 @@ const ProjectInquirySection: React.FC = () => {
             alt="Decorative coffee cup"
             width={400}
             height={400}
-            className="opacity-80"
             data-ai-hint="coffee cup illustration"
           />
         </div>
