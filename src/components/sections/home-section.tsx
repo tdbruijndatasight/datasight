@@ -21,16 +21,23 @@ const HomeSection: React.FC = () => {
     setShouldAnimateSubtitleLine(true);
   };
 
+  const backgroundImageUrl = "https://static.vecteezy.com/system/resources/previews/014/689/892/large_2x/abstract-network-technology-geometric-dots-network-clipart-connecting-dots-and-lines-global-network-connection-digital-technology-with-plexus-background-illustration-vector.jpg";
+
   return (
-    <section 
-      id="home" 
-      className="bg-gradient-to-br from-background to-secondary section-min-height pt-28 pb-12 md:py-16" // Increased mobile top padding
+    <section
+      id="home"
+      className="section-min-height relative overflow-hidden bg-cover bg-center bg-no-repeat"
+      style={{ backgroundImage: `url('${backgroundImageUrl}')` }}
     >
-      <div className="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+      {/* Overlay for tint and blur to improve text readability over the background image */}
+      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-0"></div>
+
+      {/* Content wrapper: relative z-10 to sit on top of the overlay, container for layout, and padding for header offset */}
+      <div className="relative z-10 container mx-auto grid md:grid-cols-2 gap-12 items-center pt-28 pb-12 md:py-16"> {/* Padding ensures content is below fixed header */}
         <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
-            "text-lg md:text-xl text-foreground/80 font-semibold subtitle-line-base",
+            "text-lg md:text-xl text-white/90 font-semibold subtitle-line-base", // Changed text color for better contrast
             shouldAnimateSubtitleLine && "is-drawing"
           )}>
             {t('homeSubtitle')}
@@ -47,8 +54,8 @@ const HomeSection: React.FC = () => {
           </Button>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative z-10 flex justify-center">
-          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
+        <AnimatedSection delay="delay-200" className="relative z-10 flex justify-center"> {/* Ensure card is also z-10 if it wasn't implicitly */}
+          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80"> {/* Card has its own semi-transparent background */}
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
