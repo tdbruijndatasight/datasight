@@ -26,22 +26,19 @@ const HomeSection: React.FC = () => {
       id="home"
       className="section-min-height relative overflow-hidden bg-background md:py-12 pt-24 pb-8"
     >
-      {/* Geometric background image with opacity */}
+      {/* Geometrical overlay */}
       <div
-        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-20 z-0"
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-40 z-0"
         style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
         data-ai-hint="geometric abstract background"
       ></div>
-
-      {/* Overlay for tint and blur on top of the geometric image */}
-      <div className="absolute inset-0 bg-black/50 backdrop-blur-sm z-10"></div>
 
       {/* Content wrapper: relative z-20 to sit on top of all overlays */}
       <div className="relative z-20 container mx-auto grid md:grid-cols-2 gap-12 items-center">
         <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
-            "text-lg md:text-xl text-white/90 font-semibold subtitle-line-base",
+            "text-lg md:text-xl text-foreground/90 font-semibold subtitle-line-base",
             shouldAnimateSubtitleLine && "is-drawing"
           )}>
             {t('homeSubtitle')}
@@ -59,7 +56,7 @@ const HomeSection: React.FC = () => {
         </AnimatedSection>
 
         <AnimatedSection delay="delay-200" className="flex justify-center">
-          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80">
+          <Card className="shadow-xl border-primary/20 backdrop-blur-sm bg-card/80"> {/* Retained backdrop-blur on card for legibility if bg becomes busy */}
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
