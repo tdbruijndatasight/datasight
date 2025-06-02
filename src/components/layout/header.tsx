@@ -13,7 +13,7 @@ import { NAV_ITEMS } from '@/constants/site';
 import { cn } from '@/lib/utils';
 
 const Logo = () => (
-  <Link href="/#home" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
+  <Link href="/#home" className="flex items-end space-x-2 text-primary hover:text-primary/90 transition-colors">
     <img src="/barchart.svg" alt="DataSight Logo" className="h-8 w-8" />
     <span className="text-2xl font-bold">DataSight</span>
   </Link>
