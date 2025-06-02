@@ -197,7 +197,7 @@ export const translations: Translations = {
     loading: 'Laden...',
 
     homeTitle: 'Data > Inzicht > Waarde, Simpel.',
-    homeSubtitle: 'Tom de Bruijn | Splunk &amp; Cribl Consultant',
+    homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welkom bij DataSight.',
     homeAboutMeP1: "Mijn naam is Tom de Bruijn en in 2024 heb ik DataSight opgericht. Met DataSight heb ik een heldere missie: organisaties helpen bij complexe datavraagstukken door heldere- bruikbare inzichten te bieden die échte waarde opleveren.",
     homeAboutMeP2: "Met meer dan tien jaar ervaring en een sterke achtergrond in APM en observability, heb ik mij in de afgelopen jaren ontwikkeld tot een veelzijdige en ervaren data engineer.",
@@ -240,14 +240,14 @@ export const translations: Translations = {
 	  service2DialogFooterText: "Cribl is een veelzijdig platform en flexibel inzetbaar. In een persoonlijk gesprek kan ik meer toelichten, bespreken we jouw data-uitdaging en laat ik graag een demo zien die past bij jouw situatie.",
     service2DetailCTA: 'Neem contact op',
 
-    service5Title: 'Trainingen &amp; Workshops',
+    service5Title: 'Trainingen & Workshops',
     service5Description: 'Nieuw met Splunk of Cribl, of hulp nodig? Wij leveren maatwerk trainingen en workshops. Lees meer.',
-    service5DetailTitle: 'Trainingen &amp; Workshops: Praktische trainingen afgestemd op uw organisatie en behoeften',
+    service5DetailTitle: 'Trainingen & Workshops: Praktische trainingen afgestemd op uw organisatie en behoeften',
     service5DetailDesc: 'Trots op mijn werk deel ik op enthousiaste wijze graag mijn kennis op een praktische en begrijpelijke manier. Daarom geef ik regelmatig trainingen en workshops aan mensen die meer willen leren. Of jullie nu net beginnen met Splunk of Cribl, of juist meer uit de tools willen halen, alles is mogelijk. Ik geloof in maatwerk, zodat ik precies kan aansluiten bij jullie wensen en zo het beste resultaat kan bereiken.\n\nIk verzorg trainingen op locatie of remote, op jullie eigen (Splunk/Cribl) omgeving, maar ook via een demo-omgeving. Daarbij bied ik zowel 1-op-1 sessies als groepssessies aan, van één dag tot meerdere dagen. Mijn trainingsmogelijkheden omvatten:',
     service5DetailBullet1: 'Maatwerk trainingen die passen bij de behoeften van jullie organisatie',
     service5DetailBullet2: 'Trainingen voor beginners en gevorderden in Splunk en Cribl',
     service5DetailBullet3: 'Flexibele trainingsvormen, individueel of in groepsverband',
-    service5DetailBullet4: 'Interactieve labs en Q&amp;A sessies voor een diepgaand begrip',
+    service5DetailBullet4: 'Interactieve labs en Q&A sessies voor een diepgaand begrip',
     service5DetailBullet5: 'Trainingen op locatie of remote, op eigen of demo-omgeving',
 	  service5DialogFooterText: "Neem gerust contact op om de mogelijkheden te bespreken. Omdat alles maatwerk is, bespreken we de prijzen altijd in overleg.",
     service5DetailCTA: 'Neem contact op',
@@ -278,7 +278,7 @@ export const translations: Translations = {
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur gerust een berichtje.",
     // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur gerust een berichtje!",
-    inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nIk help om slimme keuzes te maken met Splunk &amp; Cribl.",
+    inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nIk help om slimme keuzes te maken met Splunk & Cribl.",
     // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\n De trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
     // inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.", // Removed
@@ -365,7 +365,7 @@ export const translations: Translations = {
     loading: 'Loading...',
 
     homeTitle: 'Data > Insight > Value, Simple.',
-    homeSubtitle: 'Tom de Bruijn | Splunk &amp; Cribl Consultant',
+    homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "My name is Tom de Bruijn and I founded DataSight in 2024. With DataSight, I have a clear mission: to help organizations with complex data issues by providing clear, usable insights that deliver real value.",
     homeAboutMeP2: "With over ten years of experience and a strong background in APM and observability, I have developed into a versatile and experienced data engineer in recent years.",
@@ -407,14 +407,14 @@ export const translations: Translations = {
 	  service2DialogFooterText: "Cribl is a versatile platform and flexibly deployable. In a personal conversation, I can explain more, we can discuss your data challenge, and I would be happy to show a demo that fits your situation.",
     service2DetailCTA: 'Get in touch',
 
-    service5Title: 'Trainings &amp; Workshops',
+    service5Title: 'Trainings & Workshops',
     service5Description: 'New to Splunk or Cribl, or need specific help? We provide tailored training and workshops. Learn more.',
-    service5DetailTitle: 'Trainings &amp; Workshops: Practical training designed for your organization and needs',
+    service5DetailTitle: 'Trainings & Workshops: Practical training designed for your organization and needs',
     service5DetailDesc: "Proud of my work, I enthusiastically share my knowledge in a practical and understandable way. That's why I regularly give trainings and workshops to people who want to learn more. Whether you're just starting with Splunk or Cribl, or want to get more out of the tools, anything is possible. I believe in custom solutions, so I can precisely meet your needs and achieve the best results.\n\nI provide trainings on-site or remotely, on your own (Splunk/Cribl) environment, but also via a demo environment. I offer both 1-on-1 sessions and group sessions, ranging from one day to several days. My training options include:",
     service5DetailBullet1: "Customized trainings that fit the needs of your organization",
     service5DetailBullet2: "Trainings for beginners and advanced users in Splunk and Cribl",
     service5DetailBullet3: "Flexible training formats, individual or in group sessions",
-    service5DetailBullet4: "Interactive labs and Q&amp;A sessions for in-depth understanding",
+    service5DetailBullet4: "Interactive labs and Q&A sessions for in-depth understanding",
     service5DetailBullet5: "Trainings on-site or remotely, on your own or demo environment",
 	  service5DialogFooterText: "Feel free to contact us to discuss the possibilities. Since everything is custom-made, we always discuss prices in consultation.",
     service5DetailCTA: 'Get in touch',
@@ -445,7 +445,7 @@ export const translations: Translations = {
     inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nI'll gladly send you a message.",
     // inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.", // Removed
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nI'll gladly send you a message!",
-    inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nI help to make smart choices with Splunk &amp; Cribl.",
+    inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nI help to make smart choices with Splunk & Cribl.",
     // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\n The trainings are hands-on, custom, and without unnecessary theory.",
     // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed
@@ -542,4 +542,6 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
 ensureEnglishPlaceholders(translations.en, translations.nl);
 
     
+    
+
     
