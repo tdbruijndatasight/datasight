@@ -208,7 +208,7 @@ export const translations: Translations = {
     customersTitlePart2: '',
     customersTitlePart3: '',
     customersDescription: 'Ik werk voor zowel nationale als internationale bedrijven in de profit- en non-profitsector. Wat ons bindt, is de behoefte om complexe veranderingen door te voeren, waarbij IT en data cruciaal zijn.',
-    customersLinkedInClarification: "Een overzicht van projecten en bedrijven waarvoor ik via eerdere werkgevers heb gewerkt vind je op LinkedIn.",
+    customersLinkedInClarification: "Een overzicht van projecten en bedrijven waarvoor ik via eerdere werkgevers heb gewerkt vind je op",
     customersCTAChallenge: "Heeft u een uitdaging of project waarin ik kan meedenken of meewerken?",
     customersCTAPleasure: "Ik kom graag in contact voor vrijblijvende kennismaking.",
 
@@ -376,7 +376,7 @@ export const translations: Translations = {
     customersTitlePart2: '',
     customersTitlePart3: '',
     customersDescription: 'I work for both national and international companies in the profit and non-profit sectors. What connects us is the need to implement complex changes where IT and data are crucial.',
-    customersLinkedInClarification: "An overview of projects and companies for which I have worked through previous employers can be found on LinkedIn.",
+    customersLinkedInClarification: "An overview of projects and companies for which I have worked through previous employers can be found on",
     customersCTAChallenge: "Do you have a challenge or project where I can contribute or collaborate?",
     customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction.",
 
