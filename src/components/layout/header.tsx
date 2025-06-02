@@ -3,7 +3,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Menu, Brain } from 'lucide-react';
+import { Menu, BarChartBig } from 'lucide-react'; // Changed Brain to BarChartBig
 import { Button } from '@/components/ui/button';
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import LanguageToggle from './language-toggle';
@@ -14,7 +14,7 @@ import { cn } from '@/lib/utils';
 
 const Logo = () => (
   <Link href="/#home" className="flex items-center space-x-2 text-primary hover:text-primary/90 transition-colors">
-    <Brain className="h-8 w-8" />
+    <BarChartBig className="h-8 w-8" /> {/* Changed Brain to BarChartBig */}
     <span className="text-2xl font-bold">DataSight</span>
   </Link>
 );
