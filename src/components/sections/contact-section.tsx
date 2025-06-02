@@ -117,8 +117,7 @@ const ContactSection: React.FC = () => {
         </div>
         <AnimatedSection className="text-center mt-16 text-primary-foreground/80 text-xs space-y-1">
           <p>&copy; 2024 DataSight - Tom de Bruijn. All rights reserved.</p>
-          <p>KVK-nummer: 93353413</p>
-          <p>BTW-id: NL005019445B05</p>
+          <p>KVK: 93353413 | BTW-ID: NL005019445B05</p>
           <div className="mt-4 space-x-2 md:space-x-4 !pt-2">
             <Link href="/privacy" className="hover:underline text-sm font-medium text-primary-foreground/80">
               {t('legalPrivacy')}
