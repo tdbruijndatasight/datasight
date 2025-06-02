@@ -59,10 +59,10 @@ const CustomersSection: React.FC = () => {
 
         <AnimatedSection delay="delay-300" className="mt-10">
           <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center">
-            {/* Mobile Order: Text then Icon */}
+            {/* Mobile Order: Icon then Text */}
             <span className="md:hidden flex items-center justify-center gap-2">
-              <span>{t('customersCTAChallenge')}</span>
               <Wrench className="h-5 w-5 text-accent" />
+              <span>{t('customersCTAChallenge')}</span>
             </span>
             {/* Desktop Order: Icon then Text */}
             <span className="hidden md:flex items-center justify-center gap-2">
