@@ -166,12 +166,12 @@ const ProjectInquirySection: React.FC = () => {
   return (
     <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto relative">
-        <div className="absolute -top-12 right-8 transform -translate-y-1/2 z-10 hidden md:block pointer-events-none">
+        <div className="absolute -top-24 right-8 transform -translate-y-1/2 z-10 hidden md:block pointer-events-none">
           <Image
             src="/Coffee_Cup_DataSight.png"
             alt="Decorative coffee cup"
-            width={300}
-            height={300}
+            width={350}
+            height={350}
             className="opacity-80"
             data-ai-hint="coffee cup illustration"
           />
@@ -281,3 +281,4 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
+
