@@ -2,6 +2,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from 'react';
+import Image from 'next/image';
 import { useForm, type SubmitHandler } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { z } from 'zod';
@@ -18,14 +19,13 @@ import { cn } from '@/lib/utils';
 import type { TranslationContent } from '@/lib/translations';
 
 const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
-  'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder4', 'inquiryPlaceholder5',
-  'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9', 'inquiryPlaceholder10',
-  'inquiryPlaceholder11', 'inquiryPlaceholder12', 'inquiryPlaceholder13', 'inquiryPlaceholder14', 'inquiryPlaceholder15',
-  'inquiryPlaceholder16',
+  'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder5',
+  'inquiryPlaceholder6', 'inquiryPlaceholder7', 'inquiryPlaceholder8', 'inquiryPlaceholder9',
+  'inquiryPlaceholder11', 'inquiryPlaceholder12', 'inquiryPlaceholder14', 'inquiryPlaceholder16',
 ];
 
 const keysToRemoveFromPlaceholders = new Set<keyof TranslationContent>([
-  'inquiryPlaceholder4', 'inquiryPlaceholder10', 'inquiryPlaceholder13', 'inquiryPlaceholder15'
+  // 'inquiryPlaceholder4', 'inquiryPlaceholder10', 'inquiryPlaceholder13', 'inquiryPlaceholder15' // Already removed
 ]);
 
 const activePlaceholderKeys = allOriginalPlaceholderKeys.filter(
@@ -68,7 +68,7 @@ const ProjectInquirySection: React.FC = () => {
 
   useEffect(() => {
     if (!isFormInteracted) {
-      setCurrentSubtitleIndex(0); // Reset index on language change if form not touched
+      setCurrentSubtitleIndex(0); 
     }
   }, [language, isFormInteracted]);
 
@@ -79,37 +79,35 @@ const ProjectInquirySection: React.FC = () => {
         clearInterval(intervalRef.current);
         intervalRef.current = null;
       }
-      setIsSubtitleVisible(true); // Keep current text visible
-      return; // Stop animation
+      setIsSubtitleVisible(true); 
+      return; 
     }
 
     if (activePlaceholderKeys.length === 0) {
-      setAnimatedSubtitle(""); // Handle case where no keys are active
+      setAnimatedSubtitle(""); 
       return;
     }
     
-    // Set initial subtitle text
     setAnimatedSubtitle(t(activePlaceholderKeys[currentSubtitleIndex] || activePlaceholderKeys[0]));
     setIsSubtitleVisible(true);
 
     intervalRef.current = setInterval(() => {
-      setIsSubtitleVisible(false); // Start fade-out
+      setIsSubtitleVisible(false); 
 
       setTimeout(() => {
-        // Check again if form has been interacted with during fade-out
         if (!intervalRef.current || isFormInteractedRef.current ) {
-          if (isFormInteractedRef.current) setIsSubtitleVisible(true); // Ensure text is visible if interaction occurred
+          if (isFormInteractedRef.current) setIsSubtitleVisible(true); 
           return;
         }
         
         setCurrentSubtitleIndex(prevIndex => {
           const nextIndex = (prevIndex + 1) % activePlaceholderKeys.length;
-          setAnimatedSubtitle(t(activePlaceholderKeys[nextIndex] || activePlaceholderKeys[0])); // Set new text
-          setIsSubtitleVisible(true); // Start fade-in
+          setAnimatedSubtitle(t(activePlaceholderKeys[nextIndex] || activePlaceholderKeys[0])); 
+          setIsSubtitleVisible(true); 
           return nextIndex;
         });
-      }, 1000); // Duration of fade-out animation (1s)
-    }, 10000); // Total cycle time: 9s visible + 1s fade = 10s
+      }, 1000); 
+    }, 10000); 
 
     return () => {
       if (intervalRef.current) {
@@ -117,8 +115,7 @@ const ProjectInquirySection: React.FC = () => {
         intervalRef.current = null;
       }
     };
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [language, t, isFormInteracted, currentSubtitleIndex]); // Added currentSubtitleIndex
+  }, [language, t, isFormInteracted, currentSubtitleIndex]);
 
 
   const handleFocus = () => {
@@ -147,7 +144,7 @@ const ProjectInquirySection: React.FC = () => {
           duration: 7000,
         });
         form.reset();
-        setIsFormInteracted(false); // Reset interaction state
+        setIsFormInteracted(false); 
       } else {
         toast({
           variant: "destructive",
@@ -168,24 +165,35 @@ const ProjectInquirySection: React.FC = () => {
 
   return (
     <section id="inquiry" className="bg-secondary section-min-height">
-      <div className="container mx-auto">
-        <AnimatedSection className="text-center mb-12">
+      <div className="container mx-auto relative">
+        <div className="absolute top-0 right-8 transform -translate-y-1/2 z-10 hidden md:block pointer-events-none">
+          <Image
+            src="/coffee-cup-datasight.png"
+            alt="Decorative coffee cup"
+            width={120}
+            height={120}
+            className="opacity-80"
+            data-ai-hint="coffee cup illustration"
+          />
+        </div>
+
+        <AnimatedSection className="text-center mb-12 relative z-20">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
             <Send className="h-8 w-8 text-accent" />
             {t('projectInquiryTitle')}
           </h2>
            <p className={cn(
-            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]", // Adjusted min-height
-            "transition-opacity duration-1000 ease-in-out whitespace-pre-line", // Slower transition
+            "text-lg text-foreground/80 max-w-2xl mx-auto min-h-[4em] md:min-h-[3em]",
+            "transition-opacity duration-1000 ease-in-out whitespace-pre-line",
             (isFormInteracted || isSubtitleVisible) ? "opacity-100" : "opacity-0"
           )}>
             {animatedSubtitle}
           </p>
         </AnimatedSection>
 
-        <AnimatedSection delay="delay-200" className="relative">
+        <AnimatedSection delay="delay-200" className="relative z-20">
           <div className="max-w-2xl mx-auto relative">
-            <Card className="shadow-xl bg-card border-primary/20 relative z-0">
+            <Card className="shadow-xl bg-card border-primary/20">
               <CardContent className="p-6 md:p-8">
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
@@ -273,4 +281,3 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
-
