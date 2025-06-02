@@ -4,7 +4,7 @@ export type Locale = 'nl' | 'en';
 export interface TranslationContent {
   // Header / Nav
   navHome: string;
-  navExperience: string; // Changed from navCustomers
+  navExperience: string;
   navServices: string;
   // navPublications: string; // Hidden
   navProjectInquiry: string;
@@ -285,7 +285,7 @@ export const translations: Translations = {
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? ✨\n Ik graag meer met je mee naar efficiënte oplossingen.",
 
     contactTitle: 'Neem Contact Op',
-    contactSubtitle: 'Laten we bespreken hoe DataSight uw organisatie kunnen helpen met uw data-uitdagingen.',
+    contactSubtitle: 'Laten we bespreken hoe ik kan helpen met uw data-uitdagingen.',
     contactEmail: 'E-mail',
     contactPhone: 'Telefoon',
     contactLinkedIn: 'LinkedIn Profiel',
@@ -452,7 +452,7 @@ export const translations: Translations = {
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? ✨\n I'am happy to look into efficient solutions with you.",
 
     contactTitle: 'Get in Touch',
-    contactSubtitle: 'Let\'s discuss how DataSight can help your organization with its data challenges.',
+    contactSubtitle: "Let's discuss how I can help with your data challenges.",
     contactEmail: 'Email',
     contactPhone: 'Phone',
     contactLinkedIn: 'LinkedIn Profile',
@@ -540,3 +540,4 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   });
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
+
