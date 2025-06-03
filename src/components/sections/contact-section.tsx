@@ -28,7 +28,7 @@ const ContactSection: React.FC = () => {
       icon: <Phone className="h-8 w-8 text-accent" />,
       labelKey: 'contactPhone',
       value: SITE_CONFIG.phone,
-      href: `https://wa.me/${SITE_CONFIG.phone.replace(/\s|\+/g, '')}`, // WhatsApp link for the button
+      href: `https://wa.me/${SITE_CONFIG.phone.replace(/\s|\+/g, '')}`, 
       buttonLabelKey: 'openWhatsApp',
     },
     {
@@ -66,8 +66,9 @@ const ContactSection: React.FC = () => {
             <Image
                 src="/Pen_DataSight.png"
                 alt="Decorative pen"
-                layout="fill"
-                objectFit="contain"
+                fill={true}
+                style={{ objectFit: 'contain' }}
+                sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem, 8rem"
             />
         </div>
 
@@ -76,13 +77,14 @@ const ContactSection: React.FC = () => {
             <h2 className="text-3xl md:text-4xl font-bold md:mb-4">
               {t('contactTitle')}
             </h2>
-            {/* Mobiele Pen - naast de titel */}
+            {/* Mobile Pen - naast de titel */}
             <div className="relative w-16 h-16 ml-2 md:hidden shrink-0">
               <Image
                 src="/Pen_DataSight.png"
                 alt="" 
-                layout="fill"
-                objectFit="contain"
+                fill={true}
+                style={{ objectFit: 'contain' }}
+                sizes="4rem"
               />
             </div>
           </div>

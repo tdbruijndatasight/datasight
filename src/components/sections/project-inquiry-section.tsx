@@ -25,7 +25,6 @@ const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
 ];
 
 const keysToRemoveFromPlaceholders = new Set<keyof TranslationContent>([
-  // 'inquiryPlaceholder4', 'inquiryPlaceholder10', 'inquiryPlaceholder13', 'inquiryPlaceholder15' // Already removed
 ]);
 
 const activePlaceholderKeys = allOriginalPlaceholderKeys.filter(
@@ -167,15 +166,17 @@ const ProjectInquirySection: React.FC = () => {
   return (
     <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto relative">
-        {/* Coffee Cup 1 */}
-        <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none hidden md:block w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0">
+        {/* Desktop Coffee Cup - on dividing line */}
+        <div className="absolute top-0 transform -translate-y-1/2 z-10 pointer-events-none hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0 md:translate-x-0">
           <Image
-                src="/Coffee_Cup_DataSight.png"
-                alt="Decorative coffee cup"
-                layout="fill"
-                objectFit="contain"
-            />
+            src="/Coffee_Cup_DataSight.png"
+            alt="Decorative coffee cup"
+            fill={true}
+            style={{ objectFit: 'contain' }}
+            sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem"
+          />
         </div>
+
         <AnimatedSection className="text-center mb-12 relative z-20">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4 flex items-center justify-center gap-2">
             <Send className="h-8 w-8 text-accent" />
@@ -193,7 +194,17 @@ const ProjectInquirySection: React.FC = () => {
         <AnimatedSection delay="delay-200" className="relative z-20">
           <div className="max-w-2xl mx-auto relative">
             <Card className="shadow-xl bg-card border-primary/20">
-              <CardContent className="p-6 md:p-8">
+              <CardContent className="relative p-6 md:p-8 pt-16 md:pt-8"> {/* Increased mobile top padding */}
+                {/* Mobile Coffee Cup - inside CardContent */}
+                <div className="absolute top-3 right-3 z-10 pointer-events-none block md:hidden w-14 h-14">
+                  <Image
+                    src="/Coffee_Cup_DataSight.png"
+                    alt="" 
+                    fill={true}
+                    style={{ objectFit: 'contain' }}
+                    sizes="3.5rem" 
+                  />
+                </div>
                 <Form {...form}>
                   <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
                     <FormField
@@ -280,4 +291,3 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
-

@@ -8,11 +8,11 @@ import AnimatedSection from '@/components/animated-section';
 import { SITE_CONFIG, type CompanyLogo } from '@/constants/site';
 import { Wrench, Heart } from 'lucide-react'; 
 import Link from 'next/link';
+import type { StaticImageData } from 'next/image';
 
 const CustomersSection: React.FC = () => {
   const { t } = useLanguage();
   
-  // Find the Schiphol logo
   const schipholLogo = SITE_CONFIG.companyLogos.find(logo => logo.name === 'Schiphol Airport');
 
   return (
@@ -41,7 +41,7 @@ const CustomersSection: React.FC = () => {
                 width={schipholLogo.width || 140}
                 height={schipholLogo.height || 55}
                 className="object-contain"
-                data-ai-hint={schipholLogo.dataAiHint}
+                style={{ height: 'auto' }} // Added to address console warning
               />
             </div>
           </AnimatedSection>
@@ -59,12 +59,10 @@ const CustomersSection: React.FC = () => {
 
         <AnimatedSection delay="delay-300" className="mt-10">
           <p className="text-lg font-semibold text-foreground max-w-4xl mx-auto flex items-center justify-center">
-            {/* Mobile Order: Icon then Text */}
             <span className="md:hidden flex items-center justify-center gap-2">
               <Wrench className="h-5 w-5 text-accent" />
               <span>{t('customersCTAChallenge')}</span>
             </span>
-            {/* Desktop Order: Icon then Text */}
             <span className="hidden md:flex items-center justify-center gap-2">
               <Wrench className="h-5 w-5 text-accent" />
               <span>{t('customersCTAChallenge')}</span>
@@ -83,4 +81,3 @@ const CustomersSection: React.FC = () => {
 };
 
 export default CustomersSection;
-
