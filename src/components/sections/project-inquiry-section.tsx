@@ -170,7 +170,7 @@ const ProjectInquirySection: React.FC = () => {
         <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Coffee_Cup_DataSight.png"
-                alt="Decorative coffee cup"
+                alt="Decorative coffee cup - AI Generated"
                 layout="fill"
                 objectFit="contain"
                 data-ai-hint="coffee cup illustration"
