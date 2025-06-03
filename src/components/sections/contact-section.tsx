@@ -72,7 +72,7 @@ const ContactSection: React.FC = () => {
             />
         </div>
 
-        {/* Coffee Cup 2 - Boven de sectie */}
+        {/* Coffee Cup 2 - Boven de sectie - REMOVED
         <div className="absolute top-0 -mt-[3rem] md:-mt-[5rem] lg:-mt-[6rem] z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-0 md:right-auto md:translate-x-0">
           <Image
             src="/Coffee_Cup_DataSight.png"
@@ -82,6 +82,7 @@ const ContactSection: React.FC = () => {
             
           />
         </div>
+        */}
 
         <AnimatedSection className="text-center mb-12 relative z-20">
           <div className="flex items-center justify-center md:block">
