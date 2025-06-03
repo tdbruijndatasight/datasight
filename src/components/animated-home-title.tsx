@@ -15,15 +15,15 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
-  const [typingPhase, setTypingPhase] = useState<'finalSentence' | 'done'>('finalSentence'); // Start directly with final sentence
+  const [typingPhase, setTypingPhase] = useState<'finalSentence' | 'done'>('finalSentence');
   const [showCursor, setShowCursor] = useState(true);
 
   const typingSpeed = 100;
+  const pauseDuration = 300; // Extra duration for pause
 
   useEffect(() => {
-    // Reset animation states when language changes
     setDisplayedText("");
-    setTypingPhase('finalSentence'); // Reset to start typing the final sentence directly
+    setTypingPhase('finalSentence');
     setShowCursor(true);
   }, [t, language]);
 
@@ -38,11 +38,18 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     if (typingPhase === 'finalSentence') {
       const fullSentence = t(finalSentenceKey);
       if (displayedText.length < fullSentence.length) {
+        let currentTypingSpeed = typingSpeed;
+        const lastCharTyped = displayedText.charAt(displayedText.length - 1);
+        const pauseAfterChars = ['>', ','];
+
+        if (pauseAfterChars.includes(lastCharTyped)) {
+          currentTypingSpeed += pauseDuration;
+        }
+
         timeoutId = setTimeout(() => {
           setDisplayedText(fullSentence.substring(0, displayedText.length + 1));
-        }, typingSpeed);
+        }, currentTypingSpeed);
       } else {
-        // Finished typing final sentence
         setTypingPhase('done');
         onSubtitleAnimate();
       }
