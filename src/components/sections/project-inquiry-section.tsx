@@ -196,7 +196,7 @@ const ProjectInquirySection: React.FC = () => {
             <Card className="shadow-xl bg-card border-primary/20">
               <CardContent className="relative p-6 md:p-8 pt-16 md:pt-8"> {/* Increased mobile top padding */}
                 {/* Mobile Coffee Cup - inside CardContent */}
-                <div className="absolute top-3 right-3 z-10 pointer-events-none block md:hidden w-14 h-14">
+                <div className="absolute top-0 transform -translate-y-1/2 -translate-x-1/2 right-3 z-10 pointer-events-none block md:hidden w-14 h-14">
                   <Image
                     src="/Coffee_Cup_DataSight.png"
                     alt="" 
