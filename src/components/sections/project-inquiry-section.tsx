@@ -168,13 +168,12 @@ const ProjectInquirySection: React.FC = () => {
     <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto relative">
         {/* Coffee Cup 1 */}
-        <div className="absolute -top-[5rem] transform -translate-y-1/2 z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
+        <div className="absolute top-0 transform -translate-y-1/2 z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Coffee_Cup_DataSight.png"
                 alt="Decorative coffee cup"
                 layout="fill"
                 objectFit="contain"
-                
             />
         </div>
         <AnimatedSection className="text-center mb-12 relative z-20">
@@ -281,3 +280,4 @@ const ProjectInquirySection: React.FC = () => {
 };
 
 export default ProjectInquirySection;
+
