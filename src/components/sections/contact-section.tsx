@@ -61,7 +61,7 @@ const ContactSection: React.FC = () => {
   return (
     <footer id="contact" className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground py-16 md:py-24">
       <div className="container mx-auto relative">
-        <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:right-auto md:left-0 md:translate-x-0">
+        <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 right-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Pen_DataSight.png"
                 alt="Decorative pen - DataSight - AI Generated"
