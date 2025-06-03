@@ -2,6 +2,7 @@
 "use client";
 
 import React from 'react';
+import Image from 'next/image';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/use-language';
@@ -59,7 +60,18 @@ const ContactSection: React.FC = () => {
 
   return (
     <footer id="contact" className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground py-16 md:py-24">
-      <div className="container mx-auto">
+      <div className="container mx-auto relative"> {/* Added relative positioning for the coffee cup */}
+        {/* Second Coffee Cup - Left Aligned */}
+        <div className="absolute -top-[4rem] left-0 transform -translate-y-1/2 z-10 hidden md:block pointer-events-none">
+            <Image
+                src="/Coffee_Cup_DataSight.png"
+                alt="Decorative coffee cup"
+                width={200}
+                height={200}
+                data-ai-hint="coffee cup illustration"
+            />
+        </div>
+
         <AnimatedSection className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
             {t('contactTitle')}
