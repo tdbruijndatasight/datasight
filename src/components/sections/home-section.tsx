@@ -35,7 +35,7 @@ const HomeSection: React.FC = () => {
 
       {/* Content wrapper: relative z-10 to sit on top of the geometric overlay */}
       <div className="relative z-10 container mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left bg-card/[.85] backdrop-blur-sm p-4 rounded-lg">
+        <AnimatedSection className="flex flex-col gap-6 items-center md:items-start text-center md:text-left backdrop-blur-sm p-4 rounded-lg">
           <AnimatedHomeTitle onSubtitleAnimate={handleSubtitleAnimate} />
           <p className={cn(
             "text-lg md:text-xl text-foreground/90 font-semibold subtitle-line-base",
@@ -88,4 +88,3 @@ const HomeSection: React.FC = () => {
 };
 
 export default HomeSection;
-
