@@ -77,7 +77,7 @@ const HomeSection: React.FC = () => {
                   quality={100}
                   className="rounded-full shadow-lg border border-primary/20"
                   priority
-                  data-ai-hint="profile person"
+                  
                 />
               </div>
               <div className="overflow-hidden"> {/* Clearfix for float */}
