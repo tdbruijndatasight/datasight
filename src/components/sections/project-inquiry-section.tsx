@@ -168,7 +168,7 @@ const ProjectInquirySection: React.FC = () => {
     <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto relative">
         {/* Coffee Cup 1 */}
-        <div className="absolute top-0 -mt-14 md:-mt-22 lg:-mt-26 z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
+        <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Coffee_Cup_DataSight.png"
                 alt="Decorative coffee cup"
