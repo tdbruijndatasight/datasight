@@ -67,7 +67,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <ThemeProvider defaultTheme="dark" storageKey="datasight-theme">
+    <ThemeProvider defaultTheme="light" storageKey="datasight-theme">
       <LanguageProvider>
         {/* Default language set here, suppressHydrationWarning for next-themes and initial FOUT */}
         <html lang="nl" suppressHydrationWarning>
