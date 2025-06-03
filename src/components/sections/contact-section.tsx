@@ -62,10 +62,10 @@ const ContactSection: React.FC = () => {
     <footer id="contact" className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground py-16 md:py-24">
       <div className="container mx-auto relative">
         {/* Desktop Pen - Boven de sectie */}
-        <div className="absolute top-0 md:-mt-[5rem] lg:-mt-[6rem] z-10 pointer-events-none hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48 right-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
+        <div className="absolute top-0 -mt-14 md:-mt-22 lg:-mt-26 z-10 pointer-events-none hidden md:block w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Pen_DataSight.png"
-                alt="Decorative pen - DataSight - AI Generated"
+                alt="Decorative pen"
                 layout="fill"
                 objectFit="contain"
             />
