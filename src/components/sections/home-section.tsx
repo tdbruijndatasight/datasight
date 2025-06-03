@@ -1,7 +1,7 @@
 
 "use client";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
@@ -14,12 +14,18 @@ import { cn } from '@/lib/utils';
 import profilePicture from '@/images/tom-de-bruijn-profile.jpeg';
 
 const HomeSection: React.FC = () => {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [shouldAnimateSubtitleLine, setShouldAnimateSubtitleLine] = useState(false);
 
   const handleSubtitleAnimate = () => {
     setShouldAnimateSubtitleLine(true);
   };
+
+  useEffect(() => {
+    // Reset subtitle line animation when language changes
+    // so it can re-animate after the title in the new language is typed.
+    setShouldAnimateSubtitleLine(false);
+  }, [language]);
 
   return (
     <section
@@ -28,7 +34,7 @@ const HomeSection: React.FC = () => {
     >
       {/* Geometrical overlay - more visible and positioned higher */}
       <div
-        className="absolute inset-0 bg-cover bg-[center_top] bg-no-repeat opacity-15 z-0"
+        className="absolute inset-0 bg-cover bg-[center_20%] bg-no-repeat opacity-15 z-0"
         style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
         data-ai-hint="geometric abstract background"
       ></div>
@@ -57,7 +63,7 @@ const HomeSection: React.FC = () => {
 
         <AnimatedSection delay="delay-200" className="flex justify-center">
           {/* Card with its own semi-transparent background for readability if geometric overlay is too light */}
-          <Card className="shadow-xl border-primary/20 bg-card/80 backdrop-blur-sm"> 
+          <Card className="shadow-xl border-primary/20 bg-card/80 backdrop-blur-sm">
             <CardHeader>
               <CardTitle className="text-2xl text-primary">{t('homeAboutMeTitle')}</CardTitle>
             </CardHeader>
@@ -69,7 +75,7 @@ const HomeSection: React.FC = () => {
                   width={120}
                   height={120}
                   quality={100}
-                  className="rounded-full shadow-lg border-2 border-primary/50"
+                  className="rounded-full shadow-lg border border-primary/20"
                   priority
                   data-ai-hint="profile person"
                 />

@@ -12,30 +12,20 @@ interface AnimatedHomeTitleProps {
 const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) => {
   const { t, language } = useLanguage();
 
-  const initialWordsNl = ["Data...", "Inzicht...", "Waarde..."];
-  const initialWordsEn = ["Data...", "Insights...", "Value..."];
   const finalSentenceKey = 'homeTitle';
 
   const [displayedText, setDisplayedText] = useState("");
-  const [currentInitialWordIndex, setCurrentInitialWordIndex] = useState(0);
-  const [typingPhase, setTypingPhase] = useState<'initialWord' | 'finalSentence' | 'done'>('initialWord');
+  const [typingPhase, setTypingPhase] = useState<'finalSentence' | 'done'>('finalSentence'); // Start directly with final sentence
   const [showCursor, setShowCursor] = useState(true);
 
   const typingSpeed = 100;
-  const pauseBetweenInitialWords = 3000;
-  const extraPauseBeforeFinalSentence = 500; 
-
-  const getCurrentInitialWords = () => {
-    return language === 'en' ? initialWordsEn : initialWordsNl;
-  };
 
   useEffect(() => {
     // Reset animation states when language changes
     setDisplayedText("");
-    setCurrentInitialWordIndex(0);
-    setTypingPhase('initialWord');
+    setTypingPhase('finalSentence'); // Reset to start typing the final sentence directly
     setShowCursor(true);
-  }, [t, language]); 
+  }, [t, language]);
 
   useEffect(() => {
     if (typingPhase === 'done') {
@@ -44,34 +34,8 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     }
 
     let timeoutId: NodeJS.Timeout | undefined;
-    const currentInitialWords = getCurrentInitialWords();
 
-    if (typingPhase === 'initialWord') {
-      if (currentInitialWordIndex < currentInitialWords.length) {
-        const wordToType = currentInitialWords[currentInitialWordIndex];
-        if (displayedText.length < wordToType.length) {
-          // Typing current initial word
-          timeoutId = setTimeout(() => {
-            setDisplayedText(wordToType.substring(0, displayedText.length + 1));
-          }, typingSpeed);
-        } else {
-          // Finished typing current initial word, pause, then clear for next or move to final
-          const isLastInitialWord = currentInitialWordIndex === currentInitialWords.length - 1;
-          const nextPauseDuration = isLastInitialWord
-            ? (pauseBetweenInitialWords - 2000 + extraPauseBeforeFinalSentence) 
-            : pauseBetweenInitialWords;
-
-          timeoutId = setTimeout(() => {
-            setDisplayedText(""); // Clear current word
-            if (!isLastInitialWord) {
-              setCurrentInitialWordIndex(prev => prev + 1);
-            } else {
-              setTypingPhase('finalSentence');
-            }
-          }, nextPauseDuration);
-        }
-      }
-    } else if (typingPhase === 'finalSentence') {
+    if (typingPhase === 'finalSentence') {
       const fullSentence = t(finalSentenceKey);
       if (displayedText.length < fullSentence.length) {
         timeoutId = setTimeout(() => {
@@ -87,7 +51,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [displayedText, currentInitialWordIndex, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, pauseBetweenInitialWords, extraPauseBeforeFinalSentence, language]);
+  }, [displayedText, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, language]);
 
 
   return (
