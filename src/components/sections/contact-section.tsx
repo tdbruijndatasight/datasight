@@ -62,27 +62,14 @@ const ContactSection: React.FC = () => {
     <footer id="contact" className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground py-16 md:py-24">
       <div className="container mx-auto relative">
         {/* Desktop Pen - Boven de sectie */}
-        <div className="absolute top-0 md:-mt-[4rem] lg:-mt-[5rem] z-10 pointer-events-none hidden md:block w-32 h-32 lg:w-40 lg:h-40 right-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
+        <div className="absolute top-0 md:-mt-[5rem] lg:-mt-[6rem] z-10 pointer-events-none hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48 right-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0">
             <Image
                 src="/Pen_DataSight.png"
                 alt="Decorative pen - DataSight - AI Generated"
                 layout="fill"
                 objectFit="contain"
-                
             />
         </div>
-
-        {/* Coffee Cup 2 - Boven de sectie - REMOVED
-        <div className="absolute top-0 -mt-[3rem] md:-mt-[5rem] lg:-mt-[6rem] z-10 pointer-events-none w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48 left-1/2 -translate-x-1/2 md:left-0 md:right-auto md:translate-x-0">
-          <Image
-            src="/Coffee_Cup_DataSight.png"
-            alt="Decorative coffee cup - AI Generated"
-            layout="fill"
-            objectFit="contain"
-            
-          />
-        </div>
-        */}
 
         <AnimatedSection className="text-center mb-12 relative z-20">
           <div className="flex items-center justify-center md:block">
@@ -96,7 +83,6 @@ const ContactSection: React.FC = () => {
                 alt="" 
                 layout="fill"
                 objectFit="contain"
-                
               />
             </div>
           </div>
