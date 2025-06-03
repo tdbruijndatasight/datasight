@@ -19,7 +19,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
   const [showCursor, setShowCursor] = useState(true);
 
   const typingSpeed = 100;
-  const pauseDuration = 300; // Extra duration for pause
+  const pauseDuration = 200; // Adjusted pause duration
 
   useEffect(() => {
     setDisplayedText("");
@@ -58,7 +58,7 @@ const AnimatedHomeTitle: FC<AnimatedHomeTitleProps> = ({ onSubtitleAnimate }) =>
     return () => {
       if (timeoutId) clearTimeout(timeoutId);
     };
-  }, [displayedText, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, language]);
+  }, [displayedText, typingPhase, t, finalSentenceKey, onSubtitleAnimate, typingSpeed, language, pauseDuration]);
 
 
   return (
