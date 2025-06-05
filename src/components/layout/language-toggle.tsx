@@ -20,14 +20,16 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ iconOnly = false, class
   };
 
   return (
-    <Button 
-      variant={iconOnly ? "ghost" : "outline"} 
+    <Button
+      variant="outline" // Always use outline variant for a base border
       size={iconOnly ? "icon" : "default"}
-      onClick={toggleLanguage} 
+      onClick={toggleLanguage}
       className={cn(
         "flex items-center gap-2",
-        !iconOnly && "border-primary text-primary hover:bg-primary hover:text-primary-foreground",
-        iconOnly && "text-primary hover:bg-primary/10",
+        "border-primary text-primary", // Common: always primary border and text
+        iconOnly
+          ? "hover:bg-primary/10" // Specific hover for iconOnly
+          : "hover:bg-primary hover:text-primary-foreground", // Specific hover for default
         className
       )}
       aria-label={iconOnly ? (language === 'nl' ? 'Switch to English' : 'Schakel naar Nederlands') : undefined}
