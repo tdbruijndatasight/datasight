@@ -369,7 +369,7 @@ export const translations: Translations = {
     homeAboutMeTitle: 'Welcome at DataSight.',
     homeAboutMeP1: "I'm Tom de Bruijn, founder of DataSight, established in 2024 with a clear mission: to help organizations tackle complex data challenges by transforming raw information into clear, actionable insights that create real value.",
     homeAboutMeP2: "With over a decade of experience and a solid foundation in APM and observability, I’ve grown into a versatile and seasoned data engineer.",
-    homeAboutMeP3: "Through DataSight, I offer consultancy, strategic guidance, and tailored training—backed by certifications in Splunk and Cribl—for organizations at any level of data maturity. Looking for a dedicated, experienced partner who’s genuinely invested in your success? Let’s connect.",
+    homeAboutMeP3: "Through DataSight, I offer consultancy, strategic guidance, and tailored training at any level of expertise. Looking for a dedicated, experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Customers and References',
