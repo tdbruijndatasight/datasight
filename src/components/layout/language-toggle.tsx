@@ -25,15 +25,11 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ iconOnly = false, class
   return (
     <Button
       variant="outline"
-      // When iconOnly, remove explicit size to use default height/py, and control width with px.
-      // Otherwise, use "default" size.
       size={iconOnly ? undefined : "default"}
       onClick={toggleLanguage}
       className={cn(
-        "border-primary text-primary", // Common: always primary border and text
-        iconOnly
-          ? "px-3 hover:bg-primary/10" // Specific style for iconOnly mode: auto-width with padding
-          : "hover:bg-primary hover:text-primary-foreground", // Specific hover for default mode
+        "border-primary text-primary hover:bg-primary hover:text-primary-foreground", // Common styles + desired hover for all states
+        iconOnly && "px-3", // Apply px-3 only if iconOnly is true for width adjustment
         className
       )}
       aria-label={iconOnly ? ariaLabelForIconOnly : t('languageToggle')}
@@ -51,4 +47,3 @@ const LanguageToggle: React.FC<LanguageToggleProps> = ({ iconOnly = false, class
 };
 
 export default LanguageToggle;
-
