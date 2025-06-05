@@ -64,7 +64,7 @@ const ContactSection: React.FC = () => {
         {/* Desktop Pen - Positioned on the dividing line */}
         <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none hidden md:block w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0">
             <Image
-                src="/Pen_DataSight.png"
+                src="/Pen_DataSight_GPT.png"
                 alt="Decorative pen"
                 fill={true}
                 style={{ objectFit: 'contain' }}
@@ -80,7 +80,7 @@ const ContactSection: React.FC = () => {
             {/* Mobile Pen - naast de titel */}
             <div className="relative w-16 h-16 ml-2 md:hidden shrink-0">
               <Image
-                src="/Pen_DataSight.png"
+                src="/Pen_DataSight_GPT.png"
                 alt="" 
                 fill={true}
                 style={{ objectFit: 'contain' }}

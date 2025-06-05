@@ -169,7 +169,7 @@ const ProjectInquirySection: React.FC = () => {
         {/* Desktop Coffee Cup - on dividing line */}
         <div className="absolute top-0 transform -translate-y-1/2 z-10 pointer-events-none hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0 md:translate-x-0">
           <Image
-            src="/Coffee_Cup_DataSight.png"
+            src="/Coffee_Cup_DataSight_GPT.png"
             alt="Decorative coffee cup"
             fill={true}
             style={{ objectFit: 'contain' }}
@@ -198,7 +198,7 @@ const ProjectInquirySection: React.FC = () => {
                 {/* Mobile Coffee Cup - inside CardContent */}
                 <div className="absolute top-0 transform -translate-y-1/2 -translate-x-1/2 right-3 z-10 pointer-events-none block md:hidden w-14 h-14">
                   <Image
-                    src="/Coffee_Cup_DataSight.png"
+                    src="/Coffee_Cup_DataSight_GPT.png"
                     alt="" 
                     fill={true}
                     style={{ objectFit: 'contain' }}

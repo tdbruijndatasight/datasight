@@ -367,9 +367,9 @@ export const translations: Translations = {
     homeTitle: 'Data > Insight > Value, Simple.',
     homeSubtitle: 'Tom de Bruijn | Splunk & Cribl Consultant',
     homeAboutMeTitle: 'Welcome at DataSight.',
-    homeAboutMeP1: "My name is Tom de Bruijn and I founded DataSight in 2024. With DataSight, I have a clear mission: to help organizations with complex data issues by providing clear, usable insights that deliver real value.",
-    homeAboutMeP2: "With over ten years of experience and a strong background in APM and observability, I have developed into a versatile and experienced data engineer in recent years.",
-    homeAboutMeP3: "From DataSight, as a certified specialist in Splunk and Cribl, I am available for consultancy, strategic advice, and customized training at all levels. Looking for an experienced partner who is genuinely committed to your success? Let's get acquainted.",
+    homeAboutMeP1: "I'm Tom de Bruijn, founder of DataSight, established in 2024 with a clear mission: to help organizations tackle complex data challenges by transforming raw information into clear, actionable insights that create real value.",
+    homeAboutMeP2: "With over a decade of experience and a solid foundation in APM and observability, I’ve grown into a versatile and seasoned data engineer.",
+    homeAboutMeP3: "Through DataSight, I offer consultancy, strategic guidance, and tailored training—backed by certifications in Splunk and Cribl—for organizations at any level of data maturity. Looking for a dedicated, experienced partner who’s genuinely invested in your success? Let’s connect.",
     homeCTA: 'Get in Touch',
 
     customersTitlePart1: 'Customers and References',
@@ -381,7 +381,7 @@ export const translations: Translations = {
     customersCTAPleasure: "I would be happy to get in touch for a no-obligation introduction.",
 
     servicesTitle: 'Services',
-    servicesSubtitle: "With DataSight, I help organizations to truly extract value from their data. I do this not only with the services listed below, but also with the right technical solutions, knowledge, and experience. Whether it's a cloud migration, automation, or deploying products like Splunk ITSI or Enterprise Security – I'm here to think along and assist with the execution.",
+    servicesSubtitle: "At DataSight, I help organizations unlock the full value of their data. This goes beyond the services listed below and includes the right combination of technical solutions, expertise, and hands-on experience. Whether you are going through a cloud migration, automating key processes, or working with products such as Splunk ITSI or Enterprise Security, I am here to collaborate, provide guidance, and support successful execution.",
 
     service1Title: 'Splunk Consultancy',
     service1Description: 'For proactive management, in-depth expertise, projects, and value optimization of your environment. Read more.',
