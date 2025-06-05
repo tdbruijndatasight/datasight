@@ -3,7 +3,7 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
+import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
@@ -11,6 +11,8 @@ import { SITE_CONFIG } from '@/constants/site';
 import { Mail, Phone, Linkedin as LinkedinIconLucide, ExternalLink } from 'lucide-react';
 import Link from 'next/link';
 import { useToast } from "@/hooks/use-toast";
+import { cn } from '@/lib/utils';
+import penImage from '@/images/Pen_DataSight_GPT.png';
 
 const ContactSection: React.FC = () => {
   const { t } = useLanguage();
@@ -62,25 +64,31 @@ const ContactSection: React.FC = () => {
     <footer id="contact" className="bg-gradient-to-br from-primary to-blue-700 text-primary-foreground py-16 md:py-24">
       <div className="container mx-auto relative">
         {/* Desktop Pen - Positioned on the dividing line */}
-        <div className="absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none hidden md:block w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0">
-            <Image
-                src="/Pen_DataSight_GPT.png"
-                alt="Decorative pen"
-                fill={true}
-                style={{ objectFit: 'contain' }}
-                sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem, 8rem"
-            />
+         <div
+          className={cn(
+            'absolute -top-[4rem] transform -translate-y-1/2 z-10 pointer-events-none', // Base positioning
+            'w-32 h-32 md:w-40 md:h-40 lg:w-48 lg:h-48', // Responsive sizes
+            'hidden md:block md:right-0' // Desktop visibility and alignment
+          )}
+        >
+          <Image
+            src={penImage}
+            alt="Decorative pen"
+            fill={true}
+            style={{ objectFit: 'contain' }}
+            sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem, 8rem"
+          />
         </div>
 
         <AnimatedSection className="text-center mb-12 relative z-20">
-          <div className="flex items-center justify-center md:block">
+          <div className="flex items-center justify-center">
             <h2 className="text-3xl md:text-4xl font-bold md:mb-4">
               {t('contactTitle')}
             </h2>
             {/* Mobile Pen - naast de titel */}
             <div className="relative w-16 h-16 ml-2 md:hidden shrink-0">
               <Image
-                src="/Pen_DataSight_GPT.png"
+                src={penImage}
                 alt="" 
                 fill={true}
                 style={{ objectFit: 'contain' }}

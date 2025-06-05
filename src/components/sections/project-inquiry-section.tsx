@@ -17,6 +17,7 @@ import { Loader2, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import type { TranslationContent } from '@/lib/translations';
+import coffeeCupImage from '@/images/Coffee_Cup_DataSight_GPT.png';
 
 const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
   'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder5',
@@ -167,13 +168,20 @@ const ProjectInquirySection: React.FC = () => {
     <section id="inquiry" className="bg-secondary section-min-height">
       <div className="container mx-auto relative">
         {/* Desktop Coffee Cup - on dividing line */}
-        <div className="absolute top-0 transform -translate-y-1/2 z-10 pointer-events-none hidden md:block md:w-40 md:h-40 lg:w-48 lg:h-48 md:right-0 md:translate-x-0">
+        <div
+          className={cn(
+            'absolute top-0 transform -translate-y-1/2 z-10 pointer-events-none',
+            'w-24 h-24 md:w-40 md:h-40 lg:w-48 lg:h-48', // Sizes
+            'left-1/2 -translate-x-1/2 md:left-auto md:right-0 md:translate-x-0', // Positioning
+            'hidden md:flex md:items-center md:justify-center' // Visibility & flex
+          )}
+        >
           <Image
-            src="/Coffee_Cup_DataSight_GPT.png"
+            src={coffeeCupImage}
             alt="Decorative coffee cup"
             fill={true}
             style={{ objectFit: 'contain' }}
-            sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem"
+            sizes="(min-width: 1024px) 12rem, (min-width: 768px) 10rem, 6rem" 
           />
         </div>
 
@@ -194,12 +202,12 @@ const ProjectInquirySection: React.FC = () => {
         <AnimatedSection delay="delay-200" className="relative z-20">
           <div className="max-w-2xl mx-auto relative">
             <Card className="shadow-xl bg-card border-primary/20">
-              <CardContent className="relative p-6 md:p-8 pt-16 md:pt-8"> {/* Increased mobile top padding */}
+              <CardContent className="relative p-6 md:p-8 pt-10 md:pt-8"> {/* Adjusted mobile top padding */}
                 {/* Mobile Coffee Cup - inside CardContent */}
-                <div className="absolute top-0 transform -translate-y-1/2 -translate-x-1/2 right-3 z-10 pointer-events-none block md:hidden w-14 h-14">
+                <div className="absolute top-0 right-3 transform -translate-y-1/2 z-30 pointer-events-none block md:hidden w-14 h-14">
                   <Image
-                    src="/Coffee_Cup_DataSight_GPT.png"
-                    alt="" 
+                    src={coffeeCupImage}
+                    alt=""
                     fill={true}
                     style={{ objectFit: 'contain' }}
                     sizes="3.5rem" 

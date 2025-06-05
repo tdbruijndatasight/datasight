@@ -1,3 +1,4 @@
+
 "use client";
 
 import type { ReactNode } from 'react';
@@ -13,18 +14,57 @@ interface LanguageContextType {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
-  const [language, setLanguage] = useState<Locale>('nl'); // Default to Dutch
+  // Initial default, will be updated by useEffect
+  const [currentLanguage, setCurrentLanguageState] = useState<Locale>('nl'); 
+
+  // This function will be exposed via context to set the language
+  // and handle side effects like localStorage and html lang attribute.
+  const setLanguage = (newLang: Locale) => {
+    if (newLang === 'en' || newLang === 'nl') {
+      if (typeof window !== 'undefined') {
+        localStorage.setItem('datasight-language', newLang);
+        document.documentElement.lang = newLang;
+      }
+      setCurrentLanguageState(newLang);
+    }
+  };
 
   useEffect(() => {
-    // You could potentially sync with localStorage or browser preference here
-    // For now, just set the HTML lang attribute
+    // This effect runs once on mount to determine the initial language.
     if (typeof window !== 'undefined') {
-      document.documentElement.lang = language;
+      const params = new URLSearchParams(window.location.search);
+      const langFromUrl = params.get('lang') as Locale | null;
+
+      // 1. Check URL parameter
+      if (langFromUrl && (langFromUrl === 'en' || langFromUrl === 'nl')) {
+        setLanguage(langFromUrl);
+        return;
+      }
+
+      // 2. Check localStorage
+      const storedLang = localStorage.getItem('datasight-language') as Locale | null;
+      if (storedLang && (storedLang === 'en' || storedLang === 'nl')) {
+        setLanguage(storedLang);
+        return;
+      }
+
+      // 3. Browser language detection (proxy for location)
+      const browserLang = navigator.language.toLowerCase();
+      if (browserLang.startsWith('nl')) { // Covers 'nl', 'nl-nl', 'nl-be'
+        setLanguage('nl');
+      } else {
+        setLanguage('en'); // Default to English if browser language is not Dutch
+      }
     }
-  }, [language]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Empty dependency array ensures this runs once on mount after client is available
 
   const t = (key: keyof Translations[Locale], replacements?: Record<string, string>): string => {
-    let translation = translations[language][key] || translations['en'][key] || String(key); // Fallback to English then key
+    const langSpecificTranslations = translations[currentLanguage];
+    const englishTranslations = translations['en'];
+    
+    let translation = langSpecificTranslations?.[key] || englishTranslations?.[key] || String(key); 
+
     if (replacements) {
       Object.keys(replacements).forEach((placeholder) => {
         translation = translation.replace(new RegExp(`{{${placeholder}}}`, 'g'), replacements[placeholder]);
@@ -35,7 +75,7 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ language: currentLanguage, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );
@@ -48,3 +88,4 @@ export const useLanguage = () => {
   }
   return context;
 };
+
