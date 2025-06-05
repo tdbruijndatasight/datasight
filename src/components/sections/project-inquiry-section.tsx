@@ -17,7 +17,6 @@ import { Loader2, Send } from 'lucide-react';
 import { useToast } from '@/hooks/use-toast';
 import { cn } from '@/lib/utils';
 import type { TranslationContent } from '@/lib/translations';
-import coffeeCupImage from '@/images/Coffee_Cup_DataSight_GPT.png';
 
 const allOriginalPlaceholderKeys: (keyof TranslationContent)[] = [
   'inquiryPlaceholder1', 'inquiryPlaceholder2', 'inquiryPlaceholder3', 'inquiryPlaceholder5',
@@ -177,7 +176,7 @@ const ProjectInquirySection: React.FC = () => {
           )}
         >
           <Image
-            src={coffeeCupImage}
+            src="/Coffee_Cup_DataSight_GPT.png"
             alt="Decorative coffee cup"
             fill={true}
             style={{ objectFit: 'contain' }}
@@ -206,7 +205,7 @@ const ProjectInquirySection: React.FC = () => {
                 {/* Mobile Coffee Cup - inside CardContent */}
                 <div className="absolute top-0 right-3 transform -translate-y-1/2 z-30 pointer-events-none block md:hidden w-14 h-14">
                   <Image
-                    src={coffeeCupImage}
+                    src="/Coffee_Cup_DataSight_GPT.png"
                     alt=""
                     fill={true}
                     style={{ objectFit: 'contain' }}

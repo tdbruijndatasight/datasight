@@ -12,7 +12,6 @@ import { Mail, Phone, Linkedin as LinkedinIconLucide, ExternalLink } from 'lucid
 import Link from 'next/link';
 import { useToast } from "@/hooks/use-toast";
 import { cn } from '@/lib/utils';
-import penImage from '@/images/Pen_DataSight_GPT.png';
 
 const ContactSection: React.FC = () => {
   const { t } = useLanguage();
@@ -72,7 +71,7 @@ const ContactSection: React.FC = () => {
           )}
         >
           <Image
-            src={penImage}
+            src="/Pen_DataSight_GPT.png"
             alt="Decorative pen"
             fill={true}
             style={{ objectFit: 'contain' }}
@@ -88,7 +87,7 @@ const ContactSection: React.FC = () => {
             {/* Mobile Pen - naast de titel */}
             <div className="relative w-16 h-16 ml-2 md:hidden shrink-0">
               <Image
-                src={penImage}
+                src="/Pen_DataSight_GPT.png"
                 alt="" 
                 fill={true}
                 style={{ objectFit: 'contain' }}
