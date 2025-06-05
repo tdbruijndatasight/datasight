@@ -185,8 +185,8 @@ const ServicesSection: React.FC = () => {
                       className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-md group font-semibold"
                       onClick={() => setIsOverlayOpen(false)} // Close dialog on button click
                     >
-                        <Link href="/#contact">
-                            {t('service1DetailCTA')}
+                        <Link href="/#inquiry">
+                            {t(selectedService.detailCTAKey)}
                             <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
                         </Link>
                     </Button>

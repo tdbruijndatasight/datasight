@@ -36,7 +36,7 @@ const HomeSection: React.FC = () => {
       <div
         className="absolute inset-0 bg-cover bg-[center_20%] bg-no-repeat opacity-15 z-0"
         style={{ backgroundImage: `url('/geometrical_bg_tom.png')` }}
-        data-ai-hint="geometric abstract background"
+        
       ></div>
 
       {/* Content wrapper: relative z-10 to sit on top of the geometric overlay */}
@@ -54,7 +54,7 @@ const HomeSection: React.FC = () => {
             size="lg"
             className="bg-accent hover:bg-accent/90 text-accent-foreground shadow-lg transition-transform hover:scale-105 group font-semibold"
           >
-            <Link href="#contact">
+            <Link href="/#inquiry">
               {t('homeCTA')}
               <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
             </Link>
