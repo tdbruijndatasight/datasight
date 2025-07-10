@@ -6,7 +6,7 @@ export interface TranslationContent {
   navHome: string;
   navExperience: string;
   navServices: string;
-  // navPublications: string; // Hidden
+  navBlogs: string;
   navProjectInquiry: string;
   navContact: string;
   languageToggle: string;
@@ -25,8 +25,8 @@ export interface TranslationContent {
 
   // Customers Section
   customersTitlePart1: string;
-  customersTitlePart2: string; // Retained from user's base
-  customersTitlePart3: string; // Retained from user's base
+  customersTitlePart2: string; 
+  customersTitlePart3: string; 
   customersDescription: string;
   customersLinkedInClarification: string;
   customersCTAChallenge: string;
@@ -73,9 +73,19 @@ export interface TranslationContent {
   service5DetailCTA: string;
   service5DialogFooterText: string;
 
+  // Blogs Section
+  blogsTitle: string;
+  blogsSubtitle: string;
+  readMore: string;
+  blog1TeaserTitle: string;
+  blog1TeaserCTA: string;
+  blog1ArticleTitle: string;
+  blog1FullArticle: string;
+  backToOverview: string;
+
   // Project Inquiry Section
   projectInquiryTitle: string;
-  projectInquirySubtitle: string; // This is the animated one
+  projectInquirySubtitle: string; 
   questionStaticPlaceholder: string;
   emailLabel: string;
   emailPlaceholder: string;
@@ -87,23 +97,18 @@ export interface TranslationContent {
   contactFormSuccessTitle: string;
   contactFormSuccessMessage: string;
   contactFormError: string;
-  // contactFormResponseTime: string; // Removed from form display
 
   inquiryPlaceholder1: string;
   inquiryPlaceholder2: string;
   inquiryPlaceholder3: string;
-  // inquiryPlaceholder4: string; // Removed
   inquiryPlaceholder5: string;
   inquiryPlaceholder6: string;
   inquiryPlaceholder7: string;
   inquiryPlaceholder8: string;
   inquiryPlaceholder9: string;
-  // inquiryPlaceholder10: string; // Removed
   inquiryPlaceholder11: string;
   inquiryPlaceholder12: string;
-  // inquiryPlaceholder13: string; // Removed
   inquiryPlaceholder14: string;
-  // inquiryPlaceholder15: string; // Removed
   inquiryPlaceholder16: string;
 
   // Contact Section
@@ -188,7 +193,7 @@ export const translations: Translations = {
     navHome: 'Home',
     navExperience: 'Ervaring',
     navServices: 'Diensten',
-    // navPublications: 'Publicaties', // Hidden
+    navBlogs: 'Blogs',
     navProjectInquiry: 'Contactformulier',
     navContact: 'Contact',
     languageToggle: 'Switch to English',
@@ -251,6 +256,72 @@ export const translations: Translations = {
     service5DetailBullet5: 'Trainingen op locatie of remote, op eigen of demo-omgeving',
 	  service5DialogFooterText: "Neem gerust contact op om de mogelijkheden te bespreken. Omdat alles maatwerk is, bespreken we de prijzen altijd in overleg.",
     service5DetailCTA: 'Neem contact op',
+    
+    blogsTitle: "Blogs",
+    blogsSubtitle: "Gedachten, handleidingen en inzichten over data, observability en de praktijk.",
+    readMore: "Lees meer",
+    backToOverview: "Terug naar overzicht",
+
+    blog1TeaserTitle: "🚀 Hoe koppel je Azure DevOps Workitems slim aan Splunk en krijg je realtime inzicht in MTTR, teamperformance en doorlooptijden?",
+    blog1TeaserCTA: "In deze blog lees je hoe wij dat aanpakken — inclusief YAML, API's en dashboarding.\nEen must-read voor engineers én managers die meer uit hun data willen halen.",
+    blog1ArticleTitle: "📝 Van Azure DevOps naar Splunk: Volledig inzicht in workitems, MTTR en teamvoortgang",
+    blog1FullArticle: `In veel DevOps-omgevingen leven workitems en technische logs in gescheiden werelden. Engineers loggen ijverig alles wat fout gaat, maar het koppelen van die logs aan daadwerkelijke tickets — inclusief de status en doorlooptijd — blijft vaak uit. Gevolg: beperkte inzichten in de Mean Time To Resolve (MTTR), geen zicht op openstaande issues per team of afdeling, en lastig te verbeteren processen.
+
+Met een slimme integratie tussen Azure DevOps en Splunk hebben wij dit opgelost. En het mooie: zowel engineers als managers plukken daar de vruchten van.
+
+**✅ Wat levert het op?**
+
+- **Voor engineers:** directe koppeling van logs en events aan relevante workitems — geen context-switch nodig.
+- **Voor managers:** realtime dashboarding van ticketstatussen, MTTR/MTBF, doorlooptijden en bottlenecks.
+- **Voor teams:** stuurinformatie over performance per afdeling, prioriteit of tag.
+- **Voor de hele organisatie:** data-gedreven verbeterkansen en minder verrassingen.
+
+**📸 Hieronder een voorbeeld van het Splunk-dashboard zoals dat live draait (voeg hier je dashboard-afbeelding toe):**
+
+[Afbeelding: Splunk Dashboard – MTTR / Ticket Status / Filters per afdeling]
+
+In deze blog leggen we uit hoe je dit technisch opzet — met YAML scripts, API tokens en slimme filtering. De implementatie is robuust, schaalbaar en makkelijk aanpasbaar aan je eigen datamodellen.
+
+**🔧 YAML-integratie: zo werkt het**
+
+Met één slim YAML-script verbinden we Azure DevOps met Splunk, waardoor je altijd inzicht hebt in actuele workitem-data. Hieronder zie je de vereenvoudigde datastroom:
+
+**Benodigdheden**
+
+- Azure DevOps PAT token – voor het ophalen van workitems via de REST API
+- Splunk REST token – om de huidige status van workitems op te vragen
+- Splunk HEC token – om nieuwe data als event naar Splunk te sturen
+- Splunk index + JSON sourcetype – om de data correct op te slaan en te visualiseren
+- Server of runner – die toegang heeft tot zowel Azure DevOps als Splunk en het script periodiek uitvoert (bijv. via cronjob of CI-pipeline)
+
+**Proces in 5 stappen**
+
+1.  **ℹ️ Azure DevOps API**
+    Haalt alle workitems op die in de afgelopen 24 uur zijn gewijzigd.
+2.  **🔍 Azure DevOps Batch API**
+    Vraagt per ID de relevante velden op (zoals status, priority, team).
+3.  **🔄 Splunk REST API**
+    Controleert welke workitems al in Splunk staan.
+4.  **🧠 Filtering**
+    Vergelijkt de datasets en selecteert alleen de nieuwe of gewijzigde records.
+5.  **🚀 Call to Splunk HEC**
+    Stuurt deze records via HEC naar Splunk, als JSON-event.
+
+---
+
+**📊 Het resultaat? Eén slim dashboard**
+
+Met deze koppeling laad je realtime data in Splunk en bereken je automatisch:
+
+- MTTR / MTBF per team of afdeling
+- Doorlooptijd per ticket
+- Bottlenecks per status, prioriteit of tag
+
+Inclusief dynamische filters en timecharts voor diepere analyses — zonder handmatig rapporteren.
+
+---
+
+Wil je deze aanpak zelf proberen of eerst een demo zien? Neem gerust contact op! We laten je graag zien hoe dit binnen jouw organisatie toegepast kan worden.`,
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
@@ -270,18 +341,14 @@ export const translations: Translations = {
     inquiryPlaceholder1: "Werk je met Splunk of Cribl en loop je ergens tegenaan? 🤔\nIk denk graag met u mee.",
     inquiryPlaceholder2: "Heb je een uitdaging in het gebruik of beheer van Splunk of Cribl? 🎯\nStuur ons gerust een berichtje.",
     inquiryPlaceholder3: "Ook voor een virtuele ☕ of korte kennismaking.\nPlan hier eenvoudig 30 minuten in je agenda 📅.",
-    // inquiryPlaceholder4: "Op zoek naar een training op maat voor jouw team in Splunk of Cribl? 🎓\nWij bellen graag even.", // Removed
     inquiryPlaceholder5: "Vragen over Splunk Observability, Security of ITSI? 🔍\nIk denk graag met u mee.",
     inquiryPlaceholder6: "Wil je efficiënter werken met Cribl of Splunk? 🛠️\nDataSight geeft ook hands-on trainingen die precies aansluiten bij jouw situatie.",
     inquiryPlaceholder7: "Hulp nodig met dashboarding, alerting of rapportages in Splunk? 📊\nIk help graag.",
     inquiryPlaceholder8: "Beheer je Cribl Stream of Edge en wil je het maximale eruit halen? 📈\nLaten we kijken wat er mogelijk is.",
     inquiryPlaceholder9: "Hulp nodig bij het opzetten of optimaliseren van Cribl Pipelines? ⚙️\nStuur gerust een berichtje.",
-    // inquiryPlaceholder10: "Training nodig, maar geen standaard verhaal? 💡\nWij bieden maatwerk – praktisch, begrijpelijk en direct toepasbaar.", // Removed
     inquiryPlaceholder11: "Gewoon even kennismaken of een vraag stellen over Splunk/Cribl? 👋\nStuur gerust een berichtje!",
     inquiryPlaceholder12: "Wil je met minder data meer inzicht krijgen? ✨\nIk help om slimme keuzes te maken met Splunk & Cribl.",
-    // inquiryPlaceholder13: "Een snelle call om je Splunk-omgeving future-proof te maken? 📞\nPlan 'm hier in 🎧.", // Removed
     inquiryPlaceholder14: "Wil je met je team sneller werken in Cribl of Splunk? 🚀\n De trainingen zijn hands-on, maatwerk en zonder onnodige theorie.",
-    // inquiryPlaceholder15: "Liever 1-op-1 begeleiding dan droge documentatie? 👨‍🏫\nWij begeleiden je praktisch, op jouw tempo.", // Removed
     inquiryPlaceholder16: "Wil je kosten besparen door Splunk en Cribl slimmer in te zetten? ✨\n Ik graag meer met je mee naar efficiënte oplossingen.",
 
     contactTitle: 'Neem Contact Op',
@@ -356,7 +423,7 @@ export const translations: Translations = {
     navHome: 'Home',
     navExperience: 'Experience',
     navServices: 'Services',
-    // navPublications: 'Publications', // Hidden
+    navBlogs: 'Blogs',
     navProjectInquiry: 'Contact Form',
     navContact: 'Contact',
     languageToggle: 'Schakel naar Nederlands',
@@ -418,6 +485,73 @@ export const translations: Translations = {
     service5DetailBullet5: "Trainings on-site or remotely, on your own or demo environment",
 	  service5DialogFooterText: "Feel free to contact us to discuss the possibilities. Since everything is custom-made, we always discuss prices in consultation.",
     service5DetailCTA: 'Get in touch',
+    
+    blogsTitle: "Blogs",
+    blogsSubtitle: "Thoughts, guides, and insights on data, observability, and real-world practice.",
+    readMore: "Read more",
+    backToOverview: "Back to overview",
+    
+    blog1TeaserTitle: "🚀 How to intelligently connect Azure DevOps Workitems to Splunk for real-time insights into MTTR, team performance, and lead times?",
+    blog1TeaserCTA: "In this blog, you'll read how we tackle this — including YAML, APIs, and dashboarding.\nA must-read for engineers and managers looking to get more out of their data.",
+    blog1ArticleTitle: "📝 From Azure DevOps to Splunk: Complete Insight into Workitems, MTTR, and Team Progress",
+    blog1FullArticle: `In many DevOps environments, workitems and technical logs exist in separate worlds. Engineers diligently log everything that goes wrong, but linking those logs to actual tickets—including their status and lead time—is often overlooked. The result: limited insights into Mean Time To Resolve (MTTR), no visibility into open issues per team or department, and difficult-to-improve processes.
+
+We solved this with a smart integration between Azure DevOps and Splunk. And the best part: both engineers and managers reap the benefits.
+
+**✅ What are the benefits?**
+
+- **For engineers:** direct linking of logs and events to relevant workitems—no context-switching needed.
+- **For managers:** real-time dashboarding of ticket statuses, MTTR/MTBF, lead times, and bottlenecks.
+- **For teams:** steering information on performance per department, priority, or tag.
+- **For the entire organization:** data-driven improvement opportunities and fewer surprises.
+
+**📸 Below is an example of the Splunk dashboard as it runs live (add your dashboard image here):**
+
+[Image: Splunk Dashboard – MTTR / Ticket Status / Filters per department]
+
+In this blog, we explain how to set this up technically—with YAML scripts, API tokens, and smart filtering. The implementation is robust, scalable, and easily adaptable to your own data models.
+
+**🔧 YAML Integration: How It Works**
+
+With one smart YAML script, we connect Azure DevOps to Splunk, giving you constant insight into current workitem data. Below is the simplified data flow:
+
+**Requirements**
+
+- Azure DevOps PAT token – for retrieving workitems via the REST API
+- Splunk REST token – to query the current status of workitems
+- Splunk HEC token – to send new data as an event to Splunk
+- Splunk index + JSON sourcetype – to store and visualize the data correctly
+- Server or runner – that has access to both Azure DevOps and Splunk and runs the script periodically (e.g., via cronjob or CI pipeline)
+
+**Process in 5 Steps**
+
+1.  **ℹ️ Azure DevOps API**
+    Retrieves all workitems modified in the last 24 hours.
+2.  **🔍 Azure DevOps Batch API**
+    Requests relevant fields per ID (such as status, priority, team).
+3.  **🔄 Splunk REST API**
+    Checks which workitems are already in Splunk.
+4.  **🧠 Filtering**
+    Compares the datasets and selects only the new or modified records.
+5.  **🚀 Call to Splunk HEC**
+    Sends these records via HEC to Splunk as a JSON event.
+
+---
+
+**📊 The result? One smart dashboard**
+
+With this integration, you load real-time data into Splunk and automatically calculate:
+
+- MTTR / MTBF per team or department
+- Lead time per ticket
+- Bottlenecks per status, priority, or tag
+
+Including dynamic filters and timecharts for deeper analysis—without manual reporting.
+
+---
+
+Want to try this approach yourself or see a demo first? Feel free to get in touch! We'll gladly show you how it can be applied within your organization.`,
+
 
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
@@ -437,18 +571,14 @@ export const translations: Translations = {
     inquiryPlaceholder1: "Working with Splunk or Cribl and facing a challenge? 🤔\nI'am happy to brainstorm with you.",
     inquiryPlaceholder2: "Have a challenge using or managing Splunk or Cribl? 🎯\nI'll gladly send you a message.",
     inquiryPlaceholder3: "Also for a virtual ☕ or a brief introduction.\nEasily schedule 30 minutes in your calendar here 📅.",
-    // inquiryPlaceholder4: "Looking for a custom training for your team in Splunk or Cribl? 🎓\nI'am happy to call.", // Removed
     inquiryPlaceholder5: "Questions about Splunk Observability, Security, or ITSI? 🔍\nI'am happy to think along.",
     inquiryPlaceholder6: "Want to work more efficiently with Cribl or Splunk? 🛠️\nDataSight gives also hands-on training tailored to your situation.",
     inquiryPlaceholder7: "Need help with dashboarding, alerting, or reporting in Splunk? 📊\nI'am happy to help you get started.",
     inquiryPlaceholder8: "Managing Cribl Stream or Edge and want to get the most out of it? 📈\nI'll explore the possibilities together.",
     inquiryPlaceholder9: "Need help setting up or optimizing Cribl Pipelines? ⚙️\nI'll gladly send you a message.",
-    // inquiryPlaceholder10: "Need training, but not a standard package? 💡\nWe offer custom solutions – practical, understandable, and directly applicable.", // Removed
     inquiryPlaceholder11: "Just want to get acquainted or ask a question about Splunk/Cribl? 👋\nI'll gladly send you a message!",
     inquiryPlaceholder12: "Want to gain more insight with less data? ✨\nI help to make smart choices with Splunk & Cribl.",
-    // inquiryPlaceholder13: "A quick call to make your Splunk environment future-proof? 📞\nSchedule it here 🎧.", // Removed
     inquiryPlaceholder14: "Want your team to work faster in Cribl or Splunk? 🚀\n The trainings are hands-on, custom, and without unnecessary theory.",
-    // inquiryPlaceholder15: "Prefer 1-on-1 guidance over dry documentation? 👨‍🏫\nWe guide you practically, at your own pace.", // Removed
     inquiryPlaceholder16: "Want to save costs by using Splunk and Cribl smarter? ✨\n I'am happy to look into efficient solutions with you.",
 
     contactTitle: 'Get in Touch',
@@ -540,4 +670,3 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   });
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
-

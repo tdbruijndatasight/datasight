@@ -25,11 +25,22 @@ export interface CompanyLogo {
   height?: number;
 }
 
+export interface BlogItem {
+  slug: string;
+  imageSrc: string;
+  dataAiHint: string;
+  date: string; // YYYY-MM-DD for consistency
+  titleKey: keyof TranslationContent;
+  teaserKey: keyof TranslationContent;
+  fullArticleKey: keyof TranslationContent;
+  articleTitleKey: keyof TranslationContent;
+}
+
 export const NAV_ITEMS: NavItem[] = [
   { labelKey: 'navHome', href: '/#home', id: 'home' },
   { labelKey: 'navServices', href: '/#services', id: 'services' },
   { labelKey: 'navExperience', href: '/#customers', id: 'customers' },
-  // { labelKey: 'navPublications', href: '/#publications', id: 'publications' }, // Hidden
+  { labelKey: 'navBlogs', href: '/#blogs', id: 'blogs' },
   { labelKey: 'navProjectInquiry', href: '/#inquiry', id: 'inquiry' },
   { labelKey: 'navContact', href: '/#contact', id: 'contact' },
 ];
@@ -60,5 +71,20 @@ export const SERVICE_ITEMS: ServiceItemConstant[] = [
   { titleKey: 'service2Title', descriptionKey: 'service2Description', icon: 'CriblIcon' },
   { titleKey: 'service5Title', descriptionKey: 'service5Description', icon: 'Clipboard' },
 ] as const;
+
+
+export const BLOG_ITEMS: BlogItem[] = [
+  {
+    slug: 'azure-devops-naar-splunk-inzicht',
+    imageSrc: 'https://placehold.co/600x400.png',
+    dataAiHint: 'dashboard charts',
+    date: '2024-05-20',
+    titleKey: 'blog1TeaserTitle',
+    teaserKey: 'blog1TeaserCTA',
+    fullArticleKey: 'blog1FullArticle',
+    articleTitleKey: 'blog1ArticleTitle',
+  }
+];
+
 
 export const PUBLICATION_ITEMS = [] as const;
