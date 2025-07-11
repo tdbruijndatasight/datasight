@@ -51,11 +51,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     title: nlTranslations[post.articleTitleKey],
     article: nlTranslations[post.fullArticleKey],
     back: nlTranslations.backToOverview,
+    by: nlTranslations.by,
   };
   const enContent = {
     title: enTranslations[post.articleTitleKey],
     article: enTranslations[post.fullArticleKey],
     back: enTranslations.backToOverview,
+    by: enTranslations.by,
   };
 
   return (
@@ -66,12 +68,12 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           {/* We'll render both and use CSS to toggle visibility based on the html[lang] attribute */}
           <div lang="nl" className="[&[lang=en]_&]:hidden">
             <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">{nlContent.title}</h1>
-            <p className="text-sm text-muted-foreground mb-6">{formatDate(post.date, 'nl-NL')}</p>
+            <p className="text-sm text-muted-foreground mb-6">{formatDate(post.date, 'nl-NL')} - {nlContent.by} Tom de Bruijn</p>
             <div className="prose prose-blue dark:prose-invert max-w-none text-foreground/90" dangerouslySetInnerHTML={{ __html: nlContent.article.replace(/\n/g, '<br />').replace(/\*\*✅ (.*?)\*\*/g, '<strong>✅ $1</strong>').replace(/\*\*📸 (.*?)\*\*/g, '<strong>📸 $1</strong>').replace(/\*\*🔧 (.*?)\*\*/g, '<strong>🔧 $1</strong>').replace(/\*\*📊 (.*?)\*\*/g, '<strong>📊 $1</strong>') }} />
           </div>
           <div lang="en" className="[&[lang=nl]_&]:hidden">
             <h1 className="text-3xl md:text-4xl font-bold text-primary mb-2">{enContent.title}</h1>
-            <p className="text-sm text-muted-foreground mb-6">{formatDate(post.date, 'en-US')}</p>
+            <p className="text-sm text-muted-foreground mb-6">{formatDate(post.date, 'en-US')} - {enContent.by} Tom de Bruijn</p>
             <div className="prose prose-blue dark:prose-invert max-w-none text-foreground/90" dangerouslySetInnerHTML={{ __html: enContent.article.replace(/\n/g, '<br />').replace(/\*\*✅ (.*?)\*\*/g, '<strong>✅ $1</strong>').replace(/\*\*📸 (.*?)\*\*/g, '<strong>📸 $1</strong>').replace(/\*\*🔧 (.*?)\*\*/g, '<strong>🔧 $1</strong>').replace(/\*\*📊 (.*?)\*\*/g, '<strong>📊 $1</strong>') }} />
           </div>
 

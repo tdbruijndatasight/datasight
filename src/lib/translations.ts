@@ -263,7 +263,7 @@ export const translations: Translations = {
     backToOverview: "Terug naar overzicht",
 
     blog1TeaserTitle: "🚀 Hoe koppel je Azure DevOps Workitems slim aan Splunk en krijg je realtime inzicht in MTTR, teamperformance en doorlooptijden?",
-    blog1TeaserCTA: "In deze blog lees je hoe wij dat aanpakken — inclusief YAML, API's en dashboarding.\nEen must-read voor engineers én managers die meer uit hun data willen halen.",
+    blog1TeaserCTA: "In deze blog lees je hoe wij dat aanpakken — inclusief YAML, API's en dashboarding.\nEen must-read voor engineers én managers die meer uit hun data willen halen.\n\n#Splunk #AzureDevOps #DevOps #Observability",
     blog1ArticleTitle: "📝 Van Azure DevOps naar Splunk: Volledig inzicht in workitems, MTTR en teamvoortgang",
     blog1FullArticle: `In veel DevOps-omgevingen leven workitems en technische logs in gescheiden werelden. Engineers loggen ijverig alles wat fout gaat, maar het koppelen van die logs aan daadwerkelijke tickets — inclusief de status en doorlooptijd — blijft vaak uit. Gevolg: beperkte inzichten in de Mean Time To Resolve (MTTR), geen zicht op openstaande issues per team of afdeling, en lastig te verbeteren processen.
 
@@ -321,7 +321,7 @@ Inclusief dynamische filters en timecharts voor diepere analyses — zonder hand
 
 ---
 
-Wil je deze aanpak zelf proberen of eerst een demo zien? Neem gerust contact op! We laten je graag zien hoe dit binnen jouw organisatie toegepast kan worden.`,
+Wil je deze aanpak zelf proberen, eerst een demo zien of heb je een reactie? Reageer gerust op mijn <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank" rel="noopener noreferrer">LinkedIn profiel</a> of neem direct contact op!`,
 
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
@@ -492,7 +492,7 @@ Wil je deze aanpak zelf proberen of eerst een demo zien? Neem gerust contact op!
     backToOverview: "Back to overview",
     
     blog1TeaserTitle: "🚀 How to intelligently connect Azure DevOps Workitems to Splunk for real-time insights into MTTR, team performance, and lead times?",
-    blog1TeaserCTA: "In this blog, you'll read how we tackle this — including YAML, APIs, and dashboarding.\nA must-read for engineers and managers looking to get more out of their data.",
+    blog1TeaserCTA: "In this blog, you'll read how we tackle this — including YAML, APIs, and dashboarding.\nA must-read for engineers and managers looking to get more out of their data.\n\n#Splunk #AzureDevOps #DevOps #Observability",
     blog1ArticleTitle: "📝 From Azure DevOps to Splunk: Complete Insight into Workitems, MTTR, and Team Progress",
     blog1FullArticle: `In many DevOps environments, workitems and technical logs exist in separate worlds. Engineers diligently log everything that goes wrong, but linking those logs to actual tickets—including their status and lead time—is often overlooked. The result: limited insights into Mean Time To Resolve (MTTR), no visibility into open issues per team or department, and difficult-to-improve processes.
 
@@ -550,7 +550,7 @@ Including dynamic filters and timecharts for deeper analysis—without manual re
 
 ---
 
-Want to try this approach yourself or see a demo first? Feel free to get in touch! We'll gladly show you how it can be applied within your organization.`,
+Want to try this approach yourself, see a demo first, or have a comment? Feel free to react on my <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank" rel="noopener noreferrer">LinkedIn profile</a> or get in touch directly!`,
 
 
     projectInquiryTitle: 'Contact Form',

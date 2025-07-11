@@ -51,7 +51,7 @@ const BlogsSection: React.FC = () => {
                   </div>
                   <div className="flex flex-col flex-grow">
                     <CardHeader>
-                      <time className="text-sm text-muted-foreground mb-2">{formatDate(item.date)}</time>
+                      <div className="text-sm text-muted-foreground mb-2">{formatDate(item.date)} - {t('by')} Tom de Bruijn</div>
                       <CardTitle className="text-xl text-primary">{t(item.titleKey)}</CardTitle>
                     </CardHeader>
                     <CardContent className="flex-grow">
