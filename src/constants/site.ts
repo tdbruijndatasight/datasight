@@ -1,4 +1,3 @@
-
 import type { StaticImageData } from 'next/image';
 import type { Locale, TranslationContent } from '@/lib/translations';
 
@@ -81,7 +80,7 @@ export const BLOG_ITEMS: BlogItem[] = [
     slug: 'azure-devops-naar-splunk-inzicht',
     imageSrc: blogImage1,
     dataAiHint: 'dashboard charts',
-    date: '2024-05-20',
+    date: '2025-07-20',
     titleKey: 'blog1TeaserTitle',
     teaserKey: 'blog1TeaserCTA',
     fullArticleKey: 'blog1FullArticle',

@@ -1,4 +1,3 @@
-
 "use client";
 
 import React from 'react';
@@ -40,12 +39,12 @@ const BlogsSection: React.FC = () => {
             BLOG_ITEMS.map((item, index) => (
               <AnimatedSection key={index} delay={`delay-${index * 100}`}>
                 <Card className="overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 bg-card border-primary/20 flex flex-col md:flex-row">
-                  <div className="md:w-1/3 xl:w-1/4 relative h-64 md:h-auto flex-shrink-0">
+                  <div className="md:w-1/3 xl:w-1/4 relative h-64 md:h-auto flex-shrink-0 p-4 bg-card">
                     <Image
-                      src={item.imageSrc}
+                      src={item.imageSrc as StaticImageData}
                       alt={t(item.titleKey)}
                       fill={true}
-                      style={{ objectFit: 'cover' }}
+                      style={{ objectFit: 'contain' }}
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 33vw, 25vw"
                       data-ai-hint={item.dataAiHint}
                     />
