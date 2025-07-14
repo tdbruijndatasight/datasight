@@ -10,6 +10,7 @@ import { useLanguage } from '@/hooks/use-language';
 import AnimatedSection from '@/components/animated-section';
 import { BLOG_ITEMS } from '@/constants/site';
 import { ArrowRight, BookOpen } from 'lucide-react';
+import type { StaticImageData } from 'next/image';
 
 const BlogsSection: React.FC = () => {
   const { t } = useLanguage();

@@ -10,6 +10,9 @@ import icsLogo from '@/images/logos/ics.svg';
 import uwvLogo from '@/images/logos/uwv.svg';
 import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
 
+// Import blog images
+import blogImage1 from '@/images/Blog_Azure_DevOps_Pipeline_001.png';
+
 
 export interface NavItem {
   labelKey: keyof TranslationContent;
@@ -27,7 +30,7 @@ export interface CompanyLogo {
 
 export interface BlogItem {
   slug: string;
-  imageSrc: string;
+  imageSrc: string | StaticImageData;
   dataAiHint: string;
   date: string; // YYYY-MM-DD for consistency
   titleKey: keyof TranslationContent;
@@ -76,7 +79,7 @@ export const SERVICE_ITEMS: ServiceItemConstant[] = [
 export const BLOG_ITEMS: BlogItem[] = [
   {
     slug: 'azure-devops-naar-splunk-inzicht',
-    imageSrc: 'https://placehold.co/600x400.png',
+    imageSrc: blogImage1,
     dataAiHint: 'dashboard charts',
     date: '2024-05-20',
     titleKey: 'blog1TeaserTitle',
