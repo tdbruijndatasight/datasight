@@ -11,6 +11,7 @@ import gemeenteDenHaagLogo from '@/images/logos/gemeente-den-haag.svg';
 
 // Import blog images
 import blogImage1 from '@/images/Blog_Azure_DevOps_Pipeline_001.png';
+import blogImage2 from '@/images/Blog_Azure_DevOps_Workitems_Splunk.png';
 
 
 export interface NavItem {
@@ -30,6 +31,7 @@ export interface CompanyLogo {
 export interface BlogItem {
   slug: string;
   imageSrc: string | StaticImageData;
+  articleImageSrc?: string | StaticImageData;
   dataAiHint: string;
   date: string; // YYYY-MM-DD for consistency
   titleKey: keyof TranslationContent;
@@ -79,6 +81,7 @@ export const BLOG_ITEMS: BlogItem[] = [
   {
     slug: 'azure-devops-naar-splunk-inzicht',
     imageSrc: blogImage1,
+    articleImageSrc: blogImage2,
     dataAiHint: 'dashboard charts',
     date: '2025-07-20',
     titleKey: 'blog1TeaserTitle',
