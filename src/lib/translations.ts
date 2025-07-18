@@ -274,8 +274,8 @@ export const translations: Translations = {
     readMore: "Lees meer",
     backToOverview: "Terug naar overzicht",
 
-    blog1TeaserTitle: "🚀 Hoe koppel je Azure DevOps slim aan Splunk en krijg je real time inzicht in MTTR, teamperformance en doorlooptijden?",
-    blog1TeaserCTA: "In deze blog lees je hoe ik dat zo efficient mogelijk aanpak; gebruikmakend van 1 script en de Azure & Splunk Rest API.\n\n#Splunk #Azure #DevOps #CICD #Observability #AI",
+    blog1TeaserTitle: "🚀 Hoe koppel je Azure DevOps Workitems slim aan Splunk en krijg je real time inzicht in MTTR, teamperformance en doorlooptijden?",
+    blog1TeaserCTA: "In deze blog lees je hoe ik dat zo efficient mogelijk aanpak; gebruikmakend van 1 script en de Azure DevOps & Splunk Rest API.\n\n#Splunk #Azure #DevOps #Automation #CICD #Observability #AI",
     blog1ArticleTitle: "📝 Van Azure DevOps naar Splunk: Volledig inzicht in workitems, MTTR en teamvoortgang",
     blog1FullArticle: `In veel DevOps-omgevingen zie ik het volgende patroon: in een monitoringtool gaat een alert af, waarop — handmatig of geautomatiseerd — een ticket wordt aangemaakt in incident registratie systemen als Azure DevOps of Jira. Een engineer onderzoekt het incident, documenteert de oorzaak, en sluit uiteindelijk het ticket af. Wat er in deze flow ontbreekt: <b>samenhangend inzicht</b>. Tickets en logging zijn soms wel geintegreerd, maar leven in de praktijk vaak in gescheiden werelden. Dit leidt tot twee veelvoorkomende problemen:
 
@@ -312,7 +312,7 @@ Het eindresultaat is een dynamisch Splunk-dashboard dat de workitem data visuali
 **•    Tijd filtering – werktijden - MTTR MTBF -** . De MTTR (Mean Time To Repair) en MTBF (Mean Time Between Failures) wordt standaard berekend middels het vergelijken van twee timestamps, bijvoorbeeld voor MTTR de tijd tussen incident “acknowledged” en “resolved”. In Splunk is het echter ook mogelijk om voor MTTR alleen de tijd tussen werktijden te meten, 08:00-17:00. In de avond- nacht- en weekenden wordt er immers niet gewerkt. Hiervoor is wel een slimme macro nodig.
 **•    Visualisaties & filters -** filters op, Afdeling/team, prioriteit, tag, label, status etc. Dit maakt het eenvoudig om bottlenecks per team te identificeren, prioriteitenschema’s te bewaken en trends over tijd te visualiseren.
 
-📬 **Voorbeelden nodig, of dit graag een keer live zien? Vraag gerust om de volledig code of een demo!**
+📬 **Volledige code nog nodig, of dit graag een keer live zien? Vraag een demo!**
 Neem onderstaand contact met mij op of reageer op deze post op [LinkedIn](https://www.linkedin.com/in/tcdebruijn/).`,
 blog1Step1Title: `Request Azure DevOps API - WIQL`,
 blog1Step1Desc: `Met de [Azure DevOps WIQL API](https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2) kan je zoals de naam (Work Item Query Language) zegt, zoekopdrachten doen. Ik haal bij deze API call een lijst ID's van workitems op, die de afgelopen 24 uur een wijziging hebben gehad. code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
@@ -531,8 +531,8 @@ blog1Step5Desc: `Stuur de gefilterde events in batch op via de [Splunk HTTP Even
     readMore: "Read more",
     backToOverview: "Back to overview",
     
-    blog1TeaserTitle: "🚀 How to smartly connect Azure DevOps to Splunk and get real-time insights into MTTR, team performance, and lead times?",
-    blog1TeaserCTA: "In this blog, I'll show you how I approach this as efficiently as possible; using 1 script and the Azure & Splunk Rest API.\n\n#Splunk #Azure #DevOps #CICD #Observability #AI",
+    blog1TeaserTitle: "🚀 How to smartly connect Azure DevOps Workitems to Splunk and get real-time insights into MTTR, team performance, and lead times?",
+    blog1TeaserCTA: "In this blog, I'll show you how I approach this as efficiently as possible; using 1 script and the Azure DevOps & Splunk Rest API.\n\n#Splunk #Azure #Automation #DevOps #CICD #Observability #AI",
     blog1ArticleTitle: "📝 From Azure DevOps to Splunk: Complete Insight into Workitems, MTTR, and Team Progress",
     blog1FullArticle: `In many DevOps environments, I see the following pattern: an alert is triggered in a monitoring tool, which — either manually or automatically — creates a ticket in an incident management system like Azure DevOps or Jira. An engineer investigates the issue, documents the root cause, and eventually resolves and closes the ticket. What’s often missing in this flow: <b>meaningful, connected insight.</b> Tickets and logging may be technically integrated, but in practice they often live in separate silos. This leads to two common problems:
 
