@@ -79,11 +79,11 @@ export const SERVICE_ITEMS: ServiceItemConstant[] = [
 
 export const BLOG_ITEMS: BlogItem[] = [
   {
-    slug: 'azure-devops-naar-splunk-inzicht',
+    slug: 'insights-azure-devops-workitems-to-splunk',
     imageSrc: blogImage1,
     articleImageSrc: blogImage2,
     dataAiHint: 'dashboard charts',
-    date: '2025-07-21',
+    date: '2025-07-2',
     titleKey: 'blog1TeaserTitle',
     teaserKey: 'blog1TeaserCTA',
     fullArticleKey: 'blog1FullArticle',
