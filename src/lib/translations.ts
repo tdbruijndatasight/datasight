@@ -81,6 +81,8 @@ export interface TranslationContent {
   blog1ArticleTitle: string;
   blog1FullArticle: string;
   backToOverview: string;
+  
+  // Blog steps
   blog1Step1Title: string;
   blog1Step1Desc: string;
   blog1Step2Title: string;
@@ -239,7 +241,7 @@ export const translations: Translations = {
     service1DetailBullet3: 'Implementatie en configuratie van Splunk IT Service Intelligence (ITSI) voor betere IT-service monitoring.',
     service1DetailBullet4: 'Support bij een Security Operations Center (SOC), met de implementatie en configuratie van Splunk Enterprise Security (ES).',
     service1DetailBullet5: 'Ontwikkeling van maatwerk dashboards, alerts en data-integraties, helemaal afgestemd op wat jij nodig hebt.',
-	  service1DialogFooterText: "Dit is een algemene indruk van wat ik onder Splunk-consultancy aanbied. Elke klant en omgeving is anders, met eigen specifieke uitdagingen en doelen. Daarom ga ik graag eerst met je in gesprek om jouw situatie goed te begrijpen en samen tot de juiste aanpak te komen.",
+    service1DialogFooterText: "Dit is een algemene indruk van wat ik onder Splunk-consultancy aanbied. Elke klant en omgeving is anders, met eigen specifieke uitdagingen en doelen. Daarom ga ik graag eerst met je in gesprek om jouw situatie goed te begrijpen en samen tot de juiste aanpak te komen.",
     service1DetailCTA: 'Neem contact op',
 
     service2Title: 'Cribl Consultancy',
@@ -251,7 +253,7 @@ export const translations: Translations = {
     service2DetailBullet3: 'Integraties met Cribl, van iedere data bron naar iedere data bestemming in ieder gewenst format.',
     service2DetailBullet4: 'Kostenbesparingsstrategieën door data-reductie en slimme datarouting.',
     service2DetailBullet5: '',
-	  service2DialogFooterText: "Cribl is een veelzijdig platform en flexibel inzetbaar. In een persoonlijk gesprek kan ik meer toelichten, bespreken we jouw data-uitdaging en laat ik graag een demo zien die past bij jouw situatie.",
+    service2DialogFooterText: "Cribl is een veelzijdig platform en flexibel inzetbaar. In een persoonlijk gesprek kan ik meer toelichten, bespreken we jouw data-uitdaging en laat ik graag een demo zien die past bij jouw situatie.",
     service2DetailCTA: 'Neem contact op',
 
     service5Title: 'Trainingen & Workshops',
@@ -263,7 +265,7 @@ export const translations: Translations = {
     service5DetailBullet3: 'Flexibele trainingsvormen, individueel of in groepsverband',
     service5DetailBullet4: 'Interactieve labs en Q&A sessies voor een diepgaand begrip',
     service5DetailBullet5: 'Trainingen op locatie of remote, op eigen of demo-omgeving',
-	  service5DialogFooterText: "Neem gerust contact op om de mogelijkheden te bespreken. Omdat alles maatwerk is, bespreken we de prijzen altijd in overleg.",
+    service5DialogFooterText: "Neem gerust contact op om de mogelijkheden te bespreken. Omdat alles maatwerk is, bespreken we de prijzen altijd in overleg.",
     service5DetailCTA: 'Neem contact op',
     
     blogsTitle: "Blogs",
@@ -276,62 +278,93 @@ export const translations: Translations = {
     blog1ArticleTitle: "📝 Van Azure DevOps naar Splunk: Volledig inzicht in workitems, MTTR en teamvoortgang",
     blog1FullArticle: `In veel DevOps-omgevingen zie ik het volgende patroon: in een monitoringtool gaat een alert af, waarop — handmatig of geautomatiseerd — een ticket wordt aangemaakt in incident registratie systemen als Azure DevOps of Jira. Een engineer onderzoekt het incident, documenteert de oorzaak, en sluit uiteindelijk het ticket af. Wat er in deze flow ontbreekt: samenhangend inzicht. Tickets en logging zijn soms wel geintegreerd, maar leven in de praktijk vaak in gescheiden werelden. Dit leidt tot twee veelvoorkomende problemen:
 
-**Gebrek aan directe context:** Vanuit het ticket is vaak onvoldoende informatie beschikbaar, en er ontbreekt een directe link naar de relevante logdata of het bijbehorende dashboard. Engineers moeten handmatig op zoek naar de juiste logs, wat tijdrovend en foutgevoelig is.
+<b>- Gebrek aan directe context:</b> Vanuit het ticket is vaak onvoldoende informatie beschikbaar, en er ontbreekt een directe link naar de relevante logdata of het bijbehorende dashboard. Engineers moeten handmatig op zoek naar de juiste logs, wat tijdrovend en foutgevoelig is.
 
-**Beperkt inzicht in incidentstromen:** Omdat tickets niet zichtbaar zijn in Splunk, ontbreekt daar het overzicht van hoeveel issues er spelen, welke al zijn opgelost en wat de doorlooptijden zijn. Hierdoor is het lastig om trends te signaleren, processen structureel te verbeteren of effectief bij te sturen.
+<b>- Beperkt inzicht in incidentstromen:</b> Omdat tickets niet zichtbaar zijn in Splunk, ontbreekt daar het overzicht van hoeveel issues er spelen, welke al zijn opgelost en wat de doorlooptijden zijn. Hierdoor is het lastig om trends te signaleren, processen structureel te verbeteren of effectief bij te sturen.
 
-Met een slimme integratie tussen tussen ticketing- en monitoring software heb ik dit opgelost. In deze blog leg ik uit hoe je dit technisch opzet. De implementatie is robuust, schaalbaar en makkelijk aanpasbaar aan je eigen datamodellen en vergelijkbare tools als Jira en ook andere monitoringplatforms.
+✅ Met een slimme integratie tussen tussen ticketing- en monitoring software heb ik dit opgelost. In deze blog leg ik uit hoe je dit technisch opzet. De implementatie is robuust, schaalbaar en makkelijk aanpasbaar aan je eigen datamodellen en vergelijkbare tools als Jira en ook andere monitoringplatforms. Hierdoor krijg je:
+•    📌 <b>Voor engineers:</b> directe koppeling van logs en events aan relevante tickets (workitems) — geen context-switch nodig.
+•    📈 <b>Voor managers:</b> Stuurinformatie - Duidelijke rapportages over MTTR, MTBF en doorlooptijden, overzichtelijk, instelbaar, betrouwbaar.
+•    👨‍💻 <b>Voor teams:</b> Snel context bij een errorlog of alert – gelinkt aan het juiste ticket, overzicht over alle tickets, per project, prioriteit, tag of afdeling.
+•    📊 <b>Voor de hele organisatie:</b> inzicht, data-gedreven verbeterkansen en minder verrassingen.
 
-**✅ Wat levert het op?**
-* **📌 Voor engineers:** directe koppeling van logs en events aan relevante workitems — geen context-switch nodig.
-* **📈 Voor managers:** realtime dashboarding van ticketstatussen, MTTR/MTBF, doorlooptijden en bottlenecks.
-* **👨‍💻 Voor teams:** stuurinformatie over performance per afdeling, prioriteit of tag.
-* **📊 Voor de hele organisatie:** data-gedreven verbeterkansen en minder verrassingen.
+💡 <i>Voor deze blog gebruik ik specifiek Azure DevOps en Splunk als voorbeeld, dezelfde opzet is ook toepasbaar op andere tooling.</i>
 
-**📸 Hieronder een voorbeeld van het Splunk-dashboard zoals dat live draait:**
+🔧 <b>Hoe bereik je dit?</b>
+
+Om ticketinformatie van Azure DevOps correct te koppelen aan Splunk en bruikbare inzichten te genereren, zijn de volgende componenten nodig:
+
+<b>•    Azure DevOps PAT Token - </b>Voor REST API-calls naar Azure DevOps, om de workitem ID's en bijbehorende metadata op te halen.
+<b>•    Splunk REST Token - </b>Nodig om de huidige status van workitems in Splunk op te halen via Splunk’s REST API.
+<b>•    Splunk HEC Token - </b>Voor het aanleveren van nieuwe events aan Splunk via de HTTP Event Collector.
+<b>•    Splunk Index + Sourcetype - </b>Een Splunk index en een JSON sourcetype waarin de verrijkte workitem-data wordt opgeslagen.
+<b>•    Server voor Yaml Script - </b> Een server of runner waarop het YAML-script draait dat toegang heeft tot zowel Azure DevOps als Splunk.
+
+🧩 Het YAML script in vijf duidelijke stappen:
+{{STEPS_PLACEHOLDER}}
+💡- Let op dat de API's van Azure DevOps en Splunk limieten hebben, in het YAML script maak ik daarom gebruik van batches. 
+💡- Door de wijzigingen van Azure DevOps workitems op te halen, en deze te filteren met de data die al in Splunk staat, wordt er zeer efficiënt gelogd in Splunk, waardoor dashboarding ook super goed performt.
+💡- Een voorbeeld script nodig? neem gerust contact op!
+
+📊 Splunk Dashboard:
+<b>📸 Hieronder een voorbeeld van het Splunk-dashboard zoals dat live draait:</b>
 {{IMAGE_PLACEHOLDER}}
 
-**🔧 YAML-integratie: zo werkt het**
+Het eindresultaat is een dynamisch Splunk-dashboard dat de workitem data visualiseert. De belangrijkste componenten:
+<b>•    Eén Base search - </b> die alle data ophaalt en verwerkt, alle andere panelen maken gebruik van deze search waardoor er niet onnodig veel queries worden uitgevoerd en het dashboard goed eprformt.
+<b>•    Tijd filtering – werktijden - MTTR MTBF - </b>. De MTTR (Mean Time To Repair) en MTBF (Mean Time Between Failures) wordt standaard berekend middels het vergelijken van twee timestamps, bijvoorbeeld voor MTTR de tijd tussen incident “acknowledged” en “resolved”. In Splunk is het echter ook mogelijk om voor MTTR alleen de tijd tussen werktijden te meten, 08:00-17:00. In de avond- nacht- en weekenden wordt er immers niet gewerkt. Hiervoor is wel een slimme macro nodig.
+<b>•    Visualisaties & filters - </b> filters op, Afdeling/team, prioriteit, tag, label, status etc. Dit maakt het eenvoudig om bottlenecks per team te identificeren, prioriteitenschema’s te bewaken en trends over tijd te visualiseren.
 
-Met één slim YAML-script verbinden we Azure DevOps met Splunk, waardoor je altijd inzicht hebt in actuele workitem-data. Hieronder zie je de vereenvoudigde datastroom:
-
-**Benodigdheden**
-* Azure DevOps PAT token – voor het ophalen van workitems via de REST API
-* Splunk REST token – om de huidige status van workitems op te vragen
-* Splunk HEC token – om nieuwe data als event naar Splunk te sturen
-* Splunk index + JSON sourcetype – om de data correct op te slaan en te visualiseren
-* Server of runner – die toegang heeft tot zowel Azure DevOps als Splunk en het script periodiek uitvoert (bijv. via cronjob of CI-pipeline)
-
-**Proces in 5 stappen**
-{{STEPS_PLACEHOLDER}}
-* **💡 Let op dat de API's van Azure DevOps en Splunk limieten hebben, in het YAML script maak ik daarom gebruik van batches.**
-* **💡 Door de wijzigingen van Azure DevOps workitems op te halen, en deze te filteren met de data die al in Splunk staat, wordt er zeer efficiënt gelogd in Splunk, waardoor dashboarding ook super goed performt.**
-* **💡 Een voorbeeld script nodig? neem gerust contact op!**
-
-**📊 Het resultaat? Eén slim dashboard**
-
-Met deze koppeling laad je realtime data in Splunk en bereken je automatisch:
-
-* MTTR / MTBF per team of afdeling
-* Doorlooptijd per ticket
-* Bottlenecks per status, prioriteit of tag
-
-Inclusief dynamische filters en timecharts voor diepere analyses — zonder handmatig rapporteren.
-
----
-
-**📬 Vragen, opmerkingen of wil je deze aanpak zelf proberen? Deel je gedachten op <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank" rel="noopener noreferrer">LinkedIn</a> of neem direct contact op! We laten je graag zien hoe dit binnen jouw organisatie toegepast kan worden.**`,
-    blog1Step1Title: "Request Azure DevOps API",
-    blog1Step1Desc: "Haal alle Workitem-ID’s op die in de afgelopen 24 uur zijn gewijzigd.",
-    blog1Step2Title: "Batch request Workitems metadata",
-    blog1Step2Desc: "Vraag per ID de relevante metadata op.",
-    blog1Step3Title: "Query Splunk REST API",
-    blog1Step3Desc: "Controleer of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd.",
-    blog1Step4Title: "Filter",
-    blog1Step4Desc: "Bewaar alleen gewijzigde en nieuwe events in Splunk.",
-    blog1Step5Title: "Verstuur alleen nieuwe events naar Splunk via HEC",
-    blog1Step5Desc: "Stuur de gefilterde events naar de Splunk HTTP Event Collector.",
-
+📬 <b>Voorbeelden nodig, of dit graag een keer live zien? Vraag gerust om een stukje voorbeeld code of om een demo!</b>
+Neem contact met mij op via <a href="mailto:info.tomdebruijn@gmail.com">info.tomdebruijn@gmail.com</a> of <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank" >LinkedIn</a>.`,
+blog1Step1Title: `Request Azure DevOps API - WIQL`,
+blog1Step1Desc: `Met de <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2">Azure DevOps WIQL API</a> kan je zoals de naam (Work Item Query Language) zegt, zoekopdrachten doen. Ik haal bij deze API call een lijst ID's van workitems op, die de afgelopen 24 uur een wijziging hebben gehad. Code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
+blog1Step2Title: `Batch request Workitems metadata`,
+blog1Step2Desc: `Met de <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch">Batch request Workitems API</a>vraag ik vervolgens van de lijst ID's de relevante data velden op per workitem. code:  {
+  "ids": $IDS_JSON,
+  "fields": [
+    "System.ChangedDate",
+    "System.CreatedBy",
+    "System.AssignedTo",
+    "System.WorkItemType",
+    "System.Id",
+    "System.Title",
+    "System.Description",
+    "System.Tags",
+    "Custom.Resolutionlist",
+    "Microsoft.VSTS.Common.Priority",
+    "System.State",
+    "Microsoft.VSTS.Scheduling.StoryPoints"
+  ]
+}`,
+blog1Step3Title: `Query Splunk REST API`,
+blog1Step3Desc: `Met de <a href="https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference:">Splunk REST API</a> Controleer of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd. code: index=azure_devops 
+| spath input=_raw path=id output=id 
+| stats latest(_time) as time by id 
+| eval id_time=id.",".time 
+| stats values(id_time) as id_time`,
+blog1Step4Title: `Filter Events in pipeline`,
+blog1Step4Desc: `In de pipeline heb ik nu de opgehaalde events van AzureDevOps en van Splunk. Middels filtering in de code match ik deze lijsten en kijk ik waar de waarde van AzureDevOps nieuwer is dan die van Splunk, of nog niet in Splunk staat. Op deze manier worden alleen nieuwe- of update van events behouden.`,
+blog1Step5Title: `Verstuur alleen nieuwe events naar Splunk via HEC`,
+blog1Step5Desc: `Stuur de gefilterde events in batch op via de <a href="https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request">Splunk HTTP Event Collector</a>. code: {
+    time: $time,
+    host: "sample_host_azure_dev",
+    source: "dev.azure.com",
+    sourcetype: "azure_dev_workitems",
+    event: {
+      id: .fields["System.Id"],
+      title: .fields["System.Title"],
+      WorkItemType: .fields["System.WorkItemType"],
+      CreatedBy: (.fields["System.CreatedBy"].id // null),
+      AssignedTo: (.fields["System.AssignedTo"].id // null),
+      description: (.fields["System.Description"] // null),
+      resolution: (.fields["Custom.Resolutionlist"] // null),
+      priority: (.fields["Microsoft.VSTS.Common.Priority"] // null),
+      tags: (.fields["System.Tags"] // null),
+      state: (.fields["System.State"] // null),
+      story_points: (.fields["Microsoft.VSTS.Scheduling.StoryPoints"] // null)
+    }
+ }`,
     projectInquiryTitle: 'Contactformulier',
     projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
     questionStaticPlaceholder: 'Beschrijf hier uw vraag of projectidee...',
@@ -468,7 +501,7 @@ Inclusief dynamische filters en timecharts voor diepere analyses — zonder hand
     service1DetailBullet3: 'Implementation and configuration of Splunk IT Service Intelligence (ITSI) for better IT service monitoring.',
     service1DetailBullet4: 'Support for a Security Operations Center (SOC), with the implementation and configuration of Splunk Enterprise Security (ES).',
     service1DetailBullet5: 'Development of custom dashboards, alerts, and data integrations, completely tailored to what you need.',
-	  service1DialogFooterText: "This is a general impression of what I offer under Splunk consultancy. Every client and environment is different, with its own specific challenges and goals. That's why I prefer to first discuss your situation thoroughly to understand it well and arrive at the right approach together.",
+    service1DialogFooterText: "This is a general impression of what I offer under Splunk consultancy. Every client and environment is different, with its own specific challenges and goals. That's why I prefer to first discuss your situation thoroughly to understand it well and arrive at the right approach together.",
     service1DetailCTA: 'Get in touch',
 
     service2Title: 'Cribl Consultancy',
@@ -480,7 +513,7 @@ Inclusief dynamische filters en timecharts voor diepere analyses — zonder hand
     service2DetailBullet3: 'Integrations with Cribl, from any data source to any data destination in any desired format.',
     service2DetailBullet4: 'Cost-saving strategies through data reduction and smart data routing.',
     service2DetailBullet5: '',
-	  service2DialogFooterText: "Cribl is a versatile platform and flexibly deployable. In a personal conversation, I can explain more, we can discuss your data challenge, and I would be happy to show a demo that fits your situation.",
+    service2DialogFooterText: "Cribl is a versatile platform and flexibly deployable. In a personal conversation, I can explain more, we can discuss your data challenge, and I would be happy to show a demo that fits your situation.",
     service2DetailCTA: 'Get in touch',
 
     service5Title: 'Trainings & Workshops',
@@ -492,7 +525,7 @@ Inclusief dynamische filters en timecharts voor diepere analyses — zonder hand
     service5DetailBullet3: "Flexible training formats, individual or in group sessions",
     service5DetailBullet4: "Interactive labs and Q&A sessions for in-depth understanding",
     service5DetailBullet5: "Trainings on-site or remotely, on your own or demo environment",
-	  service5DialogFooterText: "Feel free to contact us to discuss the possibilities. Since everything is custom-made, we always discuss prices in consultation.",
+    service5DialogFooterText: "Feel free to contact us to discuss the possibilities. Since everything is custom-made, we always discuss prices in consultation.",
     service5DetailCTA: 'Get in touch',
     
     blogsTitle: "Blogs",
@@ -503,66 +536,97 @@ Inclusief dynamische filters en timecharts voor diepere analyses — zonder hand
     blog1TeaserTitle: "🚀 How to smartly connect Azure DevOps to Splunk and get real-time insights into MTTR, team performance, and lead times?",
     blog1TeaserCTA: "In this blog, I’ll show you how I approach this as efficiently as possible: one YAML script, Azure DevOps and Splunk REST APIs, and smart dashboarding. Robust, scalable, and ready for your environment.\n\n#Splunk #Azure #DevOps #CICD #Observability #AI",
     blog1ArticleTitle: "📝 From Azure DevOps to Splunk: Complete Insight into Workitems, MTTR, and Team Progress",
-    blog1FullArticle: `In many DevOps environments, I see a recurring pattern: an alert fires in a monitoring tool like Splunk, which then, manually or automatically, creates a ticket in an issue tracking system like Jira or Azure DevOps. An engineer picks it up, investigates, documents their findings, and closes the ticket.
+    blog1FullArticle: `In many DevOps environments, I see the following pattern: an alert is triggered in a monitoring tool, which — either manually or automatically — creates a ticket in an incident management system like Azure DevOps or Jira. An engineer investigates the issue, documents the root cause, and eventually resolves and closes the ticket.
 
-In practice, however, logging and ticketing often remain separate worlds. This leads to two common problems:
+What’s often missing in this flow: meaningful, connected insight. Tickets and logging may be technically integrated, but in practice they often live in separate silos. This leads to two common problems:
 
-**Lack of Direct Context:** From the ticket, there's often insufficient information, and a direct link to the relevant log data or dashboard is missing. Engineers have to manually search for the right logs, which is time-consuming and error-prone.
+<b>• Lack of direct context:</b> From within a ticket, there’s often too little information available and no direct link to the relevant log data or dashboard. Engineers must manually search for the right logs — a time-consuming and error-prone process.
 
-**Limited Insight into Incident Flows:** Because tickets aren't visible in Splunk, there's no overview of how many issues are active, which have been resolved, and what their turnaround times are. This makes it difficult to identify trends, structurally improve processes, or effectively steer.
+<b>• Limited visibility into incident flows:</b> Since tickets aren’t visible in Splunk, there’s no overview of how many issues are active, which ones are resolved, or how long they took. That makes it difficult to spot trends, improve processes, or steer effectively.
 
-I've solved this with a smart integration between ticketing and monitoring software. In this blog, I'll explain how to set this up technically. The implementation is robust, scalable, and easily adaptable to your own data models and similar tools like Jira and other monitoring platforms.
+✅ With a smart integration between ticketing and monitoring software, I solved this. In this blog, I explain how to set this up technically. The implementation is robust, scalable, and easily adaptable to your own data models and similar tools like Jira and other monitoring platforms. This provides:
+•    📌 <b>For engineers:</b> direct linking of logs and events to relevant tickets (work items) — no context-switch needed.
+•    📈 <b>For managers:</b> Steering information – Clear reports on MTTR, MTBF, and lead times; organized, configurable, reliable.
+•    👨‍💻 <b>For teams:</b> Quick context for an error log or alert – linked to the correct ticket, with an overview of all tickets by project, priority, tag, or department.
+•    📊 <b>For the whole organization:</b> insight, data-driven improvement opportunities, and fewer surprises.
 
-**✅ What are the benefits?**
-* **📌 For engineers:** direct linking of logs and events to relevant workitems—no context-switching needed.
-* **📈 For managers:** real-time dashboarding of ticket statuses, MTTR/MTBF, lead times, and bottlenecks.
-* **👨‍💻 For teams:** actionable insights into performance by department, priority, or tag.
-* **📊 For the entire organization:** data-driven improvement opportunities and fewer surprises.
+💡 <i>In this blog I use Azure DevOps and Splunk as an example, but the same setup can be applied to other tooling.</i>
 
-**📸 Below is an example of the Splunk dashboard as it runs live:**
-{{IMAGE_PLACEHOLDER}}
+🔧 <b>How do you achieve this?</b>
 
-**🔧 YAML Integration: How It Works**
+To correctly link Azure DevOps tickets — known as Workitems — to Splunk and generate actionable insights, you need the following components:
 
-With one smart YAML script, we connect Azure DevOps to Splunk, giving you constant insight into current workitem data. Below is the simplified data flow:
+<b>• Azure DevOps PAT Token –</b> For REST API calls to Azure DevOps to fetch workitem IDs and metadata.
+<b>• Splunk REST Token –</b> Used to check the current workitem status in Splunk via its REST API.
+<b>• Splunk HEC Token –</b> For sending new events into Splunk via the HTTP Event Collector.
+<b>• Splunk Index + Sourcetype –</b> A dedicated Splunk index and JSON sourcetype to store the enriched workitem data.
+<b>• Server for YAML Script –</b> A server or runner where the YAML script runs, with access to both Azure DevOps and Splunk.
 
-**Requirements**
-* Azure DevOps PAT token – for fetching workitems via the REST API
-* Splunk REST token – to query the current status of workitems
-* Splunk HEC token – to send new data as an event to Splunk
-* Splunk index + JSON sourcetype – to correctly store and visualize the data
-* Server or runner – that has access to both Azure DevOps and Splunk and runs the script periodically (e.g., via cronjob or CI pipeline)
-
-**Process in 5 Steps**
+🧩 The YAML logic in 5 clear steps:
 {{STEPS_PLACEHOLDER}}
-* **💡 Note that the APIs of Azure DevOps and Splunk have limits; therefore, I use batches in the YAML script.**
-* **💡 By fetching the changes from Azure DevOps workitems and filtering them with the data already in Splunk, logging in Splunk becomes very efficient, which also makes dashboarding perform super well.**
-* **💡 Need an example script? Feel free to get in touch!**
+💡- Azure DevOps & Splunk have API limit's, therefore i use batches in the YAML script for processing the records.
+💡- By fetching only modified workitems from Azure DevOps and comparing them with what already exists in Splunk, the system logs efficiently — which leads to fast and responsive dashboards.
+💡- Need some sample code, drop me a message, happy to help!
 
-**📊 The Result? One Smart Dashboard**
+📊 Splunk Dashboard
+<b>📸 Below is an example of the Splunk dashboard as it runs live:</b>
+{{IMAGE_PLACEHOLDER}}
+The end result is a dynamic Splunk dashboard that visualizes the workitem data. Key components:
 
-With this connection, you can load real-time data into Splunk and automatically calculate:
+<b>• One base search –</b> A single search powers the entire dashboard. All panels use this shared search, avoiding redundant queries and improving performance.
+<b>• Time filtering – working hours, MTTR, MTBF – </b>MTTR (Mean Time To Repair) and MTBF (Mean Time Between Failures) are calculated by comparing timestamps — for MTTR, typically the time between “acknowledged” and “resolved”. In Splunk, this can be further refined to count only business hours (e.g., 08:00–17:00), ignoring nights and weekends, and even public holidays.
+<b>• Visualizations & filters –</b> Use filters for team, priority, tag, label, status and more. This makes it easy to identify bottlenecks, enforce priority workflows, and monitor trends over time.
 
-* MTTR / MTBF per team or department
-* Lead time per ticket
-* Bottlenecks by status, priority, or tag
-
-Including dynamic filters and timecharts for deeper analysis—without manual reporting.
-
----
-
-**📬 Questions, comments, or want to try this approach yourself? Share your thoughts on <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank" rel="noopener noreferrer">LinkedIn</a> or contact me directly! I'd be happy to show you how this can be applied within your organization.**`,
-    blog1Step1Title: "Request Azure DevOps API",
-    blog1Step1Desc: "Fetch all Workitem IDs that have been modified in the last 24 hours.",
-    blog1Step2Title: "Batch request Workitems metadata",
-    blog1Step2Desc: "Request the relevant metadata for each ID.",
-    blog1Step3Title: "Query Splunk REST API",
-    blog1Step3Desc: "Check if the workitems are already present in Splunk and what their current status is based on time.",
-    blog1Step4Title: "Filter",
-    blog1Step4Desc: "Keep only modified and new events in Splunk.",
-    blog1Step5Title: "Send only new events to Splunk via HEC",
-    blog1Step5Desc: "Send the filtered events to the Splunk HTTP Event Collector.",
-    
+📬 <b>In need of some sample code, or want to see this in action? Request a demo!</b>
+Reach out via <a href="mailto:info.tomdebruijn@gmail.com">info.tomdebruijn@gmail.com</a> or connect on <a href="https://www.linkedin.com/in/tcdebruijn/" target="_blank">LinkedIn</a>. I'am happy to walk you through the setup or help tailor it to your environment.`,
+blog1Step1Title: `Request Azure DevOps API - WIQL`,
+blog1Step1Desc: `Using the <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2">Azure DevOps WIQL API</a>, you can perform queries as the name (Work Item Query Language) suggests. In this API call, I retrieve a list of work item IDs that have been modified in the past 24 hours. Code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
+blog1Step2Title: `Batch request Workitems metadata`,
+blog1Step2Desc: `With the <a href="https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch">Batch request Workitems API</a>, I then request the relevant data fields per work item for the list of IDs. code:  {
+  "ids": $IDS_JSON,
+  "fields": [
+    "System.ChangedDate",
+    "System.CreatedBy",
+    "System.AssignedTo",
+    "System.WorkItemType",
+    "System.Id",
+    "System.Title",
+    "System.Description",
+    "System.Tags",
+    "Custom.Resolutionlist",
+    "Microsoft.VSTS.Common.Priority",
+    "System.State",
+    "Microsoft.VSTS.Scheduling.StoryPoints"
+  ]
+}`,
+blog1Step3Title: `Query Splunk REST API`,
+blog1Step3Desc: `Using the <a href="https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference:">Splunk REST API</a>, I check whether the work items are already present in Splunk and determine their current status based on time. code: index=azure_devops 
+| spath input=_raw path=id output=id 
+| stats latest(_time) as time by id 
+| eval id_time=id.",".time 
+| stats values(id_time) as id_time`,
+blog1Step4Title: `Filter Events in pipeline`,
+blog1Step4Desc: `At this stage in the pipeline, I have the fetched events from Azure DevOps and from Splunk. By filtering in the code, I match these lists and check where the Azure DevOps value is newer than the one in Splunk, or not yet present in Splunk. This way, only new or updated events are retained.`,
+blog1Step5Title: `Send only new events to Splunk via HEC`,
+blog1Step5Desc: `Send the filtered events in batch via the <a href="https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request">Splunk HTTP Event Collector</a>. code: {
+    time: $time,
+    host: "sample_host_azure_dev",
+    source: "dev.azure.com",
+    sourcetype: "azure_dev_workitems",
+    event: {
+      id: .fields["System.Id"],
+      title: .fields["System.Title"],
+      WorkItemType: .fields["System.WorkItemType"],
+      CreatedBy: (.fields["System.CreatedBy"].id // null),
+      AssignedTo: (.fields["System.AssignedTo"].id // null),
+      description: (.fields["System.Description"] // null),
+      resolution: (.fields["Custom.Resolutionlist"] // null),
+      priority: (.fields["Microsoft.VSTS.Common.Priority"] // null),
+      tags: (.fields["System.Tags"] // null),
+      state: (.fields["System.State"] // null),
+      story_points: (.fields["Microsoft.VSTS.Scheduling.StoryPoints"] // null)
+    }
+ }`,
     projectInquiryTitle: 'Contact Form',
     projectInquirySubtitle: "This text is animated and comes from inquiryPlaceholder keys",
     questionStaticPlaceholder: 'Describe your question or project idea here...',
