@@ -68,30 +68,36 @@ const CodeSnippet = ({ code }: { code: string }) => {
 
 
 const parseText = (text: string) => {
-  // Regex for Markdown style links: [text](url)
-  const markdownLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
-  // Regex for standalone URLs
-  const urlRegex = /(?<!]\()https?:\/\/[^\s]+/g; // Avoid matching URLs already in markdown links
+  // Regex for combining Markdown links, standalone URLs, and bold text
+  const combinedRegex = /((?<!]\()https?:\/\/[^\s<]+)|(\*\*([^*]+)\*\*)|(\[([^\]]+)\]\((https?:\/\/[^\s)]+)\))/g;
 
-  // Split text by newlines to process line by line
   const lines = text.split('\n');
 
   return lines.map((line, lineIndex) => {
-    // 1. Handle bolding: **text**
-    let processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // Process each line for combined patterns
+    const processedLine = line.replace(combinedRegex, (match, url, bold, boldText, markdownLink, linkText, linkUrl) => {
+      if (url) {
+        // Standalone URL
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">${url}</a>`;
+      }
+      if (bold) {
+        // Bold text
+        return `<strong>${boldText}</strong>`;
+      }
+      if (markdownLink) {
+        // Markdown link
+        return `<a href="${linkUrl}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">${linkText}</a>`;
+      }
+      return match;
+    });
 
-    // 2. Handle Markdown links
-    processedLine = processedLine.replace(markdownLinkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">$1</a>');
-
-    // 3. Handle standalone URLs
-    processedLine = processedLine.replace(urlRegex, '<a href="$&" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">$&</a>');
-
-    // Reconstruct the line and wrap in a paragraph with a line break, unless it's the last line.
+    // Use dangerouslySetInnerHTML to render the processed HTML
     return (
       <span key={lineIndex} dangerouslySetInnerHTML={{ __html: processedLine + (lineIndex < lines.length - 1 ? '<br/>' : '') }} />
     );
   });
 };
+
 
 const renderStep = (icon: string, title: string, description: string, isLast: boolean) => {
   const [descText, ...codeParts] = description.split('code:');
