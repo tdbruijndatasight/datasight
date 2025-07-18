@@ -282,7 +282,7 @@ export const translations: Translations = {
 <b>- Gebrek aan directe context:</b> Vanuit het ticket is vaak onvoldoende informatie beschikbaar, en er ontbreekt een directe link naar de relevante logdata of het bijbehorende dashboard. Engineers moeten handmatig op zoek naar de juiste logs, wat tijdrovend en foutgevoelig is.
 <b>- Beperkt inzicht in incidentstromen:</b> Omdat tickets niet zichtbaar zijn in Splunk, ontbreekt daar het overzicht van hoeveel issues er spelen, welke al zijn opgelost en wat de doorlooptijden zijn. Hierdoor is het lastig om trends te signaleren, processen structureel te verbeteren of effectief bij te sturen.
 
-✅ Met een slimme integratie tussen tussen ticketing- en monitoring software heb ik dit opgelost. In deze blog leg ik uit hoe je dit technisch opzet. De implementatie is robuust, schaalbaar en makkelijk aanpasbaar aan je eigen datamodellen en vergelijkbare tools als Jira en ook andere monitoringplatforms. Hierdoor krijg je:
+✅ Met een slimme integratie tussen ticketing- en monitoring software heb ik dit opgelost. In deze blog leg ik uit hoe je dit technisch opzet. De implementatie is robuust, schaalbaar en makkelijk aanpasbaar aan je eigen datamodellen en vergelijkbare tools als Jira en ook andere monitoringplatforms. Hierdoor krijg je:
 
 •    📌 <b>Voor engineers:</b> directe koppeling van logs en events aan relevante tickets (workitems) — geen context-switch nodig.
 •    📈 <b>Voor managers:</b> Stuurinformatie - Duidelijke rapportages over MTTR, MTBF en doorlooptijden, overzichtelijk, instelbaar, betrouwbaar.
@@ -335,7 +335,7 @@ blog1Step2Desc: `Met de [Batch request Workitems API](https://learn.microsoft.co
   ]
 }`,
 blog1Step3Title: `Query Splunk REST API`,
-blog1Step3Desc: `Met de [Splunk REST API](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference) controleer of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd. code: index=azure_devops 
+blog1Step3Desc: `Met de [Splunk REST API](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference) controleer ik of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd. code: index=azure_devops 
 | spath input=_raw path=id output=id 
 | stats latest(_time) as time by id 
 | eval id_time=id.",".time 
