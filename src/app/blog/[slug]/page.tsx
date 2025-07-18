@@ -68,29 +68,27 @@ const CodeSnippet = ({ code }: { code: string }) => {
 
 
 const parseText = (text: string) => {
-  // Regex to match URLs
-  const urlRegex = /(https?:\/\/[^\s]+)/g;
-  
+  // Regex for Markdown style links: [text](url)
+  const markdownLinkRegex = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+  // Regex for standalone URLs
+  const urlRegex = /(?<!]\()https?:\/\/[^\s]+/g; // Avoid matching URLs already in markdown links
+
   // Split text by newlines to process line by line
   const lines = text.split('\n');
 
   return lines.map((line, lineIndex) => {
-    // Handle bolding: **text**
-    const boldedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
+    // 1. Handle bolding: **text**
+    let processedLine = line.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>');
 
-    // Handle URLs: find all urls and replace them with anchor tags
-    const parts = boldedLine.split(urlRegex);
+    // 2. Handle Markdown links
+    processedLine = processedLine.replace(markdownLinkRegex, '<a href="$2" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">$1</a>');
 
-    const processedParts = parts.map((part, partIndex) => {
-      if (part.match(urlRegex)) {
-        return `<a href="${part}" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">${part}</a>`;
-      }
-      return part;
-    });
+    // 3. Handle standalone URLs
+    processedLine = processedLine.replace(urlRegex, '<a href="$&" target="_blank" rel="noopener noreferrer" class="text-accent hover:underline">$&</a>');
 
     // Reconstruct the line and wrap in a paragraph with a line break, unless it's the last line.
     return (
-      <span key={lineIndex} dangerouslySetInnerHTML={{ __html: processedParts.join('') + (lineIndex < lines.length - 1 ? '<br/>' : '') }} />
+      <span key={lineIndex} dangerouslySetInnerHTML={{ __html: processedLine + (lineIndex < lines.length - 1 ? '<br/>' : '') }} />
     );
   });
 };
@@ -109,7 +107,7 @@ const renderStep = (icon: string, title: string, description: string, isLast: bo
           <div className="w-px h-full bg-border border-dashed border-l-2 my-1"></div>
         )}
       </div>
-      <div className={cn("pt-1.5 flex-1", isLast ? 'pb-0' : 'pb-6')}>
+      <div className={cn("pt-1.5 flex-1", isLast ? 'pb-2' : 'pb-6')}>
         <h4 className="font-semibold text-primary">{title}</h4>
         <div className="text-foreground/80 prose-sm max-w-none">{parseText(descText)}</div>
         {code && <CodeSnippet code={code} />}
@@ -182,7 +180,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
           </div>
         );
       }
-      return <div key={index}>{parseText(part)}</div>;
+      return <div key={index} className="mb-4">{parseText(part)}</div>;
     });
   };
 
@@ -216,7 +214,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <div className="prose prose-blue dark:prose-invert max-w-none text-foreground/90">{enContent.articleParts}</div>
           </div>
 
-          <div className="mt-12 text-center">
+          <div className="mt-8 text-center">
             <Button asChild variant="outline">
               <Link href="/#blogs">
                 <ArrowLeft className="mr-2 h-4 w-4" />
@@ -231,5 +229,3 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
     </>
   );
 }
-
-    

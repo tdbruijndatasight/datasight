@@ -277,7 +277,7 @@ export const translations: Translations = {
     blog1TeaserTitle: "🚀 Hoe koppel je Azure DevOps slim aan Splunk en krijg je real time inzicht in MTTR, teamperformance en doorlooptijden?",
     blog1TeaserCTA: "In deze blog lees je hoe ik dat zo efficient mogelijk aanpak; gebruikmakend van 1 script en de Azure & Splunk Rest API.\n\n#Splunk #Azure #DevOps #CICD #Observability #AI",
     blog1ArticleTitle: "📝 Van Azure DevOps naar Splunk: Volledig inzicht in workitems, MTTR en teamvoortgang",
-    blog1FullArticle: `In veel DevOps-omgevingen zie ik het volgende patroon: in een monitoringtool gaat een alert af, waarop — handmatig of geautomatiseerd — een ticket wordt aangemaakt in incident registratie systemen als Azure DevOps of Jira. Een engineer onderzoekt het incident, documenteert de oorzaak, en sluit uiteindelijk het ticket af. Wat er in deze flow ontbreekt: samenhangend inzicht. Tickets en logging zijn soms wel geintegreerd, maar leven in de praktijk vaak in gescheiden werelden. Dit leidt tot twee veelvoorkomende problemen:
+    blog1FullArticle: `In veel DevOps-omgevingen zie ik het volgende patroon: in een monitoringtool gaat een alert af, waarop — handmatig of geautomatiseerd — een ticket wordt aangemaakt in incident registratie systemen als Azure DevOps of Jira. Een engineer onderzoekt het incident, documenteert de oorzaak, en sluit uiteindelijk het ticket af. Wat er in deze flow ontbreekt: **samenhangend inzicht**. Tickets en logging zijn soms wel geintegreerd, maar leven in de praktijk vaak in gescheiden werelden. Dit leidt tot twee veelvoorkomende problemen:
 
 **- Gebrek aan directe context:** Vanuit het ticket is vaak onvoldoende informatie beschikbaar, en er ontbreekt een directe link naar de relevante logdata of het bijbehorende dashboard. Engineers moeten handmatig op zoek naar de juiste logs, wat tijdrovend en foutgevoelig is.
 
@@ -308,20 +308,18 @@ Om ticketinformatie van Azure DevOps correct te koppelen aan Splunk en bruikbare
 💡- Een voorbeeld script nodig? neem gerust contact op!
 
 📊 Splunk Dashboard:
-**📸 Hieronder een voorbeeld van het Splunk-dashboard zoals dat live draait:**
 {{IMAGE_PLACEHOLDER}}
-
 Het eindresultaat is een dynamisch Splunk-dashboard dat de workitem data visualiseert. De belangrijkste componenten:
 **•    Eén Base search -** die alle data ophaalt en verwerkt, alle andere panelen maken gebruik van deze search waardoor er niet onnodig veel queries worden uitgevoerd en het dashboard goed eprformt.
 **•    Tijd filtering – werktijden - MTTR MTBF -** . De MTTR (Mean Time To Repair) en MTBF (Mean Time Between Failures) wordt standaard berekend middels het vergelijken van twee timestamps, bijvoorbeeld voor MTTR de tijd tussen incident “acknowledged” en “resolved”. In Splunk is het echter ook mogelijk om voor MTTR alleen de tijd tussen werktijden te meten, 08:00-17:00. In de avond- nacht- en weekenden wordt er immers niet gewerkt. Hiervoor is wel een slimme macro nodig.
 **•    Visualisaties & filters -** filters op, Afdeling/team, prioriteit, tag, label, status etc. Dit maakt het eenvoudig om bottlenecks per team te identificeren, prioriteitenschema’s te bewaken en trends over tijd te visualiseren.
 
 📬 **Voorbeelden nodig, of dit graag een keer live zien? Vraag gerust om een stukje voorbeeld code of om een demo!**
-Neem contact met mij op via info.tomdebruijn@gmail.com of reageer op de post via LinkedIn.`,
+Neem contact met mij op via info.tomdebruijn@gmail.com of reageer op de post via [LinkedIn](https://www.linkedin.com/in/tcdebruijn/).`,
 blog1Step1Title: `Request Azure DevOps API - WIQL`,
-blog1Step1Desc: `Met de Azure DevOps WIQL API (https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2) kan je zoals de naam (Work Item Query Language) zegt, zoekopdrachten doen. Ik haal bij deze API call een lijst ID's van workitems op, die de afgelopen 24 uur een wijziging hebben gehad. code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
+blog1Step1Desc: `Met de [Azure DevOps WIQL API](https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2) kan je zoals de naam (Work Item Query Language) zegt, zoekopdrachten doen. Ik haal bij deze API call een lijst ID's van workitems op, die de afgelopen 24 uur een wijziging hebben gehad. code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
 blog1Step2Title: `Batch request Workitems metadata`,
-blog1Step2Desc: `Met de Batch request Workitems API (https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch) vraag ik vervolgens van de lijst ID's de relevante data velden op per workitem. code:  {
+blog1Step2Desc: `Met de [Batch request Workitems API](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch) vraag ik vervolgens van de lijst ID's de relevante data velden op per workitem. code:  {
   "ids": $IDS_JSON,
   "fields": [
     "System.ChangedDate",
@@ -339,7 +337,7 @@ blog1Step2Desc: `Met de Batch request Workitems API (https://learn.microsoft.com
   ]
 }`,
 blog1Step3Title: `Query Splunk REST API`,
-blog1Step3Desc: `Met de Splunk REST API (https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference:) Controleer of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd. code: index=azure_devops 
+blog1Step3Desc: `Met de [Splunk REST API](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference) controleer of de workitems al aanwezig zijn in Splunk en wat de huidige status is op basis van tijd. code: index=azure_devops 
 | spath input=_raw path=id output=id 
 | stats latest(_time) as time by id 
 | eval id_time=id.",".time 
@@ -347,7 +345,7 @@ blog1Step3Desc: `Met de Splunk REST API (https://help.splunk.com/en/splunk-enter
 blog1Step4Title: `Filter Events in pipeline`,
 blog1Step4Desc: `In de pipeline heb ik nu de opgehaalde events van AzureDevOps en van Splunk. Middels filtering in de code match ik deze lijsten en kijk ik waar de waarde van AzureDevOps nieuwer is dan die van Splunk, of nog niet in Splunk staat. Op deze manier worden alleen nieuwe- of update van events behouden.`,
 blog1Step5Title: `Verstuur alleen nieuwe events naar Splunk via HEC`,
-blog1Step5Desc: `Stuur de gefilterde events in batch op via de Splunk HTTP Event Collector (https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request). code: {
+blog1Step5Desc: `Stuur de gefilterde events in batch op via de [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request). code: {
     time: $time,
     host: "sample_host_azure_dev",
     source: "dev.azure.com",
@@ -538,9 +536,7 @@ blog1Step5Desc: `Stuur de gefilterde events in batch op via de Splunk HTTP Event
     blog1TeaserTitle: "🚀 How to smartly connect Azure DevOps to Splunk and get real-time insights into MTTR, team performance, and lead times?",
     blog1TeaserCTA: "In this blog, I'll show you how I approach this as efficiently as possible; using 1 script and the Azure & Splunk Rest API.\n\n#Splunk #Azure #DevOps #CICD #Observability #AI",
     blog1ArticleTitle: "📝 From Azure DevOps to Splunk: Complete Insight into Workitems, MTTR, and Team Progress",
-    blog1FullArticle: `In many DevOps environments, I see the following pattern: an alert is triggered in a monitoring tool, which — either manually or automatically — creates a ticket in an incident management system like Azure DevOps or Jira. An engineer investigates the issue, documents the root cause, and eventually resolves and closes the ticket.
-
-What’s often missing in this flow: meaningful, connected insight. Tickets and logging may be technically integrated, but in practice they often live in separate silos. This leads to two common problems:
+    blog1FullArticle: `In many DevOps environments, I see the following pattern: an alert is triggered in a monitoring tool, which — either manually or automatically — creates a ticket in an incident management system like Azure DevOps or Jira. An engineer investigates the issue, documents the root cause, and eventually resolves and closes the ticket. What's often missing in this flow: **meaningful, connected insight**. Tickets and logging may be technically integrated, but in practice they often live in separate silos. This leads to two common problems:
 
 **- Lack of direct context:** From within a ticket, there’s often too little information available and no direct link to the relevant log data or dashboard. Engineers must manually search for the right logs — a time-consuming and error-prone process.
 
@@ -571,7 +567,6 @@ To correctly link Azure DevOps tickets — known as Workitems — to Splunk and 
 💡- Need some sample code, drop me a message, happy to help!
 
 📊 Splunk Dashboard:
-**📸 Below is an example of the Splunk dashboard as it runs live:**
 {{IMAGE_PLACEHOLDER}}
 The end result is a dynamic Splunk dashboard that visualizes the workitem data. Key components:
 
@@ -580,11 +575,11 @@ The end result is a dynamic Splunk dashboard that visualizes the workitem data. 
 **• Visualizations & filters –** Use filters for team, priority, tag, label, status and more. This makes it easy to identify bottlenecks, enforce priority workflows, and monitor trends over time.
 
 📬 **In need of some sample code, or want to see this in action? Request a demo!**
-Reach out via info.tomdebruijn@gmail.com or respond to the post on LinkedIn.`,
+Reach out via info.tomdebruijn@gmail.com or respond to the post on [LinkedIn](https://www.linkedin.com/in/tcdebruijn/).`,
 blog1Step1Title: `Request Azure DevOps API - WIQL`,
-blog1Step1Desc: `Using the Azure DevOps WIQL API (https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2), you can perform queries as the name (Work Item Query Language) suggests. In this API call, I retrieve a list of work item IDs that have been modified in the past 24 hours. code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
+blog1Step1Desc: `Using the [Azure DevOps WIQL API](https://learn.microsoft.com/en-us/rest/api/azure/devops/testresults/results/get-test-results-by-query-wiql?view=azure-devops-rest-7.2), you can perform queries as the name (Work Item Query Language) suggests. In this API call, I retrieve a list of work item IDs that have been modified in the past 24 hours. code: SELECT [System.Id] FROM WorkItems WHERE [System.ChangedDate] >= '$SINCE'`,
 blog1Step2Title: `Batch request Workitems metadata`,
-blog1Step2Desc: `With the Batch request Workitems API (https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch), I then request the relevant data fields per work item for the list of IDs. code:  {
+blog1Step2Desc: `With the [Batch request Workitems API](https://learn.microsoft.com/en-us/rest/api/azure/devops/wit/work-items/get-work-items-batch), I then request the relevant data fields per work item for the list of IDs. code:  {
   "ids": $IDS_JSON,
   "fields": [
     "System.ChangedDate",
@@ -602,15 +597,15 @@ blog1Step2Desc: `With the Batch request Workitems API (https://learn.microsoft.c
   ]
 }`,
 blog1Step3Title: `Query Splunk REST API`,
-blog1Step3Desc: `Using the Splunk REST API (https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference:), I check whether the work items are already present in Splunk and determine their current status based on time. code: index=azure_devops 
+blog1Step3Desc: `Using the [Splunk REST API](https://help.splunk.com/en/splunk-enterprise/rest-api-reference/9.4/introduction/using-the-rest-api-reference), I check whether the work items are already present in Splunk and determine their current status based on time. code: index=azure_devops 
 | spath input=_raw path=id output=id 
 | stats latest(_time) as time by id 
 | eval id_time=id.",".time 
 | stats values(id_time) as id_time`,
 blog1Step4Title: `Filter Events in pipeline`,
 blog1Step4Desc: `At this stage in the pipeline, I have the fetched events from Azure DevOps and from Splunk. By filtering in the code, I match these lists and check where the Azure DevOps value is newer than the one in Splunk, or not yet present in Splunk. This way, only new or updated events are retained.`,
-blog1Step5Title: `Send only new events into Splunk using Splunk HEC`,
-blog1Step5Desc: `Send the filtered events in batch via the Splunk HTTP Event Collector (https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request). code: {
+blog1Step5Title: `Send only new events to Splunk via HEC`,
+blog1Step5Desc: `Send the filtered events in batch via the [Splunk HTTP Event Collector](https://docs.splunk.com/Documentation/Splunk/9.4.2/Data/UsetheHTTPEventCollector#Example_of_sending_data_to_HEC_with_an_HTTP_request). code: {
     time: $time,
     host: "sample_host_azure_dev",
     source: "dev.azure.com",
@@ -747,5 +742,3 @@ const ensureEnglishPlaceholders = (en: TranslationContent, nl: TranslationConten
   });
 };
 ensureEnglishPlaceholders(translations.en, translations.nl);
-
-    
