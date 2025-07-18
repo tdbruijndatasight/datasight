@@ -83,7 +83,7 @@ export const BLOG_ITEMS: BlogItem[] = [
     imageSrc: blogImage1,
     articleImageSrc: blogImage2,
     dataAiHint: 'dashboard charts',
-    date: '2025-07-20',
+    date: '2025-07-21',
     titleKey: 'blog1TeaserTitle',
     teaserKey: 'blog1TeaserCTA',
     fullArticleKey: 'blog1FullArticle',
